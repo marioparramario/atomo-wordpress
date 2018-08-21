@@ -1,0 +1,85 @@
+.single {
+  margin: 0;
+}
+.single-image {
+  width: 100%;
+  max-width: 960px;
+  height: 450px;
+  background-image: url('../images/placeholders/forest.jpg');
+  background-position: 50% 80%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.single-text-wrapper {
+  width: 720px;
+  background: white;
+  transform: translateY(-150px);
+}
+.single-text-container {
+  margin: 4.5rem;
+}
+.single-text-container h3 {
+  color: #D8A073;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+.single-text-container h4 {
+  align-self: flex-end;
+  position: relative;
+  font-size: 0.9rem;
+}
+.single-text-container h4::before {
+  content: '';
+  position: absolute;
+  left: -60px;
+  top: 50%;
+  width: 50px;
+  height: 1px;
+  background: #1E1E1E;
+}
+.single-text-container p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin-top: 1.5rem;
+}
+.single-text-container span {
+  margin-top: 4rem;
+  font-size: 0.7rem;
+}
+.single-text-quote {
+  background: #D8A073;
+  margin: 2rem -4.5rem;
+}
+.single-text-quote .column {
+  flex-basis: 50%;
+}
+.single-text-quote .column:nth-of-type(2) {
+  position: relative;
+  background-image: url('../images/placeholders/car.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+.single-text-quote h5 {
+  font-size: 1.3rem;
+  color: white;
+  margin: 3rem 2rem 3rem 4.5rem;
+}
+.single-social {
+  display: none;
+  background: #D8A073;
+  width: 40px;
+  height: 100px;
+  z-index: 99;
+}
+.no-text .single-text-wrapper,
+.no-text-2 .single-text-wrapper {
+  transform: translateY(0);
+}
+.no-text-2 .main {
+  background: white;
+}
+.no-text-2 .nav-init {
+  background: #FAF0E9;
+}
