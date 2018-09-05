@@ -1,0 +1,279 @@
+@import "variables.less";
+*,
+*::before,
+*::after {
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+}
+body {
+  color: @black;
+  font-family: @baskerville;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  &.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+  }
+}
+.ready .loader {
+  opacity: 0;
+  pointer-events: none;
+}
+.loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: white;
+  background-image: url('../images/web/logo-loader.svg');
+  background-position: center center;
+  background-size: 200px;
+  background-repeat: no-repeat;
+  z-index: 10;
+  opacity: 1;
+  transition: all 0.4s cubic-bezier(.4,0,.2,1);
+}
+section {
+  margin-top: 8rem;
+  width: 90%;
+  max-width: @container;
+  position: relative;
+}
+span {
+  font-family: @roboto;
+}
+a {
+  color: @red;
+  text-decoration: none;
+  font-family: @roboto;
+  letter-spacing: 0.15rem;
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+img {
+  width: 100%;
+}
+input {
+  width: 100%;
+  // height: 30px;
+  border: none;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background: white;
+  padding: 0 1rem;
+  // &::-webkit-input-placeholder {
+  //   color: fade( @dark-blue, 60% ) !important;
+  // }
+}
+.headline {
+  position: relative;
+  font-size: 2rem;
+  color: @black;
+  margin-bottom: 3rem;
+  align-self: start;
+  &::after {
+    content: '';
+    position: absolute;
+    right: -210px;
+    top: calc(50% - 3px);
+    width: 180px;
+    height: 2px;
+    background: @black;
+  }
+}
+.mono {
+  font-family: @roboto;
+}
+
+
+.main {
+  width: 100%;
+  // padding-top: 120px;
+  background: @cream;
+}
+.container {
+  width: 100%;
+  transform: translateY(-150px);
+  padding: 0;
+}
+.archive {
+  .container {
+    transform: translateY(0);
+  }
+}
+.articles {
+  .container {
+    transform: translateY(0);
+  }
+  .nav-init {
+    height: 200px;
+  }
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.issue {
+  width: 100%;
+  max-width: none;
+  min-height: 30vh;
+  background: @red;
+  &-container {
+    position: relative;
+    max-width: @container;
+    padding: 3rem 0;
+  }
+  &-version {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-50%);
+    width: 70px;
+    z-index: 3;
+  }
+  &-image {
+    width: 230px;
+  }
+  &-text {
+    color: white;
+    max-width: 400px;
+    margin-left: 3rem;
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    a {
+      color: @black;
+      font-size: 0.9rem;
+      position: relative;
+      font-weight: 500;
+      margin-top: 1rem;
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: @black;
+      }
+    }
+  }
+}
+
+
+
+
+
+.suscribe {
+  background: @green;
+  width: 100%;
+
+  max-width: @container;
+  max-width: none;
+  min-height: 30vh;
+  text-align: center;
+  &-container {
+    width: 80%;
+    position: relative;
+    max-width: @input;
+    padding: 6rem 0;
+  }
+  h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  p {
+    color: white;
+  }
+  .input-container {
+    width: 100%;
+    padding: 3rem 0;
+
+  }
+  .button {
+    font-family: @roboto;
+    text-transform: uppercase;
+    color: white;
+    border: none;
+    background: @black;
+    padding: 1rem;
+  }
+}
+
+
+
+@media (max-width: @tablet) {
+  a {
+    letter-spacing: 0.13rem;
+  }
+  section {
+    margin-top: 6rem;
+  }
+  .headline {
+    font-size: 1.8rem;
+    &::after {
+      right: -180px;
+      width: 150px;
+    }
+  }
+  .loader {
+    background-size: 170px;
+  }
+
+  .container {
+    transform: translateY(-70px);
+  }
+}
+
+@media (max-width: @small-tablet) {
+  .headline {
+    font-size: 1.6rem;
+    margin-bottom: 2.5rem;
+    &::after {
+      right: -125px;
+      width: 100px;
+    }
+  }
+  .loader {
+    background-size: 150px;
+  }
+
+}
+
+@media (max-width: @phone) {
+  .headline {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    &::after {
+      right: -80px;
+      width: 60px;
+    }
+  }
+  .loader {
+    background-size: 120px;
+  }
+}

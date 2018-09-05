@@ -1,6 +1,7 @@
 .slider {
   margin: 0;
-  position: relative;
+  overflow: hidden;
+  height: 450px;
 }
 .slider-logo {
   position: absolute;
@@ -9,14 +10,16 @@
   right: 315px;
 }
 .slider-image-wrapper {
-  flex-basis: 70%;
-  background-image: url('../images/placeholders/slider.jpg');
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  width: 70%;
+  float: left;
+  height: auto;
+}
+.slider-image-wrapper img {
+  height: 100%;
 }
 .slider-text-wrapper {
-  flex-basis: 30%;
+  width: 30%;
+  height: 100%;
   background: #D8A073;
   color: white;
   padding: 3rem;
@@ -35,10 +38,12 @@
   margin-top: 5rem;
 }
 .slider-text-container h3 {
+  font-family: 'Libre Baskerville', serif;
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
 }
 .slider-text-container p {
+  font-family: 'Libre Baskerville', serif;
   position: relative;
   font-size: 0.9rem;
   line-height: 1.5;

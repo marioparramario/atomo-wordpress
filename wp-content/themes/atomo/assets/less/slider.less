@@ -3,7 +3,9 @@
 .slider {
   // width: 100%;
   margin: 0;
-  position: relative;
+  overflow: hidden;
+  height: 450px;
+  // position: relative;
   &-logo {
     position: absolute;
     width: 50px;
@@ -11,15 +13,22 @@
     right: 315px;
   }
   &-image-wrapper {
-    flex-basis: 70%;
-    background-image: url('../images/placeholders/slider.jpg');
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    // flex-basis: 70%;
+    // background-image: url('../images/placeholders/slider.jpg');
+    // background-position: center center;
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    width: 70%;
+    float: left;
+    height: auto;
+    img {
+      height: 100%;
+    }
   }
   &-text {
     &-wrapper {
-      flex-basis: 30%;
+      width: 30%;
+      height: 100%;
       background: @camel;
       color: white;
       padding: 3rem;
@@ -39,10 +48,12 @@
     &-container {
       margin-top: 5rem;
       h3 {
+        font-family: @baskerville;
         font-size: 1.8rem;
         margin-bottom: 1.5rem;
       }
       p {
+        font-family: @baskerville;
         position: relative;
         font-size: 0.9rem;
         line-height: 1.5;
@@ -135,11 +146,10 @@
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
-    flex-direction: column;  
+    flex-direction: column;
     &-image-wrapper {
       flex-basis: auto;
       min-height: 60vw;
-    }  
+    }
   }
 }
-

@@ -1,0 +1,50 @@
+<!doctype html>
+<html <?php language_attributes(); ?>>
+    <a href="">
+        <head>
+            <meta charset="<?php bloginfo( 'charset' ); ?>">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="description" content="">
+            <meta name="author" content="">
+            <!-- Bootstrap core CSS -->
+            <!-- Layout -->
+            <!-- Layout -->
+            <!-- Custom styles for this template -->
+            <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+            <?php wp_head(); ?>
+        </head>
+    </a>
+    <body class="<?php echo implode(' ', get_body_class()); ?>">
+
+      <section class="hero-section flex-vertical">
+        <div class="text-hero-wrapper">
+          <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/buen_consejo-logo.svg" alt="">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <img class="logo-euro" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-euro-white.svg" />
+      </section>
+
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+
+        <main>
+          <nav class="flex justify-between navbar-wrapper sticky">
+              <div class="flex align-center">
+                  <a href="<?php echo esc_url( home_url() ); ?>" class="home-link" rel="home"><?php bloginfo( 'name' ); ?></a>
+              </div>
+              <div class="flex align-center navbar-left">
+                  <?php get_search_form( true ); ?>
+                  <a class="open-menu">
+                      <span class="category-text"><?php _e( 'Categorías', 'euroamerica-v3' ); ?></span>
+                      <div class="menu-icon-mobile">
+                          <span></span>
+                      </div>
+                  </a>
+              </div>
+              <div class="navbar-mobile">
+                  <?php wp_list_categories( array() ); ?>
+                  <?php get_search_form( true ); ?>
+              </div>
+          </nav>

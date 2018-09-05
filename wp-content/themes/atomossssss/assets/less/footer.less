@@ -1,0 +1,151 @@
+@import "variables.less";
+
+.footer {
+  background: @black;
+  color: white;
+  width: 100%;
+  &-wrapper {
+    padding: 4rem 50px;
+  }
+  &-logo {
+    margin-right: 50px;
+    img {
+      width: 72px;
+    }
+  }
+  &-items {
+    flex-basis: 60%;
+    justify-self: flex-start;
+    a {
+      color: white;
+      font-size: 0.7rem;
+      margin-bottom: 0.5rem;
+      &:nth-of-type(4) {
+        margin: 0;
+      }
+    }
+  }
+  &-contact {
+    text-align: right;
+    h4 {
+      font-family: @roboto;
+      font-size: 0.7rem;
+      margin-bottom: 0.5rem;
+    }
+    .social-container {
+      margin-bottom: 1.5rem;
+    }
+    svg {
+      width: 18px;
+      margin-right: 8px;
+    }
+    path {
+      fill: white;
+      transition: all 0.4s cubic-bezier(.4,0,.2,1);
+    }
+    span {
+      font-size: 0.45rem;
+    }
+  }
+  &-email {
+    a {
+      font-family: @baskerville;
+      color: white;
+      margin-bottom: 0.2rem;
+      letter-spacing: 0;
+    }
+  }
+  a {
+    transition: all 0.4s cubic-bezier(.4,0,.2,1);
+    &:hover {
+      color: @camel;
+      path {
+        fill: @camel;
+      }
+    }
+  }
+}
+
+@media (max-width: @tablet) {
+  .footer {
+    &-wrapper {
+      padding: 3rem 30px;
+    }
+    &-logo {
+      margin-right: 30px;
+      img {
+        width: 60px;
+      }
+    }
+    &-items {
+      flex-basis: 60%;
+      a {
+        font-size: 0.65rem;
+      }
+    }
+  }
+}
+@media (max-width: @small-tablet) {
+  .footer {
+    &-wrapper {
+      padding: 2rem 30px;
+    }
+    &-logo {
+      margin-right: 25px;
+      img {
+        width: 50px;
+      }
+    }
+    &-items {
+      flex-basis: 60%;
+      a {
+        font-size: 0.65rem;
+      }
+    }
+    &-contact {
+      svg {
+        width: 16px;
+      }
+    }
+    &-email {
+      a {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@media (max-width: @phone) {
+  .footer {
+    &-wrapper {
+      padding: 4rem 30px;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+    }
+    &-logo {
+      height: 50px;
+      margin-bottom: 30px;
+    }
+    &-items {
+      flex-basis: 100%;
+      margin-bottom: 30px;
+    }
+    &-contact {
+      text-align: left;
+      -webkit-box-align: start;
+      -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+    }
+    &-email {
+      -webkit-box-align: start;
+      -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+    }
+  }
+}
+

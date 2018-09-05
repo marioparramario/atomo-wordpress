@@ -1,7 +1,8 @@
 <?php
-if ( ! function_exists( 'buen_consejo_setup' ) ) :
+if ( ! function_exists( 'todalavida_setup' ) ) :
 
-function buen_consejo_setup() {
+
+function todalavida_setup() {
 
     /*
      * Make theme available for translation.
@@ -27,8 +28,8 @@ function buen_consejo_setup() {
 
     // Add menus.
     register_nav_menus( array(
-        'primary' => __( 'Primary Menu', 'buen_consejo' ),
-        'social'  => __( 'Social Links Menu', 'buen_consejo' ),
+        'primary' => __( 'Primary Menu', 'todalavida' ),
+        'social'  => __( 'Social Links Menu', 'todalavida' ),
     ) );
 
     /*
@@ -46,14 +47,14 @@ function buen_consejo_setup() {
         'aside', 'image', 'video', 'quote', 'link', 'gallery', 'status', 'audio', 'chat'
     ) );
 }
-endif; // buen_consejo_setup
+endif; // todalavida_setup
 
-add_action( 'after_setup_theme', 'buen_consejo_setup' );
+add_action( 'after_setup_theme', 'todalavida_setup' );
 
 
-if ( ! function_exists( 'buen_consejo_init' ) ) :
+if ( ! function_exists( 'todalavida_init' ) ) :
 
-function buen_consejo_init() {
+function todalavida_init() {
 
 
     // Use categories and tags with attachments
@@ -97,14 +98,14 @@ function buen_consejo_init() {
     /* Pinegrow generated Taxonomies End */
 
 }
-endif; // buen_consejo_setup
+endif; // todalavida_setup
 
-add_action( 'init', 'buen_consejo_init' );
+add_action( 'init', 'todalavida_init' );
 
 
-if ( ! function_exists( 'buen_consejo_widgets_init' ) ) :
+if ( ! function_exists( 'todalavida_widgets_init' ) ) :
 
-function buen_consejo_widgets_init() {
+function todalavida_widgets_init() {
 
     /*
      * Register widget areas.
@@ -113,14 +114,14 @@ function buen_consejo_widgets_init() {
 
     /* Pinegrow generated Register Sidebars End */
 }
-add_action( 'widgets_init', 'buen_consejo_widgets_init' );
-endif;// buen_consejo_widgets_init
+add_action( 'widgets_init', 'todalavida_widgets_init' );
+endif;// todalavida_widgets_init
 
 
 
-if ( ! function_exists( 'buen_consejo_customize_register' ) ) :
+if ( ! function_exists( 'todalavida_customize_register' ) ) :
 
-function buen_consejo_customize_register( $wp_customize ) {
+function todalavida_customize_register( $wp_customize ) {
     // Do stuff with $wp_customize, the WP_Customize_Manager object.
 
     /* Pinegrow generated Customizer Controls Begin */
@@ -128,12 +129,12 @@ function buen_consejo_customize_register( $wp_customize ) {
     /* Pinegrow generated Customizer Controls End */
 
 }
-add_action( 'customize_register', 'buen_consejo_customize_register' );
-endif;// buen_consejo_customize_register
+add_action( 'customize_register', 'todalavida_customize_register' );
+endif;// todalavida_customize_register
 
 
-if ( ! function_exists( 'buen_consejo_enqueue_scripts' ) ) :
-    function buen_consejo_enqueue_scripts() {
+if ( ! function_exists( 'todalavida_enqueue_scripts' ) ) :
+    function todalavida_enqueue_scripts() {
 
         /* Pinegrow generated Enqueue Scripts Begin */
 
@@ -151,6 +152,9 @@ if ( ! function_exists( 'buen_consejo_enqueue_scripts' ) ) :
 
     wp_deregister_script( 'index' );
     wp_enqueue_script( 'index', get_template_directory_uri() . '/assets/js/index.js', false, null, true);
+
+    wp_deregister_script( 'functions' );
+    wp_enqueue_script( 'functions', get_template_directory_uri() . '/assets/js/functions.js', false, null, true);
 
     /* Pinegrow generated Enqueue Scripts End */
 
@@ -171,10 +175,35 @@ if ( ! function_exists( 'buen_consejo_enqueue_scripts' ) ) :
     wp_deregister_style( 'style' );
     wp_enqueue_style( 'style', get_bloginfo('stylesheet_url'), false, null, 'all');
 
+    wp_deregister_style( 'fonts' );
+    wp_enqueue_style( 'fonts', get_template_directory_uri() . '/assets/css/fonts.css', false, null, 'all');
+
+    wp_deregister_style( 'layout' );
+    wp_enqueue_style( 'layout', get_template_directory_uri() . '/assets/css/layout.css', false, null, 'all');
+
+    wp_deregister_style( 'navbar' );
+    wp_enqueue_style( 'navbar', get_template_directory_uri() . '/assets/css/navbar.css', false, null, 'all');
+
+    wp_deregister_style( 'footer' );
+    wp_enqueue_style( 'footer', get_template_directory_uri() . '/assets/css/footer.css', false, null, 'all');
+
+    wp_deregister_style( 'slider' );
+    wp_enqueue_style( 'slider', get_template_directory_uri() . '/assets/css/slider.css', false, null, 'all');
+
+    wp_deregister_style( 'grid' );
+    wp_enqueue_style( 'grid', get_template_directory_uri() . '/assets/css/grid.css', false, null, 'all');
+
+    wp_deregister_style( 'single' );
+    wp_enqueue_style( 'single', get_template_directory_uri() . '/assets/css/single.css', false, null, 'all');
+
+    wp_deregister_style( 'index' );
+    wp_enqueue_style( 'index', get_template_directory_uri() . '/assets/css/index.css', false, null, 'all');
+
+
     /* Pinegrow generated Enqueue Styles End */
 
     }
-    add_action( 'wp_enqueue_scripts', 'buen_consejo_enqueue_scripts' );
+    add_action( 'wp_enqueue_scripts', 'todalavida_enqueue_scripts' );
 endif;
 
 /*
@@ -244,4 +273,55 @@ require_once "inc/bootstrap/wp_bootstrap4_pagination.php";
             echo '</div>';
         }
     }
+?>
+
+<!-- Adding featured post -->
+
+<?php function sm_custom_meta() {
+    add_meta_box( 'sm_meta', __( 'Featured Posts', 'sm-textdomain' ), 'sm_meta_callback', 'post' );
+}
+function sm_meta_callback( $post ) {
+    $featured = get_post_meta( $post->ID );
+    ?>
+
+	<p>
+    <div class="sm-row-content">
+        <label for="meta-checkbox">
+            <input type="checkbox" name="meta-checkbox" id="meta-checkbox" value="yes" <?php if ( isset ( $featured['meta-checkbox'] ) ) checked( $featured['meta-checkbox'][0], 'yes' ); ?> />
+            <?php _e( 'Featured this post', 'sm-textdomain' )?>
+        </label>
+
+    </div>
+</p>
+
+    <?php
+}
+add_action( 'add_meta_boxes', 'sm_custom_meta' );
+?>
+
+<?php
+/**
+ * Saves the custom meta input
+ */
+function sm_meta_save( $post_id ) {
+
+    // Checks save status
+    $is_autosave = wp_is_post_autosave( $post_id );
+    $is_revision = wp_is_post_revision( $post_id );
+    $is_valid_nonce = ( isset( $_POST[ 'sm_nonce' ] ) && wp_verify_nonce( $_POST[ 'sm_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
+
+    // Exits script depending on save status
+    if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
+        return;
+    }
+
+ // Checks for input and saves
+if( isset( $_POST[ 'meta-checkbox' ] ) ) {
+    update_post_meta( $post_id, 'meta-checkbox', 'yes' );
+} else {
+    update_post_meta( $post_id, 'meta-checkbox', '' );
+}
+
+}
+add_action( 'save_post', 'sm_meta_save' );
 ?>
