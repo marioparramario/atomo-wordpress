@@ -1,8 +1,8 @@
 <?php
-if ( ! function_exists( 'todalavida_setup' ) ) :
+if ( ! function_exists( 'atomo_setup' ) ) :
 
 
-function todalavida_setup() {
+function atomo_setup() {
 
     /*
      * Make theme available for translation.
@@ -28,8 +28,8 @@ function todalavida_setup() {
 
     // Add menus.
     register_nav_menus( array(
-        'primary' => __( 'Primary Menu', 'todalavida' ),
-        'social'  => __( 'Social Links Menu', 'todalavida' ),
+        'primary' => __( 'Primary Menu', 'atomo' ),
+        'social'  => __( 'Social Links Menu', 'atomo' ),
     ) );
 
     /*
@@ -47,14 +47,14 @@ function todalavida_setup() {
         'aside', 'image', 'video', 'quote', 'link', 'gallery', 'status', 'audio', 'chat'
     ) );
 }
-endif; // todalavida_setup
+endif; // atomo_setup
 
-add_action( 'after_setup_theme', 'todalavida_setup' );
+add_action( 'after_setup_theme', 'atomo_setup' );
 
 
-if ( ! function_exists( 'todalavida_init' ) ) :
+if ( ! function_exists( 'atomo_init' ) ) :
 
-function todalavida_init() {
+function atomo_init() {
 
 
     // Use categories and tags with attachments
@@ -98,14 +98,14 @@ function todalavida_init() {
     /* Pinegrow generated Taxonomies End */
 
 }
-endif; // todalavida_setup
+endif; // atomo_setup
 
-add_action( 'init', 'todalavida_init' );
+add_action( 'init', 'atomo_init' );
 
 
-if ( ! function_exists( 'todalavida_widgets_init' ) ) :
+if ( ! function_exists( 'atomo_widgets_init' ) ) :
 
-function todalavida_widgets_init() {
+function atomo_widgets_init() {
 
     /*
      * Register widget areas.
@@ -114,14 +114,14 @@ function todalavida_widgets_init() {
 
     /* Pinegrow generated Register Sidebars End */
 }
-add_action( 'widgets_init', 'todalavida_widgets_init' );
-endif;// todalavida_widgets_init
+add_action( 'widgets_init', 'atomo_widgets_init' );
+endif;// atomo_widgets_init
 
 
 
-if ( ! function_exists( 'todalavida_customize_register' ) ) :
+if ( ! function_exists( 'atomo_customize_register' ) ) :
 
-function todalavida_customize_register( $wp_customize ) {
+function atomo_customize_register( $wp_customize ) {
     // Do stuff with $wp_customize, the WP_Customize_Manager object.
 
     /* Pinegrow generated Customizer Controls Begin */
@@ -129,12 +129,12 @@ function todalavida_customize_register( $wp_customize ) {
     /* Pinegrow generated Customizer Controls End */
 
 }
-add_action( 'customize_register', 'todalavida_customize_register' );
-endif;// todalavida_customize_register
+add_action( 'customize_register', 'atomo_customize_register' );
+endif;// atomo_customize_register
 
 
-if ( ! function_exists( 'todalavida_enqueue_scripts' ) ) :
-    function todalavida_enqueue_scripts() {
+if ( ! function_exists( 'atomo_enqueue_scripts' ) ) :
+    function atomo_enqueue_scripts() {
 
         /* Pinegrow generated Enqueue Scripts Begin */
 
@@ -203,7 +203,7 @@ if ( ! function_exists( 'todalavida_enqueue_scripts' ) ) :
     /* Pinegrow generated Enqueue Styles End */
 
     }
-    add_action( 'wp_enqueue_scripts', 'todalavida_enqueue_scripts' );
+    add_action( 'wp_enqueue_scripts', 'atomo_enqueue_scripts' );
 endif;
 
 /*
@@ -324,58 +324,4 @@ if( isset( $_POST[ 'meta-checkbox' ] ) ) {
 
 }
 add_action( 'save_post', 'sm_meta_save' );
-?>
-
-
-<!-- Most read posts_per_page -->
-<?php
-
-function wpb_set_post_views($postID) {
-    $count_key = 'wpb_post_views_count';
-    $count = get_post_meta($postID, $count_key, true);
-    if($count==''){
-        $count = 0;
-        delete_post_meta($postID, $count_key);
-        add_post_meta($postID, $count_key, '0');
-    }else{
-        $count++;
-        update_post_meta($postID, $count_key, $count);
-    }
-}
-//To keep the count accurate, lets get rid of prefetching
-remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
-
-
-
-function wpb_track_post_views ($post_id) {
-    if ( !is_single() ) return;
-    if ( empty ( $post_id) ) {
-        global $post;
-        $post_id = $post->ID;
-    }
-    wpb_set_post_views($post_id);
-}
-add_action( 'wp_head', 'wpb_track_post_views')
-
-function wpb_get_post_views($postID){
-    $count_key = 'wpb_post_views_count';
-    $count = get_post_meta($postID, $count_key, true);
-    if($count==''){
-        delete_post_meta($postID, $count_key);
-        add_post_meta($postID, $count_key, '0');
-        return "0 View";
-    }
-    return $count.' Views';
-}
-
-?>
-
-
-<?php
-$popularpost = new WP_Query( array( 'posts_per_page' => 4, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) );
-while ( $popularpost->have_posts() ) : $popularpost->the_post();
-
-the_title();
-
-endwhile;
 ?>

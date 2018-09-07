@@ -104,20 +104,32 @@ get_header(); ?>
       </div>
   </section>
 
+
+
+
   <section class="grid-featured flex vertical">
     <h3 class="headline">Artículos destacados</h3>
     <div class="row flex">
       <div class="column">
-        <a class="item" href="">
-          <div class="thumbnail">
-            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/walking.jpg" alt="">
-          </div>
-          <div class="description flex vertical">
-            <h4>Caminar descalzo</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. . .</p>
-            <span>by Isaac Asimov</span>
-          </div>
-        </a>
+        <div class="">
+          <?php query_posts('posts_per_page=1&cat=7'); ?>
+          <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+          <a class="item" href="<?php the_permalink(); ?>">
+            <div class="thumbnail">
+              <?php
+                  if ( has_post_thumbnail() ) {
+                      the_post_thumbnail();
+                  }
+               ?>
+            </div>
+            <div class="description flex vertical">
+              <h4><?php the_title(); ?></h4>
+              <p><?php the_excerpt(); ?></p>
+              <span><?php the_category(', '); ?></span>
+            </div>
+          </a>
+          <?php endwhile; ?> <?php wp_reset_query(); ?>
+        </div>
       </div>
 
 
@@ -131,20 +143,14 @@ get_header(); ?>
                 'meta_value' => 'yes'
             );
             $featured = new WP_Query($args);
-
         if ($featured->have_posts()): while($featured->have_posts()): $featured->the_post(); ?>
-
         <div class="column-sub flex">
-
-
           <a class="item landscape flex" href="<?php the_permalink(); ?>">
             <div class="thumbnail">
-              <!-- <?php if (has_post_thumbnail()) : ?> -->
+              <?php if (has_post_thumbnail()) : ?>
               <?php
                   if ( has_post_thumbnail() ) {
-                      the_post_thumbnail( 'normal', array(
-                      'class' => 'd-block w-100'
-                  ) );
+                      the_post_thumbnail();
                   }
                ?>
             </div>
@@ -154,7 +160,6 @@ get_header(); ?>
               <span>by <?php the_author(); ?></span>
             </div>
           </a>
-
       </div>
       <?php
       endif;
@@ -164,6 +169,20 @@ get_header(); ?>
     </div>
   </section>
 
+
+  <section class="issue flex-center">
+    <div class="issue-container flex-center">
+      <img class="issue-version" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/version.svg" alt="">
+      <div class="issue-image">
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/issue.jpg" alt="">
+      </div>
+      <div class="issue-text">
+        <h2>Milie atqui publium ne ad iaequast auden</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        <a href="#">A link doesn't hurt</a>
+      </div>
+    </div>
+  </section>
 
   <section class="grid-read flex-vertical">
     <h3 class="headline">Artículos más leídos</h3>
@@ -178,26 +197,6 @@ get_header(); ?>
             <span></span>
           </div>
         </a>
-      </div>
-    </div>
-  </section>
-
-
-
-
-
-
-
-  <section class="issue flex-center">
-    <div class="issue-container flex-center">
-      <img class="issue-version" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/version.svg" alt="">
-      <div class="issue-image">
-        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/issue.jpg" alt="">
-      </div>
-      <div class="issue-text">
-        <h2>Milie atqui publium ne ad iaequast auden</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-        <a href="#">A link doesn't hurt</a>
       </div>
     </div>
   </section>
@@ -220,8 +219,14 @@ get_header(); ?>
                 <?php $item_number = 0; ?>
                 <?php while ( have_posts() ) : the_post(); ?>
                     <div <?php post_class( 'column flex' ); ?> id="post-<?php the_ID(); ?>">
-                      <?php $image_attributes = (is_singular() || in_the_loop()) ? wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'normal' ) : null; ?>
-                      <div class="pg-empty-placeholder thumbnail-wrapper" style="<?php if($image_attributes) echo 'background-image:url(\''.$image_attributes[0].'\')' ?>"></div>
+                      <div class="thumbnail">
+                        <?php
+                            if ( has_post_thumbnail() ) {
+                                the_post_thumbnail();
+                            }
+                         ?>
+                      </div>
+
                       <div class="description flex vertical justify-center">
                           <h4><?php the_title(); ?></h4>
                           <?php the_excerpt( ); ?>
@@ -239,8 +244,13 @@ get_header(); ?>
                 <?php while ( have_posts() ) : the_post(); ?>
                     <div <?php post_class( 'column flex' ); ?> id="post-<?php the_ID(); ?>">
                         <a class="item flex vertical" href="<?php echo esc_url( get_permalink() ); ?>">
-                          <?php $image_attributes = (is_singular() || in_the_loop()) ? wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'normal' ) : null; ?>
-                          <div class="pg-empty-placeholder thumbnail-wrapper" style="<?php if($image_attributes) echo 'background-image:url(\''.$image_attributes[0].'\')' ?>"></div>
+                          <div class="thumbnail">
+                            <?php
+                                if ( has_post_thumbnail() ) {
+                                    the_post_thumbnail();
+                                }
+                             ?>
+                          </div>
                           <div class="description flex vertical justify-center">
                               <h4><?php the_title(); ?></h4>
                               <?php the_excerpt( ); ?>
@@ -262,5 +272,7 @@ get_header(); ?>
   </section>
 
 
+
+</div>
 
 <?php get_footer(); ?>

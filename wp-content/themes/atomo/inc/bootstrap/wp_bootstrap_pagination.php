@@ -37,10 +37,10 @@ function wp_bootstrap_pagination( $args = array() ) {
     $defaults = array(
         'range'           => 4,
         'custom_query'    => FALSE,
-        'previous_string' => __( '<i class="glyphicon glyphicon-chevron-left"></i>', 'todalavida' ),
-        'next_string'     => __( '<i class="glyphicon glyphicon-chevron-right"></i>', 'todalavida' ),
-        'first_string'    => __( 'First', 'todalavida'),
-        'last_string'     => __( 'Last', 'todalavida'),
+        'previous_string' => __( '<i class="glyphicon glyphicon-chevron-left"></i>', 'atomo' ),
+        'next_string'     => __( '<i class="glyphicon glyphicon-chevron-right"></i>', 'atomo' ),
+        'first_string'    => __( 'First', 'atomo'),
+        'last_string'     => __( 'Last', 'atomo'),
         'before_output'   => '<nav class="post-nav"><ul class="pagination">',
         'after_output'    => '</ul></nav>'
     );
@@ -85,9 +85,9 @@ function wp_bootstrap_pagination( $args = array() ) {
 
     $firstpage = esc_attr( get_pagenum_link(1) );
     if ( $firstpage && (1 != $page || true) )
-        $echo .= '<li class="previous'.($page == 1 ? ' disabled' : '').'"><a href="' . $firstpage . '" aria-label="'.__( 'First', 'todalavida' ).'">' . $args['first_string'] . '</a></li>';
+        $echo .= '<li class="previous'.($page == 1 ? ' disabled' : '').'"><a href="' . $firstpage . '" aria-label="'.__( 'First', 'atomo' ).'">' . $args['first_string'] . '</a></li>';
     if ( $previous && (1 != $page || true) )
-        $echo .= '<li'.($page == 1 ? ' class="disabled"' : '').'><a href="' . $previous . '" title="' . __( 'previous', 'todalavida') . '" aria-label="' . __( 'previous', 'todalavida') . '">' . $args['previous_string'] . '</a></li>';
+        $echo .= '<li'.($page == 1 ? ' class="disabled"' : '').'><a href="' . $previous . '" title="' . __( 'previous', 'atomo') . '" aria-label="' . __( 'previous', 'atomo') . '">' . $args['previous_string'] . '</a></li>';
 
     if ( !empty($min) && !empty($max) ) {
         for( $i = $min; $i <= $max; $i++ ) {
@@ -103,11 +103,11 @@ function wp_bootstrap_pagination( $args = array() ) {
     $next = intval($page) + 1;
     $next = esc_attr( get_pagenum_link($next) );
     if ($next && ($count != $page || true) )
-        $echo .= '<li'.($page == $count ? ' class="disabled"' : '').'><a href="' . $next . '" title="' . __( 'next', 'todalavida') . '" aria-label="' . __( 'next', 'todalavida') . '">' . $args['next_string'] . '</a></li>';
+        $echo .= '<li'.($page == $count ? ' class="disabled"' : '').'><a href="' . $next . '" title="' . __( 'next', 'atomo') . '" aria-label="' . __( 'next', 'atomo') . '">' . $args['next_string'] . '</a></li>';
 
     $lastpage = esc_attr( get_pagenum_link($count) );
     if ( $lastpage ) {
-        $echo .= '<li class="next'.($page == $count ? ' disabled' : '').'"><a href="' . $lastpage . '" aria-label="' . __( 'Last', 'todalavida') . '">' . $args['last_string'] . '</a></li>';
+        $echo .= '<li class="next'.($page == $count ? ' disabled' : '').'"><a href="' . $lastpage . '" aria-label="' . __( 'Last', 'atomo') . '">' . $args['last_string'] . '</a></li>';
     }
     if ( isset($echo) )
         echo $args['before_output'] . $echo . $args['after_output'];

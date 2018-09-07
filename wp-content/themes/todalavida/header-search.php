@@ -23,7 +23,7 @@
             </div>
             <div class="flex align-center"> 
                 <?php get_search_form( true ); ?> 
-                <a class="open-menu"><?php _e( 'Categorías', 'todalavida' ); ?></a> 
+                <a class="open-menu"><?php _e( 'Categorías', 'atomo' ); ?></a> 
             </div>
             <div class="navbar-mobile">
                 <?php wp_list_categories( array() ); ?>

@@ -1,7 +1,6 @@
 <?php
 if ( ! function_exists( 'atomo_setup' ) ) :
 
-
 function atomo_setup() {
 
     /*
@@ -138,6 +137,12 @@ if ( ! function_exists( 'atomo_enqueue_scripts' ) ) :
 
         /* Pinegrow generated Enqueue Scripts Begin */
 
+    // wp_deregister_script( 'jquery' );
+    // wp_enqueue_script( 'jquery', get_template_directory_uri() . '/assets/js/jquery.min.js', false, null, true);
+
+    // wp_deregister_script( 'popper' );
+    // wp_enqueue_script( 'popper', get_template_directory_uri() . '/assets/js/popper.js', false, null, true);
+
     wp_deregister_script( 'jquery' );
     wp_enqueue_script( 'jquery', get_template_directory_uri() . '/assets/js/jquery.min.js', false, null, true);
 
@@ -147,11 +152,12 @@ if ( ! function_exists( 'atomo_enqueue_scripts' ) ) :
     wp_deregister_script( 'bootstrap' );
     wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', false, null, true);
 
+
     wp_deregister_script( 'ieviewportbugworkaround' );
     wp_enqueue_script( 'ieviewportbugworkaround', get_template_directory_uri() . '/assets/js/ie10-viewport-bug-workaround.js', false, null, true);
 
-    wp_deregister_script( 'index' );
-    wp_enqueue_script( 'index', get_template_directory_uri() . '/assets/js/index.js', false, null, true);
+    wp_deregister_script( 'functions' );
+    wp_enqueue_script( 'functions', get_template_directory_uri() . '/assets/js/functions.js', false, null, true);
 
     /* Pinegrow generated Enqueue Scripts End */
 
@@ -161,13 +167,33 @@ if ( ! function_exists( 'atomo_enqueue_scripts' ) ) :
     wp_enqueue_style( 'normalize', 'https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css', false, null, 'all');
 
     wp_deregister_style( 'bootstrap' );
-    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/bootstrap/css/bootstrap.css', false, null, 'all');
+    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css', false, null, 'all');
 
-    wp_deregister_style( 'font' );
-    wp_enqueue_style( 'font', get_template_directory_uri() . '/css/font.css', false, null, 'all');
+
+    wp_deregister_style( 'fonts' );
+    wp_enqueue_style( 'fonts', get_template_directory_uri() . '/assets/css/fonts.css', false, null, 'all');
 
     wp_deregister_style( 'layout' );
-    wp_enqueue_style( 'layout', get_template_directory_uri() . '/css/layout.css', false, null, 'all');
+    wp_enqueue_style( 'layout', get_template_directory_uri() . '/assets/css/layout.css', false, null, 'all');
+
+    wp_deregister_style( 'navbar' );
+    wp_enqueue_style( 'navbar', get_template_directory_uri() . '/assets/css/navbar.css', false, null, 'all');
+
+    wp_deregister_style( 'footer' );
+    wp_enqueue_style( 'footer', get_template_directory_uri() . '/assets/css/footer.css', false, null, 'all');
+
+    wp_deregister_style( 'slider' );
+    wp_enqueue_style( 'slider', get_template_directory_uri() . '/assets/css/slider.css', false, null, 'all');
+
+    wp_deregister_style( 'grid' );
+    wp_enqueue_style( 'grid', get_template_directory_uri() . '/assets/css/grid.css', false, null, 'all');
+
+    wp_deregister_style( 'single' );
+    wp_enqueue_style( 'single', get_template_directory_uri() . '/assets/css/single.css', false, null, 'all');
+
+    wp_deregister_style( 'index' );
+    wp_enqueue_style( 'index', get_template_directory_uri() . '/assets/css/index.css', false, null, 'all');
+
 
     wp_deregister_style( 'style' );
     wp_enqueue_style( 'style', get_bloginfo('stylesheet_url'), false, null, 'all');
@@ -182,7 +208,7 @@ endif;
  * Resource files included by Pinegrow.
  */
 /* Pinegrow generated Include Resources Begin */
-require_once "inc/bootstrap/wp_bootstrap4_pagination.php";
+// require_once "inc/bootstrap/wp_bootstrap4_pagination.php";
     /* Pinegrow generated Include Resources End */
 
     /*=============================================
@@ -245,4 +271,37 @@ require_once "inc/bootstrap/wp_bootstrap4_pagination.php";
             echo '</div>';
         }
     }
+
+
+
+
+    function wpb_set_post_views($postID) {
+      $count_key = 'wpb_post_views_count';
+      $count = get_post_meta($postID, $count_key, true);
+      if($count==''){
+          $count = 0;
+          delete_post_meta($postID, $count_key);
+          add_post_meta($postID, $count_key, '0');
+      }else{
+          $count++;
+          update_post_meta($postID, $count_key, $count);
+      }
+  }
+  //To keep the count accurate, lets get rid of prefetching
+  remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
+  function wpb_track_post_views ($post_id) {
+    if ( !is_single() ) return;
+    if ( empty ( $post_id) ) {
+        global $post;
+        $post_id = $post->ID;
+    }
+    wpb_set_post_views($post_id);
+}
+add_action( 'wp_head', 'wpb_track_post_views');
+
+
+
+
+
 ?>
