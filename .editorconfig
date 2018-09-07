@@ -1,0 +1,45 @@
+# ==========================
+# EditorConfig for WordPress
+# ==========================
+#
+# Taken from the styles used in existing code.
+# Mostly sticks to two-space indentation for
+# frontend sources while ignoring minified files.
+#
+# NOTE How 'tab' is used for indentation in WP.
+#
+# Copyright (c) 2018 OQGraphics
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.css]
+indent_size = 2
+
+[*.html]
+indent_size = 2
+
+[*.js]
+indent_size = 2
+
+[*.json]
+indent_size = 2
+insert_final_newline = ignore
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.min.{css,js}]
+indent_size = ignore
+indent_style = ignore
+insert_final_newline = ignore
+
+[*.php]
+indent_size = 4
+indent_style = tab  # !
