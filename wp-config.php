@@ -1,6 +1,7 @@
 <?php
+
 /**
- * The base configuration for WordPress
+ * Base configuration for WordPress
  *
  * The wp-config.php creation script uses this file during the
  * installation. You don't have to use the web site, you can
@@ -18,14 +19,18 @@
  * @package WordPress
  */
 
-if ( file_exists(__DIR__ . '/vendor/autoload.php') ) {
-	require_once __DIR__ . '/vendor/autoload.php';
+/** Absolute path to the WordPress directory. */
+defined('ABSPATH') or define('ABSPATH', __DIR__ . '/');
+
+if ( file_exists(ABSPATH . 'vendor/autoload.php') ) {
+	require_once ABSPATH . 'vendor/autoload.php';
 }
 
-try {
-	( new Dotenv\Dotenv(__DIR__) )->load();
-} catch ( \Throwable $e ) {
-	error_log($e->getMessage());
+if ( is_readable(ABSPATH . '.env') ) {
+	$ini = parse_ini_file(ABSPATH . '.env', false, INI_SCANNER_TYPED);
+	foreach ($ini as $name => $value) {
+		putenv("$name=$value");
+	}
 }
 
 
@@ -99,8 +104,4 @@ define('SAVEQUERIES', getenv('WP_SAVEQUERIES', true));
 
 /*  ==== END OF CONFIGURATION ====  */
 
-/** Absolute path to the WordPress directory. */
-defined('ABSPATH') || define('ABSPATH', __DIR__ . '/');
-
-/** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
