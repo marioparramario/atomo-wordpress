@@ -1,0 +1,41 @@
+{
+  "name": "atomo-wordpress",
+  "version": "0.5.0",
+  "description": "Web magazine for art enthusiasts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/operacionquimera/atomo-wordpress.git"
+  },
+  "keywords": [
+    "wordpress",
+    "magazine",
+    "theme",
+    "blog",
+    "art"
+  ],
+  "author": {
+    "name": "Mario Parra",
+    "email": "hello@oqgraphic.com",
+    "url": "http://oqgraphic.com"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/operacionquimera/atomo-wordpress/issues"
+  },
+  "homepage": "https://github.com/operacionquimera/atomo-wordpress#readme",
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "eslint-config-wordpress": "^2.0.0",
+    "eslint-plugin-wordpress": "^0.1.0",
+    "stylelint": "^9.5.0",
+    "stylelint-config-wordpress": "^13.1.0"
+  },
+  "dependencies": {
+    "npm": "^6.4.1"
+  }
+}

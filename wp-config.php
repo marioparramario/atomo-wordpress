@@ -1,6 +1,7 @@
 <?php
+
 /**
- * The base configuration for WordPress
+ * Base configuration for WordPress
  *
  * The wp-config.php creation script uses this file during the
  * installation. You don't have to use the web site, you can
@@ -18,18 +19,35 @@
  * @package WordPress
  */
 
+/** Absolute path to the WordPress directory. */
+defined('ABSPATH') or define('ABSPATH', __DIR__ . '/');
+
+if ( file_exists(ABSPATH . 'vendor/autoload.php') ) {
+	require_once ABSPATH . 'vendor/autoload.php';
+}
+
+if ( is_readable(ABSPATH . '.env') ) {
+	$ini = parse_ini_file(ABSPATH . '.env', false, INI_SCANNER_TYPED);
+	foreach ($ini as $name => $value) {
+		putenv("$name=$value");
+	}
+}
+
+
+/*  ====  START OF CONFIGURATION  ====  */
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'atomo');
+define('DB_NAME', getenv('DB_NAME', true) ?: 'atomo');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', getenv('DB_USER', true) ?: 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', getenv('DB_PASSWORD', true) ?: 'root');
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', getenv('DB_HOST', true) ?: 'localhost');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -46,14 +64,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'put your unique phrase here');
-define('SECURE_AUTH_KEY',  'put your unique phrase here');
-define('LOGGED_IN_KEY',    'put your unique phrase here');
-define('NONCE_KEY',        'put your unique phrase here');
-define('AUTH_SALT',        'put your unique phrase here');
-define('SECURE_AUTH_SALT', 'put your unique phrase here');
-define('LOGGED_IN_SALT',   'put your unique phrase here');
-define('NONCE_SALT',       'put your unique phrase here');
+define('AUTH_KEY',         getenv('WP_AUTH_KEY', true) ?: 'INSECURE:KEY');
+define('SECURE_AUTH_KEY',  getenv('WP_SECURE_AUTH_KEY', true) ?: 'INSECURE:KEY');
+define('LOGGED_IN_KEY',    getenv('WP_LOGGED_IN_KEY', true) ?: 'INSECURE:KEY');
+define('NONCE_KEY',        getenv('WP_NONCE_KEY', true) ?: 'INSECURE:KEY');
+define('AUTH_SALT',        getenv('WP_AUTH_SALT', true) ?: 'INSECURE:SALT');
+define('SECURE_AUTH_SALT', getenv('WP_SECURE_AUTH_SALT', true) ?: 'INSECURE:SALT');
+define('LOGGED_IN_SALT',   getenv('WP_LOGGED_IN_SALT', true) ?: 'INSECURE:SALT');
+define('NONCE_SALT',       getenv('WP_NONCE_SALT', true) ?: 'INSECURE:SALT');
 
 /**#@-*/
 
@@ -63,7 +81,7 @@ define('NONCE_SALT',       'put your unique phrase here');
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix  = 'wp_';
+$table_prefix = 'wp_';  // @codingStandardsIgnoreLine
 
 /**
  * For developers: WordPress debugging mode.
@@ -77,13 +95,13 @@ $table_prefix  = 'wp_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', false);
+define('WP_DEBUG', getenv('WP_DEBUG', true));
+define('WP_DEBUG_LOG', getenv('WP_DEBUG_LOG', true));
+define('WP_DEBUG_DISPLAY', getenv('WP_DEBUG_DISPLAY', true));
 
-/* That's all, stop editing! Happy blogging. */
+define('SAVEQUERIES', getenv('WP_SAVEQUERIES', true));
 
-/** Absolute path to the WordPress directory. */
-if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
 
-/** Sets up WordPress vars and included files. */
-require_once(ABSPATH . 'wp-settings.php');
+/*  ==== END OF CONFIGURATION ====  */
+
+require_once ABSPATH . 'wp-settings.php';

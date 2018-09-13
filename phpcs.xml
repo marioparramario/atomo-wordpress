@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<ruleset name="Atomo WordPress">
+  <description>PHPCS Ruleset for Atomo WordPress</description>
+
+  <!-- Check files in this directory and subdirectories -->
+  <file>.</file>
+
+  <!-- Ignore sniffs in the following directors -->
+  <exclude-pattern>/tests/</exclude-pattern>
+  <exclude-pattern>/vendor/</exclude-pattern>
+  <exclude-pattern>/uploads/</exclude-pattern>
+  <exclude-pattern>/node_modules/</exclude-pattern>
+  <exclude-pattern>/wp-admin/</exclude-pattern>
+  <exclude-pattern>/wp-config</exclude-pattern>
+  <exclude-pattern>/wp-includes/</exclude-pattern>
+
+  <!-- Pass flags to PHPCS:
+  		 p: Show progress of the run.
+  		 s: Show sniff codes in all reports.
+  		 v: Print verbose output. -->
+	<arg value="psv" />
+
+	<!-- Only check PHP files -->
+	<arg name="extensions" value="php" />
+
+  <!-- Run against the PHPCompatibility ruleset -->
+  <rule ref="PHPCompatibility" />
+  <!-- Check for cross-version support for PHP 5.6 and higher. -->
+  <config name="testVersion" value="5.6-" />
+
+  <!-- Use the WordPress ruleset, with exclusions -->
+	<rule ref="WordPress">
+		<exclude name="Squiz.PHP.CommentedOutCode.Found" />
+
+    <!-- Space After/Before Open/Close Bracket -->
+    <exclude name="PEAR.Functions.FunctionCallSignature.SpaceAfterOpenBracket" />
+    <exclude name="PEAR.Functions.FunctionCallSignature.SpaceBeforeCloseBracket" />
+
+    <!-- <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceAfterOpenParenthesis" />
+    <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceBeforeCloseParenthesis" /> -->
+	</rule>
+
+  <!-- Verify that no deprecated or removed functions are used -->
+	<rule ref="WordPress.WP.DeprecatedFunctions">
+		<properties>
+			<property name="minimum_supported_version" value="4.9" />
+		</properties>
+	</rule>
+
+  <!-- Check all globals have the expected prefix -->
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array" value="shoptimizer" />
+		</properties>
+	</rule>
+</ruleset>
