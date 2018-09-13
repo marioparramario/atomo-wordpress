@@ -25,6 +25,7 @@
   "config": {
     "optimize-autoloader": true
   },
+  "prefer-stable" : true,
   "require": {
     "php": ">=5.6",
     "ext-curl": "*",
@@ -47,6 +48,10 @@
     "vlucas/phpdotenv": "^2.5"
   },
   "require-dev": {
-    "ext-xdebug": "*"
+    "ext-xdebug": "*",
+    "squizlabs/php_codesniffer": "^3.3",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
+    "phpcompatibility/php-compatibility": "*",
+    "wp-coding-standards/wpcs": "*"
   }
 }
