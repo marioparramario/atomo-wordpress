@@ -1,7 +1,9 @@
 *._
 *.log
+*.swp
 
 .DS_Store
+Trash.db
 
 wp-content/advanced-cache.php
 wp-content/backup-db/
