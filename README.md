@@ -1,5 +1,5 @@
 <h1 align="center">
-  ![Átomo Logo](wp-content/themes/atomo/assets/images/logo-atomo.svg)
+  <img alt="Átomo Logo" src="wp-content/themes/atomo/assets/images/logo-atomo.svg">
 </h1>
 
 <div align="center">
@@ -29,7 +29,7 @@
 <div align="center">
   <small>
     Built with ❤︎ by
-    [Mario Parra](https://www.behance.net/operacionquimera/) and
-    [contributors](https://github.com/choojs/choo/graphs/contributors).
+    <a href="https://www.behance.net/operacionquimera/">Mario Parra</a> and
+    <a href="https://github.com/choojs/choo/graphs/contributors/">contributors</a>.
   </small>
 </div>
