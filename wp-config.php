@@ -18,16 +18,18 @@
  * @package WordPress
  */
 
-if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+if ( file_exists(__DIR__ . '/vendor/autoload.php') ) {
 	require_once __DIR__ . '/vendor/autoload.php';
 }
 
 try {
-	(new Dotenv\Dotenv(__DIR__))->load();
-} catch (\Throwable $e) {
+	( new Dotenv\Dotenv(__DIR__) )->load();
+} catch ( \Throwable $e ) {
 	error_log($e->getMessage());
 }
 
+
+/*  ====  START OF CONFIGURATION  ====  */
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
@@ -74,7 +76,7 @@ define('NONCE_SALT',       'put your unique phrase here');
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix  = 'wp_';
+$table_prefix = 'wp_';  // @codingStandardsIgnoreLine
 
 /**
  * For developers: WordPress debugging mode.
@@ -91,14 +93,14 @@ $table_prefix  = 'wp_';
 define('WP_DEBUG', getenv('WP_DEBUG', true));
 define('WP_DEBUG_LOG', getenv('WP_DEBUG_LOG', true));
 define('WP_DEBUG_DISPLAY', getenv('WP_DEBUG_DISPLAY', true));
+
 define('SAVEQUERIES', getenv('WP_SAVEQUERIES', true));
 
 
-/* That's all, stop editing! Happy blogging. */
+/*  ==== END OF CONFIGURATION ====  */
 
 /** Absolute path to the WordPress directory. */
-if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+defined('ABSPATH') || define('ABSPATH', __DIR__ . '/');
 
 /** Sets up WordPress vars and included files. */
-require_once(ABSPATH . 'wp-settings.php');
+require_once ABSPATH . 'wp-settings.php';
