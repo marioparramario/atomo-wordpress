@@ -79,6 +79,7 @@ $table_prefix  = 'wp_';
  */
 define('WP_DEBUG', getenv('WP_DEBUG', true));
 define('WP_DEBUG_LOG', getenv('WP_DEBUG_LOG', true));
+define('WP_DEBUG_DISPLAY', getenv('WP_DEBUG_DISPLAY', true));
 
 
 /* That's all, stop editing! Happy blogging. */
