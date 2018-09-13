@@ -2,6 +2,11 @@
 
 .DS_Store
 
+wp-content/backup-db/
+wp-content/backups/
+wp-content/upgrade/
+wp-content/uploads/
+
 /.env
 /.htaccess
 /readme.html
