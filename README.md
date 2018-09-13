@@ -1,10 +1,10 @@
 <h1 align="center">
-  <img alt="Átomo Logo" src="wp-content/themes/atomo/assets/images/logo-atomo.svg">
+  <img alt="Átomo Logo" src="wp-content/themes/atomo/assets/images/logo-atomo.svg" width="50%">
 </h1>
 
-<div align="center">
+<p align="center">
   <em>A WordPress magazine for art enthusiasts.</em>
-</div>
+</p>
 
 <div align="center">
   <strong>
@@ -13,7 +13,7 @@
     </a>
     <span> | </span>
     <a href="https://atomo.cl" alt="Future public website">
-      Website <code>TODO</code>
+      Website
     </a>
     <span> | </span>
     <a href="http://oqpgrahic.com" alt="Portfolio of Mario Parra">
@@ -26,10 +26,12 @@
   </strong>
 </div>
 
+<br>
+
 <div align="center">
-  <small>
-    Built with ❤︎ by
+  <p>
+    <small>Built with ❤︎ by
     <a href="https://www.behance.net/operacionquimera/">Mario Parra</a> and
     <a href="https://github.com/choojs/choo/graphs/contributors/">contributors</a>.
-  </small>
+  </p>
 </div>
