@@ -2,10 +2,13 @@
 
 .DS_Store
 
+wp-content/advanced-cache.php
 wp-content/backup-db/
 wp-content/backups/
+wp-content/cache/
 wp-content/upgrade/
 wp-content/uploads/
+wp-content/wp-cache-config.php
 
 /.env
 /.htaccess
