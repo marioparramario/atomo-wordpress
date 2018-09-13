@@ -11,9 +11,8 @@
   <exclude-pattern>/uploads/</exclude-pattern>
   <exclude-pattern>/node_modules/</exclude-pattern>
   <exclude-pattern>/wp-admin/</exclude-pattern>
+  <exclude-pattern>/wp-config</exclude-pattern>
   <exclude-pattern>/wp-includes/</exclude-pattern>
-
-  <exclude-pattern>/wp-config.php</exclude-pattern>
 
   <!-- Pass flags to PHPCS:
   		 p: Show progress of the run.
