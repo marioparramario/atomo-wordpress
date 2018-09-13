@@ -1,3 +1,4 @@
+*._
 *.log
 
 .DS_Store
@@ -12,6 +13,7 @@ wp-content/uploads/
 wp-content/wp-cache-config.php
 
 /.env
+/.npmrc
 /license.txt
 /readme.html
 /sitemap.xml
