@@ -25,3 +25,11 @@
     </a>
   </strong>
 </div>
+
+<div align="center">
+  <small>
+    Built with ❤︎ by
+    [Mario Parra](https://www.behance.net/operacionquimera/) and
+    [contributors](https://github.com/choojs/choo/graphs/contributors).
+  </small>
+</div>
