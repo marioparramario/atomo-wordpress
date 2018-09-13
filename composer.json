@@ -1,0 +1,50 @@
+{
+  "name": "operacionquimera/atomo-wordpress",
+  "description": "A web magazine for art enthusiasts",
+  "type": "project",
+  "license": "proprietary",
+  "keywords": [
+    "wordpress",
+    "magazine",
+    "theme",
+    "blog",
+    "art"
+  ],
+  "homepage": "https://atomo.cl",
+  "authors": [
+    {
+      "name": "Mario Parra",
+      "email": "hello@oqgraphic.com",
+      "homepage": "http://oqgraphic.com"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/operacionquimera/atomo-wordpress/issues/",
+    "source": "https://github.com/operacionquimera/atomo-wordpress/"
+  },
+  "require": {
+    "php": ">=5.6",
+    "ext-curl": "*",
+    "ext-date": "*",
+    "ext-dom": "*",
+    "ext-filter": "*",
+    "ext-gd": "*",
+    "ext-hash": "*",
+    "ext-iconv": "*",
+    "ext-json": "*",
+    "ext-mbstring": "*",
+    "ext-mysqli": "*",
+    "ext-openssl": "*",
+    "ext-pcre": "*",
+    "ext-simplexml": "*",
+    "ext-spl": "*",
+    "ext-xml": "*",
+    "ext-xmlreader": "*",
+    "ext-zlib": "*",
+    "vlucas/phpdotenv": "^2.5"
+  },
+  "require-dev": {
+    "ext-xdebug": "*"
+  },
+  "optimize-autoloader": true
+}
