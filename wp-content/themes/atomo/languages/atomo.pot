@@ -48,6 +48,10 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
+#: index.php:249
+msgid "Submit"
+msgstr ""
+
 #: inc/metabox.php:4
 msgid "Featured Posts"
 msgstr ""
