@@ -6,6 +6,8 @@
   <em>A WordPress magazine for art enthusiasts.</em>
 </p>
 
+<br>
+
 <div align="center">
   <strong>
     <a href="http://oqgraphic.com/atomo/" alt="Theme preview">
