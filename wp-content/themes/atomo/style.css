@@ -1,13 +1,21 @@
 /*
-Theme Name: atomo
-Author: Mario Parra
-Author URI: http://oqgraphic.com
-*/
+ * Theme Name:    Átomo
+ * Theme URI:     http://oqgraphic.com/atomo/
+ * Author:        Mario Parra
+ * Author URI:    http://oqgraphic.com
+ * Description:   Purpose built art portfolio design for the Átomo magazine.
+ * Version:       0.5.0
+ * Status:        Development
+ * License:       COMMERCIAL
+ * Tags:          blog, photography, poetry, portfolio, fluid-layout, featured-images, full-width-template
+ * Text Domain:   atomo
+ */
 
 .row {
   flex-wrap: inherit;
   margin: 0;
 }
+
 /* Disabling Bootstrap stuff */
 @media (min-width: 1200px) {
   .container {
