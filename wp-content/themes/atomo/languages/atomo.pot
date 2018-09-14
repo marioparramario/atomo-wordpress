@@ -1,8 +1,8 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2018 OQGRAPHIC
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# COMMON TRANSLATION MESSAGES
 #
+# Copyright (C) 2018 OQGraphic
+#
+# This file is distributed under the same license as the PACKAGE package.
 #, fuzzy
 msgid ""
 msgstr ""
@@ -34,7 +34,10 @@ msgid "Blog Archives"
 msgstr ""
 
 #: archive.php:8
-msgid "Browse all articles"
+msgid "All Articles"
+msgstr ""
+
+msgid "Category"
 msgstr ""
 
 #: header-search.php:22
@@ -56,6 +59,10 @@ msgstr ""
 
 #: footer-search.php:16 footer.php:28
 msgid "Follow Us"
+msgstr ""
+
+#: index.php:245
+msgid "Subscribe"
 msgstr ""
 
 #. Anterior

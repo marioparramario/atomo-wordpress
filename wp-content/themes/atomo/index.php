@@ -1,107 +1,146 @@
 <?php
+
+/*
+ * Atomo Entry Page
+ */
+
+$query_args = [
+	'post_type' => 'slider',
+	'nopaging'  => true,
+	'order'     => 'ASC',
+	'orderby'   => 'date',
+];
+
+$qs = new WP_Query( $query_args );
+$count = 0;
+
+/*
+ * Fetch thumbnail of current post.
+ *
+ * @return WP_Post
+ */
+function post_thumbnail( $post = null, $size = 'post-thumbnail', array $attr = null ) : WP_Post {
+	$class = $attr['class'] ?? 'd-block w-100';
+	if ( is_array( $class ) ) {
+		$class = join( ' ', $class );
+	}
+
+	$thumb = $attr or [];
+	$thumb['class'] = $class;
+
+	return get_the_post_thumbnail( $post, $size, $thumb );
+}
+
+
+/*
+ * Render thumbnail of current post.
+ */
+function display_thumbnail( $post = null, $size = 'post-thumbnail', array $attr = null ) {
+	if ( ! has_post_thumbnail( $post ) ) {
+		return null;
+	}
+
+	$thumb = post_thumbnail( $post, $size, $attr );
+	echo esc_html( $thumb );
+}
+
+
 get_header(); ?>
 
 <div class="container flex vertical align-center">
 
-
   <section class="slider flex">
-      <div id="carousel1" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-              <?php if ( is_singular() ) : ?>
-                  <?php
-                      $slider_args = array(
-                          'post_type' => 'slider',
-                          'nopaging' => true,
-                          'order' => 'ASC',
-                          'orderby' => 'date'
-                      )
-                  ?>
-                  <?php $slider = new WP_Query( $slider_args ); ?>
-                  <?php if ( $slider->have_posts() ) : ?>
-                      <?php $slider_item_number = 0; ?>
-                      <?php while ( $slider->have_posts() ) : $slider->the_post(); ?>
-                          <div class="carousel-item<?php if( $slider_item_number == 0) echo ' active'; ?> <?php echo join( ' ', get_post_class( '' ) ) ?>" id="post-<?php the_ID(); ?>">
-                            <div class="slider-image-wrapper">
-                              <?php
-                                  if ( has_post_thumbnail() ) {
-                                      the_post_thumbnail( 'normal', array(
-                                      'class' => 'd-block w-100'
-                                  ) );
-                                  }
-                               ?>
-                            </div>
-                            <div class="slider-text-wrapper flex vertical justify-end">
-                              <div class="pagination flex">
-                                <span></span>
-                                <span class="active"></span>
-                                <span></span>
-                                <span></span>
-                              </div>
-                              <div class="slider-text-container">
-                                <h3><?php the_title(); ?></h3>
-                                <?php the_content(); ?>
-                                <div class="line"></div>
-                                <span>por Friedrich Nietzsche</span>
-                              </div>
-                            </div>
-                          </div>
-                          <?php $slider_item_number++; ?>
-                      <?php endwhile; ?>
-                      <?php wp_reset_postdata(); ?>
-                  <?php else : ?>
-                      <p><?php _e( 'Sorry, no posts matched your criteria.', 'euroamerica-v3' ); ?></p>
-                  <?php endif; ?>
-              <?php else : ?>
-                  <?php
-                      $slider_args = array(
-                          'post_type' => 'slider',
-                          'nopaging' => true,
-                          'order' => 'ASC',
-                          'orderby' => 'date'
-                      )
-                  ?>
-                  <?php $slider = new WP_Query( $slider_args ); ?>
-                  <?php if ( $slider->have_posts() ) : ?>
-                      <?php $slider_item_number = 0; ?>
-                      <?php while ( $slider->have_posts() ) : $slider->the_post(); ?>
-                          <div class="carousel-item<?php if( $slider_item_number == 0) echo ' active'; ?> <?php echo join( ' ', get_post_class( '' ) ) ?>" id="post-<?php the_ID(); ?>">
-                              <a href="<?php echo esc_url( get_permalink() ); ?>">
-                                <div class="slider-image-wrapper">
-                                  <?php
-                                      if ( has_post_thumbnail() ) {
-                                          the_post_thumbnail( 'normal', array(
-                                          'class' => 'd-block w-100'
-                                      ) );
-                                      }
-                                   ?>
-                                </div>
-                                <div class="slider-text-wrapper flex vertical justify-end">
-                                  <div class="pagination flex">
-                                    <span></span>
-                                    <span class="active"></span>
-                                    <span></span>
-                                    <span></span>
-                                  </div>
-                                  <div class="slider-text-container">
-                                    <h3><?php the_title(); ?></h3>
-                                    <?php the_content(); ?>
-                                    <div class="line"></div>
-                                    <span>por Friedrich Nietzsche</span>
-                                  </div>
-                                </div>
-                              </a>
-                          </div>
-                          <?php $slider_item_number++; ?>
-                      <?php endwhile; ?>
-                      <?php wp_reset_postdata(); ?>
-                  <?php else : ?>
-                      <p><?php _e( 'Sorry, no posts matched your criteria.', 'euroamerica-v3' ); ?></p>
-                  <?php endif; ?>
-              <?php endif; ?>
-          </div>
-          <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only"><?php _e( 'Previous', 'euroamerica-v3' ); ?></span> </a>
-          <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only"><?php _e( 'Next', 'euroamerica-v3' ); ?></span> </a>
-      </div>
+    <div id="carousel1" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <?php if ( is_singular() ): ?>
+	       <?php while ( $qs->have_posts() ): $qs->the_post(); ?>
+		     <?php
+			   $item_class = join( ' ', get_post_class( 'carousel-item' ));
+			   if ( ! $count ) $item_class .= ' active';
+			 ?>
+             <div class="<?php echo $item_class; ?>" id="<?php printf('post-%d', get_the_ID()); ?>">
+
+               <div class="slider-image-wrapper">
+		         <?php display_thumbnail(null, 'normal'); ?>
+               </div>
+
+               <div class="slider-text-wrapper flex vertical justify-end">
+
+		       <div class="pagination flex">
+                 <span></span>
+                 <span class="active"></span>
+                 <span></span>
+                 <span></span>
+               </div>
+
+	       	   <div class="slider-text-container">
+                 <h3><?php the_title(); ?></h3>
+                 <?php the_content(); ?>
+                 <div class="line"></div>
+                 <span>por Friedrich Nietzsche</span>
+               </div>
+      	     </div>
+            </div>
+
+        <?php $count++; ?>
+
+	  <?php endwhile; ?>
+      <?php wp_reset_postdata(); ?>
+
+	<?php if ( $count == 0 ): ?>
+	  <p class="no-posts">
+		<?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?>
+	  </p>
+    <?php endif; ?>
+
+<?php else: /* END-OF: is_singular */ ?>
+
+	<?php if ( $qs->have_posts() ): ?>
+	  <?php while ( $qs->have_posts() ): $qs->the_post(); ?>
+	  <?php $item_class = join( ' ', get_post_class( 'carousel-item' ) );
+	        if ( ! $count ) $item_class .= ' active'; ?>
+        <div class="<?php echo $item_class; ?>" id="<?php printf('post-%d', get_the_ID()); ?>">
+          <a href="<?php echo esc_url( get_permalink() ); ?>">
+            <div class="slider-image-wrapper">
+              <?php display_thumbnail(null, 'normal'); ?>
+            </div>
+            <div class="slider-text-wrapper flex vertical justify-end">
+              <div class="pagination flex">
+                <span></span>
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+             </div>
+             <div class="slider-text-container">
+               <h3><?php the_title(); ?></h3>
+               <?php the_content(); ?>
+               <div class="line"></div>
+               <span>por Friedrich Nietzsche</span>
+             </div>
+            </div>
+          </a>
+        </div>
+        <?php $count++; ?>
+      <?php endwhile; ?>
+      <?php wp_reset_postdata(); ?>
+    <?php else: ?>
+	  <p class="no-posts">
+		<?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?>
+	  </p>
+	<?php endif; ?>
+
+  <?php endif; ?>
+    </div>
+
+    <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	  <span class="sr-only"><?php _e( 'Previous', 'atomo' ); ?></span>
+    </a>
+    <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+	  <span class="sr-only"><?php _e( 'Next', 'atomo' ); ?></span>
+    </a>
+    </div>
   </section>
 
 
@@ -212,7 +251,7 @@ get_header(); ?>
     </div>
   </section>
   <section class="grid-regular flex-vertical">
-    <h3 class="headline">Todos los artículos</h3>
+    <h3 class="headline"><?php _e( 'All Articles', 'atomo' ); ?></h3>
       <div class="row flex">
         <?php if ( is_singular() ) : ?>
             <?php if ( have_posts() ) : ?>
@@ -230,13 +269,13 @@ get_header(); ?>
                       <div class="description flex vertical justify-center">
                           <h4><?php the_title(); ?></h4>
                           <?php the_excerpt( ); ?>
-                          <span>Leer artículo</span>
+                          <span><?php _e( 'Read article', 'atomo' ); ?></span>
                       </div>
                     </div>
                     <?php $item_number++; ?>
                 <?php endwhile; ?>
             <?php else : ?>
-                <p><?php _e( 'Sorry, no posts matched your criteria.', 'euroamerica-v3' ); ?></p>
+                <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo3' ); ?></p>
             <?php endif; ?>
         <?php else : ?>
             <?php if ( have_posts() ) : ?>
@@ -254,14 +293,14 @@ get_header(); ?>
                           <div class="description flex vertical justify-center">
                               <h4><?php the_title(); ?></h4>
                               <?php the_excerpt( ); ?>
-                              <span>Leer artículo</span>
+                              <span><?php _e( 'Read article', 'atomo' ); ?></span>
                           </div>
                         </a>
                     </div>
                     <?php $item_number++; ?>
                 <?php endwhile; ?>
             <?php else : ?>
-                <p><?php _e( 'Sorry, no posts matched your criteria.', 'euroamerica-v3' ); ?></p>
+                <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
             <?php endif; ?>
         <?php endif; ?>
       </div>

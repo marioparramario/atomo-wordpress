@@ -31,7 +31,7 @@ get_header( 'index.html' ); ?>
                     <?php if( $item_number % 2 == 0 ) echo '<div class="clearfix visible-sm-block"></div>'; ?>
                 <?php endwhile; ?>
             <?php else : ?>
-                <p><?php _e( 'Sorry, no posts matched your criteria.', 'euroamerica-v3' ); ?></p>
+                <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
             <?php endif; ?>
         <?php else : ?>
             <?php if ( have_posts() ) : ?>
