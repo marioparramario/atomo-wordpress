@@ -51,7 +51,7 @@ msgstr "Contacto"
 
 #: inc/metabox.php:4
 msgid "Featured Posts"
-msgstr "Artículos relacionados"
+msgstr "Artículos destacados"
 
 #: inc/metabox.php:16
 msgid "Featured this post"
