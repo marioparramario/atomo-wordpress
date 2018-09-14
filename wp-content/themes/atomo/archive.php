@@ -3,7 +3,9 @@ get_header( 'index.hmtl' ); ?>
 
 <div class="container flex vertical align-center">
   <section class="grid-read flex-vertical">
-    <h3 class="headline">Todos los artículos</h3>
+    <h3 class="headline">
+      <?php _e( 'Browser all articles', 'atomo' ); ?><!-- Todos los artículos -->
+    </h3>
     <div class="row flex">
       <?php if ( is_singular() ) : ?>
           <?php if ( have_posts() ) : ?>
@@ -15,13 +17,13 @@ get_header( 'index.hmtl' ); ?>
                     <div class="description flex vertical justify-center">
                         <h4><?php the_title(); ?></h4>
                         <?php the_excerpt( ); ?>
-                        <span>Leer artículo</span>
+                        <span><?php _e( 'Read article', 'atomo' ); ?><!-- Leer artículo --></span>
                     </div>
                   </div>
                   <?php $item_number++; ?>
               <?php endwhile; ?>
           <?php else : ?>
-              <p><?php _e( 'Sorry, no posts matched your criteria.', 'euroamerica-v3' ); ?></p>
+              <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
           <?php endif; ?>
       <?php else : ?>
           <?php if ( have_posts() ) : ?>
@@ -34,14 +36,14 @@ get_header( 'index.hmtl' ); ?>
                         <div class="description flex vertical justify-center">
                             <h4><?php the_title(); ?></h4>
                             <?php the_excerpt( ); ?>
-                            <span>Leer artículo</span>
+                            <span><?php _e( 'Read article', 'atomo' ); ?><!-- Leer artículo --></span>
                         </div>
                       </a>
                   </div>
                   <?php $item_number++; ?>
               <?php endwhile; ?>
           <?php else : ?>
-              <p><?php _e( 'Sorry, no posts matched your criteria.', 'euroamerica-v3' ); ?></p>
+              <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
           <?php endif; ?>
       <?php endif; ?>
 
@@ -50,7 +52,7 @@ get_header( 'index.hmtl' ); ?>
   </section>
     <!-- <div class="card">
         <div class="card-body flex-center">
-            <h5 class="card-subtitle mb-2"><?php _e( 'Resultado de búsqueda:', 'euroamerica-v3' ); ?></h5>
+            <h5 class="card-subtitle mb-2"><?php _e( 'Search results', 'atomo' ); ?>">:</h5> <!-- Resultado de búsqueda -->
             <span class="search-tag"><?php echo single_cat_title(); ?></span>
             <a href="<?php echo esc_url( home_url() ); ?>" class="close-card" rel="home"><?php bloginfo( 'name' ); ?></a>
         </div>
