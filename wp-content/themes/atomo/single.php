@@ -23,7 +23,7 @@ get_header(); ?>
                   <?php $item_number++; ?>
               <?php endwhile; ?>
           <?php else : ?>
-              <p><?php _e( 'Sorry, no posts matched your criteria.', 'euroamerica-v3' ); ?></p>
+              <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
           <?php endif; ?>
       <?php else : ?>
           <?php if ( have_posts() ) : ?>
@@ -47,13 +47,13 @@ get_header(); ?>
                   <?php $item_number++; ?>
               <?php endwhile; ?>
           <?php else : ?>
-              <p><?php _e( 'Sorry, no posts matched your criteria.', 'euroamerica-v3' ); ?></p>
+              <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
           <?php endif; ?>
       <?php endif; ?>
-      <?php the_post_navigation( array(
-              'prev_text' => __( 'Anterior', 'euroamerica-v3' ),
-              'next_text' => __( 'Siguiente', 'euroamerica-v3' )
-      ) ); ?>
+      <?php the_post_navigation( [
+          'prev_text' => __( 'Previous', 'atomo' ),  /* Anterior */
+          'next_text' => __( 'Next', 'atomo' ),  /* Siguiente  */
+      ] ); ?>
     </div>
   </section>
 </div>
