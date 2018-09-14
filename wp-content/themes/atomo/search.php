@@ -2,12 +2,12 @@
 get_header( 'index.hmtl' ); ?>
 
 <div class="container">
-    <div class="card"> 
-        <div class="card-body flex-center"> 
-            <h5 class="card-subtitle mb-2"><?php _e( 'Resultado de búsqueda:', 'euroamerica-v3' ); ?></h5>
+    <div class="card">
+        <div class="card-body flex-center">
+            <h5 class="card-subtitle mb-2"><?php _e( 'Search results', 'atomo' ); ?>:<!-- Resultado de búsqueda --></h5>
             <span class="search-tag"><?php echo esc_html( get_search_query( false ) ); ?></span>
-            <a href="<?php echo esc_url( home_url() ); ?>" class="close-card" rel="home"><?php bloginfo( 'name' ); ?></a> 
-        </div>                     
+            <a href="<?php echo esc_url( home_url() ); ?>" class="close-card" rel="home"><?php bloginfo( 'name' ); ?></a>
+        </div>
     </div>
     <div class="row">
         <?php if ( is_singular() ) : ?>
@@ -22,7 +22,7 @@ get_header( 'index.hmtl' ); ?>
                                 <h4><?php the_title(); ?></h4>
                                 <?php the_excerpt( ); ?>
                             </div>
-                        </div>                                     
+                        </div>
                     </div>
                     <?php $item_number++; ?>
                     <?php if( $item_number % 4 == 0 ) echo '<div class="clearfix visible-lg-block"></div>'; ?>
@@ -45,7 +45,7 @@ get_header( 'index.hmtl' ); ?>
                                     <h4><?php the_title(); ?></h4>
                                     <?php the_excerpt( ); ?>
                                 </div>
-                            </div>                                         
+                            </div>
                         </a>
                     </div>
                     <?php $item_number++; ?>
@@ -54,13 +54,13 @@ get_header( 'index.hmtl' ); ?>
                     <?php if( $item_number % 2 == 0 ) echo '<div class="clearfix visible-sm-block"></div>'; ?>
                 <?php endwhile; ?>
             <?php else : ?>
-                <p><?php _e( 'Sorry, no posts matched your criteria.', 'euroamerica-v3' ); ?></p>
+                <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
             <?php endif; ?>
         <?php endif; ?>
     </div>
     <div class="pagination-wrapper flex-center">
         <?php wp_bootstrap4_pagination( array() ); ?>
     </div>
-</div>            
+</div>
 
 <?php get_footer( 'index.hmtl' ); ?>
