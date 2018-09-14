@@ -31,9 +31,7 @@
 <br>
 
 <div align="center">
-  <p>
-    <small>Built with ❤︎ by
-    <a href="https://www.behance.net/operacionquimera/">Mario Parra</a> and
-    <a href="https://github.com/operacionquimera/atomo-wordpress/graphs/contributors/">contributors</a>.
-  </p>
+  <small>
+    Built with ❤︎ by <a href="https://www.behance.net/operacionquimera/">Mario Parra</a>
+  </small>
 </div>
