@@ -1,5 +1,6 @@
 <?php
-get_header( 'index.hmtl' ); ?>
+
+get_header( 'index.html' ); ?>
 
 <div class="container">
     <div class="card">
@@ -63,4 +64,4 @@ get_header( 'index.hmtl' ); ?>
     </div>
 </div>
 
-<?php get_footer( 'index.hmtl' ); ?>
+<?php get_footer( 'index.html' ); ?>
