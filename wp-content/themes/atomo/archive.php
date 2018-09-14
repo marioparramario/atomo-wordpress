@@ -5,7 +5,7 @@ get_header( 'index.html' ); ?>
 <div class="container flex vertical align-center">
   <section class="grid-read flex-vertical">
     <h3 class="headline">
-      <?php _e( 'Browser all articles', 'atomo' ); ?><!-- Todos los artículos -->
+      <?php _e( 'Browse all articles', 'atomo' ); ?><!-- Todos los artículos -->
     </h3>
     <div class="row flex">
       <?php if ( is_singular() ) : ?>
