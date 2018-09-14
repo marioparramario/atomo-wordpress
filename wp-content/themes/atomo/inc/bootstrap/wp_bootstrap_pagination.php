@@ -37,8 +37,8 @@ function wp_bootstrap_pagination( $args = array() ) {
     $defaults = array(
         'range'           => 4,
         'custom_query'    => FALSE,
-        'previous_string' => __( '<i class="glyphicon glyphicon-chevron-left"></i>', 'atomo' ),
-        'next_string'     => __( '<i class="glyphicon glyphicon-chevron-right"></i>', 'atomo' ),
+        'previous_string' => '<i class="glyphicon glyphicon-chevron-left" title="' . __('left', 'atomo') . '""></i>',
+        'next_string'     => '<i class="glyphicon glyphicon-chevron-right" title="' .  __('right', 'atomo') . '"></i>',
         'first_string'    => __( 'First', 'atomo'),
         'last_string'     => __( 'Last', 'atomo'),
         'before_output'   => '<nav class="post-nav"><ul class="pagination">',
