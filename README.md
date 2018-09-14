@@ -2,9 +2,9 @@
   <img alt="Átomo Logo" src="wp-content/themes/atomo/assets/images/logo-atomo.svg" width="50%">
 </h1>
 
-<p align="center">
+<div align="center">
   <em>A WordPress magazine for art enthusiasts.</em>
-</p>
+</div>
 
 <br>
 
