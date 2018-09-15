@@ -14,7 +14,7 @@
       Preview
     </a>
     <span> | </span>
-    <a href="https://atomo.cl" alt="Future public website">
+    <a href="https://revistaatomo.com" alt="Magazine website">
       Website
     </a>
     <span> | </span>
