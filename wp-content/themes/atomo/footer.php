@@ -1,13 +1,14 @@
 
         </main>
+
         <footer class="footer">
           <div class="footer-wrapper flex justify-between">
             <div class="footer-logo flex">
-              <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-iso.svg" alt="">
+              <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-iso.svg" alt="Atomo Logo">
             </div>
             <div class="footer-items flex vertical justify-center">
               <a href="">Blog</a>
-              <a href="">Acerca de nosotros</a>
+              <a href="<?php echo home_url( 'about-us' ); ?>">Acerca de nosotros</a>
               <a href="">Políticas de privacidad</a>
               <a href="">Términos de uso</a>
             </div>
