@@ -1,6 +1,6 @@
 <?php
-if ( ! function_exists( 'atomo_setup' ) ) :
 
+if ( ! function_exists( 'atomo_setup' ) ) :
 
 function atomo_setup() {
 
@@ -133,7 +133,7 @@ add_action( 'customize_register', 'atomo_customize_register' );
 endif;// atomo_customize_register
 
 
-if ( ! function_exists( 'atomo_enqueue_scripts' ) ) :
+if ( ! function_exists( 'atomo_enqueue_scripts' ) ) {
     function atomo_enqueue_scripts() {
 
         /* Pinegrow generated Enqueue Scripts Begin */
@@ -204,105 +204,41 @@ if ( ! function_exists( 'atomo_enqueue_scripts' ) ) :
 
     }
     add_action( 'wp_enqueue_scripts', 'atomo_enqueue_scripts' );
-endif;
-
-/*
- * Resource files included by Pinegrow.
- */
-/* Pinegrow generated Include Resources Begin */
-require_once "inc/bootstrap/wp_bootstrap4_pagination.php";
-    /* Pinegrow generated Include Resources End */
-
-    /*=============================================
-    =            BREADCRUMBS			            =
-    =============================================*/
-
-    //  to include in functions.php
-    function the_breadcrumb() {
-
-        $sep = ' / ';
-
-        if (!is_front_page()) {
-
-    	// Start the breadcrumb with a link to your homepage
-            echo '<div class="breadcrumbs">';
-            echo '<a href="';
-            echo get_option('home');
-            echo '">';
-            bloginfo('name');
-            echo '</a>' . $sep;
-
-    	// Check if the current page is a category, an archive or a single page. If so show the category or archive name.
-            if (is_category() || is_single() ){
-                the_category(' / ');
-            } elseif (is_archive() || is_single()){
-                if ( is_day() ) {
-                    printf( __( '%s', 'text_domain' ), get_the_date() );
-                } elseif ( is_month() ) {
-                    printf( __( '%s', 'text_domain' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'text_domain' ) ) );
-                } elseif ( is_year() ) {
-                    printf( __( '%s', 'text_domain' ), get_the_date( _x( 'Y', 'yearly archives date format', 'text_domain' ) ) );
-                } else {
-                    _e( 'Blog Archives', 'text_domain' );
-                }
-            }
-
-    	// If the current page is a single post, show its title with the separator
-            if (is_single()) {
-                echo $sep;
-                the_title();
-            }
-
-    	// If the current page is a static page, show its title.
-            if (is_page()) {
-                echo the_title();
-            }
-
-    	// if you have a static page assigned to be you posts list page. It will find the title of the static page and display it. i.e Home >> Blog
-            if (is_home()){
-                global $post;
-                $page_for_posts_id = get_option('page_for_posts');
-                if ( $page_for_posts_id ) {
-                    $post = get_page($page_for_posts_id);
-                    setup_postdata($post);
-                    the_title();
-                    rewind_posts();
-                }
-            }
-
-            echo '</div>';
-        }
-    }
-
-?>
-
-
-
-
-<?php function sm_custom_meta() {
-    add_meta_box( 'sm_meta', __( 'Featured Posts', 'sm-textdomain' ), 'sm_meta_callback', 'post' );
-    // add_meta_box( 'sm_meta', __( 'Featured Posts', 'sm-textdomain' ), 'sm_meta_callback', 'post' );
 }
-function sm_meta_callback( $post ) {
-    $featured = get_post_meta( $post->ID );
-    ?>
 
-	<p>
+
+/*  === FEATURED POSTS ===  */
+
+function sm_meta_featured_callback( $post_id ) {
+    $featured = get_post_meta( $post_id );
+	$title = _e( 'Featured this post', 'sm-textdomain' );
+
+	if ( isset ( $featured['meta-checkbox'] ) ) {
+		$checked = checked( $featured['meta-checkbox'][0], 'yes', false );
+	} else {
+		$checked = '';
+	}
+
+	echo <<<EOS
+<p>
     <div class="sm-row-content">
         <label for="meta-checkbox">
-            <input type="checkbox" name="meta-checkbox" id="meta-checkbox" value="yes" <?php if ( isset ( $featured['meta-checkbox'] ) ) checked( $featured['meta-checkbox'][0], 'yes' ); ?> />
-            <?php _e( 'Featured this post', 'sm-textdomain' )?>
+            <input type="checkbox" name="meta-checkbox" id="meta-checkbox" value="yes" {$checked} />
+            <span>{$checked}</span>
         </label>
-
     </div>
 </p>
-
-    <?php
+EOS;
 }
-add_action( 'add_meta_boxes', 'sm_custom_meta' );
-?>
 
-<?php
+function sm_custom_meta() {
+    add_meta_box( 'sm_meta', __( 'Featured Posts', 'sm-textdomain' ), 'sm_meta_featured_callback', 'post' );
+}
+
+add_action( 'add_meta_boxes', 'sm_custom_meta' );
+
+
+
 /**
  * Saves the custom meta input
  */
@@ -318,13 +254,46 @@ function sm_meta_save( $post_id ) {
         return;
     }
 
- // Checks for input and saves
-if( isset( $_POST[ 'meta-checkbox' ] ) ) {
-    update_post_meta( $post_id, 'meta-checkbox', 'yes' );
-} else {
-    update_post_meta( $post_id, 'meta-checkbox', '' );
-}
+	// Checks for input and saves
+	if( isset( $_POST[ 'meta-checkbox' ] ) ) {
+	    update_post_meta( $post_id, 'meta-checkbox', 'yes' );
+	} else {
+	    update_post_meta( $post_id, 'meta-checkbox', '' );
+	}
 
 }
 add_action( 'save_post', 'sm_meta_save' );
-?>
+
+
+function wpb_set_post_views($postID) {
+	$count_key = 'wpb_post_views_count';
+	$count = get_post_meta($postID, $count_key, true);
+	if ($count == '') {
+		$count = 0;
+		delete_post_meta($postID, $count_key);
+		add_post_meta($postID, $count_key, '0');
+	} else {
+		$count++;
+		update_post_meta($postID, $count_key, $count);
+	}
+}
+
+
+// To keep the count accurate, lets get rid of prefetching
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
+function wpb_track_post_views ($post_id) {
+	if ( !is_single() )
+		return;
+	if ( empty ( $post_id) ) {
+		global $post;
+		$post_id = $post->ID;
+	}
+
+	wpb_set_post_views($post_id);
+}
+
+add_action( 'wp_head', 'wpb_track_post_views');
+
+
+require_once 'inc/bootstrap/wp_bootstrap4_pagination.php';
