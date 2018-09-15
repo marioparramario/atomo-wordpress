@@ -55,8 +55,8 @@
                 </div>
               </div>
               <div class="footer-email flex vertical align-end">
-                <a href="">contacto@atomo.cl</a>
-                <span>© 2018 RevistaaÁtomo. Todos los derechos reservados</span>
+                <a href="mailto:contacto@revistaatomo.com">contacto@revistaatomo.com</a>
+                <span>© 2018 Revista Átomo. Todos los derechos reservados</span>
               </div>
             </div>
 
