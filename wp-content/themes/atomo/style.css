@@ -1,14 +1,16 @@
 /*
-Theme Name: atomo
-Author: Mario Parra
-Author URI: http://oqgraphic.com
-*/
+ * Theme Name: Átomo
+ * Author: Mario Parra
+ * Author URI: http://oqgraphic.com
+ */
 
 .row {
   flex-wrap: inherit;
   margin: 0;
 }
-/* Disabling Bootstrap stuff */
+
+/* Disabling bootstrap stuff */
+
 @media (min-width: 1200px) {
   .container {
     max-width: none;
