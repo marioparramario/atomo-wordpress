@@ -12,6 +12,6 @@
 </IfModule>
 
 <Files wp-config.php>
-  Order Allow, Deny
-  Deny From All
+  Order allow,deny
+  Deny from all
 </Files>
