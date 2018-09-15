@@ -41,10 +41,10 @@ if ( is_readable(ABSPATH . '.env') ) {
 define('DB_NAME', getenv('DB_NAME', true) ?: 'atomo');
 
 /** MySQL database username */
-define('DB_USER', getenv('DB_USER', true) ?: 'root');
+define('DB_USER', getenv('DB_USER', true) ?: 'atomo');
 
 /** MySQL database password */
-define('DB_PASSWORD', getenv('DB_PASSWORD', true) ?: 'root');
+define('DB_PASSWORD', getenv('DB_PASSWORD', true) ?: 'atomo');
 
 /** MySQL hostname */
 define('DB_HOST', getenv('DB_HOST', true) ?: 'localhost');
