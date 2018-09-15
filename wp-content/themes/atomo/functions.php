@@ -207,7 +207,12 @@ if ( ! function_exists( 'atomo_enqueue_scripts' ) ) {
 }
 
 
-/*  === FEATURED POSTS ===  */
+/*
+ * FEATURED POSTS
+ * ==============
+ *
+ * https://smallenvelop.com/how-to-create-featured-posts-in-wordpress/
+ */
 
 function sm_meta_featured_callback( $post_id ) {
     $featured = get_post_meta( $post_id );
