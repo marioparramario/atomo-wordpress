@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-21 20:12+0200\n"
+"POT-Creation-Date: 2018-09-21 23:07+0200\n"
 "PO-Revision-Date: 2018-09-21 20:12+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -22,17 +22,13 @@ msgstr ""
 msgid "%s"
 msgstr ""
 
+#: header.php:49
+msgid "Art & Photography"
+msgstr "Kunst & Photographie"
+
 #: inc/breadcrumbs.php:28
 msgid "Blog Archives"
 msgstr "Archiv"
-
-#: header.php:24
-msgid "Subscribe"
-msgstr "Abonnieren"
-
-#: header.php:25
-msgid "Search"
-msgstr "Suche"
 
 #: header-search.php:23
 msgid "Categories"
@@ -50,13 +46,29 @@ msgstr ""
 msgid "Featured this post"
 msgstr ""
 
+#: header.php:40
+msgid "Fiction"
+msgstr "Fiktion"
+
 #: footer-search.php:11
 msgid "Follow us"
 msgstr "Folge uns"
 
+#: header.php:37
+msgid "Interviews"
+msgstr ""
+
+#: header.php:43
+msgid "Letters & Essays"
+msgstr ""
+
 #: index-old.php:103 index.php:103 single.php:55
 msgid "Next"
 msgstr "Vor"
+
+#: header.php:46
+msgid "Poetry"
+msgstr "Poesie"
 
 #: index-old.php:102 index.php:102 single.php:54
 msgid "Previous"
@@ -65,6 +77,10 @@ msgstr "Zurück"
 #: functions.php:26
 msgid "Primary Menu"
 msgstr "Hauptmenü"
+
+#: header.php:25 header.php:85
+msgid "Search"
+msgstr "Suche"
 
 #: archive.php:53 search.php:7
 msgid "Search results"
@@ -87,3 +103,7 @@ msgstr ""
 #: index.php:264 search.php:33 search.php:57 single.php:26 single.php:50
 msgid "Sorry, no posts matched your criteria."
 msgstr "Es wurden keine Artikel mit den gewünschten Kriterien gefunden werden."
+
+#: header.php:24 header.php:84
+msgid "Subscribe"
+msgstr "Abonnieren"

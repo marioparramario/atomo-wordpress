@@ -22,6 +22,10 @@ msgstr ""
 msgid "%s"
 msgstr ""
 
+#: header.php:49
+msgid "Art & Photography"
+msgstr "Arte y fotografía"
+
 #: inc/breadcrumbs.php:28
 msgid "Blog Archives"
 msgstr ""
@@ -50,13 +54,29 @@ msgstr "Artículos destacados"
 msgid "Featured this post"
 msgstr ""
 
+#: header.php:40
+msgid "Fiction"
+msgstr "Ficción"
+
 #: footer-search.php:11
 msgid "Follow us"
 msgstr "Síguenos"
 
+#: header.php:37
+msgid "Interviews"
+msgstr "Entrevistas"
+
+#: header.php:43
+msgid "Letters & Essays"
+msgstr "Cartas y ensayos"
+
 #: index-old.php:103 index.php:103 single.php:55
 msgid "Next"
 msgstr "Siguiente"
+
+#: header.php:46
+msgid "Poetry"
+msgstr "Poesía"
 
 #: index-old.php:102 index.php:102 single.php:54
 msgid "Previous"

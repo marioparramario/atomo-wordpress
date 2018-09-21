@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR OQGraphic
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the Atomo package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Atomo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-21 22:40+0200\n"
+"POT-Creation-Date: 2018-09-21 23:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,6 +20,10 @@ msgstr ""
 #: inc/breadcrumbs.php:22 inc/breadcrumbs.php:24 inc/breadcrumbs.php:26
 #, php-format
 msgid "%s"
+msgstr ""
+
+#: header.php:49
+msgid "Art & Photography"
 msgstr ""
 
 #: inc/breadcrumbs.php:28
@@ -42,12 +46,28 @@ msgstr ""
 msgid "Featured this post"
 msgstr ""
 
+#: header.php:40
+msgid "Fiction"
+msgstr ""
+
 #: footer-search.php:11
 msgid "Follow us"
 msgstr ""
 
+#: header.php:37
+msgid "Interviews"
+msgstr ""
+
+#: header.php:43
+msgid "Letters & Essays"
+msgstr ""
+
 #: index-old.php:103 index.php:103 single.php:55
 msgid "Next"
+msgstr ""
+
+#: header.php:46
+msgid "Poetry"
 msgstr ""
 
 #: index-old.php:102 index.php:102 single.php:54
