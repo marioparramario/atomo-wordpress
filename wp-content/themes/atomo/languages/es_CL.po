@@ -102,6 +102,10 @@ msgstr "Menú principal"
 msgid "Privacy Policy"
 msgstr "Políticas de privacidad"
 
+#: index.php:270
+msgid "Read article"
+msgstr "Leer articulo"
+
 #: archive.php:53 search.php:7
 msgid "Search results"
 msgstr "Resultado de búsqueda"
@@ -123,6 +127,10 @@ msgstr ""
 #: index.php:264 search.php:33 search.php:57 single.php:26 single.php:50
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
+
+#: index.php:223
+msgid "Submit"
+msgstr "Enviar"
 
 #: footer.php:13
 msgid "Terms of Use"

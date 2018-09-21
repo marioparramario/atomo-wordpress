@@ -220,7 +220,7 @@ get_header(); ?>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       <div class="input-container flex">
         <input type="text" name="" value="" placeholder="email">
-        <button class="button" type="button" name="button"><?php _e( 'Submit', 'atomo' ); ?><!-- Enviar --></button>
+        <button class="button" type="button" name="button"><?php _e( 'Submit', 'atomo' ); ?></button>
       </div>
     </div>
   </section>
@@ -243,7 +243,7 @@ get_header(); ?>
                       <div class="description flex vertical justify-center">
                           <h4><?php the_title(); ?></h4>
                           <?php the_excerpt( ); ?>
-                          <span>Leer artículo</span>
+                          <span><?php _e( 'Read article', 'atomo' ); ?></span>
                       </div>
                     </div>
                     <?php $item_number++; ?>
@@ -267,7 +267,7 @@ get_header(); ?>
                           <div class="description flex vertical justify-center">
                               <h4><?php the_title(); ?></h4>
                               <?php the_excerpt( ); ?>
-                              <span><?php _e( 'Read article', 'atomo' ); ?><!-- Leer artículo --></span>
+                              <span><?php _e( 'Read article', 'atomo' ); ?></span>
                           </div>
                         </a>
                     </div>

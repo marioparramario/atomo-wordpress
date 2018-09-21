@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Atomo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-22 00:16+0200\n"
+"POT-Creation-Date: 2018-09-22 01:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "About us"
 msgstr ""
 
-#: footer.php:59
+#: footer.php:59 footer.php:54
 msgid "All Rights Reserved"
 msgstr ""
 
@@ -46,15 +46,11 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
-#: functions.php:201
-msgid "Most Read Articles"
-msgstr ""
-
-#: functions.php:220
+#: functions.php:220 functions.php:226 index.php:124
 msgid "Featured Articles"
 msgstr ""
 
-#: functions.php:199
+#: functions.php:199 functions.php:205
 msgid "Featured this post"
 msgstr ""
 
@@ -74,7 +70,11 @@ msgstr ""
 msgid "Letters & Essays"
 msgstr ""
 
-#: index-old.php:103 index.php:103 single.php:55
+#: functions.php:201 index.php:201
+msgid "Most Read Articles"
+msgstr ""
+
+#: index-old.php:103 index.php:103 single.php:55 index.php:116 single.php:65
 msgid "Next"
 msgstr ""
 
@@ -82,16 +82,20 @@ msgstr ""
 msgid "Poetry"
 msgstr ""
 
-#: index-old.php:102 index.php:102 single.php:54
+#: index-old.php:102 index.php:102 single.php:54 index.php:115 single.php:64
 msgid "Previous"
 msgstr ""
 
-#: functions.php:26
+#: functions.php:26 functions.php:32
 msgid "Primary Menu"
 msgstr ""
 
 #: footer.php:12
 msgid "Privacy Policy"
+msgstr ""
+
+#: index.php:270
+msgid "Read article"
 msgstr ""
 
 #: header.php:25 header.php:85
@@ -102,22 +106,36 @@ msgstr ""
 msgid "Search results"
 msgstr ""
 
-#: functions.php:71
+#: functions.php:71 functions.php:77
 msgid "Slider"
 msgstr ""
 
-#: functions.php:70
+#: functions.php:70 functions.php:76
 msgid "Sliders"
 msgstr ""
 
-#: functions.php:27
+#: functions.php:27 functions.php:33
 msgid "Social Links Menu"
 msgstr ""
 
+#. *
+#. * Atomo template for displaying all single posts
+#. *
+#. * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+#. *
+#. * @package WordPress
+#. * @subpackage Atomo
+#.
 #: archive.php:24 archive.php:44 index-old.php:52 index-old.php:98
 #: index-old.php:231 index-old.php:256 index.php:52 index.php:98 index.php:239
 #: index.php:264 search.php:33 search.php:57 single.php:26 single.php:50
+#: index.php:65 index.php:111 index.php:252 index.php:277 single.php:36
+#: single.php:60
 msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#: index.php:223
+msgid "Submit"
 msgstr ""
 
 #: header.php:24 header.php:84
