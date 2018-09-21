@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Atomo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-21 23:07+0200\n"
+"POT-Creation-Date: 2018-09-22 00:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,11 @@ msgstr ""
 msgid "%s"
 msgstr ""
 
-#: header.php:49
+#: footer.php:11
+msgid "About us"
+msgstr ""
+
+#: header.php:49 header.php:71
 msgid "Art & Photography"
 msgstr ""
 
@@ -46,19 +50,19 @@ msgstr ""
 msgid "Featured this post"
 msgstr ""
 
-#: header.php:40
+#: header.php:40 header.php:68
 msgid "Fiction"
 msgstr ""
 
-#: footer-search.php:11
+#: footer-search.php:11 footer.php:17
 msgid "Follow us"
 msgstr ""
 
-#: header.php:37
+#: header.php:37 header.php:67
 msgid "Interviews"
 msgstr ""
 
-#: header.php:43
+#: header.php:43 header.php:69
 msgid "Letters & Essays"
 msgstr ""
 
@@ -66,7 +70,7 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: header.php:46
+#: header.php:46 header.php:70
 msgid "Poetry"
 msgstr ""
 
@@ -76,6 +80,10 @@ msgstr ""
 
 #: functions.php:26
 msgid "Primary Menu"
+msgstr ""
+
+#: footer.php:12
+msgid "Privacy Policy"
 msgstr ""
 
 #: header.php:25 header.php:85
@@ -106,4 +114,8 @@ msgstr ""
 
 #: header.php:24 header.php:84
 msgid "Subscribe"
+msgstr ""
+
+#: footer.php:13
+msgid "Terms of Use"
 msgstr ""

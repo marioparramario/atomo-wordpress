@@ -22,6 +22,10 @@ msgstr ""
 msgid "%s"
 msgstr ""
 
+#: footer.php:11
+msgid "About us"
+msgstr "Acerca de nosotros"
+
 #: header.php:49
 msgid "Art & Photography"
 msgstr "Arte y fotografía"
@@ -86,6 +90,10 @@ msgstr "Anterior"
 msgid "Primary Menu"
 msgstr "Menú principal"
 
+#: footer.php:12
+msgid "Privacy Policy"
+msgstr "Políticas de privacidad"
+
 #: archive.php:53 search.php:7
 msgid "Search results"
 msgstr ""
@@ -107,3 +115,7 @@ msgstr ""
 #: index.php:264 search.php:33 search.php:57 single.php:26 single.php:50
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
+
+#: footer.php:13
+msgid "Terms of Use"
+msgstr "Términos de uso"

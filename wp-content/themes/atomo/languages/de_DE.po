@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-21 23:07+0200\n"
+"POT-Creation-Date: 2018-09-22 00:11+0200\n"
 "PO-Revision-Date: 2018-09-21 20:12+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -22,7 +22,11 @@ msgstr ""
 msgid "%s"
 msgstr ""
 
-#: header.php:49
+#: footer.php:11
+msgid "About us"
+msgstr "Über uns"
+
+#: header.php:49 header.php:71
 msgid "Art & Photography"
 msgstr "Kunst & Photographie"
 
@@ -46,19 +50,19 @@ msgstr ""
 msgid "Featured this post"
 msgstr ""
 
-#: header.php:40
+#: header.php:40 header.php:68
 msgid "Fiction"
 msgstr "Fiktion"
 
-#: footer-search.php:11
+#: footer-search.php:11 footer.php:17
 msgid "Follow us"
 msgstr "Folge uns"
 
-#: header.php:37
+#: header.php:37 header.php:67
 msgid "Interviews"
 msgstr ""
 
-#: header.php:43
+#: header.php:43 header.php:69
 msgid "Letters & Essays"
 msgstr ""
 
@@ -66,7 +70,7 @@ msgstr ""
 msgid "Next"
 msgstr "Vor"
 
-#: header.php:46
+#: header.php:46 header.php:70
 msgid "Poetry"
 msgstr "Poesie"
 
@@ -77,6 +81,10 @@ msgstr "Zurück"
 #: functions.php:26
 msgid "Primary Menu"
 msgstr "Hauptmenü"
+
+#: footer.php:12
+msgid "Privacy Policy"
+msgstr "Datenschutzerklärung"
 
 #: header.php:25 header.php:85
 msgid "Search"
@@ -107,3 +115,7 @@ msgstr "Es wurden keine Artikel mit den gewünschten Kriterien gefunden werden."
 #: header.php:24 header.php:84
 msgid "Subscribe"
 msgstr "Abonnieren"
+
+#: footer.php:13
+msgid "Terms of Use"
+msgstr "AGB"
