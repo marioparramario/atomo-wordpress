@@ -4,7 +4,7 @@ get_header( 'index.html' ); ?>
 <div class="container">
     <div class="card">
         <div class="card-body flex-center">
-            <h5 class="card-subtitle mb-2"><?php _e( 'Resultado de búsqueda:', 'atomo' ); ?></h5>
+            <h5 class="card-subtitle mb-2"><?php _e( 'Search results', 'atomo' ); ?>:<!-- Resultado de búsqueda --></h5>
             <span class="search-tag"><?php echo esc_html( get_search_query( false ) ); ?></span>
             <a href="<?php echo esc_url( home_url() ); ?>" class="close-card" rel="home"><?php bloginfo( 'name' ); ?></a>
         </div>

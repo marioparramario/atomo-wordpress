@@ -50,7 +50,7 @@ get_header( 'index.html' ); ?>
   </section>
     <!-- <div class="card">
         <div class="card-body flex-center">
-            <h5 class="card-subtitle mb-2"><?php _e( 'Resultado de búsqueda:', 'atomo' ); ?></h5>
+            <h5 class="card-subtitle mb-2"><?php _e( 'Search results', 'atomo' ); ?><!-- Resultado de búsqueda --></h5>
             <span class="search-tag"><?php echo single_cat_title(); ?></span>
             <a href="<?php echo esc_url( home_url() ); ?>" class="close-card" rel="home"><?php bloginfo( 'name' ); ?></a>
         </div>

@@ -51,8 +51,8 @@ get_header(); ?>
           <?php endif; ?>
       <?php endif; ?>
       <?php the_post_navigation( array(
-              'prev_text' => __( 'Anterior', 'atomo' ),
-              'next_text' => __( 'Siguiente', 'atomo' )
+              'prev_text' => __( 'Previous', 'atomo' ),
+              'next_text' => __( 'Next', 'atomo' )
       ) ); ?>
     </div>
   </section>

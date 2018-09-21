@@ -13,20 +13,17 @@
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
         <?php wp_head(); ?>
     </head>
-    <body class="<?php echo implode(' ', get_body_class()); ?>"> 
-        <!-- Bootstrap core JavaScript
-    ================================================== -->         
-        <!-- Placed at the end of the document so the pages load faster -->         
+    <body class="<?php echo implode(' ', get_body_class()); ?>">
         <nav class="flex justify-between navbar-wrapper">
             <div class="align-center d-flex flex">
                 <a href="<?php echo esc_url( home_url() ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
             </div>
-            <div class="flex align-center"> 
-                <?php get_search_form( true ); ?> 
-                <a class="open-menu"><?php _e( 'Categorías', 'atomo' ); ?></a> 
+            <div class="flex align-center">
+                <?php get_search_form( true ); ?>
+                <a class="open-menu"><?php _e( 'Categories', 'atomo' ); ?><!-- Categorías --></a>
             </div>
             <div class="navbar-mobile">
                 <?php wp_list_categories( array() ); ?>
             </div>
-        </nav>         
+        </nav>
         <main>
