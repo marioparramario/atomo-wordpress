@@ -100,7 +100,7 @@ msgstr "Políticas de privacidad"
 
 #: archive.php:53 search.php:7
 msgid "Search results"
-msgstr ""
+msgstr "Resultado de búsqueda"
 
 #: functions.php:71
 msgid "Slider"
