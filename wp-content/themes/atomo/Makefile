@@ -13,7 +13,7 @@ all:
 messages: $(LANG_DIR)/atomo.pot $(LANG_DIR)/de_DE.po $(LANG_DIR)/es_CL.po
 
 $(LANG_DIR)/atomo.pot: $(LANG_SRC)
-	xgettext --from-code=UTF-8 --keyword=__ --keyword=_e --keyword=_n --keyword=_s --no-wrap --language=PHP --copyright-holder=OQGraphic --add-comments --sort-output -o $(LANG_POT) *.{html,php} inc/*.php
+	xgettext --join-existing --from-code=UTF-8 --keyword=__ --keyword=_e --keyword=_n --keyword=_s --no-wrap --language=PHP --copyright-holder=OQGraphic --add-comments --sort-output -o $(LANG_POT) *.{html,php} inc/*.php
 
 $(LANG_DIR)/de_DE.po: $(LANG_POT) $(LANG_SRC)
 	msginit --input=$< --output=$@ --locale=de --no-translator
