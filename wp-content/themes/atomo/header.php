@@ -14,10 +14,10 @@
 <body class="<?php echo implode(' ', get_body_class()); ?>">
 	<nav class="nav-init flex vertical center justify-start">
 		<div class="nav-init-container top flex justify-between align-center">
-			<a class="nav-init-iso" href="<?php echo esc_url( home_url() ); ?>">
+			<a class="nav-init-iso" href="<?php echo esc_url( home_url() ); ?>" rel="home">
 				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-iso-black.svg" alt="">
 			</a>
-			<a class="nav-init-logo flex-center" href="<?php echo esc_url( home_url() ); ?>">
+			<a class="nav-init-logo flex-center" href="<?php echo esc_url( home_url() ); ?>" rel="home">
 				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-atomo.svg" alt="">
 			</a>
 			<div class="nav-init-button init flex vertical align-end">
@@ -60,7 +60,7 @@
 
 	<nav class="navbar" id="navbar">
 		<div class="navbar-wrapper flex align-center justify-between">
-			<a class="navbar-logo" href="<?php echo esc_url( home_url() ); ?>">
+			<a class="navbar-logo" href="<?php echo esc_url( home_url() ); ?>" rel="home">
 				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-iso.svg" alt="">
 			</a>
 			<div class="navbar-container flex">
