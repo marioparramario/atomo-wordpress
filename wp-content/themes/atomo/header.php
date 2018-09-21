@@ -6,16 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- Bootstrap core CSS -->
-    <!-- Layout -->
-    <!-- Layout -->
-    <!-- Custom styles for this template -->
+
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+
     <?php wp_head(); ?>
 </head>
-    <body class="<?php echo implode(' ', get_body_class()); ?>">
-        <!-- Bootstrap core JavaScript
-    ================================================== -->
+<body class="<?php echo implode(' ', get_body_class()); ?>">
     <nav class="nav-init flex vertical center justify-start">
       <div class="nav-init-container top flex justify-between align-center">
         <a class="nav-init-iso" href="#">
@@ -25,8 +21,8 @@
           <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-atomo.svg" alt="">
         </a>
         <div class="nav-init-button init flex vertical align-end">
-          <a class="" href="#">Suscríbete</a>
-          <a class="" href="#">Búsqueda</a>
+		  <a href="#"><?php _e( 'Subscribe', 'atomo' ); ?></a>
+		  <a href="#"><?php _e( 'Search', 'atomo' ); ?></a>
         </div>
         <div class="nav-init-button menu flex justify-end">
           <a class="navbar-menu-button">
@@ -84,9 +80,8 @@
       </div>
     </nav>
 
-
     <nav class="nav-lateral flex justify-between" id="lateral">
-      <a href="#">Suscríbete</a>
-      <a href="#">Búsqueda</a>
+      <a href="#"><?php _e( 'Subscribe', 'atomo' ); ?></a><!-- Suscríbete -->
+      <a href="#"><?php _e( 'Search', 'atomo' ); ?></a><!-- Búsqueda -->
     </nav>
   <main class="main">

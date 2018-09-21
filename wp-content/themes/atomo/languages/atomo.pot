@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Copyright (C) YEAR OQGraphic
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-21 20:12+0200\n"
+"POT-Creation-Date: 2018-09-21 22:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,6 +58,10 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
+#: header.php:25 header.php:85
+msgid "Search"
+msgstr ""
+
 #: archive.php:53 search.php:7
 msgid "Search results"
 msgstr ""
@@ -78,4 +82,8 @@ msgstr ""
 #: index-old.php:231 index-old.php:256 index.php:52 index.php:98 index.php:239
 #: index.php:264 search.php:33 search.php:57 single.php:26 single.php:50
 msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#: header.php:24 header.php:84
+msgid "Subscribe"
 msgstr ""

@@ -26,6 +26,14 @@ msgstr ""
 msgid "Blog Archives"
 msgstr ""
 
+#: header.php:24
+msgid "Subscribe"
+msgstr "Suscríbete"
+
+#: header.php:25
+msgid "Search"
+msgstr "Búsqueda"
+
 #: header-search.php:23
 msgid "Categories"
 msgstr "Categorías"
