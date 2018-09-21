@@ -1,0 +1,125 @@
+# German translations for PACKAGE package.
+# Copyright (C) 2018 OQGRAPHIC
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-22 00:16+0200\n"
+"PO-Revision-Date: 2018-09-21 20:12+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: inc/breadcrumbs.php:22 inc/breadcrumbs.php:24 inc/breadcrumbs.php:26
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: footer.php:11
+msgid "About us"
+msgstr "Über uns"
+
+#: footer.php:59
+msgid "All Rights Reserved"
+msgstr "Alle Rechte vorbehalten"
+
+#: header.php:49 header.php:71
+msgid "Art & Photography"
+msgstr "Kunst & Photographie"
+
+#: inc/breadcrumbs.php:28
+msgid "Blog Archives"
+msgstr "Archiv"
+
+#: header-search.php:23
+msgid "Categories"
+msgstr "Kategorien"
+
+#: footer-search.php:6
+msgid "Contact"
+msgstr "Kontakt"
+
+#: functions.php:220
+msgid "Featured Posts"
+msgstr ""
+
+#: functions.php:199
+msgid "Featured this post"
+msgstr ""
+
+#: header.php:40 header.php:68
+msgid "Fiction"
+msgstr "Fiktion"
+
+#: footer-search.php:11 footer.php:17
+msgid "Follow us"
+msgstr "Folge uns"
+
+#: header.php:37 header.php:67
+msgid "Interviews"
+msgstr ""
+
+#: header.php:43 header.php:69
+msgid "Letters & Essays"
+msgstr ""
+
+#: index-old.php:103 index.php:103 single.php:55
+msgid "Next"
+msgstr "Vor"
+
+#: header.php:46 header.php:70
+msgid "Poetry"
+msgstr "Poesie"
+
+#: index-old.php:102 index.php:102 single.php:54
+msgid "Previous"
+msgstr "Zurück"
+
+#: functions.php:26
+msgid "Primary Menu"
+msgstr "Hauptmenü"
+
+#: footer.php:12
+msgid "Privacy Policy"
+msgstr "Datenschutzerklärung"
+
+#: header.php:25 header.php:85
+msgid "Search"
+msgstr "Suche"
+
+#: archive.php:53 search.php:7
+msgid "Search results"
+msgstr "Suchergebnisse"
+
+#: functions.php:71
+msgid "Slider"
+msgstr ""
+
+#: functions.php:70
+msgid "Sliders"
+msgstr ""
+
+#: functions.php:27
+msgid "Social Links Menu"
+msgstr ""
+
+#: archive.php:24 archive.php:44 index-old.php:52 index-old.php:98
+#: index-old.php:231 index-old.php:256 index.php:52 index.php:98 index.php:239
+#: index.php:264 search.php:33 search.php:57 single.php:26 single.php:50
+msgid "Sorry, no posts matched your criteria."
+msgstr "Es wurden keine Artikel mit den gewünschten Kriterien gefunden werden."
+
+#: header.php:24 header.php:84
+msgid "Subscribe"
+msgstr "Abonnieren"
+
+#: footer.php:13
+msgid "Terms of Use"
+msgstr "AGB"

@@ -28,7 +28,7 @@
 <a class="page-link" href="#">Next</a>
 </li>
 </ul>
- * 
+ *
  */
 function wp_bootstrap4_pagination( $args = array() ) {
 
@@ -37,10 +37,10 @@ function wp_bootstrap4_pagination( $args = array() ) {
     $defaults = array(
         'range'           => 4,
         'custom_query'    => FALSE,
-        'previous_string' => __( '&laquo;', 'euroamerica-v3' ),
-        'next_string'     => __( '&raquo;', 'euroamerica-v3' ),
-        'first_string'    => __( 'First', 'euroamerica-v3'),
-        'last_string'     => __( 'Last', 'euroamerica-v3'),
+        'previous_string' => __( '&laquo;', 'atomo' ),
+        'next_string'     => __( '&raquo;', 'atomo' ),
+        'first_string'    => __( 'First', 'atomo'),
+        'last_string'     => __( 'Last', 'atomo'),
         'before_output'   => '<ul class="pagination">',
         'after_output'    => '</ul>'
     );
@@ -85,9 +85,9 @@ function wp_bootstrap4_pagination( $args = array() ) {
 
     $firstpage = esc_attr( get_pagenum_link(1) );
     if ( $firstpage && (1 != $page || true) )
-        $echo .= '<li class="page-item previous'.($page == 1 ? ' disabled' : '').'"><a class="page-link" href="' . $firstpage . '" aria-label="'.__( 'First', 'euroamerica-v3' ).'">' . $args['first_string'] . '</a></li>';
+        $echo .= '<li class="page-item previous'.($page == 1 ? ' disabled' : '').'"><a class="page-link" href="' . $firstpage . '" aria-label="'.__( 'First', 'atomo' ).'">' . $args['first_string'] . '</a></li>';
     if ( $previous && (1 != $page || true) )
-        $echo .= '<li'.($page == 1 ? ' class="page-item disabled"' : '').'><a class="page-link" href="' . $previous . '" title="' . __( 'previous', 'euroamerica-v3') . '" aria-label="' . __( 'previous', 'euroamerica-v3') . '">' . $args['previous_string'] . '</a></li>';
+        $echo .= '<li'.($page == 1 ? ' class="page-item disabled"' : '').'><a class="page-link" href="' . $previous . '" title="' . __( 'previous', 'atomo') . '" aria-label="' . __( 'previous', 'atomo') . '">' . $args['previous_string'] . '</a></li>';
 
     if ( !empty($min) && !empty($max) ) {
         for( $i = $min; $i <= $max; $i++ ) {
@@ -103,11 +103,11 @@ function wp_bootstrap4_pagination( $args = array() ) {
     $next = intval($page) + 1;
     $next = esc_attr( get_pagenum_link($next) );
     if ($next && ($count != $page || true) )
-        $echo .= '<li'.($page == $count ? ' class="page-item disabled"' : '').'><a class="page-link" href="' . $next . '" title="' . __( 'next', 'euroamerica-v3') . '" aria-label="' . __( 'next', 'euroamerica-v3') . '">' . $args['next_string'] . '</a></li>';
+        $echo .= '<li'.($page == $count ? ' class="page-item disabled"' : '').'><a class="page-link" href="' . $next . '" title="' . __( 'next', 'atomo') . '" aria-label="' . __( 'next', 'atomo') . '">' . $args['next_string'] . '</a></li>';
 
     $lastpage = esc_attr( get_pagenum_link($count) );
     if ( $lastpage ) {
-        $echo .= '<li class="page-item next'.($page == $count ? ' disabled' : '').'"><a class="page-link" href="' . $lastpage . '" aria-label="' . __( 'Last', 'euroamerica-v3') . '">' . $args['last_string'] . '</a></li>';
+        $echo .= '<li class="page-item next'.($page == $count ? ' disabled' : '').'"><a class="page-link" href="' . $lastpage . '" aria-label="' . __( 'Last', 'atomo') . '">' . $args['last_string'] . '</a></li>';
     }
     if ( isset($echo) )
         echo $args['before_output'] . $echo . $args['after_output'];

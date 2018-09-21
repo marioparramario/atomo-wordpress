@@ -365,7 +365,7 @@ if ( ! class_exists( 'WP_Bootstrap4_Navwalker' ) ) {
                 if ( $menu_class ) {
                     $fallback_output .= ' class="' . esc_attr( $menu_class ) . '"'; }
                 $fallback_output .= '>';
-                $fallback_output .= '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" title="' . esc_attr__( 'Add a menu', 'wp-bootstrap-navwalker' ) . '">' . esc_html__( 'Add a menu', 'wp-bootstrap-navwalker' ) . '</a></li>';
+                $fallback_output .= '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" title="' . esc_attr__( 'Add a menu', 'atomo' ) . '">' . esc_html__( 'Add a menu', 'atomo' ) . '</a></li>';
                 $fallback_output .= '</ul>';
                 if ( $container ) {
                     $fallback_output .= '</' . esc_attr( $container ) . '>';

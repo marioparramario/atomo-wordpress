@@ -49,7 +49,7 @@ get_header(); ?>
                         <?php endwhile; ?>
                         <?php wp_reset_postdata(); ?>
                     <?php else : ?>
-                        <p><?php _e( 'Sorry, no posts matched your criteria.', 'euroamerica-v3' ); ?></p>
+                        <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
                     <?php endif; ?>
                 <?php else : ?>
                     <?php
@@ -95,12 +95,12 @@ get_header(); ?>
                         <?php endwhile; ?>
                         <?php wp_reset_postdata(); ?>
                     <?php else : ?>
-                        <p><?php _e( 'Sorry, no posts matched your criteria.', 'euroamerica-v3' ); ?></p>
+                        <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
                     <?php endif; ?>
                 <?php endif; ?>
             </div>
-            <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only"><?php _e( 'Previous', 'euroamerica-v3' ); ?></span> </a>
-            <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only"><?php _e( 'Next', 'euroamerica-v3' ); ?></span> </a>
+            <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only"><?php _e( 'Previous', 'atomo' ); ?></span> </a>
+            <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only"><?php _e( 'Next', 'atomo' ); ?></span> </a>
         </div>
     </section>
 
@@ -228,7 +228,7 @@ get_header(); ?>
                       <?php $item_number++; ?>
                   <?php endwhile; ?>
               <?php else : ?>
-                  <p><?php _e( 'Sorry, no posts matched your criteria.', 'euroamerica-v3' ); ?></p>
+                  <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
               <?php endif; ?>
           <?php else : ?>
               <?php if ( have_posts() ) : ?>
@@ -253,7 +253,7 @@ get_header(); ?>
                       <?php $item_number++; ?>
                   <?php endwhile; ?>
               <?php else : ?>
-                  <p><?php _e( 'Sorry, no posts matched your criteria.', 'euroamerica-v3' ); ?></p>
+                  <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
               <?php endif; ?>
           <?php endif; ?>
         </div>

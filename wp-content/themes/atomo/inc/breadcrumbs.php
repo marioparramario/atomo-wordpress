@@ -19,13 +19,13 @@ function the_breadcrumb() {
             the_category(' / ');
         } elseif (is_archive() || is_single()){
             if ( is_day() ) {
-                printf( __( '%s', 'text_domain' ), get_the_date() );
+                printf( __( '%s', 'atomo' ), get_the_date() );
             } elseif ( is_month() ) {
-                printf( __( '%s', 'text_domain' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'text_domain' ) ) );
+                printf( __( '%s', 'atomo' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'atomo' ) ) );
             } elseif ( is_year() ) {
-                printf( __( '%s', 'text_domain' ), get_the_date( _x( 'Y', 'yearly archives date format', 'text_domain' ) ) );
+                printf( __( '%s', 'atomo' ), get_the_date( _x( 'Y', 'yearly archives date format', 'atomo' ) ) );
             } else {
-                _e( 'Blog Archives', 'text_domain' );
+                _e( 'Blog Archives', 'atomo' );
             }
         }
 

@@ -1,0 +1,125 @@
+# Spanish translations for PACKAGE package.
+# Copyright (C) 2018 OQGRAPHIC
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-21 20:12+0200\n"
+"PO-Revision-Date: 2018-09-21 20:12+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: inc/breadcrumbs.php:22 inc/breadcrumbs.php:24 inc/breadcrumbs.php:26
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: footer.php:11
+msgid "About us"
+msgstr "Acerca de nosotros"
+
+#: footer.php:59
+msgid "All Rights Reserved"
+msgstr "Todos los derechos reservados"
+
+#: header.php:49
+msgid "Art & Photography"
+msgstr "Arte y fotografía"
+
+#: inc/breadcrumbs.php:28
+msgid "Blog Archives"
+msgstr ""
+
+#: header.php:24
+msgid "Subscribe"
+msgstr "Suscríbete"
+
+#: header.php:25
+msgid "Search"
+msgstr "Búsqueda"
+
+#: header-search.php:23
+msgid "Categories"
+msgstr "Categorías"
+
+#: footer-search.php:6
+msgid "Contact"
+msgstr "Contacto"
+
+#: functions.php:220
+msgid "Featured Posts"
+msgstr "Artículos destacados"
+
+#: functions.php:199
+msgid "Featured this post"
+msgstr ""
+
+#: header.php:40
+msgid "Fiction"
+msgstr "Ficción"
+
+#: footer-search.php:11
+msgid "Follow us"
+msgstr "Síguenos"
+
+#: header.php:37
+msgid "Interviews"
+msgstr "Entrevistas"
+
+#: header.php:43
+msgid "Letters & Essays"
+msgstr "Cartas y ensayos"
+
+#: index-old.php:103 index.php:103 single.php:55
+msgid "Next"
+msgstr "Siguiente"
+
+#: header.php:46
+msgid "Poetry"
+msgstr "Poesía"
+
+#: index-old.php:102 index.php:102 single.php:54
+msgid "Previous"
+msgstr "Anterior"
+
+#: functions.php:26
+msgid "Primary Menu"
+msgstr "Menú principal"
+
+#: footer.php:12
+msgid "Privacy Policy"
+msgstr "Políticas de privacidad"
+
+#: archive.php:53 search.php:7
+msgid "Search results"
+msgstr ""
+
+#: functions.php:71
+msgid "Slider"
+msgstr ""
+
+#: functions.php:70
+msgid "Sliders"
+msgstr ""
+
+#: functions.php:27
+msgid "Social Links Menu"
+msgstr ""
+
+#: archive.php:24 archive.php:44 index-old.php:52 index-old.php:98
+#: index-old.php:231 index-old.php:256 index.php:52 index.php:98 index.php:239
+#: index.php:264 search.php:33 search.php:57 single.php:26 single.php:50
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#: footer.php:13
+msgid "Terms of Use"
+msgstr "Términos de uso"

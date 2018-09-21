@@ -1,0 +1,125 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR OQGraphic
+# This file is distributed under the same license as the Atomo package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Atomo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-22 00:16+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: inc/breadcrumbs.php:22 inc/breadcrumbs.php:24 inc/breadcrumbs.php:26
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: footer.php:11
+msgid "About us"
+msgstr ""
+
+#: footer.php:59
+msgid "All Rights Reserved"
+msgstr ""
+
+#: header.php:49 header.php:71
+msgid "Art & Photography"
+msgstr ""
+
+#: inc/breadcrumbs.php:28
+msgid "Blog Archives"
+msgstr ""
+
+#: header-search.php:23
+msgid "Categories"
+msgstr ""
+
+#: footer-search.php:6
+msgid "Contact"
+msgstr ""
+
+#: functions.php:220
+msgid "Featured Posts"
+msgstr ""
+
+#: functions.php:199
+msgid "Featured this post"
+msgstr ""
+
+#: header.php:40 header.php:68
+msgid "Fiction"
+msgstr ""
+
+#: footer-search.php:11 footer.php:17
+msgid "Follow us"
+msgstr ""
+
+#: header.php:37 header.php:67
+msgid "Interviews"
+msgstr ""
+
+#: header.php:43 header.php:69
+msgid "Letters & Essays"
+msgstr ""
+
+#: index-old.php:103 index.php:103 single.php:55
+msgid "Next"
+msgstr ""
+
+#: header.php:46 header.php:70
+msgid "Poetry"
+msgstr ""
+
+#: index-old.php:102 index.php:102 single.php:54
+msgid "Previous"
+msgstr ""
+
+#: functions.php:26
+msgid "Primary Menu"
+msgstr ""
+
+#: footer.php:12
+msgid "Privacy Policy"
+msgstr ""
+
+#: header.php:25 header.php:85
+msgid "Search"
+msgstr ""
+
+#: archive.php:53 search.php:7
+msgid "Search results"
+msgstr ""
+
+#: functions.php:71
+msgid "Slider"
+msgstr ""
+
+#: functions.php:70
+msgid "Sliders"
+msgstr ""
+
+#: functions.php:27
+msgid "Social Links Menu"
+msgstr ""
+
+#: archive.php:24 archive.php:44 index-old.php:52 index-old.php:98
+#: index-old.php:231 index-old.php:256 index.php:52 index.php:98 index.php:239
+#: index.php:264 search.php:33 search.php:57 single.php:26 single.php:50
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#: header.php:24 header.php:84
+msgid "Subscribe"
+msgstr ""
+
+#: footer.php:13
+msgid "Terms of Use"
+msgstr ""

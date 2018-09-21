@@ -3,12 +3,12 @@
         <footer>
             <div class="row">
                 <div class="col-md-6">
-                    <p><?php _e( 'Contacto', 'atomo' ); ?></p>
-                    <a class="mail-link" href="mailto:scliente@euroamerica.cl"><?php _e( 'scliente@euroamerica.cl', 'atomo' ); ?></a>
-                    <p class="copyright"><?php _e( 'Euroamérica ©', 'atomo' ); ?><?php echo date('Y') ?></p>
+                    <p><?php _e( 'Contact', 'atomo' ); ?></p>
+                    <a class="mail-link" href="mailto:contacto@revistaatomo.com">contacto@revistaatomo.com</a>
+                    <p class="copyright">© <?php echo date('Y') ?> Revista Átomo</p>
                 </div>
                 <div class="col-md-6 flex justify-end align-center">
-                    <p><?php _e( 'Síguenos', 'atomo' ); ?></p>
+                    <p><?php _e( 'Follow us', 'atomo' ); ?></p>
                     <div class="social-container flex align-center">
                         <a href="" class="flex">
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 32 32">

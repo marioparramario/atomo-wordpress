@@ -21,7 +21,7 @@ get_header( 'index.html' ); ?>
                   <?php $item_number++; ?>
               <?php endwhile; ?>
           <?php else : ?>
-              <p><?php _e( 'Sorry, no posts matched your criteria.', 'euroamerica-v3' ); ?></p>
+              <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
           <?php endif; ?>
       <?php else : ?>
           <?php if ( have_posts() ) : ?>
@@ -41,7 +41,7 @@ get_header( 'index.html' ); ?>
                   <?php $item_number++; ?>
               <?php endwhile; ?>
           <?php else : ?>
-              <p><?php _e( 'Sorry, no posts matched your criteria.', 'euroamerica-v3' ); ?></p>
+              <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
           <?php endif; ?>
       <?php endif; ?>
 
@@ -50,7 +50,7 @@ get_header( 'index.html' ); ?>
   </section>
     <!-- <div class="card">
         <div class="card-body flex-center">
-            <h5 class="card-subtitle mb-2"><?php _e( 'Resultado de búsqueda:', 'euroamerica-v3' ); ?></h5>
+            <h5 class="card-subtitle mb-2"><?php _e( 'Search results', 'atomo' ); ?><!-- Resultado de búsqueda --></h5>
             <span class="search-tag"><?php echo single_cat_title(); ?></span>
             <a href="<?php echo esc_url( home_url() ); ?>" class="close-card" rel="home"><?php bloginfo( 'name' ); ?></a>
         </div>
