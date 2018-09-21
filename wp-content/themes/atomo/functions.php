@@ -196,7 +196,7 @@ if (!function_exists('atomo_enqueue_scripts')) {
 
 function sm_meta_featured_callback( $post_id ) {
 	$featured = get_post_meta( $post_id );
-	$title = _e( 'Featured this post', 'sm-textdomain');
+	$title = _e( 'Featured this post', 'atomo');
 
 	if ( isset ( $featured['meta-checkbox'] ) ) {
 		$checked = checked( $featured['meta-checkbox'][0], 'yes', false );
@@ -217,7 +217,7 @@ EOS;
 }
 
 function sm_custom_meta() {
-    add_meta_box( 'sm_meta', __( 'Featured Posts', 'sm-textdomain' ), 'sm_meta_featured_callback', 'post' );
+    add_meta_box( 'sm_meta', __( 'Featured Posts', 'atomo' ), 'sm_meta_featured_callback', 'post' );
 }
 
 add_action( 'add_meta_boxes', 'sm_custom_meta' );
