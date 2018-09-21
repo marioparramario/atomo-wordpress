@@ -20,7 +20,7 @@
             </div>
             <div class="flex align-center">
                 <?php get_search_form( true ); ?>
-                <a class="open-menu"><?php _e( 'Categories', 'atomo' ); ?><!-- Categorías --></a>
+                <a class="open-menu"><?php _e( 'Categories', 'atomo' ); ?></a>
             </div>
             <div class="navbar-mobile">
                 <?php wp_list_categories( array() ); ?>
