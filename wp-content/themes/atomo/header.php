@@ -21,8 +21,8 @@
 				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-atomo.svg" alt="">
 			</a>
 			<div class="nav-init-button init flex vertical align-end">
-				<a href="#"><?php _e( 'Subscribe', 'atomo' ); ?></a>
-				<a href="#"><?php _e( 'Search', 'atomo' ); ?></a>
+				<a href="<?php echo home_url( '/subscribe' ); ?>"><?php _e( 'Subscribe', 'atomo' ); ?></a>
+				<a href="<?php echo home_url( '/search' ); ?>"><?php _e( 'Search', 'atomo' ); ?></a>
 			</div>
 			<div class="nav-init-button menu flex justify-end">
 				<a class="navbar-menu-button">
@@ -50,10 +50,10 @@
 			</div>
 
 			<div class="nav-init-item">
-				<a href="#">Ediciones</a>
+				<a href="<?php echo home_url( '/issues' ); ?>">Ediciones</a>
 			</div>
 			<div class="nav-init-item">
-				<a href="#">Nosotros</a>
+				<a href="<?php echo home_url( '/about-us' ); ?>">Nosotros</a>
 			</div>
 		</div>
 	</nav>
@@ -69,8 +69,8 @@
 				<a href="<?php echo home_url( '/category/cartas-ensayos/' ); ?>"><?php _e( 'Letters & Essays', 'atomo' ); ?></a>
 				<a href="<?php echo home_url( '/category/poesia/' ); ?>"><?php _e( 'Poetry', 'atomo' ); ?></a>
 				<a href="<?php echo home_url( '/category/arte-fotografia/' ); ?>"><?php _e( 'Art & Photography', 'atomo' ); ?></a>
-				<a href="#">Ediciones</a>
-				<a href="#">Nosotros</a>
+				<a href="<?php echo home_url( '/issues' ); ?>">Ediciones</a>
+				<a href="<?php echo home_url( '/about-us' ); ?>">Nosotros</a>
 			</div>
 			<a class="navbar-menu-button">
 				<span></span>
@@ -81,8 +81,8 @@
 	</nav>
 
 	<nav class="nav-lateral flex justify-between" id="lateral">
-		<a href="#"><?php _e( 'Subscribe', 'atomo' ); ?></a>
-		<a href="#"><?php _e( 'Search', 'atomo' ); ?></a>
+		<a href="<?php echo home_url( '/subscribe' ); ?>"><?php _e( 'Subscribe', 'atomo' ); ?></a>
+		<a href="<?php echo home_url( '/search' ); ?>"><?php _e( 'Search', 'atomo' ); ?></a>
 	</nav>
 
 	<main class="main">
