@@ -8,13 +8,13 @@
             </div>
             <div class="footer-items flex vertical justify-center">
               <a href="">Blog</a>
-              <a href="<?php echo home_url( 'about-us' ); ?>">Acerca de nosotros</a>
-              <a href="">Políticas de privacidad</a>
-              <a href="">Términos de uso</a>
+              <a href="<?php echo esc_url( home_url( 'about-us' ) ); ?>"><?php _e( 'About us', 'atomo' ); ?><!-- Acerca de nosotros --></a>
+              <a href="<?php echo esc_url( home_url( 'privacy-policy' ) ); ?>"><?php _e( 'Privacy Policy', 'atomo' ); ?><!-- Políticas de privacidad --></a>
+              <a href="<?php echo esc_url( home_url( 'terms-of-use' ) ); ?>"><?php _e( 'Terms of Use', 'atomo' ); ?><!-- Términos de uso --></a>
             </div>
             <div class="footer-contact flex vertical justify-center align-end">
               <div class="footer-social flex vertical">
-                <h4>Síguenos</h4>
+                <h4><?php _e( 'Follow us', 'atomo' ); ?></h4>
                 <div class="social-container">
                   <a href="">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
