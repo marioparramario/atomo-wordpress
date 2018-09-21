@@ -1,5 +1,15 @@
 <?php
+/**
+ * Atomo template for displaying all single posts
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ *
+ * @package WordPress
+ * @subpackage Atomo
+ */
+
 get_header(); ?>
+
 <div class="container flex vertical align-center">
   <section class="single">
     <div class="single-container flex-vertical">
