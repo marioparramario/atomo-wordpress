@@ -11,7 +11,7 @@
 
 	<?php wp_head(); ?>
 </head>
-<body class="<?php echo implode(' ', get_body_class()); ?>">
+<body <?php body_class(); ?>>
 	<nav class="nav-init flex vertical center justify-start">
 		<div class="nav-init-container top flex justify-between align-center">
 			<a class="nav-init-iso" href="<?php echo esc_url( home_url() ); ?>" rel="home">
