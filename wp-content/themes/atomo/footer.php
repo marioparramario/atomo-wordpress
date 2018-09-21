@@ -56,7 +56,7 @@
               </div>
               <div class="footer-email flex vertical align-end">
                 <a href="mailto:contacto@revistaatomo.com">contacto@revistaatomo.com</a>
-                <span>© <?php echo date( 'Y' ); ?> Revista Átomo. Todos los derechos reservados</span>
+                <span class="copyright">© <?php echo date( 'Y' ); ?> Revista Átomo. <?php _e( 'All Rights Reserved', 'atomo' ); ?></span>
               </div>
             </div>
 

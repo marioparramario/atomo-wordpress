@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Atomo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-22 00:11+0200\n"
+"POT-Creation-Date: 2018-09-22 00:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,6 +24,10 @@ msgstr ""
 
 #: footer.php:11
 msgid "About us"
+msgstr ""
+
+#: footer.php:59
+msgid "All Rights Reserved"
 msgstr ""
 
 #: header.php:49 header.php:71
