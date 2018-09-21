@@ -34,19 +34,19 @@
 		</div>
 		<div class="nav-init-container bottom flex justify-between">
 			<div class="nav-init-item">
-				<a href="<?php echo home_url() ?>/category/entrevistas/"><?php _e( 'Interviews', 'atomo' ); ?></a>
+				<a href="<?php echo home_url( '/category/entrevistas/' ); ?>"><?php _e( 'Interviews', 'atomo' ); ?></a>
 			</div>
 			<div class="nav-init-item">
-				<a href="<?php echo home_url() ?>/category/ficcion/"><?php _e( 'Fiction', 'atomo' ); ?></a>
+				<a href="<?php echo home_url( '/category/ficcion/' ); ?>"><?php _e( 'Fiction', 'atomo' ); ?></a>
 			</div>
 			<div class="nav-init-item">
-				<a href="<?php echo home_url() ?>/category/cartas-ensayos/"><?php _e( 'Letters & Essays', 'atomo' ); ?></a>
+				<a href="<?php echo home_url( '/category/cartas-ensayos/' ); ?>"><?php _e( 'Letters & Essays', 'atomo' ); ?></a>
 			</div>
 			<div class="nav-init-item">
-				<a href="<?php echo home_url() ?>/category/poesia/"><?php _e( 'Poetry', 'atomo' ); ?></a>
+				<a href="<?php echo home_url( '/category/poesia/' ); ?>"><?php _e( 'Poetry', 'atomo' ); ?></a>
 			</div>
 			<div class="nav-init-item">
-				<a href="<?php echo home_url() ?>/category/arte-fotografia/"><?php _e( 'Art & Photography', 'atomo' ); ?></a>
+				<a href="<?php echo home_url( '/category/arte-fotografia/' ); ?>"><?php _e( 'Art & Photography', 'atomo' ); ?></a>
 			</div>
 
 			<div class="nav-init-item">
