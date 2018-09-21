@@ -4,7 +4,8 @@
  * Functions and constants for Átomo theme.
  *
  * @link    https://developer.wordpress.org/themes/basics/theme-functions/
- * @package atomo
+ * @package WordPress
+ * @subpackage Atomo
  */
 
 if (!function_exists('atomo_setup')) {
