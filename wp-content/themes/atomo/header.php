@@ -81,7 +81,7 @@
     </nav>
 
     <nav class="nav-lateral flex justify-between" id="lateral">
-      <a href="#"><?php _e( 'Subscribe', 'atomo' ); ?></a><!-- Suscríbete -->
-      <a href="#"><?php _e( 'Search', 'atomo' ); ?></a><!-- Búsqueda -->
+      <a href="#"><?php _e( 'Subscribe', 'atomo' ); ?></a>
+      <a href="#"><?php _e( 'Search', 'atomo' ); ?></a>
     </nav>
   <main class="main">
