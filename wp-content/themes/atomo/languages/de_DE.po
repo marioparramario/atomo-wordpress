@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-22 01:48+0200\n"
+"POT-Creation-Date: 2018-09-22 01:58+0200\n"
 "PO-Revision-Date: 2018-09-21 20:12+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -25,6 +25,10 @@ msgstr ""
 #: footer.php:11
 msgid "About us"
 msgstr "Über uns"
+
+#: archive.php:6
+msgid "All Articles"
+msgstr "Alle Artikel"
 
 #: footer.php:59 footer.php:54
 msgid "All Rights Reserved"
@@ -94,7 +98,7 @@ msgstr "Hauptmenü"
 msgid "Privacy Policy"
 msgstr "Datenschutzerklärung"
 
-#: index.php:270
+#: index.php:270 archive.php:18 archive.php:37 index.php:246
 msgid "Read article"
 msgstr "Artikel lesen"
 

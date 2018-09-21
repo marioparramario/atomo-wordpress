@@ -26,6 +26,10 @@ msgstr ""
 msgid "About us"
 msgstr "Acerca de nosotros"
 
+#: archive.php:6
+msgid "All Articles"
+msgstr "Todos los artículos"
+
 #: footer.php:59
 msgid "All Rights Reserved"
 msgstr "Todos los derechos reservados"

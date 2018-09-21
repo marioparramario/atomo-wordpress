@@ -3,7 +3,7 @@ get_header( 'index.html' ); ?>
 
 <div class="container flex vertical align-center">
   <section class="grid-read flex-vertical">
-    <h3 class="headline">Todos los artículos</h3>
+    <h3 class="headline"><?php _e( 'All Articles', 'atomo' ); ?></h3>
     <div class="row flex">
       <?php if ( is_singular() ) : ?>
           <?php if ( have_posts() ) : ?>
@@ -15,7 +15,7 @@ get_header( 'index.html' ); ?>
                     <div class="description flex vertical justify-center">
                         <h4><?php the_title(); ?></h4>
                         <?php the_excerpt( ); ?>
-                        <span>Leer artículo</span>
+                        <span><?php _e( 'Read article', 'atomo' ); ?></span>
                     </div>
                   </div>
                   <?php $item_number++; ?>
@@ -34,7 +34,7 @@ get_header( 'index.html' ); ?>
                         <div class="description flex vertical justify-center">
                             <h4><?php the_title(); ?></h4>
                             <?php the_excerpt( ); ?>
-                            <span>Leer artículo</span>
+                            <span><?php _e( 'Read article', 'atomo' ); ?></span>
                         </div>
                       </a>
                   </div>
