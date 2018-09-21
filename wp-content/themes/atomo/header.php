@@ -64,11 +64,11 @@
           <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-iso.svg" alt="">
         </a>
         <div class="navbar-container flex">
-          <a href="<?php echo home_url() ?>/category/entrevistas/">Entrevistas</a>
-          <a href="<?php echo home_url() ?>/category/ficcion/">Ficción</a>
-          <a href="<?php echo home_url() ?>/category/cartas-ensayos/">Cartas y ensayos</a>
-          <a href="<?php echo home_url() ?>/category/poesia/">Poesía</a>
-          <a href="<?php echo home_url() ?>/category/arte-fotografia/">Arte y fotografía</a>
+          <a href="<?php echo home_url() ?>/category/entrevistas/">><?php _e( 'Interviews', 'atomo' ); ?></a>
+          <a href="<?php echo home_url() ?>/category/ficcion/"><?php _e( 'Fiction', 'atomo' ); ?></a>
+          <a href="<?php echo home_url() ?>/category/cartas-ensayos/"><?php _e( 'Letters & Essays', 'atomo' ); ?></a>
+          <a href="<?php echo home_url() ?>/category/poesia/"><?php _e( 'Poetry', 'atomo' ); ?></a>
+          <a href="<?php echo home_url() ?>/category/arte-fotografia/"><?php _e( 'Art & Photography', 'atomo' ); ?></a>
           <a href="#">Ediciones</a>
           <a href="#">Nosotros</a>
         </div>
