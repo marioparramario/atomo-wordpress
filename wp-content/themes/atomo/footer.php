@@ -8,9 +8,9 @@
             </div>
             <div class="footer-items flex vertical justify-center">
               <a href="">Blog</a>
-              <a href="<?php echo esc_url( home_url( 'about-us' ) ); ?>"><?php _e( 'About us', 'atomo' ); ?><!-- Acerca de nosotros --></a>
-              <a href="<?php echo esc_url( home_url( 'privacy-policy' ) ); ?>"><?php _e( 'Privacy Policy', 'atomo' ); ?><!-- Políticas de privacidad --></a>
-              <a href="<?php echo esc_url( home_url( 'terms-of-use' ) ); ?>"><?php _e( 'Terms of Use', 'atomo' ); ?><!-- Términos de uso --></a>
+              <a href="<?php echo esc_url( home_url( 'about-us' ) ); ?>"><?php _e( 'About us', 'atomo' ); ?></a>
+              <a href="<?php echo esc_url( home_url( 'privacy-policy' ) ); ?>"><?php _e( 'Privacy Policy', 'atomo' ); ?></a>
+              <a href="<?php echo esc_url( home_url( 'terms-of-use' ) ); ?>"><?php _e( 'Terms of Use', 'atomo' ); ?></a>
             </div>
             <div class="footer-contact flex vertical justify-center align-end">
               <div class="footer-social flex vertical">
