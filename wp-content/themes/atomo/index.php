@@ -121,7 +121,7 @@ get_header(); ?>
 
 
   <section class="grid-featured flex vertical">
-    <h3 class="headline">Artículos destacados</h3>
+    <h3 class="headline"><?php _e( 'Featured Articles', 'atomo' ); ?></h3>
     <div class="row flex">
       <div class="column">
         <div class="">
@@ -198,7 +198,7 @@ get_header(); ?>
   </section>
 
   <section class="grid-read flex-vertical">
-    <h3 class="headline">Artículos más leídos</h3>
+    <h3 class="headline"><?php _e( 'Most Read Articles', 'atomo' ); ?></h3>
     <div class="row flex">
       <div class="column featured flex">
         <a class="item flex" href="">
@@ -220,7 +220,7 @@ get_header(); ?>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       <div class="input-container flex">
         <input type="text" name="" value="" placeholder="email">
-        <button class="button" type="button" name="button">Enviar</button>
+        <button class="button" type="button" name="button"><?php _e( 'Submit', 'atomo' ); ?><!-- Enviar --></button>
       </div>
     </div>
   </section>
@@ -267,7 +267,7 @@ get_header(); ?>
                           <div class="description flex vertical justify-center">
                               <h4><?php the_title(); ?></h4>
                               <?php the_excerpt( ); ?>
-                              <span>Leer artículo</span>
+                              <span><?php _e( 'Read article', 'atomo' ); ?><!-- Leer artículo --></span>
                           </div>
                         </a>
                     </div>

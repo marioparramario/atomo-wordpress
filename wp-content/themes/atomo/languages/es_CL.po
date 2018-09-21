@@ -54,8 +54,12 @@ msgstr "Categorías"
 msgid "Contact"
 msgstr "Contacto"
 
+#: functions.php:201
+msgid "Most Read Articles"
+msgstr "Artículos más leídos"
+
 #: functions.php:220
-msgid "Featured Posts"
+msgid "Featured Articles"
 msgstr "Artículos destacados"
 
 #: functions.php:199

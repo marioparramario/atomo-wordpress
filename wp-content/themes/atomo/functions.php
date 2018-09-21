@@ -223,7 +223,7 @@ EOS;
 }
 
 function atomo_custom_meta() {
-    add_meta_box( 'atomo_meta', __( 'Featured Posts', 'atomo' ), 'atomo_meta_featured_callback', 'post' );
+    add_meta_box( 'atomo_meta', __( 'Featured Articles', 'atomo' ), 'atomo_meta_featured_callback', 'post' );
 }
 
 add_action( 'add_meta_boxes', 'atomo_custom_meta' );

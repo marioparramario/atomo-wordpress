@@ -46,8 +46,12 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
+#: functions.php:201
+msgid "Most Read Articles"
+msgstr ""
+
 #: functions.php:220
-msgid "Featured Posts"
+msgid "Featured Articles"
 msgstr ""
 
 #: functions.php:199

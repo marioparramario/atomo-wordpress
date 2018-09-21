@@ -46,9 +46,13 @@ msgstr "Kategorien"
 msgid "Contact"
 msgstr "Kontakt"
 
+#: functions.php:201
+msgid "Most Read Articles"
+msgstr "Meistgelesene Artikel"
+
 #: functions.php:220
-msgid "Featured Posts"
-msgstr ""
+msgid "Featured Articles"
+msgstr "Aktuelle Artikel"
 
 #: functions.php:199
 msgid "Featured this post"
@@ -68,7 +72,7 @@ msgstr ""
 
 #: header.php:43 header.php:69
 msgid "Letters & Essays"
-msgstr ""
+msgstr "Briefe & Aufsätze"
 
 #: index-old.php:103 index.php:103 single.php:55
 msgid "Next"
