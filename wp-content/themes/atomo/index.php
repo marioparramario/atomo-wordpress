@@ -225,7 +225,7 @@ get_header(); ?>
     </div>
   </section>
   <section class="grid-regular flex-vertical">
-    <h3 class="headline">Todos los artículos</h3>
+    <h3 class="headline"><?php _e( 'All Articles', 'atomo' ); ?></h3>
       <div class="row flex">
         <?php if ( is_singular() ) : ?>
             <?php if ( have_posts() ) : ?>
