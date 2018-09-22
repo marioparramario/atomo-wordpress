@@ -1,0 +1,40 @@
+// =======================================================================
+//                ·~: GLOBAL SASS VARIABLES :~·
+// =======================================================================
+
+
+$atomo-white:         #FFFFFF;
+$atomo-camel:         #D8A073;
+$atomo-cream:         #FAF0E9;
+$atomo-red:           #D6062D;
+$atomo-green:         #85AA8E;
+$atomo-gray:          #525251;
+$atomo-black:         #1E1E1E;
+
+// --- COLORS ------------------------------------------------------------
+
+$white:               $atomo-white !default;
+$camel:               $atomo-camel !default;
+$cream:               $atomo-cream !default;
+$red:                 $atomo-red !default;
+$green:               $atomo-green !default;
+$gray:                $atomo-gray !default;
+$black:               $atomo-black !default;
+
+// --- FONTS ------------------------------------------------------------
+
+$baskerville-serif:   'Libre Baskerville',serif;
+$roboto-mono:         'Roboto Mono',Menlo,monospace;
+
+// --- BREAKPOINTS ------------------------------------------------------
+
+$desktop:             1280px;
+$tablet:              991px;
+$small-tablet:        767px;
+$phone:               479px;
+
+// --- ELEMENTS ---------------------------------------------------------
+
+$paragraph-max:       340px;
+$container-width:     960px;
+$input-width:         720px;
