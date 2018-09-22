@@ -1,0 +1,11 @@
+files:
+  ignore:
+    - 'node_modules/**/*.scss'
+    - 'tests/**/*.scss'
+  include:
+    - 'wp-content/themes/*/styles/**/*.scss'
+
+rules:
+  indentation:
+    - 2
+    - size: 2
