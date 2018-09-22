@@ -1,6 +1,6 @@
 {
   "name": "atomo-wordpress",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Web magazine for art enthusiasts",
   "main": "index.js",
   "scripts": {
@@ -14,8 +14,7 @@
     "wordpress",
     "magazine",
     "theme",
-    "blog",
-    "art"
+    "blog"
   ],
   "author": {
     "name": "Mario Parra",
