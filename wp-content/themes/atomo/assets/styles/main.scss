@@ -9,18 +9,18 @@
  * Tags:        blog, photography, poetry, featured-images, full-width-template
  */
 
-@import "_fonts";
-@import "_mixins";
-@import "_variables";
+@import "fonts";
+@import "mixins";
+@import "variables";
 
-@import "_grid";
-@import "_layout";
+@import "grid";
+@import "layout";
 
-@import "_content";
-@import "_navbar";
-@import "_slider";
-@import "_footer";
-@import "_single";
+@import "content";
+@import "navbar";
+@import "slider";
+@import "footer";
+@import "single";
 
 
 // --- Disable some ``bootstrap`` styles
