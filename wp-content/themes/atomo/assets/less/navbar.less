@@ -49,6 +49,16 @@
       padding-bottom: 0.2rem;
       &:first-child {
         margin-bottom: 0.4rem;
+        &::before {
+          content: '';
+          position: absolute;
+          left: -20px;
+          width: 12px;
+          height: 100%;
+          background: url(../images/arrow-nav.svg) no-repeat center center;
+          border-bottom: 1px solid @camel;
+
+        }
       }
       &::after {
         content: '';
