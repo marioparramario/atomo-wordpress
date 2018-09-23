@@ -32,7 +32,7 @@
 				</a>
 			</div>
 		</div>
-		<div class="nav-init-container bottom flex justify-between">
+		<div class="nav-init-container bottom flex align-center justify-between">
 			<div class="nav-init-item">
 				<a href="<?php echo esc_url( home_url( '/category/entrevistas/' ) ); ?>"><?php _e( 'Entrevistas', 'atomo' ); ?></a>
 			</div>
@@ -48,7 +48,7 @@
 			<div class="nav-init-item">
 				<a href="<?php echo esc_url( home_url( '/category/arte-fotografia/' ) ); ?>"><?php _e( 'Arte y fotografía', 'atomo' ); ?></a>
 			</div>
-
+			<div class="nav-init-separator"></div>
 			<div class="nav-init-item">
 				<a href="<?php echo esc_url( home_url( '/issues' ) ); ?>">Ediciones</a>
 			</div>
@@ -63,12 +63,13 @@
 			<a class="navbar-logo" href="<?php echo esc_url( home_url() ); ?>" rel="home">
 				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-iso.svg" alt="">
 			</a>
-			<div class="navbar-container flex">
+			<div class="navbar-container flex align-center">
 				<a href="<?php echo esc_url( home_url( '/category/entrevistas/' ) ); ?>"><?php _e( 'Entrevistas', 'atomo' ); ?></a>
 				<a href="<?php echo esc_url( home_url( '/category/ficcion/' ) ); ?>"><?php _e( 'Ficción', 'atomo' ); ?></a>
 				<a href="<?php echo esc_url( home_url( '/category/cartas-ensayos/' ) ); ?>"><?php _e( 'Cartas y ensayos', 'atomo' ); ?></a>
 				<a href="<?php echo esc_url( home_url( '/category/poesia/' ) ); ?>"><?php _e( 'Poesía', 'atomo' ); ?></a>
 				<a href="<?php echo esc_url( home_url( '/category/arte-fotografia/' ) ); ?>"><?php _e( 'Arte y fotografía', 'atomo' ); ?></a>
+				<div class="separator"></div>
 				<a href="<?php echo esc_url( home_url( '/issues' ) ); ?>">Ediciones</a>
 				<a href="<?php echo esc_url( home_url( '/about-us' ) ); ?>">Nosotros</a>
 			</div>

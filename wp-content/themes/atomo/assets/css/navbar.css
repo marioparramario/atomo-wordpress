@@ -13,6 +13,11 @@
   font-size: 1.05rem;
   font-variant: small-caps;
 }
+.nav-init-separator {
+  width: 1px;
+  height: 14px;
+  background: #1E1E1E;
+}
 .nav-init-container {
   width: 90%;
   max-width: 960px;
@@ -73,9 +78,15 @@
 .navbar-container a {
   font-size: 0.75rem;
   letter-spacing: 0.08rem;
-  padding-left: 2rem;
+  padding-left: 1.6rem;
   color: white;
   text-transform: uppercase;
+}
+.navbar-container .separator {
+  width: 1px;
+  height: 14px;
+  background: white;
+  margin-left: 1.6rem;
 }
 .navbar-logo img {
   width: 45px;
