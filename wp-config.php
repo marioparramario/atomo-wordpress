@@ -59,6 +59,15 @@ define( 'DB_CHARSET', 'utf8' );
 /** The Database Collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
 
+/**
+ * WordPress Database Table prefix.
+ *
+ * You can have multiple installations in one database if you give each
+ * a unique prefix. Only numbers, letters, and underscores please!
+ */
+$table_prefix = getenv( 'DB_PREFIX', true ) ?: 'wp_';  // @codingStandardsIgnoreLine
+
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *
@@ -78,14 +87,6 @@ define( 'LOGGED_IN_SALT',   getenv( 'WP_LOGGED_IN_SALT', true ) ?: 'INSECURE:SAL
 define( 'NONCE_SALT',       getenv( 'WP_NONCE_SALT', true ) ?: 'INSECURE:SALT' );
 
 /**#@-*/
-
-/**
- * WordPress Database Table prefix.
- *
- * You can have multiple installations in one database if you give each
- * a unique prefix. Only numbers, letters, and underscores please!
- */
-$table_prefix = 'wp_';  // @codingStandardsIgnoreLine
 
 /**
  * For developers: WordPress debugging mode.
