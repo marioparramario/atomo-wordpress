@@ -1,60 +1,78 @@
 
 @mixin aspect-ratio($width, $height) {
   position: relative;
+
   &:before {
+    content: '';
     display: block;
-    content: "";
-    width: 100%;
     padding-top: ($height / $width) * 100%;
+    width: 100%;
   }
 }
 
 
-/* TODO autoprefixer */
+//  ~: FLEXBOX :~  //
 
-@mixin transition-properties(...) {
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+
+// XXX We have an ``autoprefixer`` for stuff like that
+
+@mixin transition-properties($arguments...) {
   -webkit-transition: $arguments;
   -moz-transition: $arguments;
   -ms-transition: $arguments;
   -o-transition: $arguments;
   transition: $arguments;
 }
-@mixin transform-properties(...) {
+
+@mixin transform-properties($arguments...) {
   -webkit-transform: $arguments;
   -moz-transform: $arguments;
   -ms-transform: $arguments;
   -o-transform: $arguments;
   transform: $arguments;
 }
-@mixin animation-properties(...) {
+
+@mixin animation-properties($arguments...) {
   -webkit-animation: $arguments;
   -moz-animation: $arguments;
   -ms-animation: $arguments;
   -o-animation: $arguments;
   animation: $arguments;
 }
-@mixin filter-properties(...) {
+
+@mixin filter-properties($arguments...) {
   -webkit-filter: $arguments;
   -moz-filter: $arguments;
   -ms-filter: $arguments;
   -o-filter: $arguments;
   filter: $arguments;
 }
-@mixin appearance-properties(...) {
+
+@mixin appearance-properties($arguments...) {
   -webkit-appearance: $arguments;
   -moz-appearance: $arguments;
   -ms-appearance: $arguments;
   -o-appearance: $arguments;
   appearance: $arguments;
 }
-@mixin user-select-properties(...) {
+
+@mixin user-select-properties($arguments...) {
   -webkit-user-select: $arguments;
   -moz-user-select: $arguments;
   -ms-user-select: $arguments;
   -o-user-select: $arguments;
   user-select: $arguments;
 }
-@mixin transform-origin-properties(...) {
+
+@mixin transform-origin-properties($arguments...) {
   -webkit-transform-origin: $arguments;
   -ms-transform-origin: $arguments;
   transform-origin: $arguments;

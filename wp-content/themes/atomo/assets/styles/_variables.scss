@@ -3,7 +3,7 @@
 // =======================================================================
 
 
-$atomo-white:         #FFFFFF;
+$atomo-white:         #FFFFFF;  // sass-lint:disable-block hex-length
 $atomo-camel:         #D8A073;
 $atomo-cream:         #FAF0E9;
 $atomo-red:           #D6062D;
@@ -13,7 +13,6 @@ $atomo-black:         #1E1E1E;
 
 // --- COLORS ------------------------------------------------------------
 
-$white:               $atomo-white !default;
 $camel:               $atomo-camel !default;
 $cream:               $atomo-cream !default;
 $red:                 $atomo-red !default;
@@ -21,10 +20,13 @@ $green:               $atomo-green !default;
 $gray:                $atomo-gray !default;
 $black:               $atomo-black !default;
 
+$white:               $atomo-white !default;
+$alpha-white:         rgba($white, 0.5) !default;
+
 // --- FONTS ------------------------------------------------------------
 
-$baskerville-serif:   'Libre Baskerville',serif;
-$roboto-mono:         'Roboto Mono',Menlo,monospace;
+$baskerville-serif:   'Libre Baskerville', serif;
+$roboto-mono:         'Roboto Mono', Menlo, monospace;
 
 // --- BREAKPOINTS ------------------------------------------------------
 

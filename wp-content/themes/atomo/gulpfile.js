@@ -27,6 +27,10 @@ const sizewise = require('gulp-size');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 
+const eslint = require('gulp-eslint');
+const sasslint = require('gulp-sass-lint');
+const stylelint = require('gulp-stylelint');
+
 const node_modules = path.resolve(__dirname, 'node_modules');
 const bootstrap = path.resolve(__dirname, 'bootstrap');
 const assets = path.resolve(__dirname, 'assets');
@@ -48,14 +52,13 @@ const dependencies = [
 
 gulp.task('default', ['build', 'watch']);
 gulp.task('build', ['styles', 'js']);
-gulp.task('watch', ['watch:styles', 'watch:js']);
 
 
 /*  ~: styles :~  */
 
 gulp.task('styles', ['build:styles', 'patch:styles']);
 
-gulp.task('build:styles', function () {
+gulp.task('build:styles', ['lint:sass'], function () {
   return gulp.src(['assets/styles/[!_]*.scss'])
              .pipe(sass({ includePaths: includes })
                   .once('error', function () { process.exit(1) })
@@ -102,7 +105,35 @@ gulp.task('js:bundle', function () {
 });
 
 
+/*  ~: lint :~  */
+
+gulp.task('lint', ['lint:sass', 'lint:css', 'lint:js']);
+
+gulp.task('lint:sass', function () {
+  return gulp.src(['**/*.scss'])
+             .pipe(sasslint())
+             .pipe(sasslint.format())
+             .pipe(sasslint.failOnError());
+});
+
+gulp.task('lint:css', function () {
+  return gulp.src(['**/*.css'])
+             .pipe(stylelint())
+             .pipe(stylelint.format())
+             .pipe(stylelint.failOnError());
+});
+
+gulp.task('lint:js', function () {
+  return gulp.src(['**/*.js'])
+             .pipe(eslint())
+             .pipe(eslint.format())
+             .pipe(eslint.failAfterError());
+});
+
+
 /*  ~: watch :~  */
+
+gulp.task('watch', ['watch:styles', 'watch:js']);
 
 gulp.task('watch:styles', function () {
   gulp.watch(['assets/styles/**/*.scss'], ['styles']);

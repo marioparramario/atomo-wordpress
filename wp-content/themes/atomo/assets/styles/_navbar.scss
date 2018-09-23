@@ -1,181 +1,212 @@
-@import "variables";
+//  ~: NAVBAR :~  //
 
 .nav-init {
+  height: 350px;
   position: relative;
   top: 0;
   width: 100%;
-  height: 350px;
   z-index: 9;
+
   &-item a {
-    font-family: $baskerville-serif;
-    letter-spacing: 0.05rem;
     color: $black;
-    text-transform: lowercase;
+    font-family: $baskerville-serif;
     font-size: 1.05rem;
     font-variant: small-caps;
+    letter-spacing: 0.05rem;
+    text-transform: lowercase;
   }
+
   &-container {
-    width: 90%;
     max-width: 960px;
+    width: 90%;
+
     &.top {
       margin-bottom: 3rem;
       margin-top: 2rem;
     }
   }
+
   &-iso {
     flex-basis: 20%;
+
     img {
       width: 50px;
     }
   }
+
   &-logo {
     flex-basis: 60%;
+
     img {
       width: 160px;
     }
   }
+
   &-button {
     flex-basis: 20%;
+
     a {
-      position: relative;
       color: $camel;
       font-size: 0.75rem;
-      text-transform: uppercase;
       padding-bottom: 0.2rem;
+      position: relative;
+      text-transform: uppercase;
+
       &:first-child {
         margin-bottom: 0.4rem;
       }
+
       &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 1px;
         background: $camel;
+        bottom: 0;
+        content: '';
+        height: 1px;
+        left: 0;
+        position: absolute;
+        width: 100%;
       }
     }
   }
 }
 
 .navbar {
-  position: fixed;
-  transition: all 0.3s ease;
-  top: -100%;
-  left: 0;
-  width: 100%;
-  height: 70px;
   background: $black;
+  height: 70px;
+  left: 0;
+  position: fixed;
+  top: -100%;
+  transition: all 0.3s ease;
+  width: 100%;
   z-index: 9;
+
   &-wrapper {
-    width: 100%;
     height: 100%;
     margin: 0 30px;
+    width: 100%;
   }
+
   &-container {
     a {
+      color: $white;
       font-size: 0.75rem;
       letter-spacing: 0.08rem;
       padding-left: 2rem;
-      color: $white;
       text-transform: uppercase;
     }
   }
+
   &-logo {
     img {
       width: 45px;
     }
   }
+
   &-menu-button {
+    cursor: pointer;
+    height: 30px;
     position: relative;
     width: 30px;
-    height: 30px;
-    cursor: pointer;
+
     span {
-      width: 100%;
-      height: 2px;
       background: $black;
+      height: 2px;
       position: absolute;
       right: 0;
       top: 50%;
       transform: translateY(-50%);
+      width: 100%;
+
       &:nth-of-type(1) {
         top: calc(50% - 8px);
       }
+
       &:nth-of-type(3) {
         width: calc(100% - 8px);
         top: calc(50% + 8px);
       }
     }
   }
+
   .navbar-menu-button {
     span {
       background: $white;
     }
   }
 }
+
 .nav-init-button.menu,
 .navbar-menu-button {
   display: none;
 }
+
 .current {
   color: $camel !important;
 }
+
 .nav-lateral {
+  left: 50%;
+  max-width: 960px;
   opacity: 0;
   position: fixed;
-  max-width: 960px;
-  width: 90%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
   pointer-events: none;
+  transform: translateX(-50%);
   transition: all 0.4s ease;
+  width: 90%;
+  z-index: 3;
+
   a {
     color: $camel;
+    font-size: 0.75rem;
     min-width: 100px;
     pointer-events: auto;
-    text-transform: uppercase;
-    font-size: 0.75rem;
     text-align: center;
+    text-transform: uppercase;
+
     &:first-child {
+      margin-left: -40px;
       transform: rotate(-90deg);
       transform-origin: left;
-      margin-left: -40px;
     }
+
     &:last-child {
+      margin-right: -40px;
       transform: rotate(90deg);
       transform-origin: right;
-      margin-right: -40px;
     }
   }
 }
+
 .navbar-menu-button {
   pointer-events: all;
+
   &::after {
     content: none !important;
   }
 }
+
 .navbar-menu {
-  position: fixed;
-  width: 100%;
-  height: 0;
   background: $white;
+  height: 0;
+  position: fixed;
   top: 0;
-  z-index: 8;
   transition: all 0.4s cubic-bezier(.4,0,.2,1);
+  width: 100%;
+  z-index: 8;
+
   &-container {
     a {
-      margin-bottom: 1rem;
-      text-align: center;
       color: $black;
       font-family: $baskerville-serif;
+      margin-bottom: 1rem;
       opacity: 0;
+      text-align: center;
       transition: all 0.3s cubic-bezier(.4,0,.2,1);
     }
   }
+
   &.active {
     height: 100vh;
+
     .navbar-menu-container {
       a {
         opacity: 1;
@@ -188,51 +219,62 @@
 @media (max-width: $tablet) {
   .nav-init {
     height: 200px;
+
     &-iso {
       img {
         width: 50px;
       }
     }
+
     &-logo {
       img {
         width: 140px;
       }
     }
+
     &-button {
       &.init {
         display: none;
       }
     }
+
     &-container {
       &.bottom {
         display: none;
       }
     }
   }
+
   .navbar {
     height: 60px;
+
     &-container {
       display: none;
     }
+
     &-logo {
       img {
         width: 40px;
       }
     }
   }
+
   .nav-init-button.menu,
   .navbar-menu-button {
     display: flex;
   }
 }
+
 @media (max-width: $small-tablet) {
   .nav-init {
     height: 180px;
+
     &-iso {
       img {
         width: 35px;
       }
     }
+
     &-logo {
       img {
         width: 110px;
@@ -240,6 +282,7 @@
     }
   }
 }
+
 @media (max-width: $phone) {
   .nav-init {
     &-iso {
@@ -247,24 +290,29 @@
         width: 30px;
       }
     }
+
     &-logo {
       img {
         width: 90px;
       }
     }
   }
+
   .navbar-menu-button {
     span {
       width: 90%;
+
       &:nth-of-type(3) {
         width: calc(90% - 8px);
       }
     }
   }
+
   .navbar {
     &-wrapper {
       margin: 0 5%;
     }
+
     &-logo {
       img {
         width: 30px;

@@ -1,4 +1,4 @@
-@import "variables";
+@import 'variables';
 
 
 *,
@@ -11,65 +11,73 @@
 
 html,
 body {
+  background: $white;
+  height: 100%;
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
-  background: $white;
 }
+
 body {
   color: $black;
   font-family: $baskerville-serif;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
+
   &.stop-scrolling {
     height: 100%;
     overflow: hidden;
   }
 }
+
 .ready .loader {
   opacity: 0;
   pointer-events: none;
 }
+
 .loader {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: white;
+  background: $white;
   background-image: url('../images/web/logo-loader.svg');
   background-position: center center;
   background-size: 200px;
   background-repeat: no-repeat;
-  z-index: 10;
+  height: 100%;
   opacity: 1;
+  position: fixed;
   transition: all 0.4s cubic-bezier(.4,0,.2,1);
+  width: 100%;
+  z-index: 10;
 }
+
 section {
   margin-top: 8rem;
-  width: 90%;
   max-width: $container-width;
   position: relative;
+  width: 90%;
 }
+
 span {
   font-family: $roboto-mono;
 }
+
 a {
   color: $red;
-  text-decoration: none;
   font-family: $roboto-mono;
   letter-spacing: 0.15rem;
+  text-decoration: none;
+
   &:hover {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
   }
 }
+
 img {
   width: 100%;
 }
+
 input {
-  width: 100%;
-  // height: 30px;
   border: none;
   vertical-align: middle;
   -webkit-appearance: none;
@@ -77,46 +85,49 @@ input {
   border-radius: 0;
   background: $white;
   padding: 0 1rem;
-  // &::-webkit-input-placeholder {
-  //   color: fade( $dark-blue, 60% ) !important;
-  // }
+  width: 100%;
 }
+
 .headline {
-  position: relative;
-  font-size: 2rem;
-  color: $black;
-  margin-bottom: 3rem;
   align-self: start;
+  color: $black;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+
   &::after {
+    background: $black;
     content: '';
+    height: 2px;
     position: absolute;
     right: -210px;
     top: calc(50% - 3px);
     width: 180px;
-    height: 2px;
-    background: $black;
   }
 }
+
 .mono {
   font-family: $roboto-mono;
 }
 
 
 .main {
-  width: 100%;
-  // padding-top: 120px;
   background: $cream;
-}
-.container {
   width: 100%;
-  transform: translateY(-150px);
-  padding: 0;
 }
+
+.container {
+  padding: 0;
+  transform: translateY(-150px);
+  width: 100%;
+}
+
 .archive {
   .container {
     transform: translateY(0);
   }
 }
+
 .articles {
   .container {
     transform: translateY(0);
@@ -136,57 +147,62 @@ input {
 }
 
 .issue {
-  width: 100%;
   max-width: none;
   min-height: 30vh;
-  background: $red;
+  width: 100%;
+
   &-container {
-    position: relative;
     max-width: $container-width;
     padding: 3rem 0;
+    position: relative;
   }
+
   &-version {
     position: absolute;
-    top: 0;
     right: 0;
+    top: 0;
     transform: translateY(-50%);
     width: 70px;
     z-index: 3;
   }
+
   &-image {
     width: 230px;
   }
+
   &-text {
     color: $white;
     max-width: 400px;
     margin-left: 3rem;
+
     h2 {
       font-size: 2.5rem;
       margin-bottom: 2rem;
     }
+
     p {
       margin-bottom: 1rem;
     }
+
     a {
       color: $black;
       font-size: 0.9rem;
-      position: relative;
       font-weight: 500;
       margin-top: 1rem;
+      position: relative;
+
       &::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 100%;
-        height: 2px;
         background: $black;
+        bottom: -5px;
+        content: '';
+        height: 2px;
+        left: 0;
+        position: absolute;
+        width: 100%;
       }
     }
   }
 }
-
-
 
 
 
@@ -198,31 +214,35 @@ input {
   max-width: none;
   min-height: 30vh;
   text-align: center;
+
   &-container {
-    width: 80%;
-    position: relative;
     max-width: $input-width;
     padding: 6rem 0;
+    position: relative;
+    width: 80%;
   }
+
   h2 {
     font-size: 3rem;
     margin-bottom: 1rem;
   }
+
   p {
     color: $white;
   }
-  .input-container {
-    width: 100%;
-    padding: 3rem 0;
 
+  .input-container {
+    padding: 3rem 0;
+    width: 100%;
   }
+
   .button {
-    font-family: $roboto-mono;
-    text-transform: uppercase;
-    color: $white;
-    border: none;
     background: $black;
+    border: none;
+    color: $white;
+    font-family: $roboto-mono;
     padding: 1rem;
+    text-transform: uppercase;
   }
 }
 
@@ -232,16 +252,20 @@ input {
   a {
     letter-spacing: 0.13rem;
   }
+
   section {
     margin-top: 6rem;
   }
+
   .headline {
     font-size: 1.8rem;
+
     &::after {
       right: -180px;
       width: 150px;
     }
   }
+
   .loader {
     background-size: 170px;
   }
@@ -255,26 +279,29 @@ input {
   .headline {
     font-size: 1.6rem;
     margin-bottom: 2.5rem;
+
     &::after {
       right: -125px;
       width: 100px;
     }
   }
+
   .loader {
     background-size: 150px;
   }
-
 }
 
 @media (max-width: $phone) {
   .headline {
     font-size: 1.3rem;
     margin-bottom: 2rem;
+
     &::after {
       right: -80px;
       width: 60px;
     }
   }
+
   .loader {
     background-size: 120px;
   }

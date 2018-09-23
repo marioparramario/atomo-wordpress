@@ -6,6 +6,15 @@ files:
     - 'wp-content/themes/*/styles/**/*.scss'
 
 rules:
+  hex-notation:
+    - 1
+    - style: uppercase
   indentation:
     - 2
     - size: 2
+  leading-zero:
+    - 1
+    - include: true
+  no-trailing-zero:
+    - 1
+    - false

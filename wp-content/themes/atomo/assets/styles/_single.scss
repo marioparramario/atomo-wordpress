@@ -1,85 +1,92 @@
-@import "variables";
+//  ~: SINGLE :~  //
 
 .single {
   margin: 0;
-  &-container {
 
-  }
   &-image {
-    width: 100%;
-    max-width: $container-width;
-    height: 450px;
     background-image: url('../images/placeholders/forest.jpg');
     background-position: 50% 80%;
-    background-size: cover;
     background-repeat: no-repeat;
-    // background-attachment: fixed;
-
+    background-size: cover;
+    height: 450px;
+    max-width: $container-width;
+    width: 100%;
   }
+
   &-text {
     &-wrapper {
-      width: 720px;
       background: $white;
       transform: translateY(-150px);
-      // border-top: 3px $camel solid;
+      width: 720px;
     }
+
     &-container {
       margin: 4.5rem;
+
       h3 {
         color: $camel;
         font-size: 1.6rem;
         margin-bottom: 1.5rem;
       }
+
       h4 {
         align-self: flex-end;
-        position: relative;
         font-size: 0.9rem;
+        position: relative;
+
         &::before {
+          background: $black;
           content: '';
-          position: absolute;
+          height: 1px;
           left: -60px;
+          position: absolute;
           top: 50%;
           width: 50px;
-          height: 1px;
-          background: $black;
         }
       }
+
       p {
         font-size: 0.9rem;
         line-height: 1.8;
         margin-top: 1.5rem;
       }
+
       span {
-        margin-top: 4rem;
         font-size: 0.7rem;
+        margin-top: 4rem;
       }
     }
+
     &-quote {
       background: $camel;
       margin: 2rem -4.5rem;
+
       .column {
         flex-basis: 50%;
+
         &:nth-of-type(2) {
-          position: relative;
           background-image: url('../images/placeholders/car.jpg');
           background-position: center center;
-          background-size: cover;
           background-repeat: no-repeat;
+          background-size: cover;
+          position: relative;
           width: 100%;
         }
       }
+
       h5 {
-        font-size: 1.3rem;
         color: $white;
+        font-size: 1.3rem;
         margin: 3rem 2rem 3rem 4.5rem;
       }
     }
   }
+
   &-social {
-    display: none;
     background: $camel;
-    width: 40px;
+    display: none;
     height: 100px;
+    width: 40px;
     z-index: 99;
   }
 }
@@ -93,10 +100,12 @@
     }
   }
 }
+
 .no-text-2 {
   .main {
     background: $white;
   }
+
   .nav-init {
     background: $cream;
   }

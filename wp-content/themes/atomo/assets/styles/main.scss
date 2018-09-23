@@ -1,29 +1,27 @@
-/*
- * Theme Name:  Atomo
- * Version:     0.7.0
- * Author:      Mario Parra
- * Author URI:  http://oqgraphic.com
- * License: GNU General Public License version 2.0
- * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: atomo
- * Tags:        blog, photography, poetry, featured-images, full-width-template
- */
+// Theme Name:  Atomo
+// Version:     0.7.0
+// Author:      Mario Parra
+// Author URI:  http://oqgraphic.com
+// License: GNU General Public License version 2.0
+// License URI: https://www.gnu.org/licenses/gpl-2.0.html
+// Text Domain: atomo
+// Tags:        blog, photography, poetry, featured-images, full-width-template
 
-@import "fonts";
-@import "mixins";
-@import "variables";
+@import 'fonts';
+@import 'mixins';
+@import 'variables';
 
-@import "grid";
-@import "layout";
+@import 'grid';
+@import 'layout';
 
-@import "content";
-@import "navbar";
-@import "slider";
-@import "footer";
-@import "single";
+@import 'content';
+@import 'navbar';
+@import 'slider';
+@import 'footer';
+@import 'single';
 
 
-// --- Disable some ``bootstrap`` styles
+//  --- Disable some ``bootstrap`` styles ---  //
 
 @media (min-width: 1200px) {
   .container {
@@ -32,16 +30,16 @@
 }
 @media (min-width: 992px) {
   .container {
-      max-width: none;
+    max-width: none;
   }
 }
 @media (min-width: 768px) {
   .container {
-      max-width: none;
+    max-width: none;
   }
 }
 @media (min-width: 576px) {
   .container {
-      max-width: none;
+    max-width: none;
   }
 }
