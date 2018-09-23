@@ -1,16 +1,18 @@
-/* =============================================================
- * Átomo · Gulp Pipelines
- * ======================
- *
- * Streamlined scripts to generate production ready
- * frontend artefacts from our source assets.
- *
- * For obvious reasons the processes are tweaked in
- * various ways to satisfy the specific requirements
- * inherent to WordPress themes.
- *
- * NOTE This should replace older LESS/CSS solutions.
- */
+/* ===================================================== *
+ * Átomo · Gulp Pipelines                                *
+ * ===================================================== *
+ *                                                       *
+ * Streamlined scripts to generate production ready      *
+ * frontend artefacts from our source assets.            *
+ *                                                       *
+ * For obvious reasons the processes are tweaked in      *
+ * various ways to satisfy the specific requirements     *
+ * inherent to WordPress themes.                         *
+ *                                                       *
+ *                                                       *
+ * NOTE This will replace older LESS/CSS files.          *
+ *                                                       *
+ * ===================================================== */
 
 const path = require('path');
 
