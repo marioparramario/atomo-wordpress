@@ -104,7 +104,7 @@ define( 'WP_DEBUG', getenv('WP_DEBUG', true) );
 define( 'WP_DEBUG_LOG', getenv('WP_DEBUG_LOG', true) );
 define( 'WP_DEBUG_DISPLAY', getenv('WP_DEBUG_DISPLAY', true) );
 
-define( 'SAVEQUERIES', getenv('WP_SAVEQUERIES', true) );
+define( 'SAVEQUERIES', getenv('SAVEQUERIES', true) );
 
 
 /*  ~: END OF CONFIGURATION :~  */
