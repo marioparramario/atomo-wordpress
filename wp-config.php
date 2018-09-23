@@ -54,10 +54,10 @@ define( 'DB_PASSWORD', getenv( 'DB_PASSWORD', true ) ?: 'atomo' );
 define( 'DB_HOST', getenv( 'DB_HOST', true ) ?: 'localhost' );
 
 /** Database Charset to use in creating database tables. */
-define( 'DB_CHARSET', 'utf8' );
+define( 'DB_CHARSET', getenv( 'DB_CHARSET', true ) ?: 'utf8' );
 
 /** The Database Collate type. Don't change this if in doubt. */
-define( 'DB_COLLATE', '' );
+define( 'DB_COLLATE', getenv( 'DB_COLLATE', true ) ?: '' );
 
 /**
  * WordPress Database Table prefix.
