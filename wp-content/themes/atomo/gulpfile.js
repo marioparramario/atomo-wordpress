@@ -40,7 +40,7 @@ const includes = [
 ];
 
 const dependencies = [
-  path.resolve(node_modules, 'jquery/dist/jquery.min.js'),
+  path.resolve(node_modules, 'jquery/dist/jquery.js'),
   path.resolve(node_modules, 'popper.js/dist/umd/popper.js'),
   path.resolve(node_modules, 'bootstrap/dist/js/bootstrap.js'),
 ];
