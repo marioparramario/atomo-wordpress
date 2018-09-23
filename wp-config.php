@@ -34,6 +34,10 @@ if ( is_readable( ABSPATH . '.env' ) ) {
 }
 
 
+/** Operational environment for the whole WordPress application */
+define( 'WP_ENV', getenv( 'WP_ENV', true ) ?: 'production' );
+
+
 /*  ~: START OF CONFIGURATION :~  */
 
 // ** MySQL settings - You can get this info from your web host ** //
