@@ -77,14 +77,14 @@ $table_prefix = getenv( 'DB_PREFIX', true ) ?: 'wp_';  // @codingStandardsIgnore
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         getenv( 'WP_AUTH_KEY', true ) ?: 'INSECURE:KEY' );
-define( 'SECURE_AUTH_KEY',  getenv( 'WP_SECURE_AUTH_KEY', true ) ?: 'INSECURE:KEY' );
-define( 'LOGGED_IN_KEY',    getenv( 'WP_LOGGED_IN_KEY', true ) ?: 'INSECURE:KEY' );
-define( 'NONCE_KEY',        getenv( 'WP_NONCE_KEY', true ) ?: 'INSECURE:KEY' );
-define( 'AUTH_SALT',        getenv( 'WP_AUTH_SALT', true ) ?: 'INSECURE:SALT' );
-define( 'SECURE_AUTH_SALT', getenv( 'WP_SECURE_AUTH_SALT', true ) ?: 'INSECURE:SALT' );
-define( 'LOGGED_IN_SALT',   getenv( 'WP_LOGGED_IN_SALT', true ) ?: 'INSECURE:SALT' );
-define( 'NONCE_SALT',       getenv( 'WP_NONCE_SALT', true ) ?: 'INSECURE:SALT' );
+define( 'AUTH_KEY',         getenv( 'AUTH_KEY', true ) ?: 'INSECURE:KEY' );
+define( 'SECURE_AUTH_KEY',  getenv( 'SECURE_AUTH_KEY', true ) ?: 'INSECURE:KEY' );
+define( 'LOGGED_IN_KEY',    getenv( 'LOGGED_IN_KEY', true ) ?: 'INSECURE:KEY' );
+define( 'NONCE_KEY',        getenv( 'NONCE_KEY', true ) ?: 'INSECURE:KEY' );
+define( 'AUTH_SALT',        getenv( 'AUTH_SALT', true ) ?: 'INSECURE:SALT' );
+define( 'SECURE_AUTH_SALT', getenv( 'SECURE_AUTH_SALT', true ) ?: 'INSECURE:SALT' );
+define( 'LOGGED_IN_SALT',   getenv( 'LOGGED_IN_SALT', true ) ?: 'INSECURE:SALT' );
+define( 'NONCE_SALT',       getenv( 'NONCE_SALT', true ) ?: 'INSECURE:SALT' );
 
 /**#@-*/
 
