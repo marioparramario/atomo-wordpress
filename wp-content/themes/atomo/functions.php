@@ -69,9 +69,7 @@ if ( ! function_exists( 'atomo_setup' ) ) {
 			'quote',
 			'link',
 			'gallery',
-			'status',
 			'audio',
-			'chat',
 		] );
 	}
 }
