@@ -22,15 +22,26 @@
 /** Absolute path to the WordPress directory. */
 defined( 'ABSPATH' ) or define( 'ABSPATH', __DIR__ . '/' );
 
-if ( file_exists( ABSPATH . 'vendor/autoload.php' ) ) {
+if (file_exists( ABSPATH . 'vendor/autoload.php' )) {
 	require_once ABSPATH . 'vendor/autoload.php';
 }
 
-if ( is_readable( ABSPATH . '.env' ) ) {
+if (is_readable( ABSPATH . '.env' )) {
+	/*
+	 * Load application configuration from .env file
+	 */
+	$can = function_exists( 'apache_getenv' ) && function_exists( 'apache_setenv' );
 	$ini = parse_ini_file( ABSPATH . '.env', false, INI_SCANNER_TYPED );
-	foreach ($ ini as $name => $value ) {
-		putenv( "$name=$value" );  // FIXME Not really elegant ..
+
+	foreach ($ini as $name => $value ) {
+		if ( $can && apache_getenv( $name ) ) {
+			apache_setenv( $name, $value );
+		} else {
+			putenv( "$name=$value" );
+		}
 	}
+
+	unset( $can, $ini );
 }
 
 
@@ -100,11 +111,12 @@ define( 'NONCE_SALT',       getenv( 'NONCE_SALT', true ) ?: 'INSECURE:SALT' );
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define( 'WP_DEBUG', getenv('WP_DEBUG', true) );
-define( 'WP_DEBUG_LOG', getenv('WP_DEBUG_LOG', true) );
-define( 'WP_DEBUG_DISPLAY', getenv('WP_DEBUG_DISPLAY', true) );
+define( 'WP_DEBUG', filter_var( getenv( 'WP_DEBUG', true ), FILTER_VALIDATE_BOOLEAN ));
+define( 'WP_DEBUG_LOG', filter_var( getenv( 'WP_DEBUG_LOG', true ), FILTER_VALIDATE_BOOLEAN ) );
+define( 'WP_DEBUG_DISPLAY', filter_var( getenv( 'WP_DEBUG_DISPLAY', true ), FILTER_VALIDATE_BOOLEAN ) );
 
-define( 'SAVEQUERIES', getenv('SAVEQUERIES', true) );
+define( 'SAVEQUERIES', filter_var( getenv( 'SAVEQUERIES', true ), FILTER_VALIDATE_BOOLEAN ) );
+define( 'SCRIPT_DEBUG', filter_var( getenv( 'SCRIPT_DEBUG', true ), FILTER_VALIDATE_BOOLEAN ) );
 
 
 /*  ~: END OF CONFIGURATION :~  */
