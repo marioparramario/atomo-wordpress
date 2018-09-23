@@ -87,7 +87,7 @@ gulp.task('js:vendor', function () {
              .pipe(concat('vendor.js'))
              .pipe(sizewise())
              .pipe(uglify())
-             .pipe(sourcemaps.write('dist/maps'))
+             .pipe(sourcemaps.write('../maps'))
              .pipe(gulp.dest('dist/js'));
 });
 
@@ -97,7 +97,7 @@ gulp.task('js:bundle', function () {
              .pipe(concat('bundle.js'))
              .pipe(sizewise())
              .pipe(uglify())
-             .pipe(sourcemaps.write('dist/maps'))
+             .pipe(sourcemaps.write('../maps'))
              .pipe(gulp.dest('dist/js'));
 });
 
