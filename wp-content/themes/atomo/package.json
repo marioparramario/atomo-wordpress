@@ -2,21 +2,38 @@
   "name": "atomo-wordpress",
   "version": "0.6.0",
   "description": "Literary magazine for art enthusiasts",
+  "author": "Mario Parra",
+  "authoruri": "http://oqgraphic.com/",
+  "license": "GPL-2.0",
+  "licenseuri": "http://www.gnu.org/licenses/gpl-2.0.html",
   "main": "index.js",
   "scripts": {
-    "styles": "node-sass --output-style compressed --include-path assets/styles assets/styles/main.scss style.css"
+    "make-sass": "node-sass --include-path=assets/styles assets/styles/[!_]*.scss",
+    "concat-css": "npm run make-sass | concat",
+    "minify-css": "npm run concat-css | cleancss -O2 _build/style.css",
+    "prefix-css": "postcss -u autoprefixer -r _build/style.css",
+    "commit-css": "cp _build/style.css style.css"
   },
+  "browserslist": [
+    "last 2 versions"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/operacionquimera/atomo-wordpress.git"
   },
+  "template": "atomo",
+  "themename": "Átomo",
+  "textdomain": "atomo",
   "keywords": [
+    "blog",
+    "light",
+    "poetry",
     "magazine",
     "interviews",
-    "publication"
+    "photography",
+    "featured-images",
+    "full-width-template"
   ],
-  "author": "Mario Parra",
-  "license": "GPL-2.0",
   "bugs": {
     "url": "https://github.com/operacionquimera/atomo-wordpress/issues"
   },
@@ -27,14 +44,19 @@
     "popper.js": "^1.14.4"
   },
   "devDependencies": {
+    "clean-css-cli": "^4.2.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-clean-css": "^3.10.0",
     "gulp-concat": "^2.6.1",
-    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-image": "^4.3.0",
+    "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.1",
+    "gulp-size": "^3.0.0",
     "gulp-sourcemaps": "^2.6.4",
-    "gulp-watch": "^0.5.1",
-    "node-sass": "^4.9.3"
+    "gulp-uglify": "^3.0.1",
+    "gulp-watch": "^0.5.4",
+    "node-sass": "^4.9.3",
+    "wp-file-header": "^2.1.2"
   }
 }
