@@ -203,13 +203,13 @@ get_header(); ?>
     <div class="row flex">
 		<div class="column flex vertical justify-between">
 		  <?php
-			$args = [
-				  'meta_key' => 'atomo_post_view_count',
-				  'orderby' => 'meta_value',
-				  'order' => 'DESC',
-				  'posts_per_page' => 10,
+			 $popular_args = [
+				  'meta_key'        => 'atomo_post_view_count',
+				  'orderby'         => 'meta_value_num',
+				  'order'           => 'DESC',
+				  'posts_per_page'  => 10,
 			  ];
-			  $popular = new WP_Query($args);
+			  $popular = new WP_Query( $popular_args );
 
 		  if ($popular->have_posts() ): while ($popular->have_posts()): $popular->the_post(); ?>
 		  <div class="column-sub flex">
