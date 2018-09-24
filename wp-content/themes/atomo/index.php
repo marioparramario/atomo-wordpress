@@ -128,7 +128,7 @@ get_header(); ?>
           <?php query_posts('posts_per_page=1&cat=7'); ?>
           <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
           <a class="item" href="<?php the_permalink(); ?>">
-            <div class="thumbnail">
+            <div class="thumbnail main">
               <?php
                   if ( has_post_thumbnail() ) {
                       the_post_thumbnail();
@@ -138,7 +138,7 @@ get_header(); ?>
             <div class="description flex vertical">
               <h4><?php the_title(); ?></h4>
               <p><?php the_excerpt(); ?></p>
-              <span><?php the_category(', '); ?></span>
+              <!-- <span><?php the_category(', '); ?></span> -->
             </div>
           </a>
           <?php endwhile; ?> <?php wp_reset_query(); ?>

@@ -22,7 +22,7 @@
 			</a>
 			<div class="nav-init-button init flex vertical align-end">
 				<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>"><?php _e( 'Suscríbete', 'atomo' ); ?></a>
-				<a href="<?php echo esc_url( home_url( '/search' ) ); ?>"><?php _e( 'Búsqueda', 'atomo' ); ?></a>
+				<a class="search-button" href="#"><?php _e( 'Búsqueda', 'atomo' ); ?></a>
 			</div>
 			<div class="nav-init-button menu flex justify-end">
 				<a class="navbar-menu-button">
@@ -83,7 +83,13 @@
 
 	<nav class="nav-lateral flex justify-between" id="lateral">
 		<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>"><?php _e( 'Suscríbete', 'atomo' ); ?></a>
-		<a href="<?php echo esc_url( home_url( '/search' ) ); ?>"><?php _e( 'Búsqueda', 'atomo' ); ?></a>
+		<a class="search-button"><?php _e( 'Búsqueda', 'atomo' ); ?></a>
 	</nav>
+	<div class="search flex-center">
+		<div class="search-container flex-center">
+			<?php get_search_form( true ); ?>
+		</div>
+
+	</div>
 
 	<main class="main">

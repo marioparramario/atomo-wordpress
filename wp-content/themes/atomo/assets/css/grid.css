@@ -180,7 +180,7 @@
 }
 .thumbnail img {
   position: absolute;
-  height: 100%;
+  height: auto;
   top: 50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%) translateZ(0) scale(1);
@@ -251,6 +251,9 @@
 .grid-read .thumbnail-wrapper {
   height: 100%;
   max-height: none;
+}
+.thumbnail.main img {
+  height: 100%;
 }
 @media (max-width: 991px) {
   .item span {
