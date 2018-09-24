@@ -128,7 +128,7 @@ get_header(); ?>
           <?php query_posts('posts_per_page=1&cat=7'); ?>
           <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
           <a class="item" href="<?php the_permalink(); ?>">
-            <div class="thumbnail">
+            <div class="thumbnail main">
               <?php
                   if ( has_post_thumbnail() ) {
                       the_post_thumbnail();
@@ -138,7 +138,8 @@ get_header(); ?>
             <div class="description flex vertical">
               <h4><?php the_title(); ?></h4>
               <p><?php the_excerpt(); ?></p>
-              <span><?php the_category(', '); ?></span>
+			  <span>by <?php the_author(); ?></span>
+              <!-- <span><?php the_category(', '); ?></span> -->
             </div>
           </a>
           <?php endwhile; ?> <?php wp_reset_query(); ?>
@@ -200,17 +201,40 @@ get_header(); ?>
   <section class="grid-read flex-vertical">
     <h3 class="headline"><?php _e( 'Most Read Articles', 'atomo' ); ?></h3>
     <div class="row flex">
-      <div class="column featured flex">
-        <a class="item flex" href="">
-          <div class="thumbnail">
-          </div>
-          <div class="description flex vertical justify-center">
-            <h4></h4>
-            <p></p>
-            <span></span>
-          </div>
-        </a>
-      </div>
+		<div class="column flex vertical justify-between">
+		  <?php
+			$args = [
+				  'meta_key' => 'atomo_post_view_count',
+				  'orderby' => 'meta_value',
+				  'order' => 'DESC',
+				  'posts_per_page' => 10,
+			  ];
+			  $popular = new WP_Query($args);
+
+		  if ($popular->have_posts() ): while ($popular->have_posts()): $popular->the_post(); ?>
+		  <div class="column-sub flex">
+			<a class="item landscape flex" href="<?php the_permalink(); ?>">
+			  <div class="thumbnail">
+				<?php if (has_post_thumbnail()) : ?>
+				<?php
+					if ( has_post_thumbnail() ) {
+						the_post_thumbnail();
+					}
+				 ?>
+			  </div>
+			  <div class="description flex vertical justify-center">
+				<h4><?php the_title(); ?></h4>
+				<p><?php the_excerpt();?></p>
+				<span>by <?php the_author(); ?></span>
+			  </div>
+			</a>
+		</div>
+		<?php
+		endif;
+		endwhile; else:
+		endif;
+		?>
+	  </div>
     </div>
   </section>
 

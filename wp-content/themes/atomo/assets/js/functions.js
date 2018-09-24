@@ -19,7 +19,9 @@ $(document).ready(function(){
 // When the user scrolls to the top of the page, slide up the navbar (50px out of the top view)
 
 
-
+$('.search-button').click(function(){
+    $('.search').toggleClass('active');
+});
 
 
 
