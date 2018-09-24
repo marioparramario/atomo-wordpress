@@ -37,6 +37,21 @@ if ( ! function_exists( 'atomo_setup' ) ) {
 		set_post_thumbnail_size( 825, 510, true );
 
 		/*
+		 * Enable support for various post formats. [1]
+		 *
+		 * [1] https://codex.wordpress.org/Post_Formats
+		 */
+		add_theme_support( 'post-formats', [
+			'aside',
+			'image',
+			'video',
+			'quote',
+			'link',
+			'gallery',
+			'audio',
+		] );
+
+		/*
 		 * Add support for widget edit icons in customizer.
 		 */
 		add_theme_support( 'customize-selective-refresh-widgets' );
@@ -56,22 +71,19 @@ if ( ! function_exists( 'atomo_setup' ) ) {
 			'gallery',
 			'caption',
 		] );
-
-		/*
-		 * Enable support for various post formats. [1]
-		 *
-		 * [1] https://codex.wordpress.org/Post_Formats
-		 */
-		add_theme_support( 'post-formats', [
-			'aside',
-			'image',
-			'video',
-			'quote',
-			'link',
-			'gallery',
-			'audio',
-		] );
 	}
+}
+
+
+/**
+ * $content_width
+ *
+ * Have to have it, WP Theme Check says so:
+ *
+ * https://codex.wordpress.org/Content_Width
+ */
+if ( ! isset( $content_width ) ) {
+	$content_width = 900;
 }
 
 
