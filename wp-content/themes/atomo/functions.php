@@ -146,7 +146,10 @@ if ( ! function_exists( 'atomo_customize_register' ) ) {
 }
 
 
+add_action( 'wp_enqueue_scripts', 'atomo_enqueue_scripts' );
+
 if ( ! function_exists( 'atomo_enqueue_scripts' ) ) {
+
     function atomo_enqueue_scripts() {
 
 		$base_url = get_template_directory_uri();
@@ -217,8 +220,6 @@ if ( ! function_exists( 'atomo_enqueue_scripts' ) ) {
 
 		// -- END:STYLES
 	}
-
-	add_action( 'wp_enqueue_scripts', 'atomo_enqueue_scripts' );
 }
 
 
