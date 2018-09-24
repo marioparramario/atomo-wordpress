@@ -201,6 +201,20 @@ input {
   background: #1E1E1E;
   padding: 1rem;
 }
+.page-template-issues .main {
+  background: white;
+}
+.page-template-issues img {
+  max-width: 720px;
+}
+.page-template-issues p {
+  font-size: 0.9rem;
+  text-align: center;
+  max-width: 720px;
+}
+.page-template-issues .issues {
+  margin: 0;
+}
 @media (max-width: 991px) {
   a {
     letter-spacing: 0.13rem;

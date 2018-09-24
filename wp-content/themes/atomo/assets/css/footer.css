@@ -11,6 +11,7 @@
 }
 .footer-logo img {
   width: 72px;
+  opacity: 0.5;
 }
 .footer-items {
   flex-basis: 60%;
@@ -41,7 +42,7 @@
 }
 .footer-contact path {
   fill: white;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-contact span {
   font-size: 0.45rem;
@@ -53,7 +54,7 @@
   letter-spacing: 0;
 }
 .footer a {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer a:hover {
   color: #D8A073;

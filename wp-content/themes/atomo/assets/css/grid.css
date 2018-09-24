@@ -254,6 +254,7 @@
 }
 .thumbnail.main img {
   height: 100%;
+  width: auto;
 }
 @media (max-width: 991px) {
   .item span {
@@ -313,9 +314,6 @@
   .grid-read .thumbnail img {
     height: 100%;
     width: auto;
-  }
-  .grid-regular .description {
-    padding: 10px 1.5rem;
   }
   .grid-regular h4 {
     font-size: 1rem;

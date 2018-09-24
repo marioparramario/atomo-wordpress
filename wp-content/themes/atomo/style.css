@@ -13,9 +13,9 @@
   flex-wrap: inherit;
   margin: 0;
 }
-*, *::before, *::after {
+/* *, *::before, *::after {
     box-sizing: initial;
-}
+} */
 
 /* Disabling bootstrap stuff */
 

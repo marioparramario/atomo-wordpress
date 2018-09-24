@@ -138,6 +138,7 @@ get_header(); ?>
             <div class="description flex vertical">
               <h4><?php the_title(); ?></h4>
               <p><?php the_excerpt(); ?></p>
+			  <span>by <?php the_author(); ?></span>
               <!-- <span><?php the_category(', '); ?></span> -->
             </div>
           </a>
