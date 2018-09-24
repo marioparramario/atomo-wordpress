@@ -15,16 +15,14 @@ get_header(); ?>
 <div class="container flex vertical align-center">
 <?php if ( is_singular() ): ?>
 	<section class="single singular">
-		<div class="single-container flex-vertical singular">
+		<div class="single-container flex-vertical">
 		<?php if ( !have_posts() ): ?>
 			<p class="no-posts"><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
 		<?php else: ?>
 			<?php while ( have_posts() ) { the_post(); ?>
 			<article <?php post_class( 'col-md-12 flex-vertical' ); ?> id="post-<?php the_ID(); ?>">
-			<em><?php the_post_thumbnail_url(); ?></em>
-
-			<?php $image_src = (is_singular() || in_the_loop()) ? wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'normal' ) : ''; ?>
-				<div class="single-image" style="<?php if ( $image_src ) echo "background-image: url('{ $image_src[0] }')"; ?>"></div>
+				<?php $thumb_url = get_the_post_thumbnail_url( get_the_ID(), 'normal' ); ?>
+				<div class="single-image" style="<?php echo "background-image: url('$thumb_url')"; ?>"></div>
 				<div class="single-text-wrapper">
 					<div class="single-social sticky"></div>
 					<div class="single-text-container flex vertical">
@@ -48,8 +46,8 @@ get_header(); ?>
 			<?php while ( have_posts() ) { the_post(); ?>
 			<article <?php post_class( 'col-md-12 flex-vertical' ); ?> id="post-<?php the_ID(); ?>">
 				<a class="perma-link" href="<?php echo esc_url( get_permalink() ); ?>">
-				<?php $image_src = (is_singular() || in_the_loop()) ? wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'normal' ) : ''; ?>
-					<div class="flex-center image-single-wrapper" style="<?php if ( $image_src ) echo "background-image: url('{ $image_src[0] }')"; ?>"></div>
+				<?php $thumb_url = get_the_post_thumbnail_url( get_the_ID(), 'normal' ); ?>
+					<div class="flex-center image-single-wrapper" style="<?php echo "background-image: url('$thumb_url')"; ?>"></div>
 					<div class="single-post-wrapper">
 						<h4 class="single-post-title"><?php the_title(); ?></h4>
 						<div class="single-post-info">
