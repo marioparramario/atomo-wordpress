@@ -284,7 +284,6 @@ function atomo_is_featured_post( $post_id ): bool {
 function atomo_meta_featured_post( $post_id ) {
 	$meta_key = 'atomo_post_featured';
 	$featured = get_post_meta( $post_id, $meta_key, true );
-	var_dump($featured):
 
 	$checked = checked( $featured, 'yes' );
 	$title =  __( 'Feature this post?', 'atomo' );
