@@ -201,17 +201,40 @@ get_header(); ?>
   <section class="grid-read flex-vertical">
     <h3 class="headline"><?php _e( 'Most Read Articles', 'atomo' ); ?></h3>
     <div class="row flex">
-      <div class="column featured flex">
-        <a class="item flex" href="">
-          <div class="thumbnail">
-          </div>
-          <div class="description flex vertical justify-center">
-            <h4></h4>
-            <p></p>
-            <span></span>
-          </div>
-        </a>
-      </div>
+		<div class="column flex vertical justify-between">
+		  <?php
+			$args = [
+				  'meta_key' => 'atomo_post_view_count',
+				  'orderby' => 'meta_value',
+				  'order' => 'DESC',
+				  'posts_per_page' => 10,
+			  ];
+			  $popular = new WP_Query($args);
+
+		  if ($popular->have_posts() ): while ($popular->have_posts()): $popular->the_post(); ?>
+		  <div class="column-sub flex">
+			<a class="item landscape flex" href="<?php the_permalink(); ?>">
+			  <div class="thumbnail">
+				<?php if (has_post_thumbnail()) : ?>
+				<?php
+					if ( has_post_thumbnail() ) {
+						the_post_thumbnail();
+					}
+				 ?>
+			  </div>
+			  <div class="description flex vertical justify-center">
+				<h4><?php the_title(); ?></h4>
+				<p><?php the_excerpt();?></p>
+				<span>by <?php the_author(); ?></span>
+			  </div>
+			</a>
+		</div>
+		<?php
+		endif;
+		endwhile; else:
+		endif;
+		?>
+	  </div>
     </div>
   </section>
 
