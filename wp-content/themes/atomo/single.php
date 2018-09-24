@@ -1,72 +1,79 @@
 <?php
 /**
- * Atomo template for displaying all single posts
+ * Atomo template displaying a single article.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package WordPress
- * @subpackage Atomo
+ * @subpackage atomo
  */
+
+$item_number = 0;
 
 get_header(); ?>
 
+
 <div class="container flex vertical align-center">
-  <section class="single">
-    <div class="single-container flex-vertical">
-      <?php if ( is_singular() ) : ?>
-          <?php if ( have_posts() ) : ?>
-              <?php $item_number = 0; ?>
-              <?php while ( have_posts() ) : the_post(); ?>
-                  <div <?php post_class( 'col-md-12 flex-vertical' ); ?> id="post-<?php the_ID(); ?>">
-                      <?php $image_attributes = (is_singular() || in_the_loop()) ? wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'normal' ) : null; ?>
-                      <div class="single-image" style="<?php if($image_attributes) echo 'background-image:url(\''.$image_attributes[0].'\')' ?>"></div>
-                      <div class="single-text-wrapper">
-                        <div class="single-social sticky"></div>
-                        <div class="single-text-container flex vertical">
-                          <h3 class="single-post-title"><?php the_title(); ?></h3>
-                          <h4><?php the_author(); ?></h4>
-                          <span><?php the_date( 'j, F, Y', null, ' por' ); ?></span>
-                          <?php the_content(); ?>
-                        </div>
-                      </div>
-                  </div>
-                  <?php $item_number++; ?>
-              <?php endwhile; ?>
-          <?php else : ?>
-              <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
-          <?php endif; ?>
-      <?php else : ?>
-          <?php if ( have_posts() ) : ?>
-              <?php $item_number = 0; ?>
-              <?php while ( have_posts() ) : the_post(); ?>
-                  <div <?php post_class( 'col-md-12 flex-vertical' ); ?> id="post-<?php the_ID(); ?>">
-                      <a href="<?php echo esc_url( get_permalink() ); ?>">
-                          <?php $image_attributes = (is_singular() || in_the_loop()) ? wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'normal' ) : null; ?>
-                          <div class="flex-center image-single-wrapper" style="<?php if($image_attributes) echo 'background-image:url(\''.$image_attributes[0].'\')' ?>">
-</div>
-                          <div class="single-post-wrapper">
-                              <h4 class="single-post-title"><?php the_title(); ?></h4>
-                              <div class="single-post-info">
-                                  <span><?php the_date( 'j, F, Y', null, ' por' ); ?></span>
-                                  <span><?php the_author(); ?></span>
-                              </div>
-                              <?php the_content(); ?>
-                          </div>
-                      </a>
-                  </div>
-                  <?php $item_number++; ?>
-              <?php endwhile; ?>
-          <?php else : ?>
-              <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
-          <?php endif; ?>
-      <?php endif; ?>
-      <?php the_post_navigation( array(
-              'prev_text' => __( 'Previous', 'atomo' ),
-              'next_text' => __( 'Next', 'atomo' )
-      ) ); ?>
-    </div>
-  </section>
-</div>
+<?php if ( is_singular() ): ?>
+	<section class="single singular">
+		<div class="single-container flex-vertical singular">
+		<?php if ( !have_posts() ): ?>
+			<p class="no-posts"><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
+		<?php else: ?>
+			<?php while ( have_posts() ) { the_post(); ?>
+			<article <?php post_class( 'col-md-12 flex-vertical' ); ?> id="post-<?php the_ID(); ?>">
+			<em><?php the_post_thumbnail_url(); ?></em>
+
+			<?php $image_src = (is_singular() || in_the_loop()) ? wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'normal' ) : ''; ?>
+				<div class="single-image" style="<?php if ( $image_src ) echo "background-image: url('{ $image_src[0] }')"; ?>"></div>
+				<div class="single-text-wrapper">
+					<div class="single-social sticky"></div>
+					<div class="single-text-container flex vertical">
+						<h3 class="single-post-title"><?php the_title(); ?></h3>
+						<h4><?php the_author(); ?></h4>
+						<span><?php the_date( 'j, F, Y', null, __( ' by', 'atomo' ) ); ?></span>
+						<div class="post-body">
+							<?php the_content(); ?>
+						</div>
+					</div>
+				</div>
+			</article><!-- #post-<?php the_ID(); ?> -->
+		<?php $item_number++; } ?>
+	<?php endif; ?>
+<?php else: ?>
+	<section class="single">
+		<div class="single-container flex-vertical">
+		<?php if ( !have_posts() ): ?>
+			<p class="no-posts"><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
+		<?php else: ?>
+			<?php while ( have_posts() ) { the_post(); ?>
+			<article <?php post_class( 'col-md-12 flex-vertical' ); ?> id="post-<?php the_ID(); ?>">
+				<a class="perma-link" href="<?php echo esc_url( get_permalink() ); ?>">
+				<?php $image_src = (is_singular() || in_the_loop()) ? wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'normal' ) : ''; ?>
+					<div class="flex-center image-single-wrapper" style="<?php if ( $image_src ) echo "background-image: url('{ $image_src[0] }')"; ?>"></div>
+					<div class="single-post-wrapper">
+						<h4 class="single-post-title"><?php the_title(); ?></h4>
+						<div class="single-post-info">
+							<span><?php the_date( 'j, F, Y', null, __( ' by', 'atomo' ) ); ?></span>
+							<span><?php the_author(); ?></span>
+						</div>
+						<div class="post-body">
+							<?php the_content(); ?>
+						</div>
+					</div>
+				</a>
+			</article><!-- #post-<?php the_ID(); ?> -->
+		<?php $item_number++; } ?>
+	<?php endif; ?>
+
+<?php endif; ?>
+
+	<?php the_post_navigation( [
+			'prev_text' => __( 'Previous', 'atomo' ),
+			'next_text' => __( 'Next', 'atomo' )
+	] ); ?>
+		</div><!-- .single-container -->
+	</section><!-- .single -->
+</div><!-- .container -->
 
 
 <?php get_footer(); ?>
