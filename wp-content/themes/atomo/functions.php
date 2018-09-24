@@ -1,10 +1,10 @@
 <?php
-
 /**
  * Functions and constants for Átomo theme.
  *
  * @link    https://developer.wordpress.org/themes/basics/theme-functions/
- * @package atomo
+ *
+ * @package Atomo
  */
 
 
@@ -41,7 +41,7 @@ if ( ! function_exists( 'atomo_setup' ) ) {
 		 */
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
-		register_nav_menus([
+		register_nav_menus( [
 			'primary' => __( 'Primary Menu', 'atomo' ),
 			'social'  => __( 'Social Links Menu', 'atomo' ),
 		] );
@@ -135,11 +135,9 @@ if ( ! function_exists( 'atomo_customize_register' ) ) {
 
 
 if ( ! function_exists( 'atomo_enqueue_scripts' ) ) {
-    function atomo_enqueue_scripts( $base_url = null ) {
+    function atomo_enqueue_scripts() {
 
-		if ( ! $base_url ) {
-			$base_url = get_template_directory_uri();
-		}
+		$base_url = get_template_directory_uri();
 
 		// -- BEGIN:SCRIPTS
 
@@ -220,121 +218,187 @@ if ( ! function_exists( 'atomo_enqueue_scripts' ) ) {
  * https://github.com/lesterchan/wp-postviews/blob/master/wp-postviews.php
  */
 
-function atomo_meta_featured_article( $post_id, $meta_key = '' ) {
-	$title = __( 'Featured this post', 'atomo' );
-	$data = get_post_meta( $post_id );
+// function atomo_meta_featured_article( $post_id ) {
+// 	$title = __( 'Featured this post', 'atomo' );
+// 	$data = get_post_meta( $post_id );
+//
+// 	$meta_key = $meta_key ?: 'meta-checkbox';
+// 	$meta = $data[ $meta_key ] ?? null;
+// 	if ( $meta !== null ) {
+// 		$checked = checked( $meta[0], 'yes', false );
+// 	} else {
+// 		$checked = '';
+// 	}
+//
+// 	if ( isset ( $data[ 'meta-checkbox' ] ) ) {
+// 		$checked = checked( $featured['meta-checkbox'][0], 'yes', false );
+// 	} else {
+// 		$checked = '';
+// 	}
+//
+// 	$checkbox = $meta[ 'meta-checkbox' ] ?? '';
+// 	$checked = checked( $checkbox[0], 'yes', false );
+//
+// 	var_dump( $checkbox );
+// 	var_dump( $checked );
+//
+// 	if ( isset ( $featured['meta-checkbox'] ) ) {
+// 		$checked = checked( $featured['meta-checkbox'][0], 'yes', false );
+// 	} else {
+// 		$checked = '';
+// 	}
+//
+// 	echo <<<EOS
+// <p>
+//     <div class="sm-row-content">
+//         <label for="meta-checkbox">
+//             <input type="checkbox" name="meta-checkbox" id="meta-checkbox" value="yes" {$checked} />
+//             <span>{$checked}</span>
+//         </label>
+//     </div>
+// </p>
+// EOS;
+// }
 
-	$meta_key = $meta_key ?: 'meta-checkbox';
-	$meta = $data[ $meta_key ] ?? null;
-	if ( $meta !== null ) {
-		$checked = checked( $meta[0], 'yes', false );
-	} else {
-		$checked = '';
+
+/**
+ * Check if given post is currently featured.
+ *
+ * @param int|WP_Post $post_id  Post ID or post object.
+ *
+ * @return bool
+ */
+function atomo_is_featured_post( $post_id ): bool {
+	$meta_key = 'atomo_post_featured';
+
+	$var = get_post_meta( $post_id, $meta_key, true );
+	if ( empty( $var ) ) {
+		return false;
 	}
 
-	if ( isset ( $data[ 'meta-checkbox' ] ) ) {
-		$checked = checked( $featured['meta-checkbox'][0], 'yes', false );
-	} else {
-		$checked = '';
-	}
-
-	$checkbox = $meta[ 'meta-checkbox' ] ?? '';
-	$checked = checked( $checkbox[0], 'yes', false );
-
-	var_dump( $checkbox );
-	var_dump( $checked );
-
-	if ( isset ( $featured['meta-checkbox'] ) ) {
-		$checked = checked( $featured['meta-checkbox'][0], 'yes', false );
-	} else {
-		$checked = '';
-	}
-
-	echo <<<EOS
-<p>
-    <div class="sm-row-content">
-        <label for="meta-checkbox">
-            <input type="checkbox" name="meta-checkbox" id="meta-checkbox" value="yes" {$checked} />
-            <span>{$checked}</span>
-        </label>
-    </div>
-</p>
-EOS;
+	print_r( $var );
+	return true;
 }
+
+
+function atomo_meta_featured_post( $post_id ) {
+	$meta_key = 'atomo_post_featured';
+	$featured = get_post_meta( $post_id, $meta_key, true );
+	var_dump($featured):
+
+	$checked = checked( $featured, 'yes' );
+	$title =  __( 'Feature this post?', 'atomo' );
+
+	$label = sprintf( '<label for="%s">%s</label>',
+					  $meta_key, $title );
+	$input = sprintf( '<input type="checkbox" name="featured-post" id="%s" value="yes" %s>',
+					  $meta_key, $checked );
+	$entry = sprintf( '<div class="form-group">%s %s</div>',
+	 				  $label, $input );
+
+	echo $entry;
+}
+
+
+add_action( 'add_meta_boxes', 'atomo_custom_meta_boxes' );
 
 /**
  * Setup meta boxes specific to Átomo functionality.
  */
-function atomo_add_meta_boxes() {
+function atomo_custom_meta_boxes() {
 
-	$title = __( 'Featured Articles', 'atomo' );
-    add_meta_box( 'atomo_meta', $title,
-				  'atomo_meta_featured_article',
+    add_meta_box( 'atomo_meta',__( 'Featured Posts', 'atomo' ),
+				  'atomo_meta_featured_post',
 				  'post' );
 }
 
-add_action( 'add_meta_boxes', 'atomo_add_meta_boxes' );
 
-
-add_action( 'save_post', 'atomo_save_post' );
+add_action( 'save_post', 'atomo_save_post_meta' );
 
 /**
  * Save custom post metadata from input.
  *
  * @param int|WP_Post $post_id  Post ID or post object.
- * @param string $nonce_key		Name of nonce key. (default: 'atom-nonce')
  *
  * @return bool|int             Either ID of newly created instance, or OK flag.
  */
-function atomo_save_post( $post_id, $nonce_key = '' ) {
+function atomo_save_post_meta( $post_id ) {
 
 	if ( wp_is_post_autosave( $post_id ) ) {
-		return;
+		return false;
 	}
 
 	if ( wp_is_post_revision( $post_id ) ) {
-		return;
+		return false;
 	}
 
-	$nonce_key = $nonce_key ?: 'atomo-nonce';
-	$nonce = $_POST[ $nonce_key ] ?? null;
-
-	if ( ! wp_verify_nonce( $nonce, basename( __FILE__ ) ) ) {
-		return;
+	$based = basename( __FILE__ );
+	$nonce = $_POST['atomo-nonce'] ?? null;
+	$valid = wp_verify_nonce( $nonce, $based );
+	if ( ! $valid ) {
+		return false;
 	}
 
-	$meta_key = $meta_key ?: 'meta-checkbox';
-	$meta = $_POST[ $meta_key ] ?? null;
-	$yes = $meta ? 'yes' : '';
+	/*  FEATURED POSTS  */
+	$meta_key = 'atomo_post_featured';
 
-	$rv = update_post_meta( $post_id, $meta_key, $yes );
-	if ( is_int( $rv ) ) {
-		$meta_id = $rv;  // NEW meta_id
+	if ( isset( $_POST['meta-checkbox'] ) ) {
+		$value = 'yes';
+	} elseif ( isset( $_POST['featured-post'] ) ) {
+		$value = 'yes';
+	} else {
+		$value = '';
 	}
 
-	return (bool) $rv;
+	// TODO Ideally we want some sort of timestamp here.
+	$rv = update_post_meta( $post_id, $meta_key, $value );
+	var_dump($rv);
+
+	return $rv;
+}
+
+
+//  VIEW COUNTS  //
+
+
+/**
+ * Fetch current number of tracked post views.
+ *
+ * @param int|WP_Post $post_id  Post ID or post object.
+ *
+ * @return null|int             Either a positive `int` value
+ *                              or `null` if given post has no count.
+ */
+function atomo_get_post_views( $post_id ): ?int {
+	$meta_key = 'atomo_post_views_count';
+
+	$var = get_post_meta( $post_id, $meta_key, true );
+	if ( $var == '' ) {
+		return null;
+	}
+
+	return intval( $var );
 }
 
 
 /**
- * Set per-post view count in metadata.
+ * Increment per-post view count in metadata.
  *
  * @param int|WP_Post $post_id  Post ID or post object.
- * @param string $meta_key      Name of view count metadata.
  *
  * @return int                  Total view count for given post.
  */
-function atomo_inc_post_views( $post_id, $meta_key = '' ): int {
-	$count_key = $meta_key ?: 'atomo_post_views_count';
+function atomo_inc_post_views( $post_id ): int {
+	$meta_key = 'atomo_post_views_count';
 
-	$var = get_post_meta( $post_id, $count_key, true );
+	$var = get_post_meta( $post_id, $meta_key, true );
 	if ( $var == '' ) {
 		$counter = 0;
-		$deleted = delete_post_meta( $post_id, $count_key );
-		$created = add_post_meta( $post_id, $count_key, '0' );
+		$deleted = delete_post_meta( $post_id, $meta_key );
+		$created = add_post_meta( $post_id, $meta_key, '0' );
 	} else {
 		$counter = intval( $var ) + 1;
-		$updated = update_post_meta( $post_id, $count_key, $counter );
+		$updated = update_post_meta( $post_id, $meta_key, $counter );
 	}
 
 	return $counter;
@@ -348,14 +412,11 @@ remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
  * Update handler storing the current view count on page load.
  *
  * @param int|WP_Post $post_id  Post ID or post object.
- * @param string $meta_key      Name of view count metadata.
- *
- * @return int                  Total view count for given post.
  */
-function atomo_track_post_views( $post_id, $meta_key = '' ): ?int {
+function atomo_track_post_views( $post_id ) {
 
 	if ( ! is_single() ) {
-		return null;
+		return;
 	}
 
 	if ( empty( $post_id ) ) {
@@ -363,7 +424,7 @@ function atomo_track_post_views( $post_id, $meta_key = '' ): ?int {
 		$post_id = $post->ID;
 	}
 
-	return atomo_inc_post_views( $post_id, $meta_key );
+	atomo_inc_post_views( $post_id );
 }
 
 add_action( 'wp_head', 'atomo_track_post_views' );
