@@ -158,7 +158,7 @@ get_header(); ?>
       <div class="column flex vertical justify-between">
         <?php
            $featured_args = [
-                'posts_per_page' 	=> 5,
+                'posts_per_page' 	=> 3,
                 'meta_key'          => 'atomo_post_featured',
                 'meta_value'        => 'yes',
             ];
