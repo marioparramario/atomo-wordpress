@@ -367,12 +367,21 @@ function atomo_save_post_meta( $post_id, array $args = null ) {
 	}
 
 	if ( ! isset( $_POST['atomo_featured_post_nonce'] ) ) {
-		error_log('Missing nonce' . $_POST['atomo_featured_post_nonce']);
+		error_log( 'Missing nonce' . $_POST['atomo_featured_post_nonce'] );
 		return;
 	}
 
 	if ( ! check_admin_referer( 'atomo_featured_post', 'atomo_featured_post_nonce' ) ) {
-		error_log('Invalid nonce' . $_POST['atomo_featured_post_nonce']);
+		error_log( 'Invalid nonce' . $_POST['atomo_featured_post_nonce'] );
+		return;
+	}
+
+	if ( $_POST['post_type'] != 'post' ) {
+		return;
+	}
+
+	if ( ! current_user_can( 'edit_post', $post_id ) ) {
+		error_log( 'Missing permission to edit post: ' . $post_id );
 		return;
 	}
 
