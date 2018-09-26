@@ -159,7 +159,7 @@ get_header(); ?>
         <?php
            $featured_args = [
                 'posts_per_page' 	=> 5,
-                'meta_key'          => 'meta-checkbox',
+                'meta_key'          => 'atomo_post_featured',
                 'meta_value'        => 'yes',
             ];
             $featured = new WP_Query( $featured_args );
