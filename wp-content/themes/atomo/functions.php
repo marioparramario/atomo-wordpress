@@ -333,7 +333,7 @@ function atomo_featured_post_metabox( WP_Post $post ) {
 	$title =  __( 'Feature this post?', 'atomo' );
 
 	$label = sprintf( '<label class="components-checkbox-control__label" for="%s">%s</label>',
-					  $meta_key, $title );
+					  esc_attr( $meta_key ), esc_html( $title ) );
 	$input = sprintf( '<input class="components-checkbox-control__input" type="checkbox" name="feature-post" id="%s" value="yes"%s>',
 					  esc_attr( $meta_key ), $checked );
 	$field = sprintf( '<div class="components-base-control__field">%s %s</div>',
