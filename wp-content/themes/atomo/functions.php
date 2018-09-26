@@ -324,7 +324,6 @@ function atomo_save_post_meta( $post_id, array $args = null ) {
 	}
 
 	if ( ! isset( $_POST['atomo_featured_post_nonce'] ) ) {
-		error_log( 'Missing nonce' . $_POST['atomo_featured_post_nonce'] );
 		return;
 	}
 
