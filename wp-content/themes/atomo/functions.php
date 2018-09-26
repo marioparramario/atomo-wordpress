@@ -324,18 +324,17 @@ function atomo_custom_meta_boxes() {
 			      'high' );
 }
 
-function atomo_featured_post_metabox( $post_id, array $args = null ) {
-	wp_nonce_field('atomo_featured_post', 'atomo_featured_post_nonce');
+function atomo_featured_post_metabox( WP_Post $post ) {
 
-	$meta_key = $args['meta_key'] ?? 'atomo_post_featured';
-	$value = get_post_meta( $post_id, $meta_key, true );
+	$meta_key = 'atomo_post_featured';
+	$value = get_post_meta( $post->ID, $meta_key, true );
 
-	$checked = checked( $value, 'yes' );
+	$checked = $value == 'yes' ? ' checked' : '';
 	$title =  __( 'Feature this post?', 'atomo' );
 
 	$label = sprintf( '<label class="components-checkbox-control__label" for="%s">%s</label>',
 					  $meta_key, $title );
-	$input = sprintf( '<input class="components-checkbox-control__input" type="checkbox" name="feature-post" id="%s" value="yes" %s>',
+	$input = sprintf( '<input class="components-checkbox-control__input" type="checkbox" name="feature-post" id="%s" value="yes"%s>',
 					  esc_attr( $meta_key ), $checked );
 	$field = sprintf( '<div class="components-base-control__field">%s %s</div>',
 	 				  $label, $input );
@@ -343,6 +342,7 @@ function atomo_featured_post_metabox( $post_id, array $args = null ) {
 	$group = sprintf( '<div class="components-base-control">%s</div>',
   	                  $field );
 
+	wp_nonce_field('atomo_featured_post', 'atomo_featured_post_nonce');
 	echo $group;
 }
 
