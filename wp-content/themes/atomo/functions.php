@@ -325,6 +325,7 @@ function atomo_custom_meta_boxes() {
 }
 
 function atomo_featured_post_metabox( $post_id, array $args = null ) {
+	wp_nonce_field('atomo_featured_post', 'atomo_featured_post_nonce');
 
 	$meta_key = $args['meta_key'] ?? 'atomo_post_featured';
 	$value = get_post_meta( $post_id, $meta_key, true );
@@ -332,12 +333,15 @@ function atomo_featured_post_metabox( $post_id, array $args = null ) {
 	$checked = checked( $value, 'yes' );
 	$title =  __( 'Feature this post?', 'atomo' );
 
-	$label = sprintf( '<label for="%s">%s</label>',
+	$label = sprintf( '<label class="components-checkbox-control__label" for="%s">%s</label>',
 					  $meta_key, $title );
-	$input = sprintf( '<input type="checkbox" name="feature-post" id="%s" value="yes" %s>',
-					  $meta_key, $checked );
-	$group = sprintf( '<div class="form-group">%s %s</div>',
+	$input = sprintf( '<input class="components-checkbox-control__input" type="checkbox" name="feature-post" id="%s" value="yes" %s>',
+					  esc_attr( $meta_key ), $checked );
+	$field = sprintf( '<div class="components-base-control__field">%s %s</div>',
 	 				  $label, $input );
+
+	$group = sprintf( '<div class="components-base-control">%s</div>',
+  	                  $field );
 
 	echo $group;
 }
@@ -355,19 +359,21 @@ add_action( 'save_post', 'atomo_save_post_meta' );
 function atomo_save_post_meta( $post_id, array $args = null ) {
 
 	if ( wp_is_post_autosave( $post_id ) ) {
-		return false;
+		return;
 	}
 
 	if ( wp_is_post_revision( $post_id ) ) {
-		return false;
+		return;
 	}
 
-	$nonce_key = $args['nonce_key'] ?? '_NUR_NONCE';
-	$nonce = $_POST[$nonce_key] ?? null;
+	if ( ! isset( $_POST['atomo_featured_post_nonce'] ) ) {
+		error_log('Missing nonce' . $_POST['atomo_featured_post_nonce']);
+		return;
+	}
 
-	$valid = wp_verify_nonce( $nonce, basename( __FILE__ ) );
-	if ( ! $valid ) {
-		return false;
+	if ( ! check_admin_referer( 'atomo_featured_post', 'atomo_featured_post_nonce' ) ) {
+		error_log('Invalid nonce' . $_POST['atomo_featured_post_nonce']);
+		return;
 	}
 
 	/*  FEATURED POSTS  */
@@ -384,7 +390,7 @@ function atomo_save_post_meta( $post_id, array $args = null ) {
 	}
 
 	// XXX Ideally we want some sort of timestamp here.
-	return update_post_meta( $post_id, $meta_key, $value );
+	update_post_meta( $post_id, $meta_key, $value );
 }
 
 
