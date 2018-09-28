@@ -207,19 +207,6 @@ get_header(); ?>
   <section class="grid-read flex-vertical">
     <h3 class="headline"><?php _e( 'Most Read Articles', 'atomo' ); ?></h3>
     <div class="row flex">
-<<<<<<< HEAD
-      <div class="column featured flex">
-        <a class="item flex" href="">
-          <div class="thumbnail">
-          </div>
-          <div class="description flex vertical justify-center">
-            <h4></h4>
-            <p></p>
-            <span></span>
-          </div>
-        </a>
-      </div>
-=======
 		<div class="column flex vertical justify-between">
 		  <?php
 			 $popular_args = [
@@ -254,7 +241,6 @@ get_header(); ?>
 		endif;
 		?>
 	  </div>
->>>>>>> 30118db8fbb92bd729fdf43270f4ca552ae136d2
     </div>
   </section>
 
