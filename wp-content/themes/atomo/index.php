@@ -211,7 +211,6 @@ get_header(); ?>
   <section class="grid-read flex-vertical">
     <h3 class="headline"><?php _e( 'Most Read Articles', 'atomo' ); ?></h3>
     <div class="row flex">
-<<<<<<< HEAD
 		<?php
 	   $popular_args = [
 		  'meta_key'        => 'atomo_post_views_count',
@@ -223,17 +222,6 @@ get_header(); ?>
 
 	  if ($popular->have_posts() ): while ($popular->have_posts()): $popular->the_post(); ?>
 		<div class="column flex">
-=======
-		<div class="column flex vertical justify-between">
-		  <?php
-			 $popular_args = [
-				  'meta_key'        => 'atomo_post_views_count',
-				  'orderby'         => 'meta_value_num',
-				  'order'           => 'DESC',
-				  'posts_per_page'  => 5,
-			  ];
-			  $popular = new WP_Query( $popular_args );
->>>>>>> feb261bcf08094898ece68c4d3bf2f3b65d88e2a
 
 		  <a class="item flex" href="<?php the_permalink(); ?>">
 			<div class="thumbnail">
@@ -257,10 +245,7 @@ get_header(); ?>
 		endwhile; else:
 		endif;
 		?>
-<<<<<<< HEAD
-=======
 	  </div>
->>>>>>> feb261bcf08094898ece68c4d3bf2f3b65d88e2a
     </div>
   </section>
 
