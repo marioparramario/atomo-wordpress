@@ -223,7 +223,7 @@ get_header(); ?>
 		<div class="column flex vertical justify-between">
 		  <?php
 			 $popular_args = [
-				  'meta_key'        => 'atomo_post_view_count',
+				  'meta_key'        => 'atomo_post_views_count',
 				  'orderby'         => 'meta_value_num',
 				  'order'           => 'DESC',
 				  'posts_per_page'  => 5,
