@@ -1,41 +1,36 @@
 <?php
+
 /**
  * Functions and constants for Átomo theme.
  *
  * @link    https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package Atomo
+ * @package WordPress
+ * @subpackage Atomo
  */
 
-
-add_action( 'after_setup_theme', 'atomo_setup' );
-
 if ( ! function_exists( 'atomo_setup' ) ) {
-	/**
-	 * Set up Átomo theme defaults and handlers.
+	/*
+	 * Set up `atomo` theme with all its subdivisions.
 	 */
 	function atomo_setup() {
-		/*
-		 * Make theme available for translation
-		 */
-		load_theme_textdomain( 'atomo', get_template_directory() . '/languages' );
+		$base_dir = get_template_directory();
 
-		/*
-		 * Add default RSS feed links to posts and comments.
-		 */
+		/* Make theme available for translation */
+		load_theme_textdomain( 'atomo', "$base_dir/languages" );
+
+		/* Add default RSS feed links to posts and comments */
 		add_theme_support( 'automatic-feed-links' );
 
-		/*
-		 * Enable dynamically managed page titles.
-		 */
+		/* Manage page title dynamically via WordPress */
 		add_theme_support( 'title-tag' );
 
-		/*
-		 * Enable basic thumbnail support in posts.
-		 */
+		/* ´´post-thumbnails`` */
 		add_theme_support( 'post-thumbnails' );
 		set_post_thumbnail_size( 825, 510, true );
 
+<<<<<<< HEAD
+		register_nav_menus([
+=======
 		/*
 		 * Enable support for various post formats. [1]
 		 *
@@ -57,13 +52,12 @@ if ( ! function_exists( 'atomo_setup' ) ) {
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		register_nav_menus( [
+>>>>>>> 30118db8fbb92bd729fdf43270f4ca552ae136d2
 			'primary' => __( 'Primary Menu', 'atomo' ),
 			'social'  => __( 'Social Links Menu', 'atomo' ),
 		] );
 
-		/*
-		 * Tweak common markup to utilize HTML5 features.
-		 */
+		/* ``html5`` */
 		add_theme_support( 'html5', [
 			'search-form',
 			'comment-form',
@@ -74,6 +68,20 @@ if ( ! function_exists( 'atomo_setup' ) ) {
 	}
 }
 
+<<<<<<< HEAD
+		/* ``post-formats`` */
+		add_theme_support( 'post-formats', [
+			'aside',
+			'image',
+			'video',
+			'quote',
+			'link',
+			'gallery',
+			'status',
+			'audio',
+			'chat',
+		] );
+=======
 
 /**
  * $content_width
@@ -118,17 +126,44 @@ if ( ! function_exists( 'atomo_register_slider_post_type' ) ) {
 		];
 
 		return register_post_type( 'slider', $params );
+>>>>>>> 30118db8fbb92bd729fdf43270f4ca552ae136d2
 	}
-}
+}  /* !atomo_setup */
 
+add_action( 'after_setup_theme', 'atomo_setup' );
 
-add_action( 'init', 'atomo_init' );
 
 if ( ! function_exists( 'atomo_init' ) ) {
 	/*
 	 * Initialize special-purpose page elements.
 	 */
 	function atomo_init() {
+<<<<<<< HEAD
+
+		/* Use categories and tags with attachments */
+		register_taxonomy_for_object_type( 'category', 'attachment' );
+		register_taxonomy_for_object_type( 'post_tag', 'attachment' );
+
+		/* Register custom post types */
+		register_post_type( 'slider', [
+			'labels' => [
+				'name' => __( 'Sliders', 'atomo' ),
+				'singular_name' => __( 'Slider', 'atomo' )
+			],
+			'public' => true,
+			'show_in_menu' => true,
+			'supports' => [
+				'title',
+				'editor',
+				'author',
+				'thumbnail',
+				'excerpt',
+				'custom-fields',
+				'revisions',
+				'page-attributes',
+			],
+		] );
+=======
 		/*
 		 * Use categories and tags with attachments
 		 */
@@ -136,37 +171,46 @@ if ( ! function_exists( 'atomo_init' ) ) {
 		register_taxonomy_for_object_type( 'post_tag', 'attachment' );
 
 		atomo_register_slider_post_type();
+>>>>>>> 30118db8fbb92bd729fdf43270f4ca552ae136d2
 	}
-}
+}  /* !atomo_init */
 
+add_action( 'init', 'atomo_init' );
 
-add_action( 'widgets_init', 'atomo_widgets_init' );
 
 if ( ! function_exists( 'atomo_widgets_init' ) ) {
 	/* UNUSED */
 	function atomo_widgets_init() {
 		/* -- EMPTY -- */
 	}
-}
+}  /* !atomo_widgets_init */
 
+add_action( 'widgets_init', 'atomo_widgets_init' );
 
-add_action( 'customize_register', 'atomo_customize_register' );
 
 if ( ! function_exists( 'atomo_customize_register' ) ) {
 	/* UNUSED */
 	function atomo_customize_register( $wp_customize ) {
 	    /* -- EMPTY -- */
 	}
-}
+}  /* !atomo_customize_register */
+
+add_action( 'customize_register', 'atomo_customize_register' );
 
 
 add_action( 'wp_enqueue_scripts', 'atomo_enqueue_scripts' );
 
 if ( ! function_exists( 'atomo_enqueue_scripts' ) ) {
+<<<<<<< HEAD
+    function atomo_enqueue_scripts( $base_url = null ) {
+=======
 
     function atomo_enqueue_scripts() {
+>>>>>>> 30118db8fbb92bd729fdf43270f4ca552ae136d2
 
-		$base_url = get_template_directory_uri();
+		if ( ! $base_url ) {
+			$base_url = get_template_directory_uri();
+		}
 
 		// -- BEGIN:SCRIPTS
 
@@ -242,6 +286,13 @@ if ( ! function_exists( 'atomo_enqueue_scripts' ) ) {
  * ==============
  *
  * https://smallenvelop.com/how-to-create-featured-posts-in-wordpress/
+<<<<<<< HEAD
+ */
+
+function atomo_meta_featured_callback( $post_id ) {
+	$featured = get_post_meta( $post_id );
+	$title = __( 'Featured this post', 'atomo' );
+=======
  * https://github.com/lesterchan/wp-postviews/blob/master/wp-postviews.php
  *
  * https://gist.github.com/Kevinlearynet/3852648
@@ -256,12 +307,33 @@ if ( ! function_exists( 'atomo_enqueue_scripts' ) ) {
  */
 function atomo_is_featured_post( $post_id, array $args = null ): bool {
 	$meta_key = $args['meta_key'] ?? 'atomo_post_featured';
+>>>>>>> 30118db8fbb92bd729fdf43270f4ca552ae136d2
 
-	$var = get_post_meta( $post_id, $meta_key, true );
-	if ( empty( $var ) ) {
-		return false;
+	if ( isset ( $featured['meta-checkbox'] ) ) {
+		$checked = checked( $featured['meta-checkbox'][0], 'yes', false );
+	} else {
+		$checked = '';
 	}
 
+<<<<<<< HEAD
+	echo <<<EOS
+<p>
+    <div class="sm-row-content">
+        <label for="meta-checkbox">
+            <input type="checkbox" name="meta-checkbox" id="meta-checkbox" value="yes" {$checked} />
+            <span>{$checked}</span>
+        </label>
+    </div>
+</p>
+EOS;
+}
+
+function atomo_custom_meta() {
+    add_meta_box( 'atomo_meta', __( 'Featured Articles', 'atomo' ), 'atomo_meta_featured_callback', 'post' );
+}
+
+add_action( 'add_meta_boxes', 'atomo_custom_meta' );
+=======
 	return 0 < intval( $val );
 }
 
@@ -302,11 +374,33 @@ function atomo_featured_post_metabox( WP_Post $post ) {
 	wp_nonce_field('atomo_featured_post', 'atomo_featured_post_nonce');
 	echo $group;
 }
+>>>>>>> 30118db8fbb92bd729fdf43270f4ca552ae136d2
 
 
-add_action( 'save_post', 'atomo_save_post_meta' );
 
 /**
+<<<<<<< HEAD
+ * Saves the custom meta input
+ */
+function atomo_meta_save( $post_id ) {
+
+    // Checks save status
+    $is_autosave = wp_is_post_autosave( $post_id );
+    $is_revision = wp_is_post_revision( $post_id );
+	$is_valid_nonce = isset( $_POST[ 'sm_nonce' ] );
+	if ( $is_valid_nonce ) {
+		$is_valid_nonce = wp_verify_nonce( $_POST[ 'sm_nonce' ], basename( __FILE__ ) );  // XXX: ? 'true' : 'false';
+	}
+
+    // Exits script depending on save status
+    if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
+        return;
+    }
+
+	// Checks for input and saves
+	if( isset( $_POST[ 'meta-checkbox' ] ) ) {
+	    update_post_meta( $post_id, 'meta-checkbox', 'yes' );
+=======
  * Save custom post metadata from input.
  *
  * @param int|WP_Post $post_id  Post ID or post object.
@@ -350,82 +444,56 @@ function atomo_save_post_meta( $post_id, array $args = null ) {
 	} else
 	if ( isset( $_POST[$form_key] ) ) {
 		$value = 'yes';
+>>>>>>> 30118db8fbb92bd729fdf43270f4ca552ae136d2
 	} else {
-		$value = '';
+	    update_post_meta( $post_id, 'meta-checkbox', '' );
 	}
 
+<<<<<<< HEAD
+}
+
+add_action( 'save_post', 'atomo_meta_save' );
+=======
 	// XXX Ideally we want some sort of timestamp here.
 	update_post_meta( $post_id, $meta_key, $value );
 }
 
 
 //  POST VIEWS COUNT  //
+>>>>>>> 30118db8fbb92bd729fdf43270f4ca552ae136d2
 
 
-/**
- * Fetch current number of tracked post views.
- *
- * @param int|WP_Post $post_id  Post ID or post object.
- *
- * @return null|int             Either a positive `int` value
- *                              or `null` if given post has no count.
- */
-function atomo_get_post_views( $post_id ): ?int {
-	$meta_key = 'atomo_post_views_count';
-
-	$var = get_post_meta( $post_id, $meta_key, true );
-	if ( $var == '' ) {
-		return null;
-	}
-
-	return intval( $var );
-}
-
-
-/**
- * Increment per-post view count in metadata.
- *
- * @param int|WP_Post $post_id  Post ID or post object.
- *
- * @return int                  Total view count for given post.
- */
-function atomo_inc_post_views( $post_id ): int {
-	$meta_key = 'atomo_post_views_count';
-
-	$var = get_post_meta( $post_id, $meta_key, true );
-	if ( $var == '' ) {
-		$counter = 0;
-		$deleted = delete_post_meta( $post_id, $meta_key );
-		$created = add_post_meta( $post_id, $meta_key, '0' );
+function atomo_set_post_views( $post_id ) {
+	$count_key = 'wpb_post_views_count';
+	$count = get_post_meta( $post_id, $count_key, true );
+	if ( $count == '' ) {
+		$count = 0;
+		delete_post_meta( $post_id, $count_key );
+		add_post_meta( $post_id, $count_key, '0' );
 	} else {
-		$counter = intval( $var ) + 1;
-		$updated = update_post_meta( $post_id, $meta_key, $counter );
+		$count++;
+		update_post_meta( $post_id, $count_key, $count );
 	}
-
-	return $counter;
 }
 
-// To keep the count accurate, we disable prefetching here.
+
+// To keep the count accurate, lets get rid of prefetching
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
 
-
-/**
- * Update handler storing the current view count on page load.
- *
- * @param int|WP_Post $post_id  Post ID or post object.
- */
 function atomo_track_post_views( $post_id ) {
+<<<<<<< HEAD
+	if ( ! is_single() )
+=======
 
 	if ( ! is_singular() ) {
+>>>>>>> 30118db8fbb92bd729fdf43270f4ca552ae136d2
 		return;
-	}
-
-	if ( empty( $post_id ) ) {
+	if ( empty( $post_id) ) {
 		global $post;
 		$post_id = $post->ID;
 	}
 
-	atomo_inc_post_views( $post_id );
+	atomo_set_post_views( $post_id );
 }
 
 add_action( 'wp_head', 'atomo_track_post_views' );
