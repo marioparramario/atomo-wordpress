@@ -6,7 +6,8 @@ $(document).ready(function(){
 $(document).ready(function(){
 	$('.navbar-menu-button').click(function(){
 			$('.navbar-menu').toggleClass('active');
-			$('body').toggleClass('stop-scrolling')
+			$('body').toggleClass('stop-scrolling');
+      $('.nav-init-mobile').toggleClass('active');
 	});
 });
 
@@ -22,6 +23,8 @@ $(document).ready(function(){
 $('.search-button').click(function(){
     $('.search').toggleClass('active');
 });
+
+
 
 
 

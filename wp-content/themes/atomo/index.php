@@ -158,7 +158,7 @@ get_header(); ?>
       <div class="column flex vertical justify-between">
         <?php
            $featured_args = [
-                'posts_per_page' 	=> 3,
+                'posts_per_page' 	=> 2,
                 'meta_key'          => 'atomo_post_featured',
                 'meta_value'        => 'yes',
             ];
@@ -204,57 +204,47 @@ get_header(); ?>
     </div>
   </section>
 
+
+
+
+
   <section class="grid-read flex-vertical">
     <h3 class="headline"><?php _e( 'Most Read Articles', 'atomo' ); ?></h3>
     <div class="row flex">
-<<<<<<< HEAD
-      <div class="column featured flex">
-        <a class="item flex" href="">
-          <div class="thumbnail">
-          </div>
-          <div class="description flex vertical justify-center">
-            <h4></h4>
-            <p></p>
-            <span></span>
-          </div>
-        </a>
-      </div>
-=======
-		<div class="column flex vertical justify-between">
-		  <?php
-			 $popular_args = [
-				  'meta_key'        => 'atomo_post_view_count',
-				  'orderby'         => 'meta_value_num',
-				  'order'           => 'DESC',
-				  'posts_per_page'  => 5,
-			  ];
-			  $popular = new WP_Query( $popular_args );
+		<?php
+	   $popular_args = [
+		  'meta_key'        => 'atomo_post_views_count',
+		  'orderby'         => 'meta_value_num',
+		  'order'           => 'DESC',
+		  'posts_per_page'  => 6,
+		];
+		$popular = new WP_Query( $popular_args );
 
-		  if ($popular->have_posts() ): while ($popular->have_posts()): $popular->the_post(); ?>
-		  <div class="column-sub flex">
-			<a class="item landscape flex" href="<?php the_permalink(); ?>">
-			  <div class="thumbnail">
-				<?php if (has_post_thumbnail()) : ?>
-				<?php
-					if ( has_post_thumbnail() ) {
-						the_post_thumbnail();
-					}
-				 ?>
-			  </div>
-			  <div class="description flex vertical justify-center">
+	  if ($popular->have_posts() ): while ($popular->have_posts()): $popular->the_post(); ?>
+		<div class="column flex">
+
+		  <a class="item flex" href="<?php the_permalink(); ?>">
+			<div class="thumbnail">
+			<?php if (has_post_thumbnail()) : ?>
+  	      	<?php
+  	        	if ( has_post_thumbnail() ) {
+  	          	the_post_thumbnail();
+  	        	}
+  	       	?>
+			</div>
+			<div class="description flex vertical justify-center">
 				<h4><?php the_title(); ?></h4>
-				<p><?php the_excerpt();?></p>
-				<span>by <?php the_author(); ?></span>
-			  </div>
-			</a>
+  	      		<p><?php the_excerpt();?></p>
+  	      		<span>by <?php the_author(); ?></span>
+			</div>
+		  </a>
+
 		</div>
 		<?php
 		endif;
 		endwhile; else:
 		endif;
 		?>
-	  </div>
->>>>>>> 30118db8fbb92bd729fdf43270f4ca552ae136d2
     </div>
   </section>
 
