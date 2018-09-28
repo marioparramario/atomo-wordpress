@@ -112,8 +112,14 @@ get_header(); ?>
                   <?php endif; ?>
               <?php endif; ?>
           </div>
-          <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only"><?php _e( 'Previous', 'atomo' ); ?></span> </a>
-          <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only"><?php _e( 'Next', 'atomo' ); ?></span> </a>
+          <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
+			  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			  <span class="sr-only"><?php _e( 'Previous', 'atomo' ); ?></span>
+		  </a>
+          <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
+		 	  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			  <span class="sr-only"><?php _e( 'Next', 'atomo' ); ?></span>
+		  </a>
       </div>
   </section>
 
@@ -151,12 +157,12 @@ get_header(); ?>
 
       <div class="column flex vertical justify-between">
         <?php
-          $args = array(
-                'posts_per_page' => 5,
-                'meta_key' => 'meta-checkbox',
-                'meta_value' => 'yes'
-            );
-            $featured = new WP_Query($args);
+           $featured_args = [
+                'posts_per_page' 	=> 3,
+                'meta_key'          => 'atomo_post_featured',
+                'meta_value'        => 'yes',
+            ];
+            $featured = new WP_Query( $featured_args );
         if ($featured->have_posts()): while($featured->have_posts()): $featured->the_post(); ?>
         <div class="column-sub flex">
           <a class="item landscape flex" href="<?php the_permalink(); ?>">
@@ -201,6 +207,7 @@ get_header(); ?>
   <section class="grid-read flex-vertical">
     <h3 class="headline"><?php _e( 'Most Read Articles', 'atomo' ); ?></h3>
     <div class="row flex">
+<<<<<<< HEAD
       <div class="column featured flex">
         <a class="item flex" href="">
           <div class="thumbnail">
@@ -212,6 +219,42 @@ get_header(); ?>
           </div>
         </a>
       </div>
+=======
+		<div class="column flex vertical justify-between">
+		  <?php
+			 $popular_args = [
+				  'meta_key'        => 'atomo_post_view_count',
+				  'orderby'         => 'meta_value_num',
+				  'order'           => 'DESC',
+				  'posts_per_page'  => 5,
+			  ];
+			  $popular = new WP_Query( $popular_args );
+
+		  if ($popular->have_posts() ): while ($popular->have_posts()): $popular->the_post(); ?>
+		  <div class="column-sub flex">
+			<a class="item landscape flex" href="<?php the_permalink(); ?>">
+			  <div class="thumbnail">
+				<?php if (has_post_thumbnail()) : ?>
+				<?php
+					if ( has_post_thumbnail() ) {
+						the_post_thumbnail();
+					}
+				 ?>
+			  </div>
+			  <div class="description flex vertical justify-center">
+				<h4><?php the_title(); ?></h4>
+				<p><?php the_excerpt();?></p>
+				<span>by <?php the_author(); ?></span>
+			  </div>
+			</a>
+		</div>
+		<?php
+		endif;
+		endwhile; else:
+		endif;
+		?>
+	  </div>
+>>>>>>> 30118db8fbb92bd729fdf43270f4ca552ae136d2
     </div>
   </section>
 
@@ -280,7 +323,7 @@ get_header(); ?>
         <?php endif; ?>
       </div>
       <div class="pagination flex">
-        <?php echo paginate_links( $args ); ?>
+        <?php echo paginate_links( $popular_args ); ?>
       </div>
 
   </section>
