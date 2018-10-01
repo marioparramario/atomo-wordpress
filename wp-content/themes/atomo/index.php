@@ -130,26 +130,24 @@ get_header(); ?>
     <h3 class="headline"><?php _e( 'Featured Articles', 'atomo' ); ?></h3>
     <div class="row flex">
       <div class="column">
-        <div class="">
-          <?php query_posts('posts_per_page=1&cat=7'); ?>
-          <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-          <a class="item" href="<?php the_permalink(); ?>">
-            <div class="thumbnail main">
-              <?php
-                  if ( has_post_thumbnail() ) {
-                      the_post_thumbnail();
-                  }
-               ?>
-            </div>
-            <div class="description flex vertical">
-              <h4><?php the_title(); ?></h4>
-              <p><?php the_excerpt(); ?></p>
-			  <span>by <?php the_author(); ?></span>
-              <!-- <span><?php the_category(', '); ?></span> -->
-            </div>
-          </a>
-          <?php endwhile; ?> <?php wp_reset_query(); ?>
-        </div>
+		<?php query_posts('posts_per_page=1&cat=7'); ?>
+  		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+  		<a class="item" href="<?php the_permalink(); ?>">
+  		  <div class="thumbnail main">
+  			<?php
+  				if ( has_post_thumbnail() ) {
+  					the_post_thumbnail();
+  				}
+  			 ?>
+  		  </div>
+  		  <div class="description flex vertical">
+  			<h4><?php the_title(); ?></h4>
+  			<p><?php the_excerpt(); ?></p>
+  			<span>by <?php the_author(); ?></span>
+  			<!-- <span><?php the_category(', '); ?></span> -->
+  		  </div>
+  		</a>
+  		<?php endwhile; ?> <?php wp_reset_query(); ?>
       </div>
 
 
@@ -245,7 +243,7 @@ get_header(); ?>
 		endwhile; else:
 		endif;
 		?>
-	  </div>
+
     </div>
   </section>
 
@@ -253,10 +251,11 @@ get_header(); ?>
     <div class="suscribe-container flex-vertical">
       <h2>Suscríbete a Átomo</h2>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <div class="input-container flex">
+	  <a class="button" href="#">Suscríbete</a>
+      <!-- <div class="input-container flex">
         <input type="text" name="" value="" placeholder="email">
         <button class="button" type="button" name="button"><?php _e( 'Submit', 'atomo' ); ?></button>
-      </div>
+      </div> -->
     </div>
   </section>
   <section class="grid-regular flex-vertical">

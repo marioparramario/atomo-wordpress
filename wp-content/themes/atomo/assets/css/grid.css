@@ -2,10 +2,10 @@
   min-height: 200px;
 }
 .grid-featured .column:first-child {
-  flex-basis: 45%;
+  flex-basis: 50%;
 }
 .grid-featured .column:last-child {
-  flex-basis: 55%;
+  flex-basis: 50%;
   margin-left: 40px;
 }
 .grid-featured .column .description {
@@ -84,6 +84,10 @@
 .grid-read .thumbnail {
   flex-basis: 50%;
 }
+.grid-read .thumbnail img {
+  height: 100%;
+  width: auto;
+}
 .grid-read .description {
   background: white;
   padding: 20px 2rem;
@@ -95,9 +99,9 @@
   color: #D8A073;
 }
 .grid-read p {
-  font-size: 0.8rem;
-  line-height: 1.5;
-  margin-bottom: 2rem;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  margin-bottom: 0.8rem;
 }
 .grid-read a {
   height: 100%;

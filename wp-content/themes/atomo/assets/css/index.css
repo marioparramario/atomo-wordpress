@@ -168,6 +168,13 @@ input {
   height: 2px;
   background: #1E1E1E;
 }
+.row {
+  box-sizing: initial !important;
+}
+.row::before,
+.row::after {
+  box-sizing: initial !important;
+}
 .suscribe {
   background: #85AA8E;
   width: 100%;
@@ -180,7 +187,7 @@ input {
   width: 80%;
   position: relative;
   max-width: 720px;
-  padding: 6rem 0;
+  padding: 4.6rem 0;
 }
 .suscribe h2 {
   font-size: 3rem;
@@ -188,18 +195,21 @@ input {
 }
 .suscribe p {
   color: white;
+  max-width: 640px;
+  margin-bottom: 1.6rem;
 }
 .suscribe .input-container {
   width: 100%;
   padding: 3rem 0;
 }
 .suscribe .button {
+  font-size: 0.9rem;
   font-family: 'Roboto Mono', monospace;
   text-transform: uppercase;
   color: white;
   border: none;
   background: #1E1E1E;
-  padding: 1rem;
+  padding: 0.7rem 1.4rem;
 }
 .page-template-issues .main {
   background: white;
