@@ -112,7 +112,7 @@
 		<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>"><?php _e( 'Suscríbete', 'atomo' ); ?></a>
 		<a class="search-button"><?php _e( 'Búsqueda', 'atomo' ); ?></a>
 	</nav>
-	<div class="search flex-center">
+	<div class="search search-wrapper flex-center">
 		<div class="search-container flex-center">
 			<?php get_search_form( true ); ?>
 		</div>

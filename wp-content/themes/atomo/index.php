@@ -252,12 +252,9 @@ get_header(); ?>
       <h2>Suscríbete a Átomo</h2>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 	  <a class="button" href="#">Suscríbete</a>
-      <!-- <div class="input-container flex">
-        <input type="text" name="" value="" placeholder="email">
-        <button class="button" type="button" name="button"><?php _e( 'Submit', 'atomo' ); ?></button>
-      </div> -->
     </div>
   </section>
+
   <section class="grid-regular flex-vertical">
     <h3 class="headline"><?php _e( 'All Articles', 'atomo' ); ?></h3>
       <div class="row flex">

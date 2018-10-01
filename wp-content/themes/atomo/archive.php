@@ -48,13 +48,16 @@ get_header( 'index.html' ); ?>
     </div>
 
   </section>
-    <!-- <div class="card">
-        <div class="card-body flex-center">
-            <h5 class="card-subtitle mb-2"><?php _e( 'Search results', 'atomo' ); ?><!-- Resultado de búsqueda --></h5>
-            <span class="search-tag"><?php echo single_cat_title(); ?></span>
-            <a href="<?php echo esc_url( home_url() ); ?>" class="close-card" rel="home"><?php bloginfo( 'name' ); ?></a>
-        </div>
-    </div> -->
+
+  <section class="suscribe flex-center">
+    <div class="suscribe-container flex-vertical">
+      <h2>Suscríbete a Átomo</h2>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	  <a class="button" href="#">Suscríbete</a>
+    </div>
+  </section>
+
+
     <div class="pagination-wrapper flex-center">
         <?php wp_bootstrap4_pagination( array() ); ?>
     </div>

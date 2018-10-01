@@ -202,7 +202,7 @@ input {
   width: 100%;
   padding: 3rem 0;
 }
-.suscribe .button {
+.button {
   font-size: 0.9rem;
   font-family: 'Roboto Mono', monospace;
   text-transform: uppercase;
@@ -210,6 +210,9 @@ input {
   border: none;
   background: #1E1E1E;
   padding: 0.7rem 1.4rem;
+}
+.green {
+  background: #85AA8E;
 }
 .page-template-issues .main {
   background: white;
@@ -224,6 +227,23 @@ input {
 }
 .page-template-issues .issues {
   margin: 0;
+}
+.card {
+  background: #D8A073;
+  color: white;
+  border: none;
+  border-radius: initial;
+  width: 100%;
+  height: 10rem;
+}
+.card span {
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+}
+.card .search-tag {
+  background: #1E1E1E;
+  padding: 0.2rem 0.5rem;
+  margin-left: 1rem;
 }
 @media (max-width: 991px) {
   a {
