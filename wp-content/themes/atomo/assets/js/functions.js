@@ -21,7 +21,7 @@ $(document).ready(function(){
 
 
 $('.search-button').click(function(){
-    $('.search').toggleClass('active');
+    $('.search-wrapper').toggleClass('active');
 });
 
 

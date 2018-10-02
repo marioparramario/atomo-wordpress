@@ -209,7 +209,7 @@
     }
   }
 }
-.search {
+.search-wrapper {
   position: fixed;
   top: 0;
   left: 0;
@@ -224,6 +224,8 @@
     pointer-events: all;
     opacity: 0.95;
   }
+}
+.search {
   &-button {
     cursor: pointer;
     color: @camel;
@@ -235,7 +237,7 @@
   //   background: red;
   // }
   &-field {
-    border: 1px red solid;
+    border: 1px @camel solid;
     height: 100%;
   }
   &-submit {

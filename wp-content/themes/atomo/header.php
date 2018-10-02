@@ -59,7 +59,7 @@
 		</div>
 	</nav>
 	<nav class="nav-init-mobile flex justify-center">
-		<div class="nav-init-container flex-vertical">
+		<!-- <div class="nav-init-container flex-vertical">
 			<div class="nav-init-item">
 				<a href="<?php echo esc_url( home_url( '/category/entrevistas/' ) ); ?>"><?php _e( 'Entrevistas', 'atomo' ); ?></a>
 			</div>
@@ -82,7 +82,7 @@
 			<div class="nav-init-item">
 				<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Suscríbete</a>
 			</div>
-		</div>
+		</div> -->
 	</nav>
 
 	<nav class="navbar" id="navbar">
@@ -112,7 +112,7 @@
 		<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>"><?php _e( 'Suscríbete', 'atomo' ); ?></a>
 		<a class="search-button"><?php _e( 'Búsqueda', 'atomo' ); ?></a>
 	</nav>
-	<div class="search flex-center">
+	<div class="search search-wrapper flex-center">
 		<div class="search-container flex-center">
 			<?php get_search_form( true ); ?>
 		</div>

@@ -4,10 +4,10 @@
   .column {
     min-height: 200px;
     &:first-child {
-      flex-basis: 45%;
+      flex-basis: 50%;
     }
     &:last-child {
-      flex-basis: 55%;
+      flex-basis: 50%;
       margin-left: 40px;
     }
     .description {
@@ -79,6 +79,10 @@
   }
   .thumbnail {
     flex-basis: 50%;
+    img {
+      height: 100%;
+      width: auto;
+    }
   }
   .description {
     background: white;
@@ -91,9 +95,12 @@
     color: @camel;
   }
   p {
-    font-size: 0.8rem;
-    line-height: 1.5;
-    margin-bottom: 2rem;
+    // font-size: 0.8rem;
+    // line-height: 1.5;
+    // margin-bottom: 2rem;
+    font-size: 0.75rem;
+    line-height: 1.45;
+    margin-bottom: 0.8rem;
   }
   a {
     height: 100%;

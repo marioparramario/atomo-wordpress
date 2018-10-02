@@ -195,7 +195,7 @@
   opacity: 1;
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.search {
+.search-wrapper {
   position: fixed;
   top: 0;
   left: 0;
@@ -207,7 +207,7 @@
   opacity: 0;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.search.active {
+.search-wrapper.active {
   pointer-events: all;
   opacity: 0.95;
 }
@@ -219,7 +219,7 @@
   width: 90%;
 }
 .search-field {
-  border: 1px red solid;
+  border: 1px #D8A073 solid;
   height: 100%;
 }
 .search-submit {
