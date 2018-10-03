@@ -125,7 +125,7 @@ get_header(); ?>
 
 	<section class="grid-featured flex vertical">
 		<h3 class="headline">
-			<?php _e( 'Featured Articles', 'atomo' ); ?>
+			<?php esc_html_e( 'Featured Articles', 'atomo' ); ?>
 		</h3>
 		<div class="row flex">
 		<?php
@@ -146,7 +146,7 @@ get_header(); ?>
 				</div>
 				<div class="description flex vertical">
 					<h4><?php the_title(); ?></h4>
-					<p class="excerpt"><?php the_excerpt(); ?></p>
+					<p class="excerpt"><?php atomo_excerpt(); ?></p>
 					<span class="category"><?php the_category(', '); ?></span>
 				</div>
 			</a><!-- .item -->
@@ -162,7 +162,7 @@ get_header(); ?>
 					</div>
 					<div class="description flex vertical justify-center">
 						<h4><?php the_title(); ?></h4>
-						<p class="excerpt"><?php the_excerpt(); ?></p>
+						<p class="excerpt"><?php atomo_excerpt(); ?></p>
 						<span class="category"><?php the_category(', '); ?></span>
 					</div>
 				</a><!-- .item -->
