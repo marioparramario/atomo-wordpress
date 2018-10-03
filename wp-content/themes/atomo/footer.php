@@ -6,12 +6,14 @@
 			<div class="footer-logo flex">
 				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-iso.svg" alt="Átomo">
 			</div>
+
 			<div class="footer-items flex vertical justify-center">
 				<a href="#blog">Blog</a>
-				<a href="<?php echo esc_url( home_url( 'about-us' ) ); ?>"><?php _e( 'Acerca de nosotrs', 'atomo' ); ?></a>
-				<a href="<?php echo esc_url( home_url( 'privacy-policy' ) ); ?>"><?php _e( 'Políticas de privacidad', 'atomo' ); ?></a>
-				<a href="<?php echo esc_url( home_url( 'terms-of-use' ) ); ?>"><?php _e( 'Términos de uso', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( 'about-us' ) ); ?>"><?php _e( 'About Us', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( 'privacy-policy' ) ); ?>"><?php _e( 'Privacy Policy', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( 'terms-of-use' ) ); ?>"><?php _e( 'Terms of Use', 'atomo' ); ?></a>
 			</div>
+
 			<div class="footer-contact flex vertical justify-center align-end">
 				<div class="footer-social flex vertical">
 					<h4><?php _e( 'Síguenos', 'atomo' ); ?></h4>
