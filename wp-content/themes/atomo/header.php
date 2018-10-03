@@ -60,7 +60,7 @@
 				<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>"><?php _e( 'Subscribe', 'atomo' ); ?></a>
 			</div>
 			<div class="nav-init-item">
-				<a class="search-button" href="#"><?php _e( 'Búsqueda', 'atomo' ); ?></a>
+				<a class="search-button" href="#"><?php _e( 'Search', 'atomo' ); ?></a>
 			</div>
 
 		</div>
