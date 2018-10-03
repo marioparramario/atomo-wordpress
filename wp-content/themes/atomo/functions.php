@@ -140,6 +140,21 @@ if ( ! function_exists( 'atomo_init' ) ) {
 }
 
 
+add_action( 'excerpt_length', 'atomo_excerpt_length' );
+
+if ( ! function_exists( 'atomo_excerpt_length' ) ) {
+	/**
+	 * Set excerpt filter's length to a common number.
+	 *
+	 * @param int $length (Optional) Desired length of excerpts. (default: 20)
+	 * @return int Common excerpt length.
+	 */
+	function atomo_excerpt_length( $length ) {
+		return 20;
+	}
+}
+
+
 add_action( 'widgets_init', 'atomo_widgets_init' );
 
 if ( ! function_exists( 'atomo_widgets_init' ) ) {
@@ -431,4 +446,5 @@ function atomo_track_post_views( $post_id ) {
 add_action( 'wp_head', 'atomo_track_post_views' );
 
 
+require_once 'inc/template-tags.php';
 require_once 'inc/bootstrap/wp_bootstrap4_pagination.php';
