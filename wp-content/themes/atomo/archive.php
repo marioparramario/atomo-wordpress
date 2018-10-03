@@ -2,52 +2,63 @@
 get_header( 'index.html' ); ?>
 
 <div class="container flex vertical align-center">
-  <section class="grid-read flex-vertical">
-    <h3 class="headline"><?php _e( 'All Articles', 'atomo' ); ?></h3>
-    <div class="row flex">
-      <?php if ( is_singular() ) : ?>
-          <?php if ( have_posts() ) : ?>
-              <?php $item_number = 0; ?>
-              <?php while ( have_posts() ) : the_post(); ?>
-                  <div <?php post_class( 'column flex' ); ?> id="post-<?php the_ID(); ?>">
-                    <?php $image_attributes = (is_singular() || in_the_loop()) ? wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'normal' ) : null; ?>
-                    <div class="pg-empty-placeholder thumbnail-wrapper thumbnail" style="<?php if($image_attributes) echo 'background-image:url(\''.$image_attributes[0].'\')' ?>"></div>
-                    <div class="description flex vertical justify-center">
-                        <h4><?php the_title(); ?></h4>
-                        <?php the_excerpt( ); ?>
-                        <span><?php _e( 'Read article', 'atomo' ); ?></span>
-                    </div>
-                  </div>
-                  <?php $item_number++; ?>
-              <?php endwhile; ?>
-          <?php else : ?>
-              <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
-          <?php endif; ?>
-      <?php else : ?>
-          <?php if ( have_posts() ) : ?>
-              <?php $item_number = 0; ?>
-              <?php while ( have_posts() ) : the_post(); ?>
-                  <div <?php post_class( 'column flex' ); ?> id="post-<?php the_ID(); ?>">
-                      <a class="item flex" href="<?php echo esc_url( get_permalink() ); ?>">
-                        <?php $image_attributes = (is_singular() || in_the_loop()) ? wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'normal' ) : null; ?>
-                        <div class="pg-empty-placeholder thumbnail-wrapper thumbnail" style="<?php if($image_attributes) echo 'background-image:url(\''.$image_attributes[0].'\')' ?>"></div>
+	<section class="grid-regular flex-vertical">
+      <h3 class="headline"><?php _e( 'All Articles', 'atomo' ); ?></h3>
+        <div class="row flex">
+          <?php if ( is_singular() ) : ?>
+              <?php if ( have_posts() ) : ?>
+                  <?php $item_number = 0; ?>
+                  <?php while ( have_posts() ) : the_post(); ?>
+                      <div <?php post_class( 'column flex' ); ?> id="post-<?php the_ID(); ?>">
+                        <div class="thumbnail">
+                          <?php
+                              if ( has_post_thumbnail() ) {
+                                  the_post_thumbnail();
+                              }
+                           ?>
+                        </div>
+
                         <div class="description flex vertical justify-center">
                             <h4><?php the_title(); ?></h4>
                             <?php the_excerpt( ); ?>
                             <span><?php _e( 'Read article', 'atomo' ); ?></span>
                         </div>
-                      </a>
-                  </div>
-                  <?php $item_number++; ?>
-              <?php endwhile; ?>
+                      </div>
+                      <?php $item_number++; ?>
+                  <?php endwhile; ?>
+              <?php else : ?>
+                  <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
+              <?php endif; ?>
           <?php else : ?>
-              <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
+              <?php if ( have_posts() ) : ?>
+                  <?php $item_number = 0; ?>
+                  <?php while ( have_posts() ) : the_post(); ?>
+                      <div <?php post_class( 'column flex' ); ?> id="post-<?php the_ID(); ?>">
+                          <a class="item flex vertical" href="<?php echo esc_url( get_permalink() ); ?>">
+                            <div class="thumbnail">
+                              <?php
+                                  if ( has_post_thumbnail() ) {
+                                      the_post_thumbnail();
+                                  }
+                               ?>
+                            </div>
+                            <div class="description flex vertical justify-center">
+                                <h4><?php the_title(); ?></h4>
+                                <?php the_excerpt( ); ?>
+                                <span><?php _e( 'Read article', 'atomo' ); ?></span>
+                            </div>
+                          </a>
+                      </div>
+                      <?php $item_number++; ?>
+                  <?php endwhile; ?>
+              <?php else : ?>
+                  <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
+              <?php endif; ?>
           <?php endif; ?>
-      <?php endif; ?>
+        </div>
 
-    </div>
 
-  </section>
+    </section>
 
   <section class="suscribe flex-center">
     <div class="suscribe-container flex-vertical">
