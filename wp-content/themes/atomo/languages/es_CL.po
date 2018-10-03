@@ -70,8 +70,7 @@ msgstr "Artículos más leídos"
 msgid "Featured Articles"
 msgstr "Artículos destacados"
 
-#: functions.php:199
-msgid "Featured this post"
+msgid "Feature this post"
 msgstr ""
 
 #: header.php:40
@@ -79,7 +78,7 @@ msgid "Fiction"
 msgstr "Ficción"
 
 #: footer-search.php:11
-msgid "Follow us"
+msgid "Follow Us"
 msgstr "Síguenos"
 
 #: header.php:37

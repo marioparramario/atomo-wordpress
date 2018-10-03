@@ -23,7 +23,7 @@ msgid "%s"
 msgstr ""
 
 #: footer.php:11
-msgid "About us"
+msgid "About Us"
 msgstr ""
 
 #: archive.php:6
@@ -58,8 +58,7 @@ msgstr ""
 msgid "Featured Articles"
 msgstr ""
 
-#: functions.php:199 functions.php:205
-msgid "Featured this post"
+msgid "Feature this post"
 msgstr ""
 
 #: header.php:40 header.php:68
@@ -67,7 +66,7 @@ msgid "Fiction"
 msgstr ""
 
 #: footer-search.php:11 footer.php:17
-msgid "Follow us"
+msgid "Follow Us"
 msgstr ""
 
 #: header.php:37 header.php:67
