@@ -138,7 +138,7 @@ get_header(); ?>
 			$featured = new WP_Query( $featured_args );
 		?>
 
-	<?php if ( $featured->have_posts() ): $featured->the_post(); ?>
+	<?php if ( !$featured->have_posts() ): $featured->the_post(); ?>
 		<div class="column featured-column">
 			<a class="item featured-item" href="<?php the_permalink(); ?>">
 				<div class="thumbnail main">
@@ -170,7 +170,10 @@ get_header(); ?>
 		<?php endwhile; ?>
 		</div><!-- .column -->
 	<?php endif; ?>
-
+	<?php else: ?>
+		<div class="column empty">
+			<p><?php _e( 'No featured posts yet.', 'atomo' ); ?></p>
+		</div>
 	<?php endif; ?>
 	</section><!-- .grid-featured -->
 
