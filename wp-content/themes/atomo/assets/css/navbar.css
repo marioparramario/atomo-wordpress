@@ -6,12 +6,15 @@
   z-index: 9;
 }
 .nav-init-item a {
-  font-family: 'Libre Baskerville', serif;
-  letter-spacing: 0.05rem;
+  font-family: 'Roboto Mono', monospace;
+  letter-spacing: 0.08rem;
   color: #1E1E1E;
-  text-transform: lowercase;
-  font-size: 1.05rem;
-  font-variant: small-caps;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-init-item a:hover {
+  color: #D8A073;
 }
 .nav-init-separator {
   width: 1px;
@@ -52,25 +55,48 @@
 .nav-init-button a:first-child {
   margin-bottom: 0.4rem;
 }
-.nav-init-button a:first-child::before {
-  content: '';
-  position: absolute;
-  left: -20px;
-  width: 12px;
-  height: 100%;
-  background: url(../images/arrow-nav.svg) no-repeat center center;
-  border-bottom: 1px solid #D8A073;
-}
-.nav-init-button a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-  background: #D8A073;
-}
 .nav-init-button a:hover {
+  color: #1E1E1E;
+}
+.nav-init-button a.log-in {
+  position: relative;
+  border: 1px #D8A073 solid;
+  line-height: 0.6;
+  padding: 0.5rem;
+}
+.nav-init-button a.log-in::before {
+  content: '';
+  position: absolute;
+  background: #1E1E1E;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  z-index: -1;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-init-button a.log-in:hover {
+  color: #D8A073;
+  border: 1px #1E1E1E solid;
+}
+.nav-init-button a.log-in:hover::before {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+}
+.nav-init-button .separator {
+  height: 10px;
+  width: 1px;
+  background: #1E1E1E;
+  margin-left: 0.4rem;
+}
+.nav-init-button-lang {
+  margin-bottom: 0.7rem;
+}
+.nav-init-button-lang a {
+  margin: 0 !important;
+  padding-left: 0.5rem;
+}
+.nav-init-button-lang a.active {
   color: #1E1E1E;
 }
 .navbar {
@@ -79,7 +105,8 @@
   top: -100%;
   left: 0;
   width: 100%;
-  height: 70px;
+  height: 90px;
+  height: auto;
   background: #1E1E1E;
   z-index: 9;
 }
@@ -91,15 +118,19 @@
 .navbar-container a {
   font-size: 0.75rem;
   letter-spacing: 0.08rem;
-  padding-left: 1.6rem;
+  padding-left: 1.3rem;
   color: white;
   text-transform: uppercase;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.navbar-container a:hover {
+  color: #D8A073;
 }
 .navbar-container .separator {
   width: 1px;
   height: 14px;
   background: white;
-  margin-left: 1.6rem;
+  margin-left: 1.3rem;
 }
 .navbar-logo img {
   width: 45px;
@@ -128,6 +159,51 @@
 }
 .navbar .navbar-menu-button span {
   background: white;
+}
+.navbar-button {
+  margin-top: 0.5rem;
+}
+.navbar-button a {
+  text-transform: uppercase;
+  color: #D8A073;
+  font-size: 0.75rem;
+  padding-left: 0.5rem;
+}
+.navbar-button a.active {
+  color: white;
+}
+.navbar-button a.log-in {
+  position: relative;
+  border: 1px #D8A073 solid;
+  padding: 0 0.5rem;
+  padding-bottom: 1px;
+}
+.navbar-button a.log-in::before {
+  content: '';
+  position: absolute;
+  background: #D8A073;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  z-index: -1;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.navbar-button a.log-in:hover {
+  color: white;
+}
+.navbar-button a.log-in:hover::before {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+}
+.navbar-button-lang {
+  margin-right: 1rem;
+}
+.navbar-button-lang .separator {
+  width: 1px;
+  height: 10px;
+  background: white;
+  margin-left: 0.5rem;
 }
 .nav-init-button.menu,
 .navbar-menu-button {
