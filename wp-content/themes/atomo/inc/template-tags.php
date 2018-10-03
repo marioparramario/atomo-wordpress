@@ -155,13 +155,22 @@ function atomo_categorized_blog() {
 
 
 if ( ! function_exists( 'atomo_excerpt' ) ) {
-	/*
+	/**
 	 * Display a short excerpt of the post's contents.
+	 *
+	 * @param array $args (Optional) Arguments for generating the excerpt.
+	 * @see https://wordpress.org/plugins/advanced-excerpt/
 	 */
 	function atomo_excerpt( array $args = null ) {
 		echo atomo_get_excerpt( $args );
 	}
 
+	/**
+	 * Get short excerpt of the post's contents.
+	 *
+	 * @param array $args (Optional) Arguments for generating the excerpt.
+	 * @return string Short excerpt text.
+	 */
 	function atomo_get_excerpt( array $args = null ) {
 
 		$allowed_defaults = [
