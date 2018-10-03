@@ -246,68 +246,59 @@ get_header(); ?>
 	</section><!-- #subscribe -->
 
 
-  <section id="all" class="grid-regular flex-vertical">
-    <h3 class="headline"><?php _e( 'All Articles', 'atomo' ); ?></h3>
-      <div class="row flex">
-        <?php if ( is_singular() ) : ?>
-            <?php if ( have_posts() ) : ?>
-                <?php $item_number = 0; ?>
-                <?php while ( have_posts() ) : the_post(); ?>
-                    <div <?php post_class( 'column flex' ); ?> id="post-<?php the_ID(); ?>">
-                      <div class="thumbnail">
-                        <?php
-                            if ( has_post_thumbnail() ) {
-                                the_post_thumbnail();
-                            }
-                         ?>
-                      </div>
+	<section id="all" class="grid-regular flex-vertical">
+		<h3 class="headline">
+			<?php esc_html_e( 'All Articles', 'atomo' ); ?>
+		</h3>
+		<div class="row all-row flex">
+		<?php if ( is_singular() ): ?>
+			<?php if ( have_posts() ): $item_number = 0; ?>
+			<?php while ( have_posts() ): the_post(); ?>
+			<div <?php post_class( 'column flex' ); ?> id="post-<?php the_ID(); ?>">
+				<div class="thumbnail">
+					<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+				</div>
 
-                      <div class="description flex vertical justify-center">
-                          <h4><?php the_title(); ?></h4>
-                          <?php the_excerpt( ); ?>
-                          <span><?php _e( 'Read article', 'atomo' ); ?></span>
-                      </div>
-                    </div>
-                    <?php $item_number++; ?>
-                <?php endwhile; ?>
-            <?php else : ?>
-                <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
-            <?php endif; ?>
-        <?php else : ?>
-            <?php if ( have_posts() ) : ?>
-                <?php $item_number = 0; ?>
-                <?php while ( have_posts() ) : the_post(); ?>
-                    <div <?php post_class( 'column flex' ); ?> id="post-<?php the_ID(); ?>">
-                        <a class="item flex vertical" href="<?php echo esc_url( get_permalink() ); ?>">
-                          <div class="thumbnail">
-                            <?php
-                                if ( has_post_thumbnail() ) {
-                                    the_post_thumbnail();
-                                }
-                             ?>
-                          </div>
-                          <div class="description flex vertical justify-center">
-                              <h4><?php the_title(); ?></h4>
-                              <?php atomo_excerpt( ); ?>
-                              <span><?php _e( 'Read article', 'atomo' ); ?></span>
-                          </div>
-                        </a>
-                    </div>
-                    <?php $item_number++; ?>
-                <?php endwhile; ?>
-            <?php else : ?>
-                <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
-            <?php endif; ?>
-        <?php endif; ?>
-      </div>
-      <div class="pagination flex">
-        <?php echo paginate_links( $popular_args ); ?>
-      </div>
+				<div class="description flex vertical justify-center">
+					<h4><?php the_title(); ?></h4>
+					<p class="excerpt"><?php atomo_excerpt( ); ?></p>
+					<span><?php _e( 'Read article', 'atomo' ); ?></span>
+				</div>
+			</div><!-- .column -->
+			<?php $item_number++; ?>
+			<?php endwhile; ?>
+			<?php else : ?>
+			<p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
+			<?php endif; ?>
+		<?php else: ?>
+		<?php if ( have_posts() ): $item_number = 0; ?>
+		<?php while ( have_posts() ): the_post(); ?>
+		<div <?php post_class( 'column flex' ); ?> id="post-<?php the_ID(); ?>">
+			<a class="item flex vertical" href="<?php echo esc_url( get_permalink() ); ?>">
+				<div class="thumbnail">
+					<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+				</div>
+				<div class="description flex vertical justify-center">
+					<h4><?php the_title(); ?></h4>
+					<p class="excerpt"><?php atomo_excerpt(); ?></p>
+					<span><?php _e( 'Read article', 'atomo' ); ?></span>
+				</div>
+			</a>
+		</div>
+		<?php $item_number++; ?>
+		<?php endwhile; ?>
+		<?php else : ?>
+			<p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
+		<?php endif; ?>
+		<?php endif; ?>
+		</div><!-- .all-row -->
 
-  </section><!-- #all -->
+		<div class="pagination flex">
+			<?php echo paginate_links( $popular_args ); ?>
+		</div>
+	</section><!-- #all -->
 
 
-
-</div>
+</div><!-- .container -->
 
 <?php get_footer(); ?>
