@@ -20,15 +20,8 @@
 			</a>
 
 			<div class="nav-init-button init flex vertical align-end">
-				<div class="nav-init-button-lang flex align-center">
-					<a class="lang-link active" href="#spanish" rel="alternate" hreflang="es">
-						<abbr title="Español">ES</abbr>
-					</a>
-					<div class="separator"></div>
-					<a class="lang-link" href="#english" rel="alternate" hreflang="en">
-						<abbr title="English">EN</abbr>
-					</a>
-				</div>
+				<?php atomo_language_switcher( 'nav-init-button-lang flex align-center' ); ?>
+
 				<a class="log-in" href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">
 					<?php _e( 'Log in', 'atomo' ); ?>
 				</a>
