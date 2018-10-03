@@ -124,127 +124,127 @@ get_header(); ?>
   </section>
 
 	<section id="featured" class="grid-featured flex vertical">
+	<?php
+		$featured_args = [
+			'meta_key'          => 'atomo_post_featured',
+			'meta_value'        => 'yes',
+			'posts_per_page' 	=> 3,
+		];
+
+		$featured = new WP_Query( $featured_args );
+	?>
 		<h3 class="headline">
 			<?php esc_html_e( 'Featured Articles', 'atomo' ); ?>
 		</h3>
 		<div class="row flex">
-		<?php
-			$featured_args = [
-				'meta_key'          => 'atomo_post_featured',
-				'meta_value'        => 'yes',
-				'posts_per_page' 	=> 3,
-			];
-
-			$featured = new WP_Query( $featured_args );
-		?>
-
-	<?php if ( !$featured->have_posts() ): $featured->the_post(); ?>
-		<div class="column featured-column">
-			<a class="item featured-item" href="<?php the_permalink(); ?>">
-				<div class="thumbnail main">
-					<?php if ( has_post_thumbnail() ) {	the_post_thumbnail(); } ?>
-				</div>
-				<div class="description flex vertical">
-					<h4><?php the_title(); ?></h4>
-					<p class="excerpt"><?php atomo_excerpt(); ?></p>
-					<span class="category"><?php the_category(', '); ?></span>
-				</div>
-			</a><!-- .item -->
-		</div>
 
 		<?php if ( $featured->have_posts() ): $featured->the_post(); ?>
-		<div class="column featured-column flex vertical justify-between">
-		<?php while ( $featured->have_posts() ): $featured->the_post(); ?>
-			<div class="column-sub flex">
-				<a class="item featured-item landscape flex" href="<?php the_permalink(); ?>">
+			<div class="column featured-column">
+				<a class="item featured-item" href="<?php the_permalink(); ?>">
+					<div class="thumbnail main">
+						<?php if ( has_post_thumbnail() ) {	the_post_thumbnail(); } ?>
+					</div>
+					<div class="description flex vertical">
+						<h4><?php the_title(); ?></h4>
+						<p class="excerpt"><?php atomo_excerpt(); ?></p>
+						<span class="category"><?php the_category( ', ' ); ?></span>
+					</div>
+				</a><!-- .item -->
+			</div>
+
+			<?php if ( $featured->have_posts() ): $featured->the_post(); ?>
+			<div class="column featured-column flex vertical justify-between">
+			<?php while ( $featured->have_posts() ): $featured->the_post(); ?>
+				<div class="column-sub flex">
+					<a class="item featured-item landscape flex" href="<?php the_permalink(); ?>">
+						<div class="thumbnail">
+							<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+						</div>
+						<div class="description flex vertical justify-center">
+							<h4><?php the_title(); ?></h4>
+							<p class="excerpt"><?php atomo_excerpt(); ?></p>
+							<span class="category"><?php the_category( ', ' ); ?></span>
+						</div>
+					</a><!-- .item -->
+				</div>
+			<?php endwhile; ?>
+			</div><!-- .featured-column -->
+			<?php endif; ?>
+		<?php else: ?>
+			<div class="column">
+				<p class="empty"><?php _e( 'No featured articles yet.', 'atomo' ); ?></p>
+			</div>
+		<?php endif; ?>
+		</div><!-- .row -->
+	</section><!-- #featured -->
+
+
+	<?php wp_reset_query(); ?>
+
+
+	<section id="current" class="issue flex-center">
+		<div class="issue-container flex-center">
+			<img class="issue-version" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/version.svg" alt="">
+			<div class="issue-image">
+				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/issue.jpg" alt="">
+			</div>
+			<div class="issue-text">
+				<h2>Milie atqui publium ne ad iaequast auden</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+				<a href="#">A link doesn't hurt</a>
+			</div>
+		</div>
+	</section><!-- #current -->
+
+
+	<section id="popular" class="grid-read flex-vertical">
+	<?php
+		$popular_args = [
+			'meta_key'        => 'atomo_post_views_count',
+			'orderby'         => 'meta_value_num',
+			'order'           => 'DESC',
+			'posts_per_page'  => 6,
+		];
+
+		$popular = new WP_Query( $popular_args );
+	?>
+		<h3 class="headline">
+			<?php esc_html_e( 'Most Read Articles', 'atomo' ); ?>
+		</h3>
+		<div class="row popular-row flex">
+		<?php if ( $popular->have_posts() ): ?>
+			<?php while ( $popular->have_posts() ): $popular->the_post(); ?>
+			<div class="column popular-column">
+
+				<a class="item flex" href="<?php the_permalink(); ?>">
 					<div class="thumbnail">
 						<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
 					</div>
 					<div class="description flex vertical justify-center">
 						<h4><?php the_title(); ?></h4>
-						<p class="excerpt"><?php atomo_excerpt(); ?></p>
-						<span class="category"><?php the_category(', '); ?></span>
+						<p class="excerpt"><?php atomo_excerpt();?></p>
+						<span class="author">by <?php the_author(); ?></span>
 					</div>
-				</a><!-- .item -->
+				</a>
 			</div>
-		<?php endwhile; ?>
-		</div><!-- .column -->
-	<?php endif; ?>
-	<?php else: ?>
-		<div class="column empty">
-			<p><?php _e( 'No featured articles yet.', 'atomo' ); ?></p>
+			<?php endwhile; ?>
+		<?php else: ?>
+			<div class="column popular-column empty">
+				<p><?php _e( 'No articles', 'atomo' ); ?></p>
+			</div>
+		<?php endif; ?>
 		</div>
-	<?php endif; ?>
-	</section><!-- #featured -->
-
-<?php wp_reset_query(); ?>
-
-  <section class="issue flex-center">
-    <div class="issue-container flex-center">
-      <img class="issue-version" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/version.svg" alt="">
-      <div class="issue-image">
-        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/issue.jpg" alt="">
-      </div>
-      <div class="issue-text">
-        <h2>Milie atqui publium ne ad iaequast auden</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-        <a href="#">A link doesn't hurt</a>
-      </div>
-    </div>
-  </section>
+	</section><!-- #popular -->
 
 
-
-
-
-  <section class="grid-read flex-vertical">
-    <h3 class="headline"><?php _e( 'Most Read Articles', 'atomo' ); ?></h3>
-    <div class="row flex">
-		<?php
-	   $popular_args = [
-		  'meta_key'        => 'atomo_post_views_count',
-		  'orderby'         => 'meta_value_num',
-		  'order'           => 'DESC',
-		  'posts_per_page'  => 6,
-		];
-		$popular = new WP_Query( $popular_args );
-
-	  if ($popular->have_posts() ): while ($popular->have_posts()): $popular->the_post(); ?>
-		<div class="column flex">
-
-		  <a class="item flex" href="<?php the_permalink(); ?>">
-			<div class="thumbnail">
-			<?php if (has_post_thumbnail()) : ?>
-  	      	<?php
-  	        	if ( has_post_thumbnail() ) {
-  	          	the_post_thumbnail();
-  	        	}
-  	       	?>
-			</div>
-			<div class="description flex vertical justify-center">
-				<h4><?php the_title(); ?></h4>
-  	      		<p><?php the_excerpt();?></p>
-  	      		<span>by <?php the_author(); ?></span>
-			</div>
-		  </a>
-
+	<section id="subscribe" class="suscribe flex-center">
+		<div class="suscribe-container flex-vertical">
+			<h2>Suscríbete a Átomo</h2>
+			<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			<a class="button" href="#">Suscríbete</a>
 		</div>
-		<?php
-		endif;
-		endwhile; else:
-		endif;
-		?>
+	</section><!-- #subscribe -->
 
-    </div>
-  </section>
-
-  <section class="suscribe flex-center">
-    <div class="suscribe-container flex-vertical">
-      <h2>Suscríbete a Átomo</h2>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-	  <a class="button" href="#">Suscríbete</a>
-    </div>
-  </section>
 
   <section class="grid-regular flex-vertical">
     <h3 class="headline"><?php _e( 'All Articles', 'atomo' ); ?></h3>
@@ -288,7 +288,7 @@ get_header(); ?>
                           </div>
                           <div class="description flex vertical justify-center">
                               <h4><?php the_title(); ?></h4>
-                              <?php the_excerpt( ); ?>
+                              <?php atomo_excerpt( ); ?>
                               <span><?php _e( 'Read article', 'atomo' ); ?></span>
                           </div>
                         </a>
