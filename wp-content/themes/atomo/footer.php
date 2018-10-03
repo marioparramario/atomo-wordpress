@@ -9,7 +9,7 @@
 
 			<div class="footer-items flex vertical justify-center">
 				<a href="<?php echo esc_url( home_url( 'blog' ) ); ?>"><?php _e( 'Blog', 'atomo' ); ?></a>
-				<a href="<?php echo esc_url( home_url( 'about-us' ) ); ?>"><?php _e( 'About Us', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( 'about-us' ) ); ?>"><?php _e( 'About us', 'atomo' ); ?></a>
 				<a href="<?php echo esc_url( home_url( 'privacy-policy' ) ); ?>"><?php _e( 'Privacy Policy', 'atomo' ); ?></a>
 				<a href="<?php echo esc_url( home_url( 'terms-of-use' ) ); ?>"><?php _e( 'Terms of Use', 'atomo' ); ?></a>
 			</div>
