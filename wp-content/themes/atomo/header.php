@@ -50,9 +50,11 @@
 			<div class="nav-init-item">
 				<a href="<?php echo esc_url( home_url( '/category/arte-fotografia/' ) ); ?>"><?php _e( 'Art & Photography', 'atomo' ); ?></a>
 			</div>
+
 			<div class="nav-init-separator"></div>
+
 			<div class="nav-init-item">
-				<a href="<?php echo esc_url( home_url( '/issues' ) ); ?>">Ediciones</a>
+				<a href="<?php echo esc_url( home_url( '/issues' ) ); ?>"><?php _e( 'Issues', 'atomo' ); ?></a>
 			</div>
 			<div class="nav-init-item">
 				<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Suscríbete</a>

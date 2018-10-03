@@ -70,6 +70,10 @@ msgstr ""
 msgid "Interviews"
 msgstr ""
 
+#: header.php:57
+msgid "Issues"
+msgstr ""
+
 #: header.php:43 header.php:69
 msgid "Letters & Essays"
 msgstr ""

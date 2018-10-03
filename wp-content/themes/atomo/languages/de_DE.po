@@ -38,6 +38,10 @@ msgstr "Alle Rechte vorbehalten"
 msgid "Art & Photography"
 msgstr "Kunst & Photographie"
 
+#: header.php:57
+msgid "Issues"
+msgstr "Ausgaben"
+
 #: inc/breadcrumbs.php:28
 msgid "Blog Archives"
 msgstr "Archiv"

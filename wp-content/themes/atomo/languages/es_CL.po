@@ -82,6 +82,10 @@ msgstr "Síguenos"
 msgid "Interviews"
 msgstr "Entrevistas"
 
+#: header.php:57
+msgid "Issues"
+msgstr "Ediciones"
+
 #: header.php:43
 msgid "Letters & Essays"
 msgstr "Cartas y ensayos"
