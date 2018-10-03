@@ -7,7 +7,7 @@
 				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-iso.svg" alt="Atomo Logo">
 			</div>
 			<div class="footer-items flex vertical justify-center">
-				<a href="">Blog</a>
+				<a href="#blog">Blog</a>
 				<a href="<?php echo esc_url( home_url( 'about-us' ) ); ?>"><?php _e( 'Acerca de nosotrs', 'atomo' ); ?></a>
 				<a href="<?php echo esc_url( home_url( 'privacy-policy' ) ); ?>"><?php _e( 'Políticas de privacidad', 'atomo' ); ?></a>
 				<a href="<?php echo esc_url( home_url( 'terms-of-use' ) ); ?>"><?php _e( 'Términos de uso', 'atomo' ); ?></a>
