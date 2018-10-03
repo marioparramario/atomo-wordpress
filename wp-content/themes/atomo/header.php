@@ -57,7 +57,7 @@
 				<a href="<?php echo esc_url( home_url( '/issues' ) ); ?>"><?php _e( 'Issues', 'atomo' ); ?></a>
 			</div>
 			<div class="nav-init-item">
-				<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Suscríbete</a>
+				<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>"><?php _e( 'Subscribe', 'atomo' ); ?></a>
 			</div>
 			<div class="nav-init-item">
 				<a class="search-button" href="#"><?php _e( 'Búsqueda', 'atomo' ); ?></a>
