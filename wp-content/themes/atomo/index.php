@@ -123,70 +123,58 @@ get_header(); ?>
       </div>
   </section>
 
+	<section class="grid-featured flex vertical">
+		<h3 class="headline">
+			<?php _e( 'Featured Articles', 'atomo' ); ?>
+		</h3>
+		<div class="row flex">
+		<?php
+			$featured_args = [
+				'meta_key'          => 'atomo_post_featured',
+				'meta_value'        => 'yes',
+				'posts_per_page' 	=> 3,
+			];
 
+			$featured = new WP_Query( $featured_args );
+		?>
 
+	<?php if ( $featured->have_posts() ): $featured->the_post(); ?>
+		<div class="column featured-column">
+			<a class="item featured-item" href="<?php the_permalink(); ?>">
+				<div class="thumbnail main">
+					<?php if ( has_post_thumbnail() ) {	the_post_thumbnail(); } ?>
+				</div>
+				<div class="description flex vertical">
+					<h4><?php the_title(); ?></h4>
+					<p class="excerpt"><?php the_excerpt(); ?></p>
+					<span class="category"><?php the_category(', '); ?></span>
+				</div>
+			</a><!-- .item -->
+		</div>
 
-  <section class="grid-featured flex vertical">
-    <h3 class="headline"><?php _e( 'Featured Articles', 'atomo' ); ?></h3>
-    <div class="row flex">
-      <div class="column">
-		<?php query_posts('posts_per_page=1&cat=7'); ?>
-  		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-  		<a class="item" href="<?php the_permalink(); ?>">
-  		  <div class="thumbnail main">
-  			<?php
-  				if ( has_post_thumbnail() ) {
-  					the_post_thumbnail();
-  				}
-  			 ?>
-  		  </div>
-  		  <div class="description flex vertical">
-  			<h4><?php the_title(); ?></h4>
-  			<p><?php the_excerpt(); ?></p>
-  			<span><?php the_category(', '); ?></span>
-  		  </div>
-  		</a>
-  		<?php endwhile; ?> <?php wp_reset_query(); ?>
-      </div>
+		<?php if ( $featured->have_posts() ): $featured->the_post(); ?>
+		<div class="column featured-column flex vertical justify-between">
+		<?php while ( $featured->have_posts() ): $featured->the_post(); ?>
+			<div class="column-sub flex">
+				<a class="item featured-item landscape flex" href="<?php the_permalink(); ?>">
+					<div class="thumbnail">
+						<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+					</div>
+					<div class="description flex vertical justify-center">
+						<h4><?php the_title(); ?></h4>
+						<p class="excerpt"><?php the_excerpt(); ?></p>
+						<span class="category"><?php the_category(', '); ?></span>
+					</div>
+				</a><!-- .item -->
+			</div>
+		<?php endwhile; ?>
+		</div><!-- .column -->
+	<?php endif; ?>
 
+	<?php endif; ?>
+	</section><!-- .grid-featured -->
 
-
-
-      <div class="column flex vertical justify-between">
-        <?php
-           $featured_args = [
-                'posts_per_page' 	=> 2,
-                'meta_key'          => 'atomo_post_featured',
-                'meta_value'        => 'yes',
-            ];
-            $featured = new WP_Query( $featured_args );
-        if ($featured->have_posts()): while($featured->have_posts()): $featured->the_post(); ?>
-        <div class="column-sub flex">
-          <a class="item landscape flex" href="<?php the_permalink(); ?>">
-            <div class="thumbnail">
-              <?php if (has_post_thumbnail()) : ?>
-              <?php
-                  if ( has_post_thumbnail() ) {
-                      the_post_thumbnail();
-                  }
-               ?>
-            </div>
-            <div class="description flex vertical justify-center">
-              <h4><?php the_title(); ?></h4>
-              <p><?php the_excerpt();?></p>
-              <span>by <?php the_author(); ?></span>
-			  <!-- <span><?php the_category(', '); ?></span> -->
-            </div>
-          </a>
-      </div>
-      <?php
-      endif;
-      endwhile; else:
-      endif;
-      ?>
-    </div>
-  </section>
-
+<?php wp_reset_query(); ?>
 
   <section class="issue flex-center">
     <div class="issue-container flex-center">
