@@ -123,7 +123,7 @@ get_header(); ?>
       </div>
   </section>
 
-	<section class="grid-featured flex vertical">
+	<section id="featured" class="grid-featured flex vertical">
 		<h3 class="headline">
 			<?php esc_html_e( 'Featured Articles', 'atomo' ); ?>
 		</h3>
@@ -175,7 +175,7 @@ get_header(); ?>
 			<p><?php _e( 'No featured articles yet.', 'atomo' ); ?></p>
 		</div>
 	<?php endif; ?>
-	</section><!-- .grid-featured -->
+	</section><!-- #featured -->
 
 <?php wp_reset_query(); ?>
 
