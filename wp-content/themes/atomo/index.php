@@ -172,7 +172,7 @@ get_header(); ?>
 	<?php endif; ?>
 	<?php else: ?>
 		<div class="column empty">
-			<p><?php _e( 'No featured posts yet.', 'atomo' ); ?></p>
+			<p><?php _e( 'No featured articles yet.', 'atomo' ); ?></p>
 		</div>
 	<?php endif; ?>
 	</section><!-- .grid-featured -->
