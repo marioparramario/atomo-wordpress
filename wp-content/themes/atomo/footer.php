@@ -4,7 +4,7 @@
 	<footer class="footer">
 		<div class="footer-wrapper flex justify-between">
 			<div class="footer-logo flex">
-				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-iso.svg" alt="Atomo Logo">
+				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-iso.svg" alt="Átomo">
 			</div>
 			<div class="footer-items flex vertical justify-center">
 				<a href="#blog">Blog</a>
