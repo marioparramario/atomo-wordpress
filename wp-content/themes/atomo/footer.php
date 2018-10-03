@@ -16,7 +16,7 @@
 
 			<div class="footer-contact flex vertical justify-center align-end">
 				<div class="footer-social flex vertical">
-					<h4><?php _e( 'Síguenos', 'atomo' ); ?></h4>
+					<h4><?php esc_html_e( 'Follow Us', 'atomo' ); ?></h4>
 					<div class="social-container">
 						<a class="facebook-link" href="">
 							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 19 19" style="enable-background:new 0 0 19 19;" xml:space="preserve">
@@ -51,6 +51,7 @@
 						</a>
 					</div>
 				</div>
+
 				<div class="footer-email flex vertical align-end">
 					<a href="mailto:contacto@revistaatomo.com">contacto@revistaatomo.com</a>
 					<span class="copyright">© <?php echo date( 'Y' ); ?> Revista Átomo. <?php _e( 'Todos los derechos reservados', 'atomo' ); ?></span>
