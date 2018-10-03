@@ -23,7 +23,7 @@ msgid "%s"
 msgstr ""
 
 #: footer.php:11
-msgid "About us"
+msgid "About Us"
 msgstr ""
 
 #: archive.php:6
@@ -36,6 +36,10 @@ msgstr ""
 
 #: header.php:49 header.php:71
 msgid "Art & Photography"
+msgstr ""
+
+#: footer.php:10
+msgid "Blog"
 msgstr ""
 
 #: inc/breadcrumbs.php:28
@@ -54,8 +58,7 @@ msgstr ""
 msgid "Featured Articles"
 msgstr ""
 
-#: functions.php:199 functions.php:205
-msgid "Featured this post"
+msgid "Feature this post"
 msgstr ""
 
 #: header.php:40 header.php:68
@@ -63,11 +66,15 @@ msgid "Fiction"
 msgstr ""
 
 #: footer-search.php:11 footer.php:17
-msgid "Follow us"
+msgid "Follow Us"
 msgstr ""
 
 #: header.php:37 header.php:67
 msgid "Interviews"
+msgstr ""
+
+#: header.php:57
+msgid "Issues"
 msgstr ""
 
 #: header.php:43 header.php:69

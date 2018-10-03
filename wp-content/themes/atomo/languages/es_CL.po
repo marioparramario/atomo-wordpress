@@ -38,6 +38,10 @@ msgstr "Todos los derechos reservados"
 msgid "Art & Photography"
 msgstr "Arte y fotografía"
 
+#: footer.php:10
+msgid "Blog"
+msgstr "Blog"
+
 #: inc/breadcrumbs.php:28
 msgid "Blog Archives"
 msgstr ""
@@ -66,8 +70,7 @@ msgstr "Artículos más leídos"
 msgid "Featured Articles"
 msgstr "Artículos destacados"
 
-#: functions.php:199
-msgid "Featured this post"
+msgid "Feature this post"
 msgstr ""
 
 #: header.php:40
@@ -75,12 +78,16 @@ msgid "Fiction"
 msgstr "Ficción"
 
 #: footer-search.php:11
-msgid "Follow us"
+msgid "Follow Us"
 msgstr "Síguenos"
 
 #: header.php:37
 msgid "Interviews"
 msgstr "Entrevistas"
+
+#: header.php:57
+msgid "Issues"
+msgstr "Ediciones"
 
 #: header.php:43
 msgid "Letters & Essays"
