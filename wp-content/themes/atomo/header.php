@@ -13,19 +13,23 @@
 	<nav class="nav-init flex vertical center justify-start">
 		<div class="nav-init-container top flex justify-between align-center">
 			<a class="nav-init-iso" href="<?php echo esc_url( home_url() ); ?>" rel="home">
-				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-iso-black.svg" alt="">
+				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-iso-black.svg" alt="Átomo">
 			</a>
 			<a class="nav-init-logo flex-center" href="<?php echo esc_url( home_url() ); ?>" rel="home">
-				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-atomo.svg" alt="">
+				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-atomo.svg" alt="Átomo">
 			</a>
+
 			<div class="nav-init-button init flex vertical align-end">
 				<div class="nav-init-button-lang flex align-center">
-					<a class="active" href="#"><?php _e( 'ES', 'atomo' ); ?></a>
+					<a class="lang-link active" href="#spanish" rel="alternate" hreflang="es">ES</a>
 					<div class="separator"></div>
-					<a class="" href="#"><?php _e( 'EN', 'atomo' ); ?></a>
+					<a class="lang-link" href="#english" rel="alternate" hreflang="en">EN</a>
 				</div>
-				<a class="log-in" href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>"><?php _e( 'Log in', 'atomo' ); ?></a>
+				<a class="log-in" href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">
+					<?php _e( 'Log in', 'atomo' ); ?>
+				</a>
 			</div>
+
 			<div class="nav-init-button menu flex justify-end">
 				<a class="navbar-menu-button">
 					<span></span>
@@ -34,6 +38,7 @@
 				</a>
 			</div>
 		</div>
+
 		<div class="nav-init-container bottom flex align-center justify-between">
 			<div class="nav-init-item">
 				<a href="<?php echo esc_url( home_url( '/category/entrevistas/' ) ); ?>"><?php _e( 'Interviews', 'atomo' ); ?></a>
@@ -62,9 +67,9 @@
 			<div class="nav-init-item">
 				<a class="search-button" href="<?php echo esc_url( home_url( '/search' ) ); ?>"><?php _e( 'Search', 'atomo' ); ?></a>
 			</div>
-
 		</div>
 	</nav>
+
 	<nav class="nav-init-mobile flex justify-center">
 		<!-- <div class="nav-init-container flex-vertical">
 			<div class="nav-init-item">
@@ -92,14 +97,17 @@
 		</div> -->
 	</nav>
 
-	<nav class="navbar flex vertical" id="navbar">
-		<div class="navbar-button init flex align-center self-end ">
+	<nav id="navbar" class="navbar flex vertical">
+		<div class="navbar-button init flex align-center self-end">
 			<div class="navbar-button-lang flex align-center">
-				<a class="active" href="#"><?php _e( 'ES', 'atomo' ); ?></a>
+				<a class="lang-link active" href="#spanish" rel="alternate" hreflang="es">ES</a>
 				<div class="separator"></div>
-				<a class="" href="#"><?php _e( 'EN', 'atomo' ); ?></a>
+				<a class="lang-link" href="#english" rel="alternate" hreflang="en">EN</a>
 			</div>
-			<a class="log-in" href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>"><?php _e( 'Log in', 'atomo' ); ?></a>
+
+			<a class="log-in" href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">
+				<?php _e( 'Log in', 'atomo' ); ?>
+			</a>
 		</div>
 		<div class="navbar-wrapper flex align-center justify-between">
 			<a class="navbar-logo" href="<?php echo esc_url( home_url() ); ?>" rel="home">
@@ -112,23 +120,26 @@
 				<a href="<?php echo esc_url( home_url( '/category/cartas-ensayos/' ) ); ?>"><?php _e( 'Cartas y ensayos', 'atomo' ); ?></a>
 				<a href="<?php echo esc_url( home_url( '/category/poesia/' ) ); ?>"><?php _e( 'Poesía', 'atomo' ); ?></a>
 				<a href="<?php echo esc_url( home_url( '/category/arte-fotografia/' ) ); ?>"><?php _e( 'Arte y fotografía', 'atomo' ); ?></a>
+
 				<div class="separator"></div>
+
 				<a href="<?php echo esc_url( home_url( '/issues' ) ); ?>">Ediciones</a>
 				<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Suscríbete</a>
 				<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Búsqueda</a>
 			</div>
+
 			<a class="navbar-menu-button">
 				<span></span>
 				<span></span>
 				<span></span>
 			</a>
 		</div>
-	</nav>
+	</nav><!-- #navbar -->
+
 	<div class="search search-wrapper flex-center">
 		<div class="search-container flex-center">
 			<?php get_search_form( true ); ?>
 		</div>
-
 	</div>
 
 	<main class="main">
