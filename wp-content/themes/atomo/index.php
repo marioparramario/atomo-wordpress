@@ -143,8 +143,7 @@ get_header(); ?>
   		  <div class="description flex vertical">
   			<h4><?php the_title(); ?></h4>
   			<p><?php the_excerpt(); ?></p>
-  			<span>by <?php the_author(); ?></span>
-  			<!-- <span><?php the_category(', '); ?></span> -->
+  			<span><?php the_category(', '); ?></span>
   		  </div>
   		</a>
   		<?php endwhile; ?> <?php wp_reset_query(); ?>
@@ -176,6 +175,7 @@ get_header(); ?>
               <h4><?php the_title(); ?></h4>
               <p><?php the_excerpt();?></p>
               <span>by <?php the_author(); ?></span>
+			  <!-- <span><?php the_category(', '); ?></span> -->
             </div>
           </a>
       </div>
