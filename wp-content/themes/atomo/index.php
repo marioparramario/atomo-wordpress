@@ -246,7 +246,7 @@ get_header(); ?>
 	</section><!-- #subscribe -->
 
 
-  <section class="grid-regular flex-vertical">
+  <section id="all" class="grid-regular flex-vertical">
     <h3 class="headline"><?php _e( 'All Articles', 'atomo' ); ?></h3>
       <div class="row flex">
         <?php if ( is_singular() ) : ?>
@@ -304,7 +304,7 @@ get_header(); ?>
         <?php echo paginate_links( $popular_args ); ?>
       </div>
 
-  </section>
+  </section><!-- #all -->
 
 
 
