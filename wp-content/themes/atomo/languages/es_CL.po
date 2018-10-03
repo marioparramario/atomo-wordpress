@@ -38,6 +38,10 @@ msgstr "Todos los derechos reservados"
 msgid "Art & Photography"
 msgstr "Arte y fotografía"
 
+#: footer.php:10
+msgid "Blog"
+msgstr "Blog"
+
 #: inc/breadcrumbs.php:28
 msgid "Blog Archives"
 msgstr ""

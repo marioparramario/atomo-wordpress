@@ -38,6 +38,10 @@ msgstr ""
 msgid "Art & Photography"
 msgstr ""
 
+#: footer.php:10
+msgid "Blog"
+msgstr ""
+
 #: inc/breadcrumbs.php:28
 msgid "Blog Archives"
 msgstr ""
