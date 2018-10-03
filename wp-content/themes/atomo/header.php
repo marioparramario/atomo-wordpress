@@ -36,19 +36,19 @@
 		</div>
 		<div class="nav-init-container bottom flex align-center justify-between">
 			<div class="nav-init-item">
-				<a href="<?php echo esc_url( home_url( '/category/entrevistas/' ) ); ?>"><?php _e( 'Entrevistas', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/category/entrevistas/' ) ); ?>"><?php _e( 'Interviews', 'atomo' ); ?></a>
 			</div>
 			<div class="nav-init-item">
-				<a href="<?php echo esc_url( home_url( '/category/ficcion/' ) ); ?>"><?php _e( 'Ficción', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/category/ficcion/' ) ); ?>"><?php _e( 'Fiction', 'atomo' ); ?></a>
 			</div>
 			<div class="nav-init-item">
-				<a href="<?php echo esc_url( home_url( '/category/cartas-ensayos/' ) ); ?>"><?php _e( 'Cartas y ensayos', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/category/cartas-ensayos/' ) ); ?>"><?php _e( 'Letters & Essays', 'atomo' ); ?></a>
 			</div>
 			<div class="nav-init-item">
-				<a href="<?php echo esc_url( home_url( '/category/poesia/' ) ); ?>"><?php _e( 'Poesía', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/category/poesia/' ) ); ?>"><?php _e( 'Poetry', 'atomo' ); ?></a>
 			</div>
 			<div class="nav-init-item">
-				<a href="<?php echo esc_url( home_url( '/category/arte-fotografia/' ) ); ?>"><?php _e( 'Arte y fotografía', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/category/arte-fotografia/' ) ); ?>"><?php _e( 'Art & Photography', 'atomo' ); ?></a>
 			</div>
 			<div class="nav-init-separator"></div>
 			<div class="nav-init-item">
