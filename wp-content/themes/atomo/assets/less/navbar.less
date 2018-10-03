@@ -7,12 +7,15 @@
   height: 350px;
   z-index: 9;
   &-item a {
-    font-family: @baskerville;
-    letter-spacing: 0.05rem;
+    font-family: @roboto;
+    letter-spacing: 0.08rem;
     color: @black;
-    text-transform: lowercase;
-    font-size: 1.05rem;
-    font-variant: small-caps;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    transition: all 0.4s cubic-bezier(.4,0,.2,1);
+    &:hover {
+      color: @camel;
+    }
   }
   &-separator {
     width: 1px;
@@ -50,28 +53,50 @@
       transition: all 0.4s cubic-bezier(.4,0,.2,1);
       &:first-child {
         margin-bottom: 0.4rem;
-        &::before {
-          content: '';
-          position: absolute;
-          left: -20px;
-          width: 12px;
-          height: 100%;
-          background: url(../images/arrow-nav.svg) no-repeat center center;
-          border-bottom: 1px solid @camel;
-
-        }
-      }
-      &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 1px;
-        background: @camel;
       }
       &:hover {
         color: @black;
+      }
+      &.log-in {
+        position: relative;
+        border: 1px @camel solid;
+        line-height: 0.6;
+        padding: 0.5rem;
+        &::before {
+          content: '';
+          position: absolute;
+          background: @black;
+          top: 0;
+          left: 0;
+          width: 0;
+          height: 100%;
+          z-index: -1;
+          transition: all 0.4s cubic-bezier(.4,0,.2,1);
+        }
+        &:hover {
+          color: @camel;
+          border: 1px @black solid;
+          &::before {
+            transition: all 0.4s cubic-bezier(.4,0,.2,1);
+            width: 100%;
+          }
+        }
+      }
+    }
+    .separator {
+      height: 10px;
+      width: 1px;
+      background: @black;
+      margin-left: 0.4rem;
+    }
+    &-lang {
+      margin-bottom: 0.7rem;
+      a {
+        margin: 0 !important;
+        padding-left: 0.5rem;
+        &.active {
+          color: @black;
+        }
       }
     }
   }
@@ -83,7 +108,8 @@
   top: -100%;
   left: 0;
   width: 100%;
-  height: 70px;
+  height: 90px;
+  height: auto;
   background: @black;
   z-index: 9;
   &-wrapper {
@@ -95,15 +121,19 @@
     a {
       font-size: 0.75rem;
       letter-spacing: 0.08rem;
-      padding-left: 1.6rem;
+      padding-left: 1.3rem;
       color: white;
       text-transform: uppercase;
+      transition: all 0.2s cubic-bezier(.4,0,.2,1);
+      &:hover {
+        color: @camel;
+      }
     }
     .separator {
       width: 1px;
       height: 14px;
       background: white;
-      margin-left: 1.6rem;
+      margin-left: 1.3rem;
     }
   }
   &-logo {
@@ -136,6 +166,51 @@
   .navbar-menu-button {
     span {
       background: white;
+    }
+  }
+  &-button {
+    margin-top: 0.5rem;
+    a {
+      text-transform: uppercase;
+      color: @camel;
+      font-size: 0.75rem;
+      padding-left: 0.5rem;
+      &.active {
+        color: white;
+      }
+      &.log-in {
+        position: relative;
+        border: 1px @camel solid;
+        padding: 0 0.5rem;
+        padding-bottom: 1px;
+        &::before {
+          content: '';
+          position: absolute;
+          background: @camel;
+          top: 0;
+          left: 0;
+          width: 0;
+          height: 100%;
+          z-index: -1;
+          transition: all 0.4s cubic-bezier(.4,0,.2,1);
+        }
+        &:hover {
+          color: white;
+          &::before {
+            transition: all 0.4s cubic-bezier(.4,0,.2,1);
+            width: 100%;
+          }
+        }
+      }
+    }
+    &-lang {
+      margin-right: 1rem;
+      .separator {
+        width: 1px;
+        height: 10px;
+        background: white;
+        margin-left: 0.5rem;
+      }
     }
   }
 }

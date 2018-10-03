@@ -21,9 +21,12 @@
 				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-atomo.svg" alt="">
 			</a>
 			<div class="nav-init-button init flex vertical align-end">
-				<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>"><?php _e( 'Log in', 'atomo' ); ?></a>
-				<a class="search-button" href="#"><?php _e( 'EN | ES', 'atomo' ); ?></a>
-				<a class="search-button" href="#"><?php _e( 'Búsqueda', 'atomo' ); ?></a>
+				<div class="nav-init-button-lang flex align-center">
+					<a class="active" href="#"><?php _e( 'ES', 'atomo' ); ?></a>
+					<div class="separator"></div>
+					<a class="" href="#"><?php _e( 'EN', 'atomo' ); ?></a>
+				</div>
+				<a class="log-in" href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>"><?php _e( 'Log in', 'atomo' ); ?></a>
 			</div>
 			<div class="nav-init-button menu flex justify-end">
 				<a class="navbar-menu-button">
@@ -56,6 +59,10 @@
 			<div class="nav-init-item">
 				<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Suscríbete</a>
 			</div>
+			<div class="nav-init-item">
+				<a class="search-button" href="#"><?php _e( 'Búsqueda', 'atomo' ); ?></a>
+			</div>
+
 		</div>
 	</nav>
 	<nav class="nav-init-mobile flex justify-center">
@@ -85,11 +92,20 @@
 		</div> -->
 	</nav>
 
-	<nav class="navbar" id="navbar">
+	<nav class="navbar flex vertical" id="navbar">
+		<div class="navbar-button init flex align-center self-end ">
+			<div class="navbar-button-lang flex align-center">
+				<a class="active" href="#"><?php _e( 'ES', 'atomo' ); ?></a>
+				<div class="separator"></div>
+				<a class="" href="#"><?php _e( 'EN', 'atomo' ); ?></a>
+			</div>
+			<a class="log-in" href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>"><?php _e( 'Log in', 'atomo' ); ?></a>
+		</div>
 		<div class="navbar-wrapper flex align-center justify-between">
 			<a class="navbar-logo" href="<?php echo esc_url( home_url() ); ?>" rel="home">
 				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-iso.svg" alt="">
 			</a>
+
 			<div class="navbar-container flex align-center">
 				<a href="<?php echo esc_url( home_url( '/category/entrevistas/' ) ); ?>"><?php _e( 'Entrevistas', 'atomo' ); ?></a>
 				<a href="<?php echo esc_url( home_url( '/category/ficcion/' ) ); ?>"><?php _e( 'Ficción', 'atomo' ); ?></a>
@@ -99,6 +115,7 @@
 				<div class="separator"></div>
 				<a href="<?php echo esc_url( home_url( '/issues' ) ); ?>">Ediciones</a>
 				<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Suscríbete</a>
+				<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Búsqueda</a>
 			</div>
 			<a class="navbar-menu-button">
 				<span></span>
@@ -106,11 +123,6 @@
 				<span></span>
 			</a>
 		</div>
-	</nav>
-
-	<nav class="nav-lateral flex justify-between" id="lateral">
-		<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>"><?php _e( 'Suscríbete', 'atomo' ); ?></a>
-		<a class="search-button"><?php _e( 'Búsqueda', 'atomo' ); ?></a>
 	</nav>
 	<div class="search search-wrapper flex-center">
 		<div class="search-container flex-center">
