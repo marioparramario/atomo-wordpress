@@ -98,10 +98,6 @@ msgstr ""
 msgid "Privacy Policy"
 msgstr ""
 
-#: index.php:175
-msgid "No featured articles yet."
-msgstr ""
-
 #: index.php:270 archive.php:18 archive.php:37 index.php:246
 msgid "Read article"
 msgstr ""
