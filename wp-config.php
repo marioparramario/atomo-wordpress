@@ -48,6 +48,11 @@ if (is_readable( ABSPATH . '.env' )) {
 /** Operational environment for the whole WordPress application */
 define( 'WP_ENV', getenv( 'WP_ENV', true ) ?: 'production' );
 
+/** Pick language for translation messages */
+if ( getenv( 'WP_LANG', true) ) {
+	define( 'WPLANG', getenv( 'WP_LANG') );
+}
+
 
 /*  ~: START OF CONFIGURATION :~  */
 
@@ -98,6 +103,7 @@ define( 'LOGGED_IN_SALT',   getenv( 'LOGGED_IN_SALT', true ) ?: 'INSECURE:SALT' 
 define( 'NONCE_SALT',       getenv( 'NONCE_SALT', true ) ?: 'INSECURE:SALT' );
 
 /**#@-*/
+
 
 /**
  * For developers: WordPress debugging mode.
