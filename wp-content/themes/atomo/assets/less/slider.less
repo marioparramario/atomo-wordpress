@@ -1,11 +1,12 @@
 @import "variables.less";
 
 .slider {
-  // width: 100%;
   margin: 0;
   overflow: hidden;
   height: 450px;
-  // position: relative;
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
   &-logo {
     position: absolute;
     width: 50px;

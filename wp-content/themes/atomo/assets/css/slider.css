@@ -3,6 +3,11 @@
   overflow: hidden;
   height: 450px;
 }
+.slider *,
+.slider *::before,
+.slider *::after {
+  box-sizing: border-box;
+}
 .slider-logo {
   position: absolute;
   width: 50px;
