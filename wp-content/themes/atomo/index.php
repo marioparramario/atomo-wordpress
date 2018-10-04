@@ -37,9 +37,7 @@ get_header(); ?>
                             <div class="slider-image-wrapper">
                               <?php
                                   if ( has_post_thumbnail() ) {
-                                      the_post_thumbnail( 'normal', array(
-                                      'class' => 'd-block w-100'
-                                  ) );
+                                      the_post_thumbnail(array(1280, 1024), array('class' => 'slider-image'));
                                   }
                                ?>
                             </div>
@@ -80,13 +78,11 @@ get_header(); ?>
                           <div class="carousel-item<?php if( $slider_item_number == 0) echo ' active'; ?> <?php echo join( ' ', get_post_class( '' ) ) ?>" id="post-<?php the_ID(); ?>">
                               <a href="<?php echo esc_url( get_permalink() ); ?>">
                                 <div class="slider-image-wrapper">
-                                  <?php
-                                      if ( has_post_thumbnail() ) {
-                                          the_post_thumbnail( 'normal', array(
-                                          'class' => 'd-block w-100'
-                                      ) );
-                                      }
-                                   ?>
+                                    <?php
+                                        if ( has_post_thumbnail() ) {
+                                            the_post_thumbnail(array(1280, 1024), array('class' => 'slider-image'));
+                                        }
+                                     ?>
                                 </div>
                                 <div class="slider-text-wrapper flex vertical justify-end">
                                   <div class="pagination flex">

@@ -109,6 +109,7 @@
   height: auto;
   background: #1E1E1E;
   z-index: 9;
+  box-sizing: border-box;
 }
 .navbar-wrapper {
   width: 100%;
@@ -356,6 +357,9 @@
   }
   .navbar-logo img {
     width: 40px;
+  }
+  .navbar-button {
+    display: none;
   }
   .nav-init-button.menu,
   .navbar-menu-button {
