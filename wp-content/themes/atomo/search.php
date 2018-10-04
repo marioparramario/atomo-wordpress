@@ -1,4 +1,13 @@
 <?php
+/**
+ * Custom template for displaying search results
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
+ *
+ * @package WordPress
+ * @subpackage Atomo
+ */
+
 get_header( 'index.html' ); ?>
 
 <div class="container flex vertical align-center">
