@@ -4,7 +4,8 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @subpackage atomo
+ * @package WordPress
+ * @subpackage Atomo
  */
 
 $item_number = 0;
