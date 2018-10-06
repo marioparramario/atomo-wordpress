@@ -76,7 +76,7 @@ get_header(); ?>
                       <?php $slider_item_number = 0; ?>
                       <?php while ( $slider->have_posts() ) : $slider->the_post(); ?>
                           <div class="carousel-item<?php if( $slider_item_number == 0) echo ' active'; ?> <?php echo join( ' ', get_post_class( '' ) ) ?>" id="post-<?php the_ID(); ?>">
-                              <a href="<?php echo esc_url( get_permalink() ); ?>">
+                              <a class="slider-link" href="<?php echo esc_url( get_permalink() ); ?>">
                                 <div class="slider-image-wrapper">
                                     <?php
                                         if ( has_post_thumbnail() ) {
