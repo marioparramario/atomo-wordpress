@@ -112,6 +112,9 @@
   box-sizing: border-box;
   padding: 0.8rem 1rem;
 }
+.navbar-mobile {
+  display: none;
+}
 .navbar-wrapper {
   height: 100%;
 }
@@ -319,6 +322,7 @@
     display: none;
   }
   .navbar-mobile {
+    display: flex;
     position: fixed;
     width: 100%;
     height: 0;
@@ -344,6 +348,9 @@
   .navbar-mobile-content {
     text-transform: uppercase;
     font-size: 0.8rem;
+  }
+  .navbar-mobile-content * {
+    align-self: baseline;
   }
   .navbar-mobile-content a {
     margin: 0.35rem 0;
