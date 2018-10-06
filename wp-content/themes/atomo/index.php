@@ -254,8 +254,8 @@ get_header(); ?>
     </div>
   </section>
 
-  <section class="suscribe flex-center">
-    <div class="suscribe-container flex-vertical">
+  <section class="subscribe flex-center">
+    <div class="subscribe-container flex-vertical">
       <h2>Suscríbete a Átomo</h2>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 	  <a class="button" href="#">Suscríbete</a>

@@ -271,6 +271,12 @@
 .search-field {
   border: 1px #D8A073 solid;
   height: 100%;
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  color: #D8A073;
+}
+.search-field::-webkit-input-placeholder {
+  color: #D8A073;
 }
 .search-submit {
   width: 100px;
@@ -336,29 +342,54 @@
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .navbar-mobile-wrapper .separator {
-    height: 100px;
+    height: 160px;
     width: 1px;
-    background: red;
+    background: #1E1E1E;
     margin: 0 2rem;
   }
   .navbar-mobile-wrapper .separator.lang {
-    height: 16px;
+    height: 12px;
     margin: 0 0.7rem;
   }
   .navbar-mobile-content {
     text-transform: uppercase;
     font-size: 0.8rem;
   }
-  .navbar-mobile-content * {
-    align-self: baseline;
-  }
   .navbar-mobile-content a {
-    margin: 0.35rem 0;
+    margin: 0.5rem 0;
     color: #1E1E1E;
   }
-  .navbar-mobile-lang {
-    height: auto;
-    max-height: 20px;
+  .navbar-mobile-content a.active {
+    color: #D8A073;
+  }
+  .navbar-mobile-content .search-form {
+    display: flex;
+    height: 30px;
+    width: 220px;
+  }
+  .navbar-mobile-content .search-submit {
+    position: relative;
+    font-size: 0;
+    width: 30px;
+    margin-left: -1px;
+  }
+  .navbar-mobile-content .search-submit::before {
+    content: '';
+    width: 30px;
+    height: 30px;
+  }
+  .navbar-mobile-lang a {
+    margin: 0;
+  }
+  .navbar-mobile-button {
+    margin: 1.2rem 0;
+  }
+  .navbar-mobile-button a {
+    color: white;
+    background: #D8A073;
+    padding: 0.3rem 0.6rem;
+    margin: 0;
+    margin-right: 0.5rem;
   }
   .navbar-mobile.active {
     height: 100vh;

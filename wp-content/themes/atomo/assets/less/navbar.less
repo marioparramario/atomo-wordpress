@@ -288,6 +288,12 @@
   &-field {
     border: 1px @camel solid;
     height: 100%;
+    font-family: @roboto;
+    text-transform: uppercase;
+    color: @camel;
+    &::-webkit-input-placeholder {
+      color: @camel;
+    }
   }
   &-submit {
     width: 100px;
@@ -362,12 +368,12 @@
         opacity: 0;
         transition: all 0.6s cubic-bezier(.4,0,.2,1);
         .separator {
-          height: 100px;
+          height: 160px;
           width: 1px;
-          background: red;
+          background: @black;
           margin: 0 2rem;
           &.lang {
-            height: 16px;
+            height: 12px;
             margin: 0 0.7rem;
           }
         }
@@ -375,17 +381,51 @@
       &-content {
         text-transform: uppercase;
         font-size: 0.8rem;
-        * {
-          align-self: baseline;
-        }
         a {
-          margin: 0.35rem 0;
+          margin: 0.5rem 0;
           color: @black;
+          &.active {
+            color: @camel;
+          }
+        }
+        .search {
+          &-form {
+            display: flex;
+            height: 30px;
+            width: 220px;
+          }
+          &-submit {
+            position: relative;
+            font-size: 0;
+            width: 30px;
+            margin-left: -1px;
+            &::before {
+              content: '';
+              width: 30px;
+              height: 30px;
+              // position: absolute;
+              // background-image: url('../images/search-icon.svg');
+              // background-position: center center;
+              // background-size: 30px;
+              // background-repeat: no-repeat;
+            }
+          }
         }
       }
       &-lang {
-        height: auto;
-        max-height: 20px;
+        a {
+          margin: 0;
+        }
+      }
+      &-button {
+        margin: 1.2rem 0;
+        a {
+          color: white;
+          background: @camel;
+          padding: 0.3rem 0.6rem;
+          margin: 0;
+          margin-right: 0.5rem;
+        }
       }
       &.active {
         height: 100vh;
