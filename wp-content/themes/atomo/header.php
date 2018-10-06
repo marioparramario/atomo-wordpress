@@ -57,12 +57,11 @@
 				<a href="<?php echo esc_url( home_url( '/issues' ) ); ?>">Ediciones</a>
 			</div>
 			<div class="nav-init-item">
-				<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Suscríbete</a>
-			</div>
-			<div class="nav-init-item">
 				<a class="search-button" href="#"><?php _e( 'Búsqueda', 'atomo' ); ?></a>
 			</div>
-
+			<div class="nav-init-item">
+				<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Suscríbete</a>
+			</div>
 		</div>
 	</nav>
 	<nav class="nav-init-mobile flex justify-center">
@@ -92,19 +91,19 @@
 		</div> -->
 	</nav>
 
-	<nav class="navbar flex vertical" id="navbar">
-		<div class="navbar-button init flex align-center self-end ">
-			<div class="navbar-button-lang flex align-center">
-				<a class="active" href="#"><?php _e( 'ES', 'atomo' ); ?></a>
-				<div class="separator"></div>
-				<a class="" href="#"><?php _e( 'EN', 'atomo' ); ?></a>
+	<nav class="navbar flex align-center justify-between" id="navbar">
+		<a class="navbar-logo" href="<?php echo esc_url( home_url() ); ?>" rel="home">
+			<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-iso.svg" alt="">
+		</a>
+		<div class="navbar-wrapper flex vertical align-end">
+			<div class="navbar-button init flex align-center self-end">
+				<div class="navbar-button-lang flex align-center">
+					<a class="active" href="#"><?php _e( 'ES', 'atomo' ); ?></a>
+					<div class="separator"></div>
+					<a class="" href="#"><?php _e( 'EN', 'atomo' ); ?></a>
+				</div>
+				<a class="log-in" href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>"><?php _e( 'Log in', 'atomo' ); ?></a>
 			</div>
-			<a class="log-in" href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>"><?php _e( 'Log in', 'atomo' ); ?></a>
-		</div>
-		<div class="navbar-wrapper flex align-center justify-between">
-			<a class="navbar-logo" href="<?php echo esc_url( home_url() ); ?>" rel="home">
-				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-iso.svg" alt="">
-			</a>
 
 			<div class="navbar-container flex align-center">
 				<a href="<?php echo esc_url( home_url( '/category/entrevistas/' ) ); ?>"><?php _e( 'Entrevistas', 'atomo' ); ?></a>
@@ -114,8 +113,8 @@
 				<a href="<?php echo esc_url( home_url( '/category/arte-fotografia/' ) ); ?>"><?php _e( 'Arte y fotografía', 'atomo' ); ?></a>
 				<div class="separator"></div>
 				<a href="<?php echo esc_url( home_url( '/issues' ) ); ?>">Ediciones</a>
+				<a href="#"><?php _e( 'Búsqueda', 'atomo' ); ?></a>
 				<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Suscríbete</a>
-				<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Búsqueda</a>
 			</div>
 			<a class="navbar-menu-button">
 				<span></span>
