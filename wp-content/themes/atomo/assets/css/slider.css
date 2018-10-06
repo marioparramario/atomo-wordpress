@@ -27,7 +27,7 @@
   height: 100%;
   background: #D8A073;
   color: white;
-  padding: 3rem;
+  padding: 3rem 2rem;
 }
 .slider-text-wrapper .pagination span {
   width: 44px;
@@ -46,13 +46,15 @@
   font-family: 'Libre Baskerville', serif;
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
+  letter-spacing: normal;
 }
 .slider-text-container p {
   font-family: 'Libre Baskerville', serif;
   position: relative;
   font-size: 0.9rem;
   line-height: 1.5;
-  margin-bottom: 3rem;
+  margin-bottom: 2.6rem;
+  letter-spacing: normal;
 }
 .slider-text-container .line {
   position: relative;
