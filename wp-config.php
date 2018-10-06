@@ -1,8 +1,5 @@
 <?php
 
-define('WP_SITEURL', 'http://localhost:8080');
-define('WP_HOME', 'http://localhost:8080');
-
 /**
  * Base configuration for Átomo WordPress
  *
@@ -120,19 +117,6 @@ define( 'WP_DEBUG_DISPLAY', filter_var( getenv( 'WP_DEBUG_DISPLAY', true ), FILT
 
 define( 'SAVEQUERIES', filter_var( getenv( 'SAVEQUERIES', true ), FILTER_VALIDATE_BOOLEAN ) );
 define( 'SCRIPT_DEBUG', filter_var( getenv( 'SCRIPT_DEBUG', true ), FILTER_VALIDATE_BOOLEAN ) );
-
-
-/**
- * Site setup
- */
-
-if ( getenv('WP_SITEURL', true) ) {
-	define('WP_SITEURL', getenv('WP_SITEURL', true));
-}
-
-if ( getenv('WP_HOME', true) ) {
-	define('WP_HOME', getenv('WP_HOME', true));
-}
 
 
 /*  ~: END OF CONFIGURATION :~  */
