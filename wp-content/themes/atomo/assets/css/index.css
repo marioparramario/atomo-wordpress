@@ -111,9 +111,6 @@ input {
   height: 150px;
   background: white;
 }
-.archive .main {
-  height: inherit;
-}
 .archive .container::before {
   height: 100px;
 }
@@ -139,6 +136,7 @@ input {
   max-width: none;
   min-height: 30vh;
   background: #D6062D;
+  margin: 0;
 }
 .issue-container {
   position: relative;
@@ -194,7 +192,7 @@ input {
 .subscribe {
   background: #85AA8E;
   width: 100%;
-  margin-bottom: 0;
+  margin: 0;
   max-width: 960px;
   max-width: none;
   min-height: 30vh;

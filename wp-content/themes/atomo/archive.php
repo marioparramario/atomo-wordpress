@@ -20,7 +20,11 @@ get_header( 'index.html' ); ?>
                         <div class="description flex vertical justify-center">
                             <h4><?php the_title(); ?></h4>
                             <?php the_excerpt( ); ?>
-                            <span><?php _e( 'Read article', 'atomo' ); ?></span>
+							<p class="category">
+								<?php $category = get_the_category();
+								echo $category[0]->cat_name;
+								?>
+							</p>
                         </div>
                       </div>
                       <?php $item_number++; ?>
@@ -44,7 +48,11 @@ get_header( 'index.html' ); ?>
                             <div class="description flex vertical justify-center">
                                 <h4><?php the_title(); ?></h4>
                                 <?php the_excerpt( ); ?>
-                                <span><?php _e( 'Read article', 'atomo' ); ?></span>
+								<p class="category">
+									<?php $category = get_the_category();
+									echo $category[0]->cat_name;
+									?>
+								</p>
                             </div>
                           </a>
                       </div>

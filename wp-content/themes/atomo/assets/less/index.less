@@ -121,9 +121,9 @@ input {
   }
 }
 .archive {
-  .main {
-    height: inherit;
-  }
+  // .main {
+  //   height: inherit;
+  // }
   .container {
     &::before {
       height: 100px;
@@ -160,6 +160,7 @@ input {
   max-width: none;
   min-height: 30vh;
   background: @red;
+  margin: 0;
   &-container {
     position: relative;
     max-width: @container;
@@ -218,7 +219,7 @@ input {
 .subscribe {
   background: @green;
   width: 100%;
-  margin-bottom: 0;
+  margin: 0;
   max-width: @container;
   max-width: none;
   min-height: 30vh;
