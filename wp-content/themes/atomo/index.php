@@ -84,21 +84,21 @@ get_header(); ?>
                                         }
                                      ?>
                                 </div>
-                                <div class="slider-text-wrapper flex vertical justify-end">
-                                  <div class="pagination flex">
-                                    <span></span>
-                                    <span class="active"></span>
-                                    <span></span>
-                                    <span></span>
-                                  </div>
-                                  <div class="slider-text-container">
-                                    <h3><?php the_title(); ?></h3>
-                                    <?php the_content(); ?>
-                                    <div class="line"></div>
-                                    <span>por Friedrich Nietzsche</span>
-                                  </div>
-                                </div>
                               </a>
+                              <div class="slider-text-wrapper flex vertical justify-end">
+                                <div class="pagination flex">
+                                  <span></span>
+                                  <span class="active"></span>
+                                  <span></span>
+                                  <span></span>
+                                </div>
+                                <div class="slider-text-container">
+                                  <h3><?php the_title(); ?></h3>
+                                  <?php the_content(); ?>
+                                  <div class="line"></div>
+                                  <span>por Friedrich Nietzsche</span>
+                                </div>
+                              </div>
                           </div>
                           <?php $slider_item_number++; ?>
                       <?php endwhile; ?>
