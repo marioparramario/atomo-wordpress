@@ -18,7 +18,7 @@ get_header(); ?>
 <div class="container flex vertical align-center">
 
   <section class="slider flex">
-      <div id="carousel1" class="carousel slide" data-ride="carousel" data-interval="false">
+      <div id="home-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
           <div class="carousel-inner">
               <?php if ( is_singular() ) : ?>
                   <?php
