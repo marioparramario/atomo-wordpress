@@ -18,7 +18,7 @@ get_header(); ?>
 <div class="container flex vertical align-center">
 
   <section class="slider flex">
-      <div id="home-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+      <div id="home-carousel" class="carousel slide" data-slide="false">
           <div class="carousel-inner">
               <?php if ( is_singular() ) : ?>
                   <?php
@@ -42,12 +42,12 @@ get_header(); ?>
                                ?>
                             </div>
                             <div class="slider-text-wrapper flex vertical justify-end">
-                              <div class="pagination flex">
-                                <span></span>
-                                <span class="active"></span>
-                                <span></span>
-                                <span></span>
-                              </div>
+								<ol class="pagination flex">
+                                  <li class="pagination-indicator active" data-target="home-carousel" data-slide-to="0"></li>
+                                  <li class="pagination-indicator" data-target="home-carousel" data-slide-to="1"></li>
+                                  <li class="pagination-indicator" data-target="home-carousel" data-slide-to="2"></li>
+                                  <li class="pagination-indicator" data-target="home-carousel" data-slide-to="3"></li>
+                                </ol>
                               <div class="slider-text-container">
                                 <h3><?php the_title(); ?></h3>
                                 <?php the_content(); ?>
@@ -86,12 +86,12 @@ get_header(); ?>
                                 </div>
                               </a>
                               <div class="slider-text-wrapper flex vertical justify-end">
-                                <div class="pagination flex">
-                                  <span></span>
-                                  <span class="active"></span>
-                                  <span></span>
-                                  <span></span>
-                                </div>
+                                <ol class="pagination flex">
+                                  <li class="pagination-indicator active" data-target="home-carousel" data-slide-to="0"></li>
+                                  <li class="pagination-indicator" data-target="home-carousel" data-slide-to="1"></li>
+                                  <li class="pagination-indicator" data-target="home-carousel" data-slide-to="2"></li>
+                                  <li class="pagination-indicator" data-target="home-carousel" data-slide-to="3"></li>
+                                </ol>
                                 <div class="slider-text-container">
                                   <h3><?php the_title(); ?></h3>
                                   <?php the_content(); ?>
