@@ -3,7 +3,6 @@ get_header( 'index.html' ); ?>
 
 <div class="container flex vertical align-center">
 	<section class="grid-regular flex-vertical">
-      <h3 class="headline"><?php _e( 'All Articles', 'atomo' ); ?></h3>
         <div class="row flex">
           <?php if ( is_singular() ) : ?>
               <?php if ( have_posts() ) : ?>

@@ -7,7 +7,7 @@ $(document).ready(function(){
 	$('.navbar-menu-button').click(function(){
 			$('.navbar-menu').toggleClass('active');
 			$('body').toggleClass('stop-scrolling');
-      $('.nav-init-mobile').toggleClass('active');
+      $('.navbar-mobile').toggleClass('active');
 	});
 });
 

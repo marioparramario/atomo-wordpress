@@ -2,16 +2,15 @@
 get_header( 'index.html' ); ?>
 
 <div class="container flex vertical align-center">
-    <div class="card">
-        <div class="card-body flex-center">
+    <div class="search-result flex-vertical">
+        <div class="flex-center">
             <span><?php _e( 'Resultados de la búsqueda', 'atomo' ); ?>: </span>
             <span class="search-tag"><?php echo esc_html( get_search_query( false ) ); ?></span>
-			<!-- <a href="<?php echo esc_url( home_url() ); ?>" class="close-card" rel="home"><?php bloginfo( 'name' ); ?></a> -->
+			<a class="search-close" href="<?php echo esc_url( home_url() ); ?>"  rel="home"></a>
         </div>
     </div>
 
 	<section class="grid-regular flex-vertical">
-	  <h3 class="headline"><?php _e( 'All Articles', 'atomo' ); ?></h3>
 		<div class="row flex">
 		  <?php if ( is_singular() ) : ?>
 			  <?php if ( have_posts() ) : ?>
