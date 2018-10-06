@@ -42,7 +42,7 @@ get_header(); ?>
                                ?>
                             </div>
                             <div class="slider-text-wrapper flex vertical justify-end">
-								<ol class="pagination flex">
+								<ol class="pagination list-unstyled flex">
                                   <li class="pagination-indicator active" data-target="home-carousel" data-slide-to="0"></li>
                                   <li class="pagination-indicator" data-target="home-carousel" data-slide-to="1"></li>
                                   <li class="pagination-indicator" data-target="home-carousel" data-slide-to="2"></li>
@@ -86,7 +86,7 @@ get_header(); ?>
                                 </div>
                               </a>
                               <div class="slider-text-wrapper flex vertical justify-end">
-                                <ol class="pagination flex">
+                                <ol class="pagination list-unstyled flex">
                                   <li class="pagination-indicator active" data-target="home-carousel" data-slide-to="0"></li>
                                   <li class="pagination-indicator" data-target="home-carousel" data-slide-to="1"></li>
                                   <li class="pagination-indicator" data-target="home-carousel" data-slide-to="2"></li>
