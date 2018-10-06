@@ -114,8 +114,10 @@
 					<div class="separator lang"></div>
 					<a class="" href="#"><?php _e( 'EN', 'atomo' ); ?></a>
 				</div>
-				<a href="#">Log in</a>
-				<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Suscríbete</a>
+				<div class="navbar-mobile-button flex">
+					<a href="#">Log in</a>
+					<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Suscríbete</a>
+				</div>
 				<?php get_search_form( true ); ?>
 
 			</div>

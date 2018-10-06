@@ -43,6 +43,7 @@ body.stop-scrolling {
 }
 section {
   margin-top: 8rem;
+  margin-bottom: 6rem;
   width: 90%;
   max-width: 960px;
   position: relative;
@@ -110,11 +111,14 @@ input {
   height: 150px;
   background: white;
 }
+.archive .main {
+  height: inherit;
+}
 .archive .container::before {
   height: 100px;
 }
 .archive section {
-  margin: 0;
+  margin-top: 0;
 }
 .articles .nav-init {
   height: 200px;
@@ -187,30 +191,31 @@ input {
 .row::after {
   box-sizing: initial !important;
 }
-.suscribe {
+.subscribe {
   background: #85AA8E;
   width: 100%;
+  margin-bottom: 0;
   max-width: 960px;
   max-width: none;
   min-height: 30vh;
   text-align: center;
 }
-.suscribe-container {
+.subscribe-container {
   width: 80%;
   position: relative;
   max-width: 720px;
   padding: 4.6rem 0;
 }
-.suscribe h2 {
+.subscribe h2 {
   font-size: 3rem;
   margin-bottom: 1rem;
 }
-.suscribe p {
+.subscribe p {
   color: white;
   max-width: 640px;
   margin-bottom: 1.6rem;
 }
-.suscribe .input-container {
+.subscribe .input-container {
   width: 100%;
   padding: 3rem 0;
 }
