@@ -11,19 +11,17 @@ $(document).ready(function(){
 	});
 });
 
-// Preventing scroll touch devices
-// $('body').bind('touchmove', function(e){e.preventDefault()})
-// $('body').unbind('touchmove')
-
-
-// When the user scrolls down 20px from the top of the document, slide down the navbar
-// When the user scrolls to the top of the page, slide up the navbar (50px out of the top view)
 
 
 $('.search-button').click(function(){
     $('.search-wrapper').toggleClass('active');
 });
 
+
+$('.login').click(function(){
+    $('.log-in').toggleClass('active');
+    $('body').toggleClass('stop-scrolling');
+});
 
 
 
