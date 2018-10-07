@@ -29,6 +29,16 @@
       color: white;
       padding: 2.3rem 2rem;
       .pagination {
+        &-indicator {
+          width: 44px;
+          height: 3px;
+          background: white;
+          margin-right: 8px;
+          background: rgba(255, 255, 255, 0.5);
+          &.active {
+            background: white;
+          }
+        }
         span {
           width: 44px;
           height: 3px;
@@ -40,6 +50,7 @@
           }
         }
       }
+
     }
     &-container {
       margin-top: 5rem;
