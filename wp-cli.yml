@@ -1,6 +1,14 @@
 # WP-CLI Configuration
+# ====================
+#
+# Set up to mirror Mario's frontend setup while providing
+# sufficiently prefilled defaults for other developers.
 #
 # https://make.wordpress.org/cli/handbook/config/
 
 server:
   port: 8888
+
+config create:
+  dbuser: atomo
+  dbpass:
