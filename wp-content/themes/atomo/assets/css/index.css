@@ -314,7 +314,7 @@ input {
   padding: 4rem;
   color: white;
 }
-.log-in-container .login {
+.log-in-container .login-link {
   position: absolute;
   width: 30px;
   height: 30px;
