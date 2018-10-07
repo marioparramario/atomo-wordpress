@@ -4,9 +4,9 @@
  *
  * @link    https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Atomo
+ * @package WordPress
+ * @subpackage Atomo
  */
-
 
 add_action( 'after_setup_theme', 'atomo_setup' );
 
@@ -125,7 +125,7 @@ if ( ! function_exists( 'atomo_register_slider_post_type' ) ) {
 add_action( 'init', 'atomo_init' );
 
 if ( ! function_exists( 'atomo_init' ) ) {
-	/*
+	/**
 	 * Initialize special-purpose page elements.
 	 */
 	function atomo_init() {
@@ -143,7 +143,7 @@ if ( ! function_exists( 'atomo_init' ) ) {
 add_action( 'widgets_init', 'atomo_widgets_init' );
 
 if ( ! function_exists( 'atomo_widgets_init' ) ) {
-	/* UNUSED */
+	/** UNUSED */
 	function atomo_widgets_init() {
 		/* -- EMPTY -- */
 	}
@@ -153,7 +153,7 @@ if ( ! function_exists( 'atomo_widgets_init' ) ) {
 add_action( 'customize_register', 'atomo_customize_register' );
 
 if ( ! function_exists( 'atomo_customize_register' ) ) {
-	/* UNUSED */
+	/** UNUSED */
 	function atomo_customize_register( $wp_customize ) {
 	    /* -- EMPTY -- */
 	}
