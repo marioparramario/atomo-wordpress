@@ -29,14 +29,14 @@
   color: white;
   padding: 2.3rem 2rem;
 }
-.slider-text-wrapper .pagination span {
+.slider-text-wrapper .pagination .pagination-indicator {
   width: 44px;
   height: 3px;
   background: white;
   margin-right: 8px;
   background: rgba(255, 255, 255, 0.5);
 }
-.slider-text-wrapper .pagination span.active {
+.slider-text-wrapper .pagination .pagination-indicator.active {
   background: #ffffff;
 }
 .slider-text-container {

@@ -93,6 +93,9 @@ input {
 .mono {
   font-family: 'Roboto Mono', monospace;
 }
+.list-unstyled {
+  list-style: none;
+}
 .main {
   width: 100%;
   background: #FAF0E9;

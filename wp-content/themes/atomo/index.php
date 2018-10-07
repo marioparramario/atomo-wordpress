@@ -18,7 +18,7 @@ get_header(); ?>
 <div class="container flex vertical align-center">
 
   <section class="slider flex">
-      <div id="carousel1" class="carousel slide" data-ride="carousel">
+      <div id="home-carousel" class="carousel slide" data-slide="false">
           <div class="carousel-inner">
               <?php if ( is_singular() ) : ?>
                   <?php
@@ -42,12 +42,12 @@ get_header(); ?>
                                ?>
                             </div>
                             <div class="slider-text-wrapper flex vertical justify-end">
-                              <div class="pagination flex">
-                                <span></span>
-                                <span class="active"></span>
-                                <span></span>
-                                <span></span>
-                              </div>
+								<ol class="pagination list-unstyled flex">
+                                  <li class="pagination-indicator active" data-target="home-carousel" data-slide-to="0"></li>
+                                  <li class="pagination-indicator" data-target="home-carousel" data-slide-to="1"></li>
+                                  <li class="pagination-indicator" data-target="home-carousel" data-slide-to="2"></li>
+                                  <li class="pagination-indicator" data-target="home-carousel" data-slide-to="3"></li>
+                                </ol>
                               <div class="slider-text-container">
                                 <h3><?php the_title(); ?></h3>
                                 <?php the_content(); ?>
@@ -76,7 +76,7 @@ get_header(); ?>
                       <?php $slider_item_number = 0; ?>
                       <?php while ( $slider->have_posts() ) : $slider->the_post(); ?>
                           <div class="carousel-item<?php if( $slider_item_number == 0) echo ' active'; ?> <?php echo join( ' ', get_post_class( '' ) ) ?>" id="post-<?php the_ID(); ?>">
-                              <a href="<?php echo esc_url( get_permalink() ); ?>">
+                              <a class="slider-link" href="<?php echo esc_url( get_permalink() ); ?>">
                                 <div class="slider-image-wrapper">
                                     <?php
                                         if ( has_post_thumbnail() ) {
@@ -84,21 +84,21 @@ get_header(); ?>
                                         }
                                      ?>
                                 </div>
-                                <div class="slider-text-wrapper flex vertical justify-end">
-                                  <div class="pagination flex">
-                                    <span></span>
-                                    <span class="active"></span>
-                                    <span></span>
-                                    <span></span>
-                                  </div>
-                                  <div class="slider-text-container">
-                                    <h3><?php the_title(); ?></h3>
-                                    <?php the_content(); ?>
-                                    <div class="line"></div>
-                                    <span>por Friedrich Nietzsche</span>
-                                  </div>
-                                </div>
                               </a>
+                              <div class="slider-text-wrapper flex vertical justify-end">
+                                <ol class="pagination list-unstyled flex">
+                                  <li class="pagination-indicator active" data-target="home-carousel" data-slide-to="0"></li>
+                                  <li class="pagination-indicator" data-target="home-carousel" data-slide-to="1"></li>
+                                  <li class="pagination-indicator" data-target="home-carousel" data-slide-to="2"></li>
+                                  <li class="pagination-indicator" data-target="home-carousel" data-slide-to="3"></li>
+                                </ol>
+                                <div class="slider-text-container">
+                                  <h3><?php the_title(); ?></h3>
+                                  <?php the_content(); ?>
+                                  <div class="line"></div>
+                                  <span>por Friedrich Nietzsche</span>
+                                </div>
+                              </div>
                           </div>
                           <?php $slider_item_number++; ?>
                       <?php endwhile; ?>
@@ -108,14 +108,6 @@ get_header(); ?>
                   <?php endif; ?>
               <?php endif; ?>
           </div>
-          <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
-			  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			  <span class="sr-only"><?php _e( 'Previous', 'atomo' ); ?></span>
-		  </a>
-          <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
-		 	  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-			  <span class="sr-only"><?php _e( 'Next', 'atomo' ); ?></span>
-		  </a>
       </div>
   </section>
 
