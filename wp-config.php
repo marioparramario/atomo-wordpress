@@ -45,11 +45,25 @@ if (is_readable( ABSPATH . '.env' )) {
 }
 
 
+/*  ~: START OF CONFIGURATION :~  */
+
 /** Operational environment for the whole WordPress application */
 define( 'WP_ENV', getenv( 'WP_ENV', true ) ?: 'production' );
 
+/**
+ * Path setup without database interference.
+ *
+ * Required for importing dumps from other setups.
+ */
 
-/*  ~: START OF CONFIGURATION :~  */
+if ( getenv( 'WP_SITEURL', true ) ) {
+	define( 'WP_SITEURL', getenv( 'WP_SITEURL', true ) );
+}
+
+if ( getenv( 'WP_HOME', true ) ) {
+	define( 'WP_HOME', getenv( 'WP_HOME', true ) );
+}
+
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
@@ -117,7 +131,6 @@ define( 'WP_DEBUG_DISPLAY', filter_var( getenv( 'WP_DEBUG_DISPLAY', true ), FILT
 
 define( 'SAVEQUERIES', filter_var( getenv( 'SAVEQUERIES', true ), FILTER_VALIDATE_BOOLEAN ) );
 define( 'SCRIPT_DEBUG', filter_var( getenv( 'SCRIPT_DEBUG', true ), FILTER_VALIDATE_BOOLEAN ) );
-
 
 /*  ~: END OF CONFIGURATION :~  */
 
