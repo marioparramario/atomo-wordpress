@@ -1,0 +1,6 @@
+# WP-CLI Configuration
+#
+# https://make.wordpress.org/cli/handbook/config/
+
+server:
+  port: 8888
