@@ -20,7 +20,7 @@ get_header(); ?>
 			<p class="no-posts"><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
 		<?php else: ?>
 			<?php while ( have_posts() ) { the_post(); ?>
-			<article <?php post_class( 'col-md-12 flex-vertical' ); ?> id="post-<?php the_ID(); ?>">
+			<article <?php post_class( 'flex-vertical' ); ?> id="post-<?php the_ID(); ?>">
 				<?php $thumb_url = get_the_post_thumbnail_url( get_the_ID(), 'normal' ); ?>
 				<div class="single-image" style="<?php echo "background-image: url('$thumb_url')"; ?>"></div>
 				<div class="single-text-wrapper">

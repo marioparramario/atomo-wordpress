@@ -26,7 +26,7 @@
 					<div class="separator"></div>
 					<a class="" href="#"><?php _e( 'EN', 'atomo' ); ?></a>
 				</div>
-				<a class="log-in" href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>"><?php _e( 'Log in', 'atomo' ); ?></a>
+				<a class="log-in" href="#"><?php _e( 'Log in', 'atomo' ); ?></a>
 			</div>
 			<div class="navbar-init-button menu flex justify-end">
 				<a class="navbar-menu-button">

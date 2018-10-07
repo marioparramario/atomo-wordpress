@@ -282,6 +282,9 @@ input {
   background-repeat: no-repeat;
   background-size: contain;
 }
+.log-in {
+  background: #D8A073;
+}
 @media (max-width: 991px) {
   a {
     letter-spacing: 0.13rem;

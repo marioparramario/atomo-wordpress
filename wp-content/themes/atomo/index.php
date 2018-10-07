@@ -16,7 +16,6 @@
 get_header(); ?>
 
 <div class="container flex vertical align-center">
-
   <section class="slider flex">
       <div id="home-carousel" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
@@ -111,9 +110,6 @@ get_header(); ?>
       </div>
   </section>
 
-
-
-
   <section class="grid-featured flex vertical">
     <h3 class="headline"><?php _e( 'Featured Articles', 'atomo' ); ?></h3>
     <div class="row flex">
@@ -140,10 +136,6 @@ get_header(); ?>
   		</a>
   		<?php endwhile; ?> <?php wp_reset_query(); ?>
       </div>
-
-
-
-
       <div class="column flex vertical justify-between">
         <?php
            $featured_args = [
@@ -182,7 +174,6 @@ get_header(); ?>
     </div>
   </section>
 
-
   <section class="issue flex-center">
     <div class="issue-container flex-center">
       <img class="issue-version" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/version.svg" alt="">
@@ -196,10 +187,6 @@ get_header(); ?>
       </div>
     </div>
   </section>
-
-
-
-
 
   <section class="grid-read flex-vertical">
     <h3 class="headline"><?php _e( 'Most Read Articles', 'atomo' ); ?></h3>
@@ -319,10 +306,14 @@ get_header(); ?>
       <div class="pagination flex">
         <?php echo paginate_links( $popular_args ); ?>
       </div>
-
   </section>
 
-
+  <div class="log-in">
+  	<h3>Log in</h3>
+  	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+	<input type="submit" class="" value="USER">
+	<input type="submit" class="" value="PASSWORD">
+  </div>
 
 </div>
 
