@@ -3,6 +3,11 @@
   overflow: hidden;
   height: 450px;
 }
+.slider *,
+.slider *::before,
+.slider *::after {
+  box-sizing: border-box;
+}
 .slider-logo {
   position: absolute;
   width: 50px;
@@ -22,7 +27,17 @@
   height: 100%;
   background: #D8A073;
   color: white;
-  padding: 3rem;
+  padding: 2.3rem 2rem;
+}
+.slider-text-wrapper .pagination-indicator {
+  width: 44px;
+  height: 3px;
+  background: white;
+  margin-right: 8px;
+  background: rgba(255, 255, 255, 0.5);
+}
+.slider-text-wrapper .pagination-indicator.active {
+  background: white;
 }
 .slider-text-wrapper .pagination span {
   width: 44px;
@@ -41,13 +56,14 @@
   font-family: 'Libre Baskerville', serif;
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
+  letter-spacing: normal;
 }
 .slider-text-container p {
   font-family: 'Libre Baskerville', serif;
   position: relative;
   font-size: 0.9rem;
   line-height: 1.5;
-  margin-bottom: 3rem;
+  letter-spacing: normal;
 }
 .slider-text-container .line {
   position: relative;
@@ -56,15 +72,24 @@
   width: 100%;
   height: 1px;
   background: #1E1E1E;
-  margin-bottom: 2rem;
+  margin: 1.5rem 0;
 }
 .slider-text-container span {
-  font-size: 0.85rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
   color: #1E1E1E;
 }
 @media (max-width: 991px) {
+  .slider {
+    height: 420px;
+  }
+  .slider-image-wrapper {
+    width: 65%;
+  }
   .slider-text-wrapper {
-    padding: 2rem 2.6rem;
+    width: 35%;
+    padding: 2rem;
   }
   .slider-text-container h3 {
     font-size: 1.7rem;
@@ -73,13 +98,12 @@
   .slider-text-container p {
     font-size: 0.85rem;
     line-height: 1.45;
-    margin-bottom: 2rem;
   }
   .slider-text-container .line {
     margin-bottom: 1rem;
   }
   .slider-text-container span {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     letter-spacing: 0.08rem;
   }
 }
@@ -107,7 +131,6 @@
   .slider-text-container p {
     font-size: 0.7rem;
     line-height: 1.45;
-    margin-bottom: 2rem;
   }
   .slider-text-container .line {
     margin-bottom: 1rem;

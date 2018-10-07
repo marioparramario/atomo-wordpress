@@ -140,21 +140,6 @@ if ( ! function_exists( 'atomo_init' ) ) {
 }
 
 
-add_action( 'excerpt_length', 'atomo_excerpt_length' );
-
-if ( ! function_exists( 'atomo_excerpt_length' ) ) {
-	/**
-	 * Set excerpt filter's length to a common number.
-	 *
-	 * @param int $length (Optional) Desired length of excerpts. (default: 20)
-	 * @return int Common excerpt length.
-	 */
-	function atomo_excerpt_length( $length ) {
-		return 20;
-	}
-}
-
-
 add_action( 'widgets_init', 'atomo_widgets_init' );
 
 if ( ! function_exists( 'atomo_widgets_init' ) ) {
@@ -211,8 +196,8 @@ if ( ! function_exists( 'atomo_enqueue_scripts' ) ) {
 		wp_deregister_style( 'normalize' );
 		wp_enqueue_style( 'normalize', 'https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css', false, null, 'all' );
 
-		wp_deregister_style( 'bootstrap' );
-		wp_enqueue_style( 'bootstrap', "$base_url/bootstrap/css/bootstrap.css", false, null, 'all' );
+		// wp_deregister_style( 'bootstrap' );
+		// wp_enqueue_style( 'bootstrap', "$base_url/bootstrap/css/bootstrap.css", false, null, 'all' );
 
 		wp_deregister_style( 'font' );
 		wp_enqueue_style( 'font', "$base_url/css/font.css", false, null, 'all' );
@@ -238,6 +223,9 @@ if ( ! function_exists( 'atomo_enqueue_scripts' ) ) {
 		wp_deregister_style( 'slider' );
 		wp_enqueue_style( 'slider', "$base_url/assets/css/slider.css", false, null, 'all' );
 
+		wp_deregister_style( 'carousel' );
+		wp_enqueue_style( 'carousel', "$base_url/assets/css/carousel.css", false, null, 'all' );
+
 		wp_deregister_style( 'grid' );
 		wp_enqueue_style( 'grid', "$base_url/assets/css/grid.css", false, null, 'all' );
 
@@ -261,6 +249,49 @@ if ( ! function_exists( 'atomo_enqueue_scripts' ) ) {
  *
  * https://gist.github.com/Kevinlearynet/3852648
  */
+
+// function atomo_meta_featured_article( $post_id ) {
+// 	$title = __( 'Featured this post', 'atomo' );
+// 	$data = get_post_meta( $post_id );
+//
+// 	$meta_key = $meta_key ?: 'meta-checkbox';
+// 	$meta = $data[ $meta_key ] ?? null;
+// 	if ( $meta !== null ) {
+// 		$checked = checked( $meta[0], 'yes', false );
+// 	} else {
+// 		$checked = '';
+// 	}
+//
+// 	if ( isset ( $data[ 'meta-checkbox' ] ) ) {
+// 		$checked = checked( $featured['meta-checkbox'][0], 'yes', false );
+// 	} else {
+// 		$checked = '';
+// 	}
+//
+// 	$checkbox = $meta[ 'meta-checkbox' ] ?? '';
+// 	$checked = checked( $checkbox[0], 'yes', false );
+//
+// 	var_dump( $checkbox );
+// 	var_dump( $checked );
+//
+// 	if ( isset ( $featured['meta-checkbox'] ) ) {
+// 		$checked = checked( $featured['meta-checkbox'][0], 'yes', false );
+// 	} else {
+// 		$checked = '';
+// 	}
+//
+// 	echo <<<EOS
+// <p>
+//     <div class="sm-row-content">
+//         <label for="meta-checkbox">
+//             <input type="checkbox" name="meta-checkbox" id="meta-checkbox" value="yes" {$checked} />
+//             <span>{$checked}</span>
+//         </label>
+//     </div>
+// </p>
+// EOS;
+// }
+
 
 /**
  * Check if given post is currently featured.
@@ -339,6 +370,7 @@ function atomo_save_post_meta( $post_id, array $args = null ) {
 	}
 
 	if ( ! isset( $_POST['atomo_featured_post_nonce'] ) ) {
+		error_log( 'Missing nonce' . $_POST['atomo_featured_post_nonce'] );
 		return;
 	}
 
@@ -446,5 +478,4 @@ function atomo_track_post_views( $post_id ) {
 add_action( 'wp_head', 'atomo_track_post_views' );
 
 
-require_once 'inc/template-tags.php';
 require_once 'inc/bootstrap/wp_bootstrap4_pagination.php';

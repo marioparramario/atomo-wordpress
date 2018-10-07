@@ -56,7 +56,7 @@ msgstr "Kontakt"
 
 #: functions.php:220 functions.php:226 index.php:124
 msgid "Featured Articles"
-msgstr "Ausgezeichnete Artikel"
+msgstr "Aktuelle Artikel"
 
 msgid "Feature this post"
 msgstr "Diesen Artikel hervorheben."
@@ -80,10 +80,6 @@ msgstr "Briefe & Aufsätze"
 #: functions.php:201 index.php:201
 msgid "Most Read Articles"
 msgstr "Meistgelesene Artikel"
-
-#: index.php:175
-msgid "No featured articles yet."
-msgstr "Noch keine ausgezeichneten Artikel."
 
 #: index-old.php:103 index.php:103 single.php:55 index.php:116 single.php:65
 msgid "Next"

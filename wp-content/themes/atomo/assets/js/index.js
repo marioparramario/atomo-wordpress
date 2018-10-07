@@ -21,3 +21,34 @@ $('main').click(function(){
 $("p").filter(function(){
     return $.trim(this.innerHTML) === "&nbsp;"
 }).remove();
+
+
+/*  === CAROUSEL ===  */
+
+$('#home-carousel .pagination-indicator').click(function (e) {
+  e.stopPropagation();
+
+  const slideTo = $(this).data('slide-to');
+  $('#home-carousel').carousel(slideTo);
+
+  /* Remove .active from all indicators on all pages .. */
+  $('#home-carousel .pagination-indicator').removeClass('active');
+
+  /* .. before activating exactly one on the page that was selected */
+  const nth = ':eq(' + slideTo + ')';
+  const chosen = '#home-carousel .pagination' + nth + ' .pagination-indicator' + nth;
+
+  $(chosen).addClass('active');
+});
+
+$('#home-carousel').on('slid.bs.carousel', function (e) {
+  e.stopPropagation();
+
+  /* Same as above, should be fixed by moving pagination out of slides */
+
+  $('#home-carousel .pagination-indicator').removeClass('active');
+  const nth = ':eq(' + e.to + ')';
+  const chosen = '#home-carousel .pagination' + nth + ' .pagination-indicator' + nth;
+
+  $(chosen).addClass('active');
+});

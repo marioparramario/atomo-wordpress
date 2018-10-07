@@ -3,7 +3,6 @@ get_header( 'index.html' ); ?>
 
 <div class="container flex vertical align-center">
 	<section class="grid-regular flex-vertical">
-      <h3 class="headline"><?php _e( 'All Articles', 'atomo' ); ?></h3>
         <div class="row flex">
           <?php if ( is_singular() ) : ?>
               <?php if ( have_posts() ) : ?>
@@ -21,7 +20,11 @@ get_header( 'index.html' ); ?>
                         <div class="description flex vertical justify-center">
                             <h4><?php the_title(); ?></h4>
                             <?php the_excerpt( ); ?>
-                            <span><?php _e( 'Read article', 'atomo' ); ?></span>
+							<p class="category">
+								<?php $category = get_the_category();
+								echo $category[0]->cat_name;
+								?>
+							</p>
                         </div>
                       </div>
                       <?php $item_number++; ?>
@@ -45,7 +48,11 @@ get_header( 'index.html' ); ?>
                             <div class="description flex vertical justify-center">
                                 <h4><?php the_title(); ?></h4>
                                 <?php the_excerpt( ); ?>
-                                <span><?php _e( 'Read article', 'atomo' ); ?></span>
+								<p class="category">
+									<?php $category = get_the_category();
+									echo $category[0]->cat_name;
+									?>
+								</p>
                             </div>
                           </a>
                       </div>
@@ -57,21 +64,19 @@ get_header( 'index.html' ); ?>
           <?php endif; ?>
         </div>
 
-
+		<div class="pagination-wrapper flex-center">
+			<?php wp_bootstrap4_pagination( array() ); ?>
+		</div>
     </section>
 
-  <section class="suscribe flex-center">
-    <div class="suscribe-container flex-vertical">
+  <section class="subscribe flex-center">
+    <div class="subscribe-container flex-vertical">
       <h2>Suscríbete a Átomo</h2>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 	  <a class="button" href="#">Suscríbete</a>
     </div>
   </section>
 
-
-    <div class="pagination-wrapper flex-center">
-        <?php wp_bootstrap4_pagination( array() ); ?>
-    </div>
 </div>
 
 <?php get_footer( 'index.html' ); ?>

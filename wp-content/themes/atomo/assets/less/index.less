@@ -45,6 +45,7 @@ body {
 }
 section {
   margin-top: 8rem;
+  margin-bottom: 6rem;
   width: 90%;
   max-width: @container;
   position: relative;
@@ -99,28 +100,52 @@ input {
   font-family: @roboto;
 }
 
+.list-unstyled {
+  list-style: none;
+}
 
 .main {
   width: 100%;
-  // padding-top: 120px;
   background: @cream;
 }
 .container {
+  position: relative;
   width: 100%;
-  transform: translateY(-150px);
+  // transform: translateY(-150px);
   padding: 0;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 150px;
+    background: white;
+  }
 }
 .archive {
+  // .main {
+  //   height: inherit;
+  // }
   .container {
-    transform: translateY(0);
+    &::before {
+      height: 100px;
+    }
+  }
+  section {
+    margin-top: 0;
   }
 }
 .articles {
-  .container {
-    transform: translateY(0);
-  }
+
+
   .nav-init {
     height: 200px;
+  }
+}
+.search {
+  section {
+    margin-top: 5rem;
   }
 }
 
@@ -138,6 +163,7 @@ input {
   max-width: none;
   min-height: 30vh;
   background: @red;
+  margin: 0;
   &-container {
     position: relative;
     max-width: @container;
@@ -193,10 +219,10 @@ input {
 
 
 
-.suscribe {
+.subscribe {
   background: @green;
   width: 100%;
-
+  margin: 0;
   max-width: @container;
   max-width: none;
   min-height: 30vh;
@@ -251,23 +277,48 @@ input {
 
 }
 
-.card {
-  background: @camel;
-  color: white;
-  border: none;
-  border-radius: initial;
-  width: 100%;
-  height: 10rem;
-  span {
-    text-transform: uppercase;
-    letter-spacing: 0.15rem;
+.search {
+  &-result {
+    position: relative;
+    background: @camel;
+    color: white;
+    border: none;
+    border-radius: initial;
+    width: 100%;
+    height: 10rem;
+    span {
+      text-transform: uppercase;
+      letter-spacing: 0.15rem;
+    }
   }
-  .search-tag {
+  &-tag {
+    position: relative;
     background: @black;
-    padding: 0.2rem 0.5rem;
+    padding: 0.2rem 0.5rem 0.2rem 0.7rem;
     margin-left: 1rem;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 28px;
+      height: 100%;
+      background: @black;
+    }
+  }
+  &-close {
+    width: 12px;
+    height: 12px;
+    z-index: 9;
+    background-image: url(../images/close-white.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 }
+.log-in {
+  background: @camel;
+}
+
 
 @media (max-width: @tablet) {
   a {
