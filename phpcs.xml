@@ -50,7 +50,7 @@
   <!-- Check all globals have the expected prefix -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
-			<property name="prefixes" type="array" value="shoptimizer" />
+			<property name="prefixes" type="array" value="atomo" />
 		</properties>
 	</rule>
 </ruleset>
