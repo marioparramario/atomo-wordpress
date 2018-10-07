@@ -4,21 +4,18 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="">
-	<meta name="author" content="">
-
-	<!-- <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>"> -->
 
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+
 	<nav class="navbar-init flex vertical center justify-start">
 		<div class="navbar-init-container top flex justify-between align-center">
 			<a class="navbar-init-iso" href="<?php echo esc_url( home_url() ); ?>" rel="home">
-				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-iso-black.svg" alt="">
+				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-iso-black.svg" alt="Átomo">
 			</a>
 			<a class="navbar-init-logo flex-center" href="<?php echo esc_url( home_url() ); ?>" rel="home">
-				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-atomo.svg" alt="">
+				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-atomo.svg" alt="Átomo">
 			</a>
 			<div class="navbar-init-button init flex vertical align-end">
 				<div class="navbar-init-button-lang flex align-center">
@@ -36,6 +33,7 @@
 				</a>
 			</div>
 		</div>
+    
 		<div class="navbar-init-container bottom flex align-center justify-between">
 			<div class="navbar-init-item">
 				<a href="<?php echo esc_url( home_url( '/category/entrevistas/' ) ); ?>"><?php _e( 'Entrevistas', 'atomo' ); ?></a>
@@ -72,24 +70,27 @@
 		<div class="navbar-wrapper flex vertical align-end">
 			<div class="navbar-button init flex align-center self-end">
 				<div class="navbar-button-lang flex align-center">
-					<a class="active" href="#"><?php _e( 'ES', 'atomo' ); ?></a>
+					<a class="lang-link active" href="#spanish" rel="alternate" hreflang="es"><abbr title="Español">ES</abbr></a>
 					<div class="separator"></div>
-					<a class="" href="#"><?php _e( 'EN', 'atomo' ); ?></a>
+					<a class="lang-link" href="#english" rel="alternate" hreflang="en"><abbr title="English">EN</abbr></a>
 				</div>
 				<a class="log-in" href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>"><?php _e( 'Log in', 'atomo' ); ?></a>
 			</div>
 
 			<div class="navbar-container flex align-center">
-				<a href="<?php echo esc_url( home_url( '/category/entrevistas/' ) ); ?>"><?php _e( 'Entrevistas', 'atomo' ); ?></a>
-				<a href="<?php echo esc_url( home_url( '/category/ficcion/' ) ); ?>"><?php _e( 'Ficción', 'atomo' ); ?></a>
-				<a href="<?php echo esc_url( home_url( '/category/cartas-ensayos/' ) ); ?>"><?php _e( 'Cartas y ensayos', 'atomo' ); ?></a>
-				<a href="<?php echo esc_url( home_url( '/category/poesia/' ) ); ?>"><?php _e( 'Poesía', 'atomo' ); ?></a>
-				<a href="<?php echo esc_url( home_url( '/category/arte-fotografia/' ) ); ?>"><?php _e( 'Arte y fotografía', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/category/entrevistas/' ) ); ?>"><?php _e( 'Interviews', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/category/ficcion/' ) ); ?>"><?php _e( 'Fiction', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/category/cartas-ensayos/' ) ); ?>"><?php _e( 'Letters & Essays', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/category/poesia/' ) ); ?>"><?php _e( 'Poetry', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/category/arte-fotografia/' ) ); ?>"><?php _e( 'Art & Photography', 'atomo' ); ?></a>
+
 				<div class="separator"></div>
+
 				<a href="<?php echo esc_url( home_url( '/issues' ) ); ?>">Ediciones</a>
-				<a href="#"><?php _e( 'Búsqueda', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/search' ) ); ?>">Búsqueda</a>
 				<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Suscríbete</a>
 			</div>
+
 			<a class="navbar-menu-button">
 				<span></span>
 				<span></span>
@@ -97,6 +98,7 @@
 			</a>
 		</div>
 	</nav>
+  
 	<nav class="navbar-mobile flex-center">
 		<div class="navbar-mobile-wrapper flex-center">
 			<div class="navbar-mobile-content flex vertical">
@@ -131,7 +133,6 @@
 		<div class="search-container flex-center">
 			<?php get_search_form( true ); ?>
 		</div>
-
 	</div>
 
 	<main class="main">

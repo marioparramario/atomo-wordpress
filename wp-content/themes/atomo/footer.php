@@ -4,17 +4,19 @@
 	<footer class="footer">
 		<div class="footer-wrapper flex justify-between">
 			<div class="footer-logo flex">
-				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-iso.svg" alt="Atomo Logo">
+				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-iso.svg" alt="Átomo">
 			</div>
+
 			<div class="footer-items flex vertical justify-center">
-				<a href="">Blog</a>
+				<a href="<?php echo esc_url( home_url( 'blog' ) ); ?>"><?php _e( 'Blog', 'atomo' ); ?></a>
 				<a href="<?php echo esc_url( home_url( 'about-us' ) ); ?>"><?php _e( 'Acerca de nosotrs', 'atomo' ); ?></a>
 				<a href="<?php echo esc_url( home_url( 'privacy-policy' ) ); ?>"><?php _e( 'Políticas de privacidad', 'atomo' ); ?></a>
 				<a href="<?php echo esc_url( home_url( 'terms-of-use' ) ); ?>"><?php _e( 'Términos de uso', 'atomo' ); ?></a>
 			</div>
+
 			<div class="footer-contact flex vertical justify-center align-end">
 				<div class="footer-social flex vertical">
-					<h4><?php _e( 'Síguenos', 'atomo' ); ?></h4>
+					<h4><?php esc_html_e( 'Follow Us', 'atomo' ); ?></h4>
 					<div class="social-container">
 						<a class="facebook-link" href="">
 							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 19 19" style="enable-background:new 0 0 19 19;" xml:space="preserve">
@@ -49,9 +51,10 @@
 						</a>
 					</div>
 				</div>
+
 				<div class="footer-email flex vertical align-end">
 					<a href="mailto:contacto@revistaatomo.com">contacto@revistaatomo.com</a>
-					<span class="copyright">© <?php echo date( 'Y' ); ?> Revista Átomo. <?php _e( 'Todos los derechos reservados', 'atomo' ); ?></span>
+					<span class="copyright" title="<?php _e( 'Todos los derechos reservados', 'atomo' ); ?>">© <?php echo date( 'Y' ); ?> Revista Átomo</span>
 				</div>
 			</div><!-- .footer-contact -->
 

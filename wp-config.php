@@ -64,6 +64,12 @@ if ( getenv( 'WP_HOME', true ) ) {
 	define( 'WP_HOME', getenv( 'WP_HOME', true ) );
 }
 
+/** Pick language for translation messages */
+if ( getenv( 'WP_LANG', true) ) {
+	define( 'WPLANG', getenv( 'WP_LANG', true ) );
+}
+
+
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
@@ -113,6 +119,7 @@ define( 'NONCE_SALT',       getenv( 'NONCE_SALT', true ) ?: 'INSECURE:SALT' );
 
 /**#@-*/
 
+
 /**
  * For developers: WordPress debugging mode.
  *
@@ -133,5 +140,6 @@ define( 'SAVEQUERIES', filter_var( getenv( 'SAVEQUERIES', true ), FILTER_VALIDAT
 define( 'SCRIPT_DEBUG', filter_var( getenv( 'SCRIPT_DEBUG', true ), FILTER_VALIDATE_BOOLEAN ) );
 
 /*  ~: END OF CONFIGURATION :~  */
+
 
 require_once ABSPATH . 'wp-settings.php';

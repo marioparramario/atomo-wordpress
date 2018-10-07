@@ -23,7 +23,7 @@ msgid "%s"
 msgstr ""
 
 #: footer.php:11
-msgid "About us"
+msgid "About Us"
 msgstr "Über uns"
 
 #: archive.php:6
@@ -37,6 +37,10 @@ msgstr "Alle Rechte vorbehalten"
 #: header.php:49 header.php:71
 msgid "Art & Photography"
 msgstr "Kunst & Photographie"
+
+#: header.php:57
+msgid "Issues"
+msgstr "Ausgaben"
 
 #: inc/breadcrumbs.php:28
 msgid "Blog Archives"
@@ -54,16 +58,15 @@ msgstr "Kontakt"
 msgid "Featured Articles"
 msgstr "Aktuelle Artikel"
 
-#: functions.php:199 functions.php:205
-msgid "Featured this post"
-msgstr ""
+msgid "Feature this post"
+msgstr "Diesen Artikel hervorheben."
 
 #: header.php:40 header.php:68
 msgid "Fiction"
 msgstr "Fiktion"
 
 #: footer-search.php:11 footer.php:17
-msgid "Follow us"
+msgid "Follow Us"
 msgstr "Folge uns"
 
 #: header.php:37 header.php:67
