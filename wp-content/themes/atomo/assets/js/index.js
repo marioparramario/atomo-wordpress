@@ -31,16 +31,12 @@ $('#home-carousel .pagination-indicator').click(function (e) {
   const slideTo = $(this).data('slide-to');
   $('#home-carousel').carousel(slideTo);
 
+  /* Remove .active from all indicators on all pages .. */
   $('#home-carousel .pagination-indicator').removeClass('active');
-});
 
-$('#home-carousel').on('slid.bs.carousel', function (e) {
-  e.stopPropagation();
+  /* .. before activating exactly one on the page that was selected */
+  const nth = ':eq(' + slideTo + ')';
+  const chosen = '#home-carousel .pagination' + nth + ' .pagination-indicator' + nth;
 
-  /* Slider page we changed to */
-  const selector = '#home-carousel .pagination-indicator:eq(' + e.to + ')';
-  $(selector).addClass('active');
-
-  /* Stop automatic sliding after selection */
-  $('#home-carousel').carousel('pause');
+  $(chosen).addClass('active');
 });
