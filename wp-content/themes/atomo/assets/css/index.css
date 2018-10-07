@@ -352,6 +352,12 @@ input {
   font-size: 0.9rem;
   padding: 0.4rem 1.4rem;
 }
+.subscription input {
+  background: red;
+}
+.subscription input .button {
+  background: red;
+}
 @media (max-width: 991px) {
   a {
     letter-spacing: 0.13rem;

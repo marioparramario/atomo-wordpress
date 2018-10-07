@@ -2,26 +2,23 @@ $(document).ready(function(){
  $('body').addClass('ready');
 });
 
-
 $(document).ready(function(){
 	$('.navbar-menu-button').click(function(){
-			$('.navbar-menu').toggleClass('active');
+			$('.navbar-menu-button').toggleClass('active');
 			$('body').toggleClass('stop-scrolling');
       $('.navbar-mobile').toggleClass('active');
 	});
 });
 
-
-
 $('.search-button').click(function(){
     $('.search-wrapper').toggleClass('active');
 });
-
 
 $('.login').click(function(){
     $('.log-in').toggleClass('active');
     $('body').toggleClass('stop-scrolling');
 });
+
 
 
 
