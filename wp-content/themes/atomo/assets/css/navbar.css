@@ -61,13 +61,13 @@
 .navbar-init-button a:hover {
   color: #1E1E1E;
 }
-.navbar-init-button a.log-in {
+.navbar-init-button a.login {
   position: relative;
   border: 1px #D8A073 solid;
   line-height: 0.6;
   padding: 0.5rem;
 }
-.navbar-init-button a.log-in::before {
+.navbar-init-button a.login::before {
   content: '';
   position: absolute;
   background: #1E1E1E;
@@ -78,11 +78,11 @@
   z-index: -1;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.navbar-init-button a.log-in:hover {
+.navbar-init-button a.login:hover {
   color: #D8A073;
   border: 1px #1E1E1E solid;
 }
-.navbar-init-button a.log-in:hover::before {
+.navbar-init-button a.login:hover::before {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
 }
