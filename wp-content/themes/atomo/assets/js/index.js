@@ -40,3 +40,15 @@ $('#home-carousel .pagination-indicator').click(function (e) {
 
   $(chosen).addClass('active');
 });
+
+$('#home-carousel').on('slid.bs.carousel', function (e) {
+  e.stopPropagation();
+
+  /* Same as above, should be fixed by moving pagination out of slides */
+
+  $('#home-carousel .pagination-indicator').removeClass('active');
+  const nth = ':eq(' + e.to + ')';
+  const chosen = '#home-carousel .pagination' + nth + ' .pagination-indicator' + nth;
+
+  $(chosen).addClass('active');
+});
