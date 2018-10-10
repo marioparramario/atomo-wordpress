@@ -325,28 +325,45 @@ function atomo_custom_meta_boxes() {
 				  'post',
 			   	  'side',
 			      'high' );
+
 }
 
 function atomo_featured_post_metabox( WP_Post $post ) {
 
 	$meta_key = 'atomo_post_featured';
 	$value = get_post_meta( $post->ID, $meta_key, true );
-
-	$checked = $value == 'yes' ? ' checked' : '';
-	$title =  __( 'Feature this post?', 'atomo' );
-
-	$label = sprintf( '<label class="components-checkbox-control__label" for="%s">%s</label>',
-					  esc_attr( $meta_key ), esc_html( $title ) );
-	$input = sprintf( '<input class="components-checkbox-control__input" type="checkbox" name="feature-post" id="%s" value="yes"%s>',
-					  esc_attr( $meta_key ), $checked );
-	$field = sprintf( '<div class="components-base-control__field">%s %s</div>',
-	 				  $label, $input );
-
-	$group = sprintf( '<div class="components-base-control">%s</div>',
-  	                  $field );
+	$out = '';
 
 	wp_nonce_field('atomo_featured_post', 'atomo_featured_post_nonce');
-	echo $group;
+
+	$checked = empty( $value ) ? ' checked' : '';
+
+	$out .= '<div>';
+	$out .= '  <label>';
+	$out .= '    <span>' . __( 'Not featured', 'atomo' ) . '</span>';
+	$out .= '    <input type="radio" name="feature-post" value=""' . $checked . '>';
+	$out .= '  </label>';
+	$out .= '</div>';
+
+	$checked = 'yes' === $value ? ' checked' : '';
+
+	$out .= '<div>';
+	$out .= '  <label>';
+	$out .= '    <span>' . __( 'Feature this post', 'atomo' ) . '</span>';
+	$out .= '    <input type="radio" name="feature-post" value="yes"' . $checked . '>';
+	$out .= '  </label>';
+	$out .= '</div>';
+
+	$checked = 'primary' === $value ? ' checked' : '';
+
+	$out .= '<div>';
+	$out .= '  <label>';
+	$out .= '    <span>' . __( 'Main featured post', 'atomo' ) . '</span>';
+	$out .= '    <input type="radio" name="feature-post" value="primary"' . $checked . '>';
+	$out .= '  </label>';
+	$out .= '</div>';
+
+	echo $out;
 }
 
 
@@ -391,11 +408,8 @@ function atomo_save_post_meta( $post_id, array $args = null ) {
 	$meta_key = $args['meta_key'] ?? 'atomo_post_featured';
 	$form_key = $args['form_key'] ?? 'feature-post';
 
-	if ( isset( $_POST['meta-checkbox'] ) ) {
-		$value = 'yes';
-	} else
 	if ( isset( $_POST[$form_key] ) ) {
-		$value = 'yes';
+		$value =  trim( $_POST[$form_key] );
 	} else {
 		$value = '';
 	}
