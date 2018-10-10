@@ -23,16 +23,11 @@
   height: 100%;
 }
 .slider-text-wrapper {
-  position: relative;
   width: 30%;
   height: 100%;
   background: #D8A073;
   color: white;
   padding: 2.3rem 2rem;
-}
-.slider-text-wrapper .pagination {
-  position: absolute;
-  top: 0;
 }
 .slider-text-wrapper .pagination-indicator {
   width: 44px;

@@ -51,11 +51,7 @@ get_header(); ?>
                                 <h3><?php the_title(); ?></h3>
                                 <?php the_content(); ?>
                                 <div class="line"></div>
-								<?php $meta_value = get_post_meta($post->ID, "author-article", true);
-								if (!empty($meta_value)) {
-									echo '<span>'. $meta_value .'</span>';
-								}
-								?>
+                                <span>por Friedrich Nietzsche</span>
                               </div>
                             </div>
                           </div>
@@ -99,11 +95,7 @@ get_header(); ?>
                                   <h3><?php the_title(); ?></h3>
                                   <?php the_content(); ?>
                                   <div class="line"></div>
-								  <?php $meta_value = get_post_meta($post->ID, "author-article", true);
-  								if (!empty($meta_value)) {
-  									echo '<span>'. $meta_value .'</span>';
-  								}
-  								?>
+                                  <span>por Friedrich Nietzsche</span>
                                 </div>
                               </div>
                           </div>
