@@ -33,22 +33,33 @@
 				</a>
 			</div>
 		</div>
-    
+
 		<div class="navbar-init-container bottom flex align-center justify-between">
 			<div class="navbar-init-item">
-				<a href="<?php echo esc_url( home_url( '/category/entrevistas/' ) ); ?>"><?php _e( 'Entrevistas', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/category/essays/' ) ); ?>"><?php _e( 'Ensayos Á', 'atomo' ); ?></a>
 			</div>
 			<div class="navbar-init-item">
-				<a href="<?php echo esc_url( home_url( '/category/ficcion/' ) ); ?>"><?php _e( 'Ficción', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/category/interviews/' ) ); ?>"><?php _e( 'Entrevistas', 'atomo' ); ?></a>
 			</div>
 			<div class="navbar-init-item">
-				<a href="<?php echo esc_url( home_url( '/category/cartas-ensayos/' ) ); ?>"><?php _e( 'Cartas y ensayos', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/category/books/' ) ); ?>"><?php _e( 'Libros', 'atomo' ); ?></a>
 			</div>
-			<div class="navbar-init-item">
-				<a href="<?php echo esc_url( home_url( '/category/poesia/' ) ); ?>"><?php _e( 'Poesía', 'atomo' ); ?></a>
+			<div class="navbar-init-item dropdown">
+				<a href="<?php echo esc_url( home_url( '/category/chronicle-others/' ) ); ?>"><?php _e( 'Crónica y otros', 'atomo' ); ?></a>
+				<div class="sub-menu flex vertical align-start">
+					<a href="<?php echo esc_url( home_url( '/category/chronic/' ) ); ?>"><?php _e( 'Crónica', 'atomo' ); ?></a>
+					<a href="<?php echo esc_url( home_url( '/category/poetry/' ) ); ?>"><?php _e( 'Poesía', 'atomo' ); ?></a>
+					<a href="<?php echo esc_url( home_url( '/category/essays/' ) ); ?>"><?php _e( 'Ensayos', 'atomo' ); ?></a>
+					<a href="<?php echo esc_url( home_url( '/category/visual-arts/' ) ); ?>"><?php _e( 'Artes visuales', 'atomo' ); ?></a>
+				</div>
+
 			</div>
-			<div class="navbar-init-item">
-				<a href="<?php echo esc_url( home_url( '/category/arte-fotografia/' ) ); ?>"><?php _e( 'Arte y fotografía', 'atomo' ); ?></a>
+			<div class="navbar-init-item dropdown">
+				<a href="<?php echo esc_url( home_url( '/category/music/' ) ); ?>"><?php _e( 'Música', 'atomo' ); ?></a>
+				<div class="sub-menu flex vertical align-start">
+					<a href="<?php echo esc_url( home_url( '/category/classic/' ) ); ?>"><?php _e( 'Música Clásica', 'atomo' ); ?></a>
+					<a href="<?php echo esc_url( home_url( '/category/jazz/' ) ); ?>"><?php _e( 'Jazz', 'atomo' ); ?></a>
+				</div>
 			</div>
 			<div class="navbar-init-separator"></div>
 			<div class="navbar-init-item">
@@ -78,11 +89,11 @@
 			</div>
 
 			<div class="navbar-container flex align-center">
-				<a href="<?php echo esc_url( home_url( '/category/entrevistas/' ) ); ?>"><?php _e( 'Interviews', 'atomo' ); ?></a>
-				<a href="<?php echo esc_url( home_url( '/category/ficcion/' ) ); ?>"><?php _e( 'Fiction', 'atomo' ); ?></a>
-				<a href="<?php echo esc_url( home_url( '/category/cartas-ensayos/' ) ); ?>"><?php _e( 'Letters & Essays', 'atomo' ); ?></a>
-				<a href="<?php echo esc_url( home_url( '/category/poesia/' ) ); ?>"><?php _e( 'Poetry', 'atomo' ); ?></a>
-				<a href="<?php echo esc_url( home_url( '/category/arte-fotografia/' ) ); ?>"><?php _e( 'Art & Photography', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/category/essays/' ) ); ?>"><?php _e( 'Ensayos Á', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/category/interviews/' ) ); ?>"><?php _e( 'Entrevistas', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/category/books/' ) ); ?>"><?php _e( 'Libros', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/category/chronicle-others/' ) ); ?>"><?php _e( 'Crónica y otros', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/category/music/' ) ); ?>"><?php _e( 'Música', 'atomo' ); ?></a>
 
 				<div class="separator"></div>
 
@@ -98,7 +109,7 @@
 			</a>
 		</div>
 	</nav>
-  
+
 	<nav class="navbar-mobile flex-center">
 		<div class="navbar-mobile-wrapper flex-center">
 			<div class="navbar-mobile-content flex vertical">

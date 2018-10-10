@@ -28,7 +28,11 @@ get_header(); ?>
 					<div class="single-social sticky"></div>
 					<div class="single-text-container flex vertical">
 						<h3 class="single-post-title"><?php the_title(); ?></h3>
-						<h4><?php the_author(); ?></h4>
+						<?php $meta_value = get_post_meta($post->ID, "author-article", true);
+								if (!empty($meta_value)) {
+									echo '<h4>'. $meta_value .'</h4>';
+								}
+								?>
 						<span><?php the_date( 'j, F, Y', null, __( ' by', 'atomo' ) ); ?></span>
 						<div class="post-body">
 							<?php the_content(); ?>

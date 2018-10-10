@@ -17,17 +17,19 @@ get_header(); ?>
 
 <div class="container flex vertical align-center">
   <section class="slider flex">
+	<?php
+	  $slider_args = [
+	      'post_type' => 'post',
+	      'meta_key' => 'atomo_post_featured',
+	      'meta_value' => 'slider',
+	      'post_per_page' => 4,
+	      'nopaging' => true,
+	      'order' => 'ASC',
+	      'orderby' => 'date'
+	  ]; ?>
       <div id="home-carousel" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
               <?php if ( is_singular() ) : ?>
-                  <?php
-                      $slider_args = array(
-                          'post_type' => 'slider',
-                          'nopaging' => true,
-                          'order' => 'ASC',
-                          'orderby' => 'date'
-                      )
-                  ?>
                   <?php $slider = new WP_Query( $slider_args ); ?>
                   <?php if ( $slider->have_posts() ) : ?>
                       <?php $slider_item_number = 0; ?>
@@ -62,14 +64,6 @@ get_header(); ?>
                       <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
                   <?php endif; ?>
               <?php else : ?>
-                  <?php
-                      $slider_args = array(
-                          'post_type' => 'slider',
-                          'nopaging' => true,
-                          'order' => 'ASC',
-                          'orderby' => 'date'
-                      )
-                  ?>
                   <?php $slider = new WP_Query( $slider_args ); ?>
                   <?php if ( $slider->have_posts() ) : ?>
                       <?php $slider_item_number = 0; ?>
@@ -114,7 +108,7 @@ get_header(); ?>
     <h3 class="headline"><?php _e( 'Featured Articles', 'atomo' ); ?></h3>
     <div class="row flex">
       <div class="column">
-		<?php query_posts('posts_per_page=1&cat=7'); ?>
+		<?php query_posts('posts_per_page=1&meta_key=atomo_post_featured&meta_value=primary'); ?>
   		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
   		<a class="item" href="<?php the_permalink(); ?>">
   		  <div class="thumbnail main">
