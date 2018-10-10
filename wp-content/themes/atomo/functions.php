@@ -349,7 +349,7 @@ function atomo_featured_post_metabox( WP_Post $post ) {
 
 	$out .= '<div>';
 	$out .= '  <label>';
-	$out .= '    <span>' . __( 'Feature this post', 'atomo' ) . '</span>';
+	$out .= '    <span>' . __( 'Featured post', 'atomo' ) . '</span>';
 	$out .= '    <input type="radio" name="feature-post" value="yes"' . $checked . '>';
 	$out .= '  </label>';
 	$out .= '</div>';
@@ -360,6 +360,15 @@ function atomo_featured_post_metabox( WP_Post $post ) {
 	$out .= '  <label>';
 	$out .= '    <span>' . __( 'Main featured post', 'atomo' ) . '</span>';
 	$out .= '    <input type="radio" name="feature-post" value="primary"' . $checked . '>';
+	$out .= '  </label>';
+	$out .= '</div>';
+
+	$checked = 'slider' === $value ? ' checked' : '';
+
+	$out .= '<div>';
+	$out .= '  <label>';
+	$out .= '    <span>' . __( 'Feature in slider', 'atomo' ) . '</span>';
+	$out .= '    <input type="radio" name="feature-post" value="slider"' . $checked . '>';
 	$out .= '  </label>';
 	$out .= '</div>';
 
