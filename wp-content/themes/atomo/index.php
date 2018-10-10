@@ -114,7 +114,7 @@ get_header(); ?>
     <h3 class="headline"><?php _e( 'Featured Articles', 'atomo' ); ?></h3>
     <div class="row flex">
       <div class="column">
-		<?php query_posts('posts_per_page=1&cat=7'); ?>
+		<?php query_posts('posts_per_page=1&meta_key=atomo_post_featured&meta_value=primary'); ?>
   		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
   		<a class="item" href="<?php the_permalink(); ?>">
   		  <div class="thumbnail main">
