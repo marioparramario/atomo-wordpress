@@ -322,6 +322,16 @@
 .navbar-menu-button {
   z-index: 9;
 }
+.dropdown:hover .sub-menu a {
+  opacity: 1;
+}
+.sub-menu {
+  position: absolute;
+}
+.sub-menu a {
+  opacity: 0;
+  margin: 0.3rem 0;
+}
 @media (max-width: 991px) {
   .navbar-init {
     height: 200px;

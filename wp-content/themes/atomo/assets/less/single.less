@@ -23,6 +23,7 @@
       width: 720px;
       background: white;
       transform: translateY(-150px);
+      margin-bottom: -120px;
       // border-top: 3px @camel solid;
     }
     &-container {
@@ -83,6 +84,35 @@
     width: 40px;
     height: 100px;
     z-index: 99;
+  }
+  blockquote {
+    p {
+      color: @camel;
+      font-size: 1.5rem;
+      line-height: 1.4;
+    }
+  }
+  .navigation {
+    width: 720px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    .nav-links {
+      width: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      a {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+      }
+    }
   }
 }
 
