@@ -16,85 +16,86 @@
 get_header(); ?>
 
 <div class="container flex vertical align-center">
-  <section class="slider flex">
+
+	<section class="slider flex">
 	<?php
-	  $atomo_slider_args = [
-	      'post_type' => 'post',
-	      'meta_key' => 'atomo_post_featured',
-	      'meta_value' => 'slider',
-	      'post_per_page' => 4,
-	      'nopaging' => true,
-	      'order' => 'ASC',
-	      'orderby' => 'date'
-	  ]; ?>
-      <div id="home-carousel" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-              <?php if ( is_singular() ) : ?>
-                  <?php $atomo_slider = new WP_Query( $atomo_slider_args ); ?>
-                  <?php if ( $atomo_slider->have_posts() ): ?>
-                      <?php $atomo_slider_item_number = 0; ?>
-                      <?php while ( $atomo_slider->have_posts() ): $atomo_slider->the_post(); ?>
-                          <div class="carousel-item<?php if ( $atomo_slider_item_number === 0 ) echo ' active'; ?> <?php echo esc_attr( join( ' ', get_post_class( '' ) ) ); ?>" id="post-<?php the_ID(); ?>">
-                            <div class="slider-image-wrapper">
-                              <?php if ( has_post_thumbnail() ) { the_post_thumbnail([ 1280, 1024 ], [ 'class' => 'slider-image' ]); } ?>
-                            </div>
-                            <div class="slider-text-wrapper flex vertical justify-end">
+		$atomo_slider_number = 0;
+		$atomo_slider_args = [
+			'post_type'     => 'post',
+			'meta_key'      => 'atomo_post_featured',
+			'meta_value'    => 'slider',
+			'post_per_page' => 4,
+			'nopaging'      => true,
+			'order'         => 'ASC',
+			'orderby'       => 'date',
+		]; ?>
+		<div id="home-carousel" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">
+				<?php if ( is_singular() ) : ?>
+					<?php $atomo_slider = new WP_Query( $atomo_slider_args ); ?>
+					<?php if ( $atomo_slider->have_posts() ): ?>
+						<?php while ( $atomo_slider->have_posts() ): $atomo_slider->the_post(); ?>
+						<div class="carousel-item<?php if ( $atomo_slider_number === 0 ) echo ' active'; ?> <?php echo esc_attr( join( ' ', get_post_class( '' ) ) ); ?>" id="post-<?php the_ID(); ?>">
+							<div class="slider-image-wrapper">
+								<?php if ( has_post_thumbnail() ) { the_post_thumbnail([ 1280, 1024 ], [ 'class' => 'slider-image' ]); } ?>
+							</div>
+							<div class="slider-text-wrapper flex vertical justify-end">
 								<ol class="pagination list-unstyled flex">
-                                  <li class="pagination-indicator active" data-target="home-carousel" data-slide-to="0"></li>
-                                  <li class="pagination-indicator" data-target="home-carousel" data-slide-to="1"></li>
-                                  <li class="pagination-indicator" data-target="home-carousel" data-slide-to="2"></li>
-                                  <li class="pagination-indicator" data-target="home-carousel" data-slide-to="3"></li>
-                                </ol>
-                              <div class="slider-text-container">
-                                <h3><?php the_title(); ?></h3>
-                                <?php the_content(); ?>
-                                <div class="line"></div>
-                                <span>por Friedrich Nietzsche</span>
-                              </div>
-                            </div>
-                          </div>
-                          <?php $atomo_slider_item_number++; ?>
-                      <?php endwhile; ?>
-                      <?php wp_reset_postdata(); ?>
-                  <?php else: ?>
-                      <p><?php esc_html_e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
-                  <?php endif; ?>
-              <?php else: ?>
-                  <?php $atomo_slider = new WP_Query( $atomo_slider_args ); ?>
-                  <?php if ( $atomo_slider->have_posts() ): ?>
-                      <?php $atomo_slider_item_number = 0; ?>
-                      <?php while ( $atomo_slider->have_posts() ): $atomo_slider->the_post(); ?>
-                          <div class="carousel-item<?php if ( $atomo_slider_item_number === 0 ) echo ' active'; ?> <?php echo esc_attr( join( ' ', get_post_class( '' ) ) ); ?>" id="post-<?php the_ID(); ?>">
-                              <a class="slider-link" href="<?php echo esc_url( get_permalink() ); ?>">
-                                <div class="slider-image-wrapper">
-                                    <?php if ( has_post_thumbnail() ) { the_post_thumbnail([ 1280, 1024 ], [ 'class' => 'slider-image' ]); } ?>
-                                </div>
-                              </a>
-                              <div class="slider-text-wrapper flex vertical justify-end">
-                                <ol class="pagination list-unstyled flex">
-                                  <li class="pagination-indicator active" data-target="home-carousel" data-slide-to="0"></li>
-                                  <li class="pagination-indicator" data-target="home-carousel" data-slide-to="1"></li>
-                                  <li class="pagination-indicator" data-target="home-carousel" data-slide-to="2"></li>
-                                  <li class="pagination-indicator" data-target="home-carousel" data-slide-to="3"></li>
-                                </ol>
-                                <div class="slider-text-container">
-                                  <h3><?php the_title(); ?></h3>
-                                  <?php the_content(); ?>
-                                  <div class="line"></div>
-                                  <span>por Friedrich Nietzsche</span>
-                                </div>
-                              </div>
-                          </div>
-                          <?php $atomo_slider_item_number++; ?>
-                      <?php endwhile; ?>
-                      <?php wp_reset_postdata(); ?>
-                  <?php else: ?>
-                      <p><?php esc_html_e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
-                  <?php endif; ?>
-              <?php endif; ?>
-          </div>
-      </div>
-  </section>
+									<li class="pagination-indicator active" data-target="home-carousel" data-slide-to="0"></li>
+									<li class="pagination-indicator" data-target="home-carousel" data-slide-to="1"></li>
+									<li class="pagination-indicator" data-target="home-carousel" data-slide-to="2"></li>
+									<li class="pagination-indicator" data-target="home-carousel" data-slide-to="3"></li>
+								</ol>
+								<div class="slider-text-container">
+									<h3><?php the_title(); ?></h3>
+									<?php the_content(); ?>
+									<div class="line"></div>
+									<span>por Friedrich Nietzsche</span>
+								</div>
+							</div><!-- .slider-text-wrapper -->
+						</div><!-- .carousel-item -->
+						<?php $atomo_slider_number++; ?>
+					<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
+				<?php else: ?>
+					<p><?php esc_html_e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
+				<?php endif; ?>
+			<?php else: ?>
+				<?php $atomo_slider = new WP_Query( $atomo_slider_args ); ?>
+				<?php if ( $atomo_slider->have_posts() ): ?>
+					<?php while ( $atomo_slider->have_posts() ): $atomo_slider->the_post(); ?>
+						<div class="carousel-item<?php if ( $atomo_slider_number === 0 ) echo ' active'; ?> <?php echo esc_attr( join( ' ', get_post_class( '' ) ) ); ?>" id="post-<?php the_ID(); ?>">
+							<a class="slider-link" href="<?php echo esc_url( get_permalink() ); ?>">
+								<div class="slider-image-wrapper">
+									<?php if ( has_post_thumbnail() ) { the_post_thumbnail([ 1280, 1024 ], [ 'class' => 'slider-image' ]); } ?>
+								</div>
+							</a>
+							<div class="slider-text-wrapper flex vertical justify-end">
+								<ol class="pagination list-unstyled flex">
+									<li class="pagination-indicator active" data-target="home-carousel" data-slide-to="0"></li>
+									<li class="pagination-indicator" data-target="home-carousel" data-slide-to="1"></li>
+									<li class="pagination-indicator" data-target="home-carousel" data-slide-to="2"></li>
+									<li class="pagination-indicator" data-target="home-carousel" data-slide-to="3"></li>
+								</ol>
+								<div class="slider-text-container">
+									<h3><?php the_title(); ?></h3>
+									<?php the_content(); ?>
+									<div class="line"></div>
+									<span>por Friedrich Nietzsche</span>
+								</div>
+							</div><!-- .slider-text-wrapper -->
+						</div><!-- .carousel-item -->
+						<?php $atomo_slider_number++; ?>
+					<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
+				<?php else: ?>
+					<p><?php esc_html_e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
+				<?php endif; ?>
+			<?php endif; ?>
+			</div>
+		</div>
+	</section><!-- .slider -->
+
 
   <section class="grid-featured flex vertical">
     <h3 class="headline"><?php _e( 'Featured Articles', 'atomo' ); ?></h3>
