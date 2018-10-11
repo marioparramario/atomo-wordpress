@@ -530,23 +530,26 @@ if ( ! function_exists('atomo_inc_post_views') ) {
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
 
 
-/**
- * Update handler storing the current view count on page load.
- *
- * @param int|WP_Post $post_id  Post ID or post object.
- */
-function atomo_track_post_views( $post_id ) {
+if ( ! function_exists('atomo_track_post_views') ) {
+	/**
+	 * Update handler storing the current view count on page load.
+	 *
+	 * @param int|WP_Post $post_id  Post ID or post object.
+	 * @param array $args (Optional) Alternative parameters.
+	 */
+	function atomo_track_post_views( $post_id, array $args = null ) {
 
-	if ( ! is_singular() ) {
-		return;
+		if ( ! is_singular() ) {
+			return;
+		}
+
+		if ( empty( $post_id ) ) {
+			global $post;
+			$post_id = $post->ID;
+		}
+
+		atomo_inc_post_views( $post_id, $args );
 	}
-
-	if ( empty( $post_id ) ) {
-		global $post;
-		$post_id = $post->ID;
-	}
-
-	atomo_inc_post_views( $post_id );
 }
 
 add_action( 'wp_head', 'atomo_track_post_views' );
