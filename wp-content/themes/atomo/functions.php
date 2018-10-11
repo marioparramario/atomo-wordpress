@@ -267,22 +267,25 @@ function atomo_custom_meta_boxes() {
  * https://gist.github.com/Kevinlearynet/3852648
  */
 
-/**
- * Check if given post is currently featured.
- *
- * @param int|WP_Post $post_id  Post ID or post object.
- *
- * @return bool
- */
-function atomo_is_featured_post( $post_id, array $args = null ): bool {
-	$meta_key = $args['meta_key'] ?? 'atomo_post_featured';
+if ( ! function_exists( 'atomo_is_featured_post' ) ) {
+	/**
+	 * Check if given post is currently featured.
+	 *
+	 * @param int|WP_Post $post_id  Post ID or post object.
+	 * @param array $args (Optional) Alternative parameters.
+	 *
+	 * @return bool
+	 */
+	function atomo_is_featured_post( $post_id, array $args = null ): bool {
+		$meta_key = $args['meta_key'] ?? 'atomo_post_featured';
 
-	$var = get_post_meta( $post_id, $meta_key, true );
-	if ( empty( $var ) ) {
-		return false;
+		$var = get_post_meta( $post_id, $meta_key, true );
+		if ( empty( $var ) ) {
+			return false;
+		}
+
+		return 0 < intval( $val );
 	}
-
-	return 0 < intval( $val );
 }
 
 function atomo_featured_post_metabox( WP_Post $post ) {
