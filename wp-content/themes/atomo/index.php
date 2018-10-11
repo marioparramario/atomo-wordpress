@@ -31,16 +31,12 @@ get_header(); ?>
           <div class="carousel-inner">
               <?php if ( is_singular() ) : ?>
                   <?php $slider = new WP_Query( $slider_args ); ?>
-                  <?php if ( $slider->have_posts() ) : ?>
+                  <?php if ( $slider->have_posts() ): ?>
                       <?php $slider_item_number = 0; ?>
-                      <?php while ( $slider->have_posts() ) : $slider->the_post(); ?>
-                          <div class="carousel-item<?php if( $slider_item_number == 0) echo ' active'; ?> <?php echo join( ' ', get_post_class( '' ) ) ?>" id="post-<?php the_ID(); ?>">
+                      <?php while ( $slider->have_posts() ): $slider->the_post(); ?>
+                          <div class="carousel-item<?php if ( $slider_item_number === 0 ) echo ' active'; ?> <?php echo esc_attr( join( ' ', get_post_class( '' ) ) ); ?>" id="post-<?php the_ID(); ?>">
                             <div class="slider-image-wrapper">
-                              <?php
-                                  if ( has_post_thumbnail() ) {
-                                      the_post_thumbnail(array(1280, 1024), array('class' => 'slider-image'));
-                                  }
-                               ?>
+                              <?php if ( has_post_thumbnail() ) { the_post_thumbnail([ 1280, 1024 ], [ 'class' => 'slider-image' ]); } ?>
                             </div>
                             <div class="slider-text-wrapper flex vertical justify-end">
 								<ol class="pagination list-unstyled flex">
@@ -60,22 +56,18 @@ get_header(); ?>
                           <?php $slider_item_number++; ?>
                       <?php endwhile; ?>
                       <?php wp_reset_postdata(); ?>
-                  <?php else : ?>
-                      <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
+                  <?php else: ?>
+                      <p><?php esc_html_e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
                   <?php endif; ?>
-              <?php else : ?>
+              <?php else: ?>
                   <?php $slider = new WP_Query( $slider_args ); ?>
-                  <?php if ( $slider->have_posts() ) : ?>
+                  <?php if ( $slider->have_posts() ): ?>
                       <?php $slider_item_number = 0; ?>
-                      <?php while ( $slider->have_posts() ) : $slider->the_post(); ?>
-                          <div class="carousel-item<?php if ( $slider_item_number == 0 ) echo ' active'; ?> <?php echo esc_attr( join( ' ', get_post_class( '' ) ) ); ?>" id="post-<?php the_ID(); ?>">
+                      <?php while ( $slider->have_posts() ): $slider->the_post(); ?>
+                          <div class="carousel-item<?php if ( $slider_item_number === 0 ) echo ' active'; ?> <?php echo esc_attr( join( ' ', get_post_class( '' ) ) ); ?>" id="post-<?php the_ID(); ?>">
                               <a class="slider-link" href="<?php echo esc_url( get_permalink() ); ?>">
                                 <div class="slider-image-wrapper">
-                                    <?php
-                                        if ( has_post_thumbnail() ) {
-                                            the_post_thumbnail(array(1280, 1024), array('class' => 'slider-image'));
-                                        }
-                                     ?>
+                                    <?php if ( has_post_thumbnail() ) { the_post_thumbnail([ 1280, 1024 ], [ 'class' => 'slider-image' ]); } ?>
                                 </div>
                               </a>
                               <div class="slider-text-wrapper flex vertical justify-end">
@@ -96,8 +88,8 @@ get_header(); ?>
                           <?php $slider_item_number++; ?>
                       <?php endwhile; ?>
                       <?php wp_reset_postdata(); ?>
-                  <?php else : ?>
-                      <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
+                  <?php else: ?>
+                      <p><?php esc_html_e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
                   <?php endif; ?>
               <?php endif; ?>
           </div>
