@@ -496,31 +496,34 @@ if ( ! function_exists('atomo_reset_post_views') ) {
 			throw new OutOfRangeException('Initial view count cannot be negative');
 		}
 
-		$updated = update_post_meta( $post_id, $meta_key, $count );
+		update_post_meta( $post_id, $meta_key, $count );
 	}
 }
 
-/**
- * Increment per-post view count in metadata.
- *
- * @param int|WP_Post $post_id  Post ID or post object.
- *
- * @return int                  Total view count for given post.
- */
-function atomo_inc_post_views( $post_id ): int {
-	$meta_key = 'atomo_post_views_count';
+if ( ! function_exists('atomo_inc_post_views') ) {
+	/**
+	 * Increment per-post view count in metadata.
+	 *
+	 * @param int|WP_Post $post_id  Post ID or post object.
+	 * @param array $args (Optional) Alternative parameters.
+	 *
+	 * @return int Total view count for given post.
+	 */
+	function atomo_inc_post_views( $post_id, array $args = null ): int {
+		$meta_key = $args['meta_key'] ?? 'atomo_post_views_count';
 
-	$var = get_post_meta( $post_id, $meta_key, true );
-	if ( $var == '' ) {
-		$counter = 0;
-		$deleted = delete_post_meta( $post_id, $meta_key );
-		$created = add_post_meta( $post_id, $meta_key, '0' );
-	} else {
-		$counter = intval( $var ) + 1;
-		$updated = update_post_meta( $post_id, $meta_key, $counter );
+		$var = get_post_meta( $post_id, $meta_key, true );
+		if ( $var === '' ) {
+			$counter = 0;
+			$deleted = delete_post_meta( $post_id, $meta_key );
+			$created = add_post_meta( $post_id, $meta_key, '0' );
+		} else {
+			$counter = intval( $var ) + 1;
+			$updated = update_post_meta( $post_id, $meta_key, $counter );
+		}
+
+		return $counter;
 	}
-
-	return $counter;
 }
 
 // To keep the count accurate, we disable prefetching here.
