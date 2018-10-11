@@ -173,50 +173,41 @@ get_header(); ?>
 	</section><!-- #current-issue -->
 
 
-  <section class="grid-read flex-vertical">
-    <h3 class="headline"><?php _e( 'Most Read Articles', 'atomo' ); ?></h3>
-    <div class="row flex">
-		<?php
-	   $popular_args = [
-		  'meta_key'        => 'atomo_post_views_count',
-		  'orderby'         => 'meta_value_num',
-		  'order'           => 'DESC',
-		  'posts_per_page'  => 6,
+	<section id="popular" class="grid-read flex-vertical">
+	<?php
+		$atomo_popular_args = [
+			'meta_key'       => 'atomo_post_views_count',
+			'orderby'        => 'meta_value_num',
+			'order'          => 'DESC',
+			'posts_per_page' => 6,
 		];
-		$popular = new WP_Query( $popular_args );
 
-	  if ($popular->have_posts() ): while ($popular->have_posts()): $popular->the_post(); ?>
-		<div class="column flex">
+		$atomo_popular = new WP_Query( $atomo_popular_args );
+	?>
+		<h3 class="headline">
+			<?php esc_html_e( 'Most Read Articles', 'atomo' ); ?>
+		</h3>
+		<div class="row flex">
 
-		  <a class="item flex" href="<?php the_permalink(); ?>">
-			<div class="thumbnail">
-			<?php if (has_post_thumbnail()) : ?>
-  	      	<?php
-  	        	if ( has_post_thumbnail() ) {
-  	          	the_post_thumbnail();
-  	        	}
-  	       	?>
-			</div>
-			<div class="description flex vertical justify-center">
-				<h4><?php the_title(); ?></h4>
-  	      		<p><?php the_excerpt();?></p>
-				<p class="category">
-					<?php $category = get_the_category();
-					echo $category[0]->cat_name;
-					?>
-				</p>
-			</div>
-		  </a>
+		<?php while ( $atomo_popular->have_posts() ) : $atomo_popular->the_post(); ?>
+			<div class="column flex">
 
-		</div>
-		<?php
-		endif;
-		endwhile; else:
-		endif;
-		?>
+				<a class="item item-link flex" href="<?php the_permalink(); ?>">
+					<div class="thumbnail">
+						<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+					</div>
+					<div class="description flex vertical justify-center">
+						<h4 class="title"><?php the_title(); ?></h4>
+						<p class="excerpt"><?php the_excerpt();?></p>
+						<p class="category"><?php esc_html_e( get_the_category()[0]->cat_name ); ?></p>
+					</div>
+				</a>
 
-    </div>
-  </section>
+			</div><!-- .column -->
+		<?php endwhile; ?>
+
+		</div><!-- .row -->
+	</section><!-- #popular -->
 
   <section class="subscribe flex-center">
     <div class="subscribe-container flex-vertical">
