@@ -283,9 +283,14 @@ if ( ! function_exists('atomo_featured_post') ) {
 	 *
 	 * @return string
 	 */
-	function atomo_featured_post( $post_id, bool $strict = false, array $args = null ) {
+	function atomo_featured_post( $post_id = null, bool $strict = false, array $args = null ) {
 		$meta_key = $args['meta_key'] ?? 'atomo_post_featured';
 		$choices  = $args['choices'] ?? ATOMO_FEATURED_POST_TYPES;
+
+		if ( empty( $post_id ) ) {
+			global $post;
+			$post_id = $post->ID;
+		}
 
 		$var = get_post_meta( $post_id, $meta_key, true );
 		if ( empty( $var ) || $var === 'no' ) {
