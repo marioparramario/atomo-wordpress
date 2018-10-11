@@ -374,56 +374,59 @@ if ( ! function_exists('atomo_featured_post_metabox') ) {
 	}
 }
 
+
 add_action( 'save_post', 'atomo_save_post_meta' );
 
-/**
- * Save custom post metadata from input.
- *
- * @param int|WP_Post $post_id  Post ID or post object.
- * @param array $args (Optional) Parameters for wp_save_meta.
- *
- * @return bool|int Either ID of newly created instance, or OK flag.
- */
-function atomo_save_post_meta( $post_id, array $args = null ) {
+if ( ! function_exists('atomo_save_post_meta') ) {
+	/**
+	 * Save custom post metadata from input.
+	 *
+	 * @param int|WP_Post $post_id  Post ID or post object.
+	 * @param array $args (Optional) Parameters for wp_save_meta.
+	 *
+	 * @return bool|int Either ID of newly created instance, or OK flag.
+	 */
+	function atomo_save_post_meta( $post_id, array $args = null ) {
 
-	if ( wp_is_post_autosave( $post_id ) ) {
-		return;
+		if ( wp_is_post_autosave( $post_id ) ) {
+			return;
+		}
+
+		if ( wp_is_post_revision( $post_id ) ) {
+			return;
+		}
+
+		if ( ! isset( $_POST['atomo_featured_post_nonce'] ) ) {
+			return;
+		}
+
+		if ( ! check_admin_referer( 'atomo_featured_post', 'atomo_featured_post_nonce' ) ) {
+			error_log( 'Invalid nonce' . $_POST['atomo_featured_post_nonce'] );
+			return;
+		}
+
+		if ( $_POST['post_type'] != 'post' ) {
+			return;
+		}
+
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+			error_log( 'Missing permission to edit post: ' . $post_id );
+			return;
+		}
+
+		/*  FEATURED POSTS  */
+		$meta_key = $args['meta_key'] ?? 'atomo_post_featured';
+		$form_key = $args['form_key'] ?? 'feature-post';
+
+		if ( isset( $_POST[ $form_key ] ) ) {
+			$value = trim( $_POST[ $form_key ] );
+		} else {
+			$value = '';
+		}
+
+		// XXX Ideally we want some sort of timestamp here.
+		update_post_meta( $post_id, $meta_key, $value );
 	}
-
-	if ( wp_is_post_revision( $post_id ) ) {
-		return;
-	}
-
-	if ( ! isset( $_POST['atomo_featured_post_nonce'] ) ) {
-		return;
-	}
-
-	if ( ! check_admin_referer( 'atomo_featured_post', 'atomo_featured_post_nonce' ) ) {
-		error_log( 'Invalid nonce' . $_POST['atomo_featured_post_nonce'] );
-		return;
-	}
-
-	if ( $_POST['post_type'] != 'post' ) {
-		return;
-	}
-
-	if ( ! current_user_can( 'edit_post', $post_id ) ) {
-		error_log( 'Missing permission to edit post: ' . $post_id );
-		return;
-	}
-
-	/*  FEATURED POSTS  */
-	$meta_key = $args['meta_key'] ?? 'atomo_post_featured';
-	$form_key = $args['form_key'] ?? 'feature-post';
-
-	if ( isset( $_POST[ $form_key ] ) ) {
-		$value = trim( $_POST[ $form_key ] );
-	} else {
-		$value = '';
-	}
-
-	// XXX Ideally we want some sort of timestamp here.
-	update_post_meta( $post_id, $meta_key, $value );
 }
 
 
