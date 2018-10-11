@@ -68,7 +68,7 @@ get_header(); ?>
                   <?php if ( $slider->have_posts() ) : ?>
                       <?php $slider_item_number = 0; ?>
                       <?php while ( $slider->have_posts() ) : $slider->the_post(); ?>
-                          <div class="carousel-item<?php if( $slider_item_number == 0) echo ' active'; ?> <?php echo join( ' ', get_post_class( '' ) ) ?>" id="post-<?php the_ID(); ?>">
+                          <div class="carousel-item<?php if ( $slider_item_number == 0 ) echo ' active'; ?> <?php echo esc_attr( join( ' ', get_post_class( '' ) ) ); ?>" id="post-<?php the_ID(); ?>">
                               <a class="slider-link" href="<?php echo esc_url( get_permalink() ); ?>">
                                 <div class="slider-image-wrapper">
                                     <?php
