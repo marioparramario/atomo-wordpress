@@ -18,7 +18,7 @@ get_header(); ?>
 	<section class="single singular">
 		<div class="single-container flex-vertical">
 		<?php if ( ! have_posts() ) : ?>
-			<p class="no-posts"><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
+			<p class="sorry no-posts"><?php esc_html_e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
 		<?php else : ?>
 			<?php while ( have_posts() ) { the_post(); ?>
 			<article <?php post_class( 'flex-vertical' ); ?> id="post-<?php the_ID(); ?>">
@@ -47,7 +47,7 @@ get_header(); ?>
 	<section class="single">
 		<div class="single-container flex-vertical">
 		<?php if ( ! have_posts() ) : ?>
-			<p class="no-posts"><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
+			<p class="sorry no-posts"><?php esc_html_e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
 		<?php else : ?>
 			<?php while ( have_posts() ) { the_post(); ?>
 			<article <?php post_class( 'col-md-12 flex-vertical' ); ?> id="post-<?php the_ID(); ?>">
