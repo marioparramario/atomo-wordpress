@@ -477,6 +477,29 @@ if ( ! function_exists('atomo_has_post_views') ) {
 	}
 }
 
+if ( ! function_exists('atomo_reset_post_views') ) {
+	/**
+	 * Reset per-post view count to zero.
+	 *
+	 * @param int|WP_Post $post_id  Post ID or post object.
+	 * @param int $count (Optional) Initial number of views.
+	 * @param array $args (Optional) Alternative parameters.
+	 */
+	function atomo_reset_post_views( $post_id, int $count = 0, array $args = null ) {
+		$meta_key = $args['meta_key'] ?? 'atomo_post_views_count';
+
+		if ( empty( $count ) ) {
+			$count = 0;
+		}
+
+		if ( $count < 0 ) {
+			throw new OutOfRangeException('Initial view count cannot be negative');
+		}
+
+		$updated = update_post_meta( $post_id, $meta_key, $count );
+	}
+}
+
 /**
  * Increment per-post view count in metadata.
  *
