@@ -267,6 +267,10 @@ function atomo_custom_meta_boxes() {
  * https://gist.github.com/Kevinlearynet/3852648
  */
 
+if ( ! defined('ATOMO_FEATURED_POST_TYPES')  ) {
+	define( 'ATOMO_FEATURED_POST_TYPES', [ 'yes', 'primary', 'slider' ] );
+}
+
 if ( ! function_exists( 'atomo_is_featured_post' ) ) {
 	/**
 	 * Check if given post is currently featured.
@@ -278,13 +282,14 @@ if ( ! function_exists( 'atomo_is_featured_post' ) ) {
 	 */
 	function atomo_is_featured_post( $post_id, array $args = null ): bool {
 		$meta_key = $args['meta_key'] ?? 'atomo_post_featured';
+		$choices = $args['choices'] ?? ATOMO_FEATURED_POST_TYPES;
 
 		$var = get_post_meta( $post_id, $meta_key, true );
 		if ( empty( $var ) ) {
 			return false;
 		}
 
-		return 0 < intval( $val );
+		return in_array( $var, $choices );
 	}
 }
 
