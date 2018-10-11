@@ -272,16 +272,16 @@ get_header(); ?>
 		</div>
 	</section><!-- #posts -->
 
-  <div class="log-in flex-center">
-  	<div class="log-in-container flex vertical">
-		<a class="login"></a>
-		<h3>Log in</h3>
-	  	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-		<input type="search" placeholder="user" value="">
-		<input type="search" placeholder="password" value="">
-		<a class="submit self-end">Entrar</a>
-  	</div>
-  </div>
+	<div class="log-in flex-center">
+		<div class="log-in-container flex vertical">
+			<a class="login login-link"></a>
+			<h3>Log in</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+			<input type="search" placeholder="user" value="">
+			<input type="search" placeholder="password" value="">
+			<a class="submit self-end">Entrar</a>
+		</div>
+	</div><!-- .log-in -->
 
 </div>
 
