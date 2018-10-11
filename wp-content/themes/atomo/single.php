@@ -82,10 +82,8 @@ get_header(); ?>
 
 <?php endif; ?>
 
-	<?php the_post_navigation( [
-			'prev_text' => __( 'Previous', 'atomo' ),
-			'next_text' => __( 'Next', 'atomo' )
-	] ); ?>
+	<?php the_post_navigation( [ 'prev_text' => __( 'Previous', 'atomo' ), 'next_text' => __( 'Next', 'atomo' )] ); ?>
+
 	</section><!-- .single -->
 </div><!-- .container -->
 
