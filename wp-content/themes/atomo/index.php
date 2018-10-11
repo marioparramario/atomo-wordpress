@@ -153,19 +153,25 @@ get_header(); ?>
 	</section><!-- #featured -->
 
 
-  <section class="issue flex-center">
-    <div class="issue-container flex-center">
-      <img class="issue-version" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/version.svg" alt="">
-      <div class="issue-image">
-        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/issue.jpg" alt="">
-      </div>
-      <div class="issue-text">
-        <h2>Milie atqui publium ne ad iaequast auden</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-        <a href="#">A link doesn't hurt</a>
-      </div>
-    </div>
-  </section>
+	<section id="current-issue" class="issue flex-center">
+		<div class="issue-container flex-center">
+			<img class="issue-version" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/version.svg" alt="">
+			<div class="issue-image">
+				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/issue.jpg" alt="<?php _e( 'Current issue', 'atomo' ); ?>">
+			</div>
+			<div class="issue-text">
+				<h2 class="title">Milie atqui publium ne ad iaequast auden</h2>
+				<p class="description">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+					Ut enim ad minim veniam.
+				</p>
+				<a class="issue-link" href="#">A link doesn't hurt</a>
+			</div>
+		</div>
+	</section><!-- #current-issue -->
+
 
   <section class="grid-read flex-vertical">
     <h3 class="headline"><?php _e( 'Most Read Articles', 'atomo' ); ?></h3>
