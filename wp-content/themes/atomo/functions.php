@@ -143,7 +143,7 @@ if ( ! function_exists( 'atomo_init' ) ) {
 		register_taxonomy_for_object_type( 'category', 'attachment' );
 		register_taxonomy_for_object_type( 'post_tag', 'attachment' );
 
-		atomo_register_slider_post_type();
+		atomo_register_slider_post_type();  // XXX(fbnm): Unused by now, can be removed.
 	}
 }
 
