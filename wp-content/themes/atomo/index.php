@@ -32,10 +32,12 @@ get_header(); ?>
 			$atomo_slider = new WP_Query( $atomo_slider_args );
 		?>
 		<div id="home-carousel" class="carousel slide" data-ride="carousel">
+		<?php if ( ! $atomo_slider->have_posts() ) : ?>
+			<div class="carousel-inner empty">
+				<p class="sorry"><?php esc_html_e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
+			</div>
+		<?php else : ?>
 			<div class="carousel-inner">
-			<?php if ( ! $atomo_slider->have_posts() ) : ?>
-				<p><?php esc_html_e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
-			<?php else : ?>
 				<?php if ( is_singular() ) : ?>
 					<?php while ( $atomo_slider->have_posts() ) : $atomo_slider->the_post(); ?>
 					<div class="carousel-item<?php if ( $atomo_slider_number === 0 ) { echo ' active'; } ?> <?php echo esc_attr( join( ' ', get_post_class( '' ) ) ); ?>" id="post-<?php the_ID(); ?>">
@@ -87,10 +89,9 @@ get_header(); ?>
 				<?php endif; /* !is_singular */ ?>
 
 				<?php wp_reset_postdata(); ?>
-
-			<?php endif; /* has_posts */ ?>
-			</div>
-		</div>
+			</div><!-- .carousel-inner -->
+		<?php endif; /* has_posts */ ?>
+		</div><!-- #home-carousel -->
 	</section><!-- #slider -->
 
 
