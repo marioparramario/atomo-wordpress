@@ -95,26 +95,26 @@ if ( ! function_exists( 'atomo_register_slider_post_type' ) ) {
 	function atomo_register_slider_post_type() {
 
 		$supports = [
-	 		'title',
-	 		'editor',
-	 		'author',
-	 		'thumbnail',
-	 		'custom-fields',
-	 		'page-attributes',
+			'title',
+			'editor',
+			'author',
+			'thumbnail',
+			'custom-fields',
+			'page-attributes',
 			'revisions',
 			'excerpt',
 		];
 
 		$labels = [
-			'name' => __( 'Sliders', 'atomo' ),
+			'name'          => __( 'Sliders', 'atomo' ),
 			'singular_name' => __( 'Slider', 'atomo' ),
 		];
 
 		$params = [
-			'labels' => $labels,
-			'public' => true,
+			'labels'       => $labels,
+			'public'       => true,
 			'show_in_menu' => true,
-			'supports' => $supports
+			'supports'     => $supports,
 		];
 
 		return register_post_type( 'slider', $params );
@@ -155,7 +155,7 @@ add_action( 'customize_register', 'atomo_customize_register' );
 if ( ! function_exists( 'atomo_customize_register' ) ) {
 	/** UNUSED */
 	function atomo_customize_register( $wp_customize ) {
-	    /* -- EMPTY -- */
+		/* -- EMPTY -- */
 	}
 }
 
@@ -164,7 +164,7 @@ add_action( 'wp_enqueue_scripts', 'atomo_enqueue_scripts' );
 
 if ( ! function_exists( 'atomo_enqueue_scripts' ) ) {
 
-    function atomo_enqueue_scripts() {
+	function atomo_enqueue_scripts() {
 
 		$base_url = get_template_directory_uri();
 
