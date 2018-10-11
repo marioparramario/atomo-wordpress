@@ -18,7 +18,7 @@ get_header(); ?>
 <div class="container flex vertical align-center">
   <section class="slider flex">
 	<?php
-	  $slider_args = [
+	  $atomo_slider_args = [
 	      'post_type' => 'post',
 	      'meta_key' => 'atomo_post_featured',
 	      'meta_value' => 'slider',
@@ -30,11 +30,11 @@ get_header(); ?>
       <div id="home-carousel" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
               <?php if ( is_singular() ) : ?>
-                  <?php $slider = new WP_Query( $slider_args ); ?>
-                  <?php if ( $slider->have_posts() ): ?>
-                      <?php $slider_item_number = 0; ?>
-                      <?php while ( $slider->have_posts() ): $slider->the_post(); ?>
-                          <div class="carousel-item<?php if ( $slider_item_number === 0 ) echo ' active'; ?> <?php echo esc_attr( join( ' ', get_post_class( '' ) ) ); ?>" id="post-<?php the_ID(); ?>">
+                  <?php $atomo_slider = new WP_Query( $atomo_slider_args ); ?>
+                  <?php if ( $atomo_slider->have_posts() ): ?>
+                      <?php $atomo_slider_item_number = 0; ?>
+                      <?php while ( $atomo_slider->have_posts() ): $atomo_slider->the_post(); ?>
+                          <div class="carousel-item<?php if ( $atomo_slider_item_number === 0 ) echo ' active'; ?> <?php echo esc_attr( join( ' ', get_post_class( '' ) ) ); ?>" id="post-<?php the_ID(); ?>">
                             <div class="slider-image-wrapper">
                               <?php if ( has_post_thumbnail() ) { the_post_thumbnail([ 1280, 1024 ], [ 'class' => 'slider-image' ]); } ?>
                             </div>
@@ -53,18 +53,18 @@ get_header(); ?>
                               </div>
                             </div>
                           </div>
-                          <?php $slider_item_number++; ?>
+                          <?php $atomo_slider_item_number++; ?>
                       <?php endwhile; ?>
                       <?php wp_reset_postdata(); ?>
                   <?php else: ?>
                       <p><?php esc_html_e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
                   <?php endif; ?>
               <?php else: ?>
-                  <?php $slider = new WP_Query( $slider_args ); ?>
-                  <?php if ( $slider->have_posts() ): ?>
-                      <?php $slider_item_number = 0; ?>
-                      <?php while ( $slider->have_posts() ): $slider->the_post(); ?>
-                          <div class="carousel-item<?php if ( $slider_item_number === 0 ) echo ' active'; ?> <?php echo esc_attr( join( ' ', get_post_class( '' ) ) ); ?>" id="post-<?php the_ID(); ?>">
+                  <?php $atomo_slider = new WP_Query( $atomo_slider_args ); ?>
+                  <?php if ( $atomo_slider->have_posts() ): ?>
+                      <?php $atomo_slider_item_number = 0; ?>
+                      <?php while ( $atomo_slider->have_posts() ): $atomo_slider->the_post(); ?>
+                          <div class="carousel-item<?php if ( $atomo_slider_item_number === 0 ) echo ' active'; ?> <?php echo esc_attr( join( ' ', get_post_class( '' ) ) ); ?>" id="post-<?php the_ID(); ?>">
                               <a class="slider-link" href="<?php echo esc_url( get_permalink() ); ?>">
                                 <div class="slider-image-wrapper">
                                     <?php if ( has_post_thumbnail() ) { the_post_thumbnail([ 1280, 1024 ], [ 'class' => 'slider-image' ]); } ?>
@@ -85,7 +85,7 @@ get_header(); ?>
                                 </div>
                               </div>
                           </div>
-                          <?php $slider_item_number++; ?>
+                          <?php $atomo_slider_item_number++; ?>
                       <?php endwhile; ?>
                       <?php wp_reset_postdata(); ?>
                   <?php else: ?>
