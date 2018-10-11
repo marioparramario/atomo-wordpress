@@ -290,8 +290,8 @@ if ( ! function_exists('atomo_featured_post') ) {
 			return false;
 		}
 
-		if ( $strict ) {
-			assert( in_array( $var, $choices ) );
+		if ( $strict && ! in_array( $var, $choices ) ) {
+			return false;
 		}
 
 		return $var;
