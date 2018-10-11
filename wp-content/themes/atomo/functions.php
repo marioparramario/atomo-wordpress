@@ -250,49 +250,6 @@ if ( ! function_exists( 'atomo_enqueue_scripts' ) ) {
  * https://gist.github.com/Kevinlearynet/3852648
  */
 
-// function atomo_meta_featured_article( $post_id ) {
-// 	$title = __( 'Featured this post', 'atomo' );
-// 	$data = get_post_meta( $post_id );
-//
-// 	$meta_key = $meta_key ?: 'meta-checkbox';
-// 	$meta = $data[ $meta_key ] ?? null;
-// 	if ( $meta !== null ) {
-// 		$checked = checked( $meta[0], 'yes', false );
-// 	} else {
-// 		$checked = '';
-// 	}
-//
-// 	if ( isset ( $data[ 'meta-checkbox' ] ) ) {
-// 		$checked = checked( $featured['meta-checkbox'][0], 'yes', false );
-// 	} else {
-// 		$checked = '';
-// 	}
-//
-// 	$checkbox = $meta[ 'meta-checkbox' ] ?? '';
-// 	$checked = checked( $checkbox[0], 'yes', false );
-//
-// 	var_dump( $checkbox );
-// 	var_dump( $checked );
-//
-// 	if ( isset ( $featured['meta-checkbox'] ) ) {
-// 		$checked = checked( $featured['meta-checkbox'][0], 'yes', false );
-// 	} else {
-// 		$checked = '';
-// 	}
-//
-// 	echo <<<EOS
-// <p>
-//     <div class="sm-row-content">
-//         <label for="meta-checkbox">
-//             <input type="checkbox" name="meta-checkbox" id="meta-checkbox" value="yes" {$checked} />
-//             <span>{$checked}</span>
-//         </label>
-//     </div>
-// </p>
-// EOS;
-// }
-
-
 /**
  * Check if given post is currently featured.
  *
