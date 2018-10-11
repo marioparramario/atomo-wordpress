@@ -22,8 +22,8 @@ get_header(); ?>
 		<?php else : ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 			<article <?php post_class( 'flex-vertical' ); ?> id="post-<?php the_ID(); ?>">
-				<?php $thumb_url = get_the_post_thumbnail_url( get_the_ID(), 'normal' ); ?>
-				<div class="single-image" style="<?php echo "background-image: url('$thumb_url')"; ?>"></div>
+				<?php $atomo_thumb_url = get_the_post_thumbnail_url( get_the_ID(), 'normal' ); ?>
+				<div class="single-image" style="<?php echo "background-image: url('$atomo_thumb_url')"; ?>"></div>
 				<div class="single-text-wrapper">
 					<div class="single-social sticky"></div>
 					<div class="single-text-container flex vertical">
@@ -53,8 +53,8 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 			<article <?php post_class( 'col-md-12 flex-vertical' ); ?> id="post-<?php the_ID(); ?>">
 				<a class="perma-link" href="<?php echo esc_url( get_permalink() ); ?>">
-				<?php $thumb_url = get_the_post_thumbnail_url( get_the_ID(), 'normal' ); ?>
-					<div class="flex-center image-single-wrapper" style="<?php echo "background-image: url('$thumb_url')"; ?>"></div>
+				<?php $atomo_thumb_url = get_the_post_thumbnail_url( get_the_ID(), 'normal' ); ?>
+					<div class="flex-center image-single-wrapper" style="<?php echo "background-image: url('$atomo_thumb_url')"; ?>"></div>
 					<div class="single-post-wrapper">
 						<h4 class="single-post-title"><?php the_title(); ?></h4>
 						<div class="single-post-info">
