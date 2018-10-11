@@ -242,18 +242,20 @@ if ( ! function_exists( 'atomo_enqueue_scripts' ) ) {
 
 add_action( 'add_meta_boxes', 'atomo_custom_meta_boxes' );
 
-/**
- * Setup meta boxes specific to Átomo functionality.
- */
-function atomo_custom_meta_boxes() {
+if ( ! function_exists('atomo_custom_meta_boxes') ) {
+	/**
+	 * Setup meta boxes specific to Átomo functionality.
+	 */
+	function atomo_custom_meta_boxes() {
 
-    add_meta_box( 'atomo_featured_post',
-				   __( 'Featured Post', 'atomo' ),
-				  'atomo_featured_post_metabox',
-				  'post',
-			   	  'side',
-			      'high' );
+		add_meta_box( 'atomo_featured_post',
+					__( 'Featured Post', 'atomo' ),
+					'atomo_featured_post_metabox',
+					'post',
+					'side',
+					'high' );
 
+	}
 }
 
 
