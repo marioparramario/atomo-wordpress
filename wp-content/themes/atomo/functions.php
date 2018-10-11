@@ -439,13 +439,18 @@ if ( ! function_exists('atomo_count_post_views') ) {
 	/**
 	 * Fetch current number of tracked post views.
 	 *
-	 * @param int|WP_Post $post_id  Post ID or post object.
-	 * @param array $args (Optional) Alternative parameters.
+	 * @param null|int|WP_Post $post_id (Optional) Post ID or post object.
+	 * @param null|array $args (Optional) Alternative parameters.
 	 *
 	 * @return int Positive integral number or `0` if given post has no count yet.
 	 */
-	function atomo_count_post_views( $post_id, array $args = null ): int {
+	function atomo_count_post_views( $post_id = null, array $args = null ): int {
 		$meta_key = $args['meta_key'] ?? 'atomo_post_views_count';
+
+		if ( empty( $post_id ) ) {
+			global $post;
+			$post_id = $post->ID;
+		}
 
 		$var = get_post_meta( $post_id, $meta_key, true );
 		if ( empty( $var ) ) {
@@ -460,13 +465,18 @@ if ( ! function_exists('atomo_has_post_views') ) {
 	/**
 	 * Check if given post has had any views yet.
 	 *
-	 * @param int|WP_Post $post_id  Post ID or post object.
+	 * @param null|int|WP_Post $post_id  Post ID or post object.
 	 * @param array $args (Optional) Alternative parameters.
 	 *
 	 * @return bool
 	 */
-	function atomo_has_post_views( $post_id, array $args = null ): bool {
+	function atomo_has_post_views( $post_id = null, array $args = null ): bool {
 		$meta_key = $args['meta_key'] ?? 'atomo_post_views_count';
+
+		if ( empty( $post_id ) ) {
+			global $post;
+			$post_id = $post->ID;
+		}
 
 		$var = get_post_meta( $post_id, $meta_key, true );
 		if ( empty( $var ) ) {
