@@ -283,6 +283,6 @@ get_header(); ?>
 		</div>
 	</div><!-- .log-in -->
 
-</div>
+</div><!-- .container -->
 
 <?php get_footer(); ?>
