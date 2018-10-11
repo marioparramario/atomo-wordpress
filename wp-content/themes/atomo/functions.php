@@ -290,7 +290,7 @@ if ( ! function_exists('atomo_featured_post') ) {
 			return false;
 		}
 
-		if ( $strict && ! in_array( $var, $choices ) ) {
+		if ( $strict && ! in_array( $var, $choices, true ) ) {
 			return false;
 		}
 
@@ -312,11 +312,11 @@ if ( ! function_exists('atomo_is_featured_post') ) {
 		$choices  = $args['choices'] ?? ATOMO_FEATURED_POST_TYPES;
 
 		$var = get_post_meta( $post_id, $meta_key, true );
-		if ( empty( $var ) ) {
+		if ( empty( $var ) || $var === 'no' ) {
 			return false;
 		}
 
-		return in_array( $var, $choices );
+		return in_array( $var, $choices, true );
 	}
 }
 
