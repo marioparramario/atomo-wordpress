@@ -282,7 +282,7 @@ get_header(); ?>
         <?php endif; ?>
       </div>
       <div class="pagination flex">
-        <?php echo paginate_links( $popular_args ); ?>
+        <?php echo paginate_links( $atomo_popular_args ); ?>
       </div>
   </section>
 
