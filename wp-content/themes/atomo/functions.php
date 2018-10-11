@@ -282,7 +282,7 @@ if ( ! function_exists( 'atomo_is_featured_post' ) ) {
 	 */
 	function atomo_is_featured_post( $post_id, array $args = null ): bool {
 		$meta_key = $args['meta_key'] ?? 'atomo_post_featured';
-		$choices = $args['choices'] ?? ATOMO_FEATURED_POST_TYPES;
+		$choices  = $args['choices'] ?? ATOMO_FEATURED_POST_TYPES;
 
 		$var = get_post_meta( $post_id, $meta_key, true );
 		if ( empty( $var ) ) {
@@ -293,53 +293,59 @@ if ( ! function_exists( 'atomo_is_featured_post' ) ) {
 	}
 }
 
-function atomo_featured_post_metabox( WP_Post $post ) {
+if ( ! function_exists('atomo_featured_post_metabox') ) {
+	/**
+	 * Provide control interface for featured posts.
+	 *
+	 * @param WP_Post $post Post object to feature.
+	 */
+	function atomo_featured_post_metabox( WP_Post $post ) {
 
-	$meta_key = 'atomo_post_featured';
-	$value = get_post_meta( $post->ID, $meta_key, true );
-	$out = '';
+		$meta_key = 'atomo_post_featured';
+		$value = get_post_meta( $post->ID, $meta_key, true );
+		$out = '';
 
-	wp_nonce_field('atomo_featured_post', 'atomo_featured_post_nonce');
+		wp_nonce_field('atomo_featured_post', 'atomo_featured_post_nonce');
 
-	$checked = empty( $value ) ? ' checked' : '';
+		$checked = empty( $value ) ? ' checked' : '';
 
-	$out .= '<div>';
-	$out .= '  <label>';
-	$out .= '    <span>' . __( 'Not featured', 'atomo' ) . '</span>';
-	$out .= '    <input type="radio" name="feature-post" value=""' . $checked . '>';
-	$out .= '  </label>';
-	$out .= '</div>';
+		$out .= '<div>';
+		$out .= '  <label>';
+		$out .= '    <span>' . __( 'Not featured', 'atomo' ) . '</span>';
+		$out .= '    <input type="radio" name="feature-post" value=""' . $checked . '>';
+		$out .= '  </label>';
+		$out .= '</div>';
 
-	$checked = 'yes' === $value ? ' checked' : '';
+		$checked = 'yes' === $value ? ' checked' : '';
 
-	$out .= '<div>';
-	$out .= '  <label>';
-	$out .= '    <span>' . __( 'Featured post', 'atomo' ) . '</span>';
-	$out .= '    <input type="radio" name="feature-post" value="yes"' . $checked . '>';
-	$out .= '  </label>';
-	$out .= '</div>';
+		$out .= '<div>';
+		$out .= '  <label>';
+		$out .= '    <span>' . __( 'Featured post', 'atomo' ) . '</span>';
+		$out .= '    <input type="radio" name="feature-post" value="yes"' . $checked . '>';
+		$out .= '  </label>';
+		$out .= '</div>';
 
-	$checked = 'primary' === $value ? ' checked' : '';
+		$checked = 'primary' === $value ? ' checked' : '';
 
-	$out .= '<div>';
-	$out .= '  <label>';
-	$out .= '    <span>' . __( 'Main featured post', 'atomo' ) . '</span>';
-	$out .= '    <input type="radio" name="feature-post" value="primary"' . $checked . '>';
-	$out .= '  </label>';
-	$out .= '</div>';
+		$out .= '<div>';
+		$out .= '  <label>';
+		$out .= '    <span>' . __( 'Main featured post', 'atomo' ) . '</span>';
+		$out .= '    <input type="radio" name="feature-post" value="primary"' . $checked . '>';
+		$out .= '  </label>';
+		$out .= '</div>';
 
-	$checked = 'slider' === $value ? ' checked' : '';
+		$checked = 'slider' === $value ? ' checked' : '';
 
-	$out .= '<div>';
-	$out .= '  <label>';
-	$out .= '    <span>' . __( 'Feature in slider', 'atomo' ) . '</span>';
-	$out .= '    <input type="radio" name="feature-post" value="slider"' . $checked . '>';
-	$out .= '  </label>';
-	$out .= '</div>';
+		$out .= '<div>';
+		$out .= '  <label>';
+		$out .= '    <span>' . __( 'Feature in slider', 'atomo' ) . '</span>';
+		$out .= '    <input type="radio" name="feature-post" value="slider"' . $checked . '>';
+		$out .= '  </label>';
+		$out .= '</div>';
 
-	echo $out;
+		echo $out;
+	}
 }
-
 
 add_action( 'save_post', 'atomo_save_post_meta' );
 
