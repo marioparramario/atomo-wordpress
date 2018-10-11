@@ -432,28 +432,29 @@ if ( ! function_exists('atomo_save_post_meta') ) {
 }
 
 
-//  POST VIEWS COUNT  //
+/* ===  POST VIEWS COUNT  === */
 
 
-/**
- * Fetch current number of tracked post views.
- *
- * @param int|WP_Post $post_id  Post ID or post object.
- *
- * @return null|int             Either a positive `int` value
- *                              or `null` if given post has no count.
- */
-function atomo_get_post_views( $post_id ): ?int {
-	$meta_key = 'atomo_post_views_count';
+if ( ! function_exists('atomo_count_post_views') ) {
+	/**
+	 * Fetch current number of tracked post views.
+	 *
+	 * @param int|WP_Post $post_id  Post ID or post object.
+	 * @param array $args (Optional) Alternative parameters.
+	 *
+	 * @return int Positive integral number or `0` if given post has no count yet.
+	 */
+	function atomo_count_post_views( $post_id, array $args = null ): int {
+		$meta_key = $args['meta_key'] ?? 'atomo_post_views_count';
 
-	$var = get_post_meta( $post_id, $meta_key, true );
-	if ( $var == '' ) {
-		return null;
+		$var = get_post_meta( $post_id, $meta_key, true );
+		if ( empty( $var ) ) {
+			return 0;
+		}
+
+		return intval( $var );
 	}
-
-	return intval( $var );
 }
-
 
 /**
  * Increment per-post view count in metadata.
