@@ -339,6 +339,7 @@ add_action( 'save_post', 'atomo_save_post_meta' );
  * Save custom post metadata from input.
  *
  * @param int|WP_Post $post_id  Post ID or post object.
+ * @param array $args (Optional) Parameters for wp_save_meta.
  *
  * @return bool|int Either ID of newly created instance, or OK flag.
  */
@@ -374,8 +375,8 @@ function atomo_save_post_meta( $post_id, array $args = null ) {
 	$meta_key = $args['meta_key'] ?? 'atomo_post_featured';
 	$form_key = $args['form_key'] ?? 'feature-post';
 
-	if ( isset( $_POST[$form_key] ) ) {
-		$value =  trim( $_POST[$form_key] );
+	if ( isset( $_POST[ $form_key ] ) ) {
+		$value = trim( $_POST[ $form_key ] );
 	} else {
 		$value = '';
 	}
