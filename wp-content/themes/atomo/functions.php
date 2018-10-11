@@ -1,16 +1,17 @@
-<?php
+<?php defined( 'ABSPATH' ) or die( 'Access denied' );
 /**
  * Functions and constants for Átomo theme.
  *
- * @link    https://developer.wordpress.org/themes/basics/theme-functions/
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package WordPress
  * @subpackage Atomo
  */
 
+
 add_action( 'after_setup_theme', 'atomo_setup' );
 
-if ( ! function_exists( 'atomo_setup' ) ) {
+if ( ! function_exists('atomo_setup') ) {
 	/**
 	 * Set up Átomo theme defaults and handlers.
 	 */
@@ -41,7 +42,7 @@ if ( ! function_exists( 'atomo_setup' ) ) {
 		 *
 		 * [1] https://codex.wordpress.org/Post_Formats
 		 */
-		add_theme_support( 'post-formats', [
+		$supported_formats = [
 			'aside',
 			'image',
 			'video',
@@ -49,28 +50,35 @@ if ( ! function_exists( 'atomo_setup' ) ) {
 			'link',
 			'gallery',
 			'audio',
-		] );
+		];
+
+		add_theme_support( 'post-formats', $supported_formats );
 
 		/*
 		 * Add support for widget edit icons in customizer.
 		 */
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
-		register_nav_menus( [
+		$nav_menus = [
 			'primary' => __( 'Primary Menu', 'atomo' ),
 			'social'  => __( 'Social Links Menu', 'atomo' ),
-		] );
+		];
+
+		register_nav_menus( $nav_menus );
 
 		/*
 		 * Tweak common markup to utilize HTML5 features.
 		 */
-		add_theme_support( 'html5', [
+
+		$html5_elements = [
 			'search-form',
 			'comment-form',
 			'comment-list',
 			'gallery',
 			'caption',
-		] );
+		];
+
+		add_theme_support( 'html5', $html5_elements );
 	}
 }
 
@@ -82,7 +90,7 @@ if ( ! function_exists( 'atomo_setup' ) ) {
  *
  * https://codex.wordpress.org/Content_Width
  */
-if ( ! isset( $content_width ) ) {
+if ( empty( $content_width ) ) {
 	$content_width = 900;
 }
 
