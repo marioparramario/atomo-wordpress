@@ -456,6 +456,27 @@ if ( ! function_exists('atomo_count_post_views') ) {
 	}
 }
 
+if ( ! function_exists('atomo_has_post_views') ) {
+	/**
+	 * Check if given post has had any views yet.
+	 *
+	 * @param int|WP_Post $post_id  Post ID or post object.
+	 * @param array $args (Optional) Alternative parameters.
+	 *
+	 * @return bool
+	 */
+	function atomo_has_post_views( $post_id, array $args = null ): bool {
+		$meta_key = $args['meta_key'] ?? 'atomo_post_views_count';
+
+		$var = get_post_meta( $post_id, $meta_key, true );
+		if ( empty( $var ) ) {
+			return false;
+		}
+
+		return intval( $var ) > 0;
+	}
+}
+
 /**
  * Increment per-post view count in metadata.
  *
