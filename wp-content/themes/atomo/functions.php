@@ -310,11 +310,12 @@ if ( ! function_exists('atomo_is_featured_post') ) {
 	 * Check if given post is currently featured.
 	 *
 	 * @param int|WP_Post $post_id  Post ID or post object.
+	 * @param string $type (Optional) Specific feature type variant to check.
 	 * @param array $args (Optional) Alternative parameters.
 	 *
 	 * @return bool
 	 */
-	function atomo_is_featured_post( $post_id = null, array $args = null ): bool {
+	function atomo_is_featured_post( $post_id = null, string $type = '*', array $args = null ): bool {
 		$meta_key = $args['meta_key'] ?? 'atomo_post_featured';
 		$choices  = $args['choices'] ?? ATOMO_FEATURED_POST_TYPES;
 
@@ -326,6 +327,14 @@ if ( ! function_exists('atomo_is_featured_post') ) {
 		$var = get_post_meta( $post_id, $meta_key, true );
 		if ( empty( $var ) || $var === 'no' ) {
 			return false;
+		}
+
+		if ( empty( $type ) ) {
+			$type = '*';
+		}
+
+		if ( in_array( $type, $choices, true ) ) {
+			return $var === $type;
 		}
 
 		return in_array( $var, $choices, true );
