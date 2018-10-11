@@ -97,69 +97,63 @@ get_header(); ?>
 	</section><!-- .slider -->
 
 
-  <section class="grid-featured flex vertical">
-    <h3 class="headline"><?php _e( 'Featured Articles', 'atomo' ); ?></h3>
-    <div class="row flex">
-      <div class="column">
-		<?php query_posts('posts_per_page=1&meta_key=atomo_post_featured&meta_value=primary'); ?>
-  		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-  		<a class="item" href="<?php the_permalink(); ?>">
-  		  <div class="thumbnail main">
-  			<?php
-  				if ( has_post_thumbnail() ) {
-  					the_post_thumbnail();
-  				}
-  			 ?>
-  		  </div>
-  		  <div class="description flex vertical">
-  			<h4><?php the_title(); ?></h4>
-  			<p><?php the_excerpt(); ?></p>
-  			<p class="category">
-				<?php $category = get_the_category();
-				echo $category[0]->cat_name;
-				?>
-			</p>
-  		  </div>
-  		</a>
-  		<?php endwhile; ?> <?php wp_reset_query(); ?>
-      </div>
-      <div class="column flex vertical justify-between">
-        <?php
-           $featured_args = [
-                'posts_per_page' 	=> 2,
-                'meta_key'          => 'atomo_post_featured',
-                'meta_value'        => 'yes',
-            ];
-            $featured = new WP_Query( $featured_args );
-        if ($featured->have_posts()): while($featured->have_posts()): $featured->the_post(); ?>
-        <div class="column-sub flex">
-          <a class="item landscape flex" href="<?php the_permalink(); ?>">
-            <div class="thumbnail">
-              <?php if (has_post_thumbnail()) : ?>
-              <?php
-                  if ( has_post_thumbnail() ) {
-                      the_post_thumbnail();
-                  }
-               ?>
-            </div>
-            <div class="description flex vertical justify-center">
-              <h4><?php the_title(); ?></h4>
-              <p><?php the_excerpt();?></p>
-			  <p class="category">
-  				<?php $category = get_the_category();
-  				echo $category[0]->cat_name;
-  				?>
-  			</p>
-            </div>
-          </a>
-      </div>
-      <?php
-      endif;
-      endwhile; else:
-      endif;
-      ?>
-    </div>
-  </section>
+	<section id="featured" class="grid-featured flex vertical">
+		<?php
+			$atomo_featured_args = [
+				'meta_key'          => 'atomo_post_featured',
+				'meta_value'        => 'yes',
+				'posts_per_page' 	=> 2,
+			];
+
+			$atomo_primary_args = [
+				'meta_key'          => 'atomo_post_featured',
+				'meta_value'        => 'primary',
+				'posts_per_page'    => 1,
+			];
+
+			$atomo_featured = new WP_Query( $atomo_featured_args );
+			$atomo_primary = new WP_Query( $atomo_primary_args );
+		?>
+		<h3 class="headline">
+			<?php esc_html_e( 'Featured Articles', 'atomo' ); ?>
+		</h3>
+		<div class="row flex">
+			<div class="column">
+			<?php while ( $atomo_primary->have_posts() ) : $atomo_primary->the_post(); ?>
+				<a class="item item-link" href="<?php the_permalink(); ?>">
+					<div class="thumbnail main">
+						<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+					</div>
+					<div class="description flex vertical">
+						<h4 class="title"><?php the_title(); ?></h4>
+						<p class="excerpt"><?php the_excerpt(); ?></p>
+						<p class="category"><?php esc_html_e( get_the_category()[0]->cat_name ); ?></p>
+					</div>
+				</a><!-- .item -->
+			<?php endwhile; ?>
+			</div><!-- .column -->
+
+			<?php wp_reset_query(); ?>
+
+			<div class="column flex vertical justify-between">
+			<?php while ( $atomo_featured->have_posts() ) : $atomo_featured->the_post(); ?>
+				<div class="column-sub flex">
+					<a class="item item-link landscape flex" href="<?php the_permalink(); ?>">
+						<div class="thumbnail">
+							<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); }	?>
+						</div>
+						<div class="description flex vertical justify-center">
+							<h4 class="title"><?php the_title(); ?></h4>
+							<p class="excerpt"><?php the_excerpt(); ?></p>
+							<p class="category"><?php esc_html_e( get_the_category()[0]->cat_name ); ?></p>
+						</div>
+					</a><!-- .item -->
+				</div><!-- .column-sub -->
+			<?php endwhile; ?>
+			</div><!-- .column -->
+		</div><!-- .row -->
+	</section><!-- #featured -->
+
 
   <section class="issue flex-center">
     <div class="issue-container flex-center">
