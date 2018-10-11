@@ -123,9 +123,9 @@
 			<div class="separator"></div>
 			<div class="navbar-mobile-content flex vertical">
 				<div class="navbar-mobile-lang flex align-center">
-					<a class="active" href="#"><?php _e( 'ES', 'atomo' ); ?></a>
+					<a class="lang-link active" href="#spanish" rel="alternate" hreflang="es"><abbr title="Español">ES</abbr></a>
 					<div class="separator lang"></div>
-					<a class="" href="#"><?php _e( 'EN', 'atomo' ); ?></a>
+					<a class="lang-link" href="#english" rel="alternate" hreflang="en"><abbr title="English">EN</abbr></a>
 				</div>
 				<div class="navbar-mobile-button flex">
 					<a href="#">Log in</a>
