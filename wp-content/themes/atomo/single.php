@@ -8,7 +8,7 @@
  * @subpackage Atomo
  */
 
-$item_number = 0;
+$atomo_item_number = 0;
 
 get_header(); ?>
 
@@ -40,7 +40,7 @@ get_header(); ?>
 					</div>
 				</div>
 			</article><!-- #post-<?php the_ID(); ?> -->
-		<?php $item_number++; } ?>
+		<?php $atomo_item_number++; } ?>
 	<?php endif; ?>
 <?php else: ?>
 	<section class="single">
@@ -65,7 +65,7 @@ get_header(); ?>
 					</div>
 				</a>
 			</article><!-- #post-<?php the_ID(); ?> -->
-		<?php $item_number++; } ?>
+		<?php $atomo_item_number++; } ?>
 	<?php endif; ?>
 
 <?php endif; ?>
