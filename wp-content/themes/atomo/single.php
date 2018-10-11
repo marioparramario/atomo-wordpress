@@ -15,11 +15,14 @@ get_header(); ?>
 
 <div class="container flex vertical align-center">
 <?php if ( is_singular() ) : ?>
+
 	<section class="single singular">
-		<div class="single-container flex-vertical">
-		<?php if ( ! have_posts() ) : ?>
+	<?php if ( ! have_posts() ) : ?>
+		<div class="single-container flex-vertical empty">
 			<p class="sorry no-posts"><?php esc_html_e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
-		<?php else : ?>
+		</div>
+	<?php else : ?>
+		<div class="single-container flex vertical">
 			<?php while ( have_posts() ) : the_post(); ?>
 			<article <?php post_class( 'flex-vertical' ); ?> id="post-<?php the_ID(); ?>">
 				<?php $atomo_thumb_url = get_the_post_thumbnail_url( get_the_ID(), 'normal' ); ?>
@@ -41,16 +44,21 @@ get_header(); ?>
 					</div>
 				</div>
 			</article><!-- #post-<?php the_ID(); ?> -->
-		<?php $atomo_item_number++; ?>
+			<?php $atomo_item_number++; ?>
 		<?php endwhile; ?>
-	<?php endif; ?>
-<?php else : ?>
+	<?php endif; /* have_posts */ ?>
+	</div><!-- .single-container -->
+
+<?php else : /* is_singular */ ?>
+
 	<section class="single">
-		<div class="single-container flex-vertical">
-		<?php if ( ! have_posts() ) : ?>
+	<?php if ( ! have_posts() ) : ?>
+		<div class="single-container flex-vertical empty">
 			<p class="sorry no-posts"><?php esc_html_e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
-		<?php else : ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+		</div>
+	<?php else : ?>
+		<div class="single-container flex-vertical">
+		<?php while ( have_posts() ) : the_post(); ?>
 			<article <?php post_class( 'col-md-12 flex-vertical' ); ?> id="post-<?php the_ID(); ?>">
 				<a class="perma-link" href="<?php echo esc_url( get_permalink() ); ?>">
 				<?php $atomo_thumb_url = get_the_post_thumbnail_url( get_the_ID(), 'normal' ); ?>
@@ -67,9 +75,10 @@ get_header(); ?>
 					</div>
 				</a>
 			</article><!-- #post-<?php the_ID(); ?> -->
-		<?php $atomo_item_number++; ?>
+			<?php $atomo_item_number++; ?>
 		<?php endwhile; ?>
-	<?php endif; ?>
+		</div><!-- .single-container -->
+	<?php endif; /* have_posts */ ?>
 
 <?php endif; ?>
 
@@ -77,7 +86,6 @@ get_header(); ?>
 			'prev_text' => __( 'Previous', 'atomo' ),
 			'next_text' => __( 'Next', 'atomo' )
 	] ); ?>
-		</div><!-- .single-container -->
 	</section><!-- .single -->
 </div><!-- .container -->
 
