@@ -209,13 +209,15 @@ get_header(); ?>
 		</div><!-- .row -->
 	</section><!-- #popular -->
 
-  <section class="subscribe flex-center">
-    <div class="subscribe-container flex-vertical">
-      <h2>Suscríbete a Átomo</h2>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-	  <a class="button" href="#">Suscríbete</a>
-    </div>
-  </section>
+
+	<section class="subscribe flex-center">
+		<div class="subscribe-container flex-vertical">
+			<h2 class="title">Suscríbete a Átomo</h2>
+			<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			<a class="button" href="#">Suscríbete</a>
+		</div>
+	</section><!-- .subscribe -->
+
 
   <section class="grid-regular flex-vertical">
     <h3 class="headline"><?php _e( 'All Articles', 'atomo' ); ?></h3>
