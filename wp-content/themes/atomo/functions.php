@@ -240,6 +240,23 @@ if ( ! function_exists( 'atomo_enqueue_scripts' ) ) {
 }
 
 
+add_action( 'add_meta_boxes', 'atomo_custom_meta_boxes' );
+
+/**
+ * Setup meta boxes specific to Átomo functionality.
+ */
+function atomo_custom_meta_boxes() {
+
+    add_meta_box( 'atomo_featured_post',
+				   __( 'Featured Post', 'atomo' ),
+				  'atomo_featured_post_metabox',
+				  'post',
+			   	  'side',
+			      'high' );
+
+}
+
+
 /*
  * FEATURED POSTS
  * ==============
@@ -266,23 +283,6 @@ function atomo_is_featured_post( $post_id, array $args = null ): bool {
 	}
 
 	return 0 < intval( $val );
-}
-
-
-add_action( 'add_meta_boxes', 'atomo_custom_meta_boxes' );
-
-/**
- * Setup meta boxes specific to Átomo functionality.
- */
-function atomo_custom_meta_boxes() {
-
-    add_meta_box( 'atomo_featured_post',
-				   __( 'Featured Post', 'atomo' ),
-				  'atomo_featured_post_metabox',
-				  'post',
-			   	  'side',
-			      'high' );
-
 }
 
 function atomo_featured_post_metabox( WP_Post $post ) {
