@@ -271,7 +271,34 @@ if ( ! defined('ATOMO_FEATURED_POST_TYPES')  ) {
 	define( 'ATOMO_FEATURED_POST_TYPES', [ 'yes', 'primary', 'slider' ] );
 }
 
-if ( ! function_exists( 'atomo_is_featured_post' ) ) {
+if ( ! function_exists('atomo_featured_post') ) {
+	/**
+	 * Get featured post variant from meta-box.
+	 *
+	 * @param int|WP_Post $post_id  Post ID or post object.
+	 * @param bool $strict (Optional) Assert feature type validity.
+	 * @param array $args (Optional) Alternative parameters.
+	 *
+	 * @return string
+	 */
+	function atomo_featured_post( $post_id, bool $strict = false, array $args = null ) {
+		$meta_key = $args['meta_key'] ?? 'atomo_post_featured';
+		$choices  = $args['choices'] ?? ATOMO_FEATURED_POST_TYPES;
+
+		$var = get_post_meta( $post_id, $meta_key, true );
+		if ( empty( $var ) || $var === 'no' ) {
+			return false;
+		}
+
+		if ( $strict ) {
+			assert( in_array( $var, $choices ) );
+		}
+
+		return $var;
+	}
+}
+
+if ( ! function_exists('atomo_is_featured_post') ) {
 	/**
 	 * Check if given post is currently featured.
 	 *
