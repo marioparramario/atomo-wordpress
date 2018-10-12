@@ -30,6 +30,7 @@
   background: #D8A073;
   color: white;
   padding: 2.3rem 2rem;
+  z-index: 9;
 }
 .slider-text-wrapper .pagination-indicator {
   width: 44px;
