@@ -27,7 +27,7 @@
       // border-top: 3px @camel solid;
     }
     &-container {
-      margin: 4.5rem;
+      margin: 4rem;
       h3 {
         color: @camel;
         font-size: 1.6rem;
@@ -48,13 +48,34 @@
         }
       }
       p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         line-height: 1.8;
         margin-top: 1.5rem;
       }
       span {
         margin-top: 4rem;
         font-size: 0.7rem;
+      }
+      ol {
+        margin-top: 1rem;
+        &>li {
+          margin-left:0;
+          margin-bottom: 0.6rem;
+          padding-left:0;
+          counter-increment:item;
+          list-style:none inside;
+          &::before {
+            content:"(" counter(item) ")";
+            padding-right:0.5em
+          }
+        }
+      }
+      li {
+        color: @red;
+        font-family: @roboto;
+        font-size: 0.65rem;
+        letter-spacing: 0.02rem;
+        line-height: 1.4;
       }
     }
     &-quote {
@@ -131,5 +152,40 @@
   }
   .nav-init {
     background: @cream;
+  }
+}
+
+figure {
+  width: 100% !important;
+  margin: 1.2rem 2.2rem;
+  img {
+    height: auto;
+  }
+}
+.alignleft {
+  margin-left: 0;
+  float: left;
+}
+.alignright {
+  margin-right: 0;
+  float: right;
+}
+.aligncenter {
+  margin-right: 0;
+  margin-left: 0;
+}
+.wp-caption-text {
+  margin-top: 0.5rem;
+  font-family: @roboto;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  letter-spacing: 0.05rem;
+  line-height: 1.4;
+}
+.category-interviews {
+  em {
+    font-weight: bold;
+    letter-spacing: 0.04rem;
+    font-size: 0.9rem;
   }
 }
