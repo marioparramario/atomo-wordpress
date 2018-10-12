@@ -8,6 +8,9 @@
  * @subpackage Atomo
  */
 
+require_once __DIR__ . '/inc/post-types.php';
+require_once __DIR__ . '/inc/taxonomies.php';
+
 
 add_action( 'after_setup_theme', 'atomo_setup' );
 
@@ -92,41 +95,6 @@ if ( ! function_exists('atomo_setup') ) {
  */
 if ( empty( $content_width ) ) {
 	$content_width = 900;
-}
-
-if ( ! function_exists( 'atomo_register_slider_post_type' ) ) {
-	/**
-	 * Register custom post types for the slider
-	 *
-	 * @return WP_Post_Type
-	 */
-	function atomo_register_slider_post_type() {
-
-		$supports = [
-			'title',
-			'editor',
-			'author',
-			'thumbnail',
-			'custom-fields',
-			'page-attributes',
-			'revisions',
-			'excerpt',
-		];
-
-		$labels = [
-			'name'          => __( 'Sliders', 'atomo' ),
-			'singular_name' => __( 'Slider', 'atomo' ),
-		];
-
-		$params = [
-			'labels'       => $labels,
-			'public'       => true,
-			'show_in_menu' => true,
-			'supports'     => $supports,
-		];
-
-		return register_post_type( 'slider', $params );
-	}
 }
 
 
@@ -604,5 +572,4 @@ if ( ! function_exists('atomo_track_post_views') ) {
 add_action( 'wp_head', 'atomo_track_post_views' );
 
 
-require_once 'inc/taxonomies.php';
 require_once 'inc/bootstrap/wp_bootstrap4_pagination.php';

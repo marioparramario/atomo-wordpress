@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom taxonomies
+ * Custom Átomo taxonomies
  *
  * @package WordPress
  * @subpackage Atomo
