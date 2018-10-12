@@ -8,6 +8,7 @@
  * @subpackage Atomo
  */
 
+require_once __DIR__ . '/inc/pagination.php';
 require_once __DIR__ . '/inc/post-types.php';
 require_once __DIR__ . '/inc/taxonomies.php';
 
@@ -439,7 +440,7 @@ if ( ! function_exists('atomo_save_post_meta') ) {
 }
 
 
-/* ===  POST VIEWS COUNT  === */
+/*  ===  POST VIEWS COUNT  ===  */
 
 
 if ( ! function_exists('atomo_count_post_views') ) {
@@ -570,6 +571,3 @@ if ( ! function_exists('atomo_track_post_views') ) {
 }
 
 add_action( 'wp_head', 'atomo_track_post_views' );
-
-
-require_once 'inc/bootstrap/wp_bootstrap4_pagination.php';
