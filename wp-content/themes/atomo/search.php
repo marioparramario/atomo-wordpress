@@ -81,7 +81,7 @@ get_header( 'index.html' ); ?>
 		  <?php endif; ?>
 		</div>
 		<div class="pagination-wrapper flex-center">
-	        <?php wp_bootstrap4_pagination( array() ); ?>
+	        <?php atomo_pagination(); ?>
 	    </div>
 
 	</section>
