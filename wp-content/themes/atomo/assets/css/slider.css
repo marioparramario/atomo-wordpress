@@ -14,8 +14,10 @@
   top: 70px;
   right: 315px;
 }
-.slider-image-wrapper {
+.slider-link {
   width: 70%;
+}
+.slider-image-wrapper {
   float: left;
   height: auto;
 }
@@ -24,7 +26,7 @@
 }
 .slider-text-wrapper {
   width: 30%;
-  height: 100%;
+  height: 450px;
   background: #D8A073;
   color: white;
   padding: 2.3rem 2rem;

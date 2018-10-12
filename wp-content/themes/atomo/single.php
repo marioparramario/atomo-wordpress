@@ -29,17 +29,17 @@ get_header(); ?>
 					<div class="single-text-container flex vertical">
 						<h3 class="single-post-title"><?php the_title(); ?></h3>
 						<?php $meta_value = get_post_meta($post->ID, "author-article", true);
-								if (!empty($meta_value)) {
-									echo '<h4>'. $meta_value .'</h4>';
-								}
-								?>
+							if (!empty($meta_value)) {
+							echo '<h4>'. $meta_value .'</h4>';
+							}
+						?>
 						<span><?php the_date( 'j, F, Y', null, __( ' by', 'atomo' ) ); ?></span>
 						<div class="post-body">
 							<?php the_content(); ?>
 						</div>
 					</div>
 				</div>
-			</article><!-- #post-<?php the_ID(); ?> -->
+			</article>
 		<?php $item_number++; } ?>
 	<?php endif; ?>
 <?php else: ?>
@@ -64,7 +64,7 @@ get_header(); ?>
 						</div>
 					</div>
 				</a>
-			</article><!-- #post-<?php the_ID(); ?> -->
+			</article>
 		<?php $item_number++; } ?>
 	<?php endif; ?>
 

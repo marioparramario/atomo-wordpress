@@ -63,6 +63,7 @@ a:hover {
 }
 img {
   width: 100%;
+  height: auto;
 }
 input {
   width: 100%;

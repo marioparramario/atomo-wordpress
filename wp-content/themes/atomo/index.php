@@ -87,7 +87,7 @@ get_header(); ?>
                                 </ol>
                                 <div class="slider-text-container">
                                   <h3><?php the_title(); ?></h3>
-                                  <?php the_content(); ?>
+                                  <?php the_excerpt(); ?>
                                   <div class="line"></div>
                                   <span>por Friedrich Nietzsche</span>
                                 </div>
