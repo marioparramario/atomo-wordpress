@@ -237,12 +237,14 @@ if ( ! function_exists('atomo_custom_meta_boxes') ) {
 	 */
 	function atomo_custom_meta_boxes() {
 
-		add_meta_box( 'atomo_featured_post',
-					__( 'Featured Post', 'atomo' ),
-					'atomo_featured_post_metabox',
-					'post',
-					'side',
-					'high' );
+		add_meta_box(
+			'atomo_featured_post',
+			__( 'Featured Post', 'atomo' ),
+			'atomo_featured_post_metabox',
+			'post',
+			'side',
+			'high'
+		);
 
 	}
 }
