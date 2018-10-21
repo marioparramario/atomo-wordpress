@@ -166,7 +166,11 @@
 					<a class="lang-link" href="#english" rel="alternate" hreflang="en"><abbr title="English">EN</abbr></a>
 				</div>
 				<div class="navbar-mobile-button flex">
+				<?php if ( is_user_logged_in() ): ?>
+					<a class="logout" href="<?php echo wp_logout_url( home_url() ); ?>"><?php _e( 'Log out', 'atomo' ); ?></a>
+				<?php else : ?>
 					<a class="login" href="#"><?php _e( 'Log in', 'atomo' ); ?></a>
+				<?php endif; ?>
 					<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Suscríbete</a>
 				</div>
 				<?php get_search_form( true ); ?>
