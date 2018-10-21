@@ -34,12 +34,17 @@ get_header(); ?>
 						<?php
 							$atomo_author = atomo_post_author( $post->ID );
 							if ( ! empty( $atomo_author ) ) {
-								echo '<h4>' . $atomo_author . '</h4>';
+								echo '<h4 class="author">' . $atomo_author . '</h4>';
 							}
 
 							$atomo_author_designation = atomo_post_author_designation( $post->ID );
 							if ( ! empty( $atomo_author_designation ) ) {
-								echo '<span>' . $atomo_author_designation . '</span>';
+								echo '<span class="designation">' . $atomo_author_designation . '</span>';
+							}
+
+							$atomo_location = atomo_post_location( $post->ID );
+							if ( ! empty( $atomo_location ) ) {
+								echo '<span class="location">' . $atomo_location . '</span>';
 							}
 						?>
 						<div class="post-body">

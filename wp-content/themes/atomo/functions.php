@@ -465,6 +465,16 @@ if ( ! function_exists('atomo_save_post_meta') ) {
 			$value = '';
 		}
 
+		/*  LOCATION  */
+		$meta_key = $args['meta_key'] ?? 'atomo_post_location';
+		$form_key = $args['form_key'] ?? 'post-author-location';
+
+		if ( isset( $_POST[ $form_key ] ) ) {
+			$value = trim( $_POST[ $form_key ] );
+		} else {
+			$value = '';
+		}
+
 		// XXX Ideally we want some sort of timestamp here.
 		update_post_meta( $post_id, $meta_key, $value );
 	}
@@ -525,6 +535,32 @@ if ( ! function_exists('atomo_post_author_designation') ) {
 	}
 }
 
+if ( ! function_exists('atomo_post_location') ) {
+	/**
+	 * Get article's posted location.
+	 *
+	 * @param int|WP_Post $post_id  Post ID or post object.
+	 * @param array $args (Optional) Alternative parameters.
+	 *
+	 * @return string
+	 */
+	function atomo_post_location( $post_id = null, array $args = null ): string {
+		$meta_key = $args['meta_key'] ?? 'atomo_post_location';
+
+		if ( empty( $post_id ) ) {
+			global $post;
+			$post_id = $post->ID;
+		}
+
+		$var = get_post_meta( $post_id, $meta_key, true );
+		if ( empty( $var ) ) {
+			return '';
+		}
+
+		return $var;
+	}
+}
+
 if ( ! function_exists('atomo_author_metabox') ) {
 	/**
 	 * Provide control interface for marking of articles's authors.
@@ -539,16 +575,25 @@ if ( ! function_exists('atomo_author_metabox') ) {
 		$author = atomo_post_author( $post->ID );
 
 		$out .= '<p>';
-		$out .= '  <label for="atomo-post-author">' . __( 'Article\'s author', 'atomo' ) . '</label>';
+		$out .= '  <div><label for="atomo-post-author">' . __( 'Author of article', 'atomo' ) . '</label></div>';
 		$out .= '  <input id="atomo-post-author" type="text" name="post-author" value="' . $author . '">';
 		$out .= '</p>';
 
 		$designation = atomo_post_author_designation( $post->ID );
 
-		$out .= '<div>';
-		$out .= '  <p><label for="atomo-post-author-designation">' . __( 'Author\'s designation', 'atomo' ) . '</label>';
-		$out .= '  <input id="atomo-post-author-designation" type="text" name="post-author-designation" value="' . $designation . '">';
-		$out .= '</div>';
+		$out .= '<p>';
+		$out .= '  <div><label class="form-check-label" for="atomo-post-author-designation">' . __( 'Author designation', 'atomo' ) . '</label></div>';
+		$out .= '  <textarea id="atomo-post-author-designation" name="post-author-designation">' . $designation . '</textarea>';
+		$out .= '</p>';
+
+		$location = atomo_post_location( $post->ID );
+
+		$out .= '<p>';
+		$out .= '  <div><label for="atomo-post-location">' . __( 'Location', 'atomo' ) . '</label></div>';
+		$out .= '  <textarea id="atomo-post-location" name="post-location">' . $location . '</textarea>';
+		$out .= '</p>';
+
+		$out .= '<input class="button button-primary button-large" type="submit" name="author-update" value="Update">';
 
 		echo $out;
 	}
