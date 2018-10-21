@@ -355,6 +355,18 @@
 .sub-menu a {
   margin: 0.3rem 0;
 }
+.navbar .dropdown > a::after {
+  background-image: url('../images/dropdown-white.svg');
+}
+.navbar .sub-menu {
+  background: #1E1E1E;
+}
+.navbar .sub-menu a {
+  color: white;
+}
+.navbar .sub-menu a:hover {
+  color: #D8A073;
+}
 @media (max-width: 991px) {
   .navbar-init {
     height: 200px;

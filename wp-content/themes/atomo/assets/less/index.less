@@ -163,7 +163,7 @@ input {
   width: 100%;
   max-width: none;
   min-height: 30vh;
-  background: @red;
+  background: @green;
   margin: 0;
   &-container {
     position: relative;
@@ -186,27 +186,32 @@ input {
     max-width: 400px;
     margin-left: 3rem;
     h2 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
+      font-size: 2.6rem;
+    }
+    h3 {
+      color: @black;
+      font-size: 1.6rem;
+      margin-bottom: 1.6rem;
     }
     p {
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
+      line-height: 1.5;
     }
     a {
-      color: @black;
+      // color: @black;
       font-size: 0.9rem;
       position: relative;
       font-weight: 500;
       margin-top: 1rem;
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background: @black;
-      }
+      // &::after {
+      //   content: '';
+      //   position: absolute;
+      //   bottom: -5px;
+      //   left: 0;
+      //   width: 100%;
+      //   height: 2px;
+      //   background: @black;
+      // }
     }
   }
 }
@@ -221,7 +226,7 @@ input {
 
 
 .subscribe {
-  background: @green;
+  background: @red;
   width: 100%;
   margin: 0;
   max-width: @container;
@@ -242,6 +247,7 @@ input {
     color: white;
     max-width: @paragraph-max-large;
     margin-bottom: 1.6rem;
+    line-height: 1.5;
   }
   .input-container {
     width: 100%;
@@ -405,6 +411,7 @@ input {
   }
   section {
     margin-top: 6rem;
+    margin-bottom: 4rem;
   }
   .headline {
     font-size: 1.8rem;

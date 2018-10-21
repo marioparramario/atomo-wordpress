@@ -357,10 +357,6 @@
   .grid-regular b {
     font-weight: normal;
   }
-  .thumbnail img {
-    height: 100%;
-    width: auto;
-  }
 }
 @media (max-width: 767px) {
   .grid-featured .column:first-child {

@@ -22,6 +22,12 @@
 .single-text-container {
   margin: 4rem;
 }
+.single-text-container .post-body {
+  padding-top: 2rem;
+}
+.single-text-container h2 {
+  font-size: 1.8rem;
+}
 .single-text-container h3 {
   color: #D8A073;
   font-size: 1.6rem;
@@ -47,7 +53,8 @@
   margin-top: 1.5rem;
 }
 .single-text-container span {
-  margin-top: 4rem;
+  font-family: 'Libre Baskerville', serif;
+  align-self: flex-end;
   font-size: 0.7rem;
 }
 .single-text-container ol {

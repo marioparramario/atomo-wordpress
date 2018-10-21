@@ -35,7 +35,7 @@ get_header(); ?>
                       <?php $atomo_slider_item_number = 0; ?>
                       <?php while ( $atomo_slider->have_posts() ): $atomo_slider->the_post(); ?>
                           <div class="carousel-item<?php if ( $atomo_slider_item_number === 0 ) echo ' active'; ?> <?php echo esc_attr( join( ' ', get_post_class( '' ) ) ); ?>" id="post-<?php the_ID(); ?>">
-                            <div class="slider-image-wrapper">
+                            <div class="slider-image-wrapper flex-center">
                               <?php if ( has_post_thumbnail() ) { the_post_thumbnail([ 1280, 1024 ], [ 'class' => 'slider-image' ]); } ?>
                             </div>
                             <div class="slider-text-wrapper flex vertical justify-end">
@@ -70,7 +70,7 @@ get_header(); ?>
                       <?php while ( $atomo_slider->have_posts() ): $atomo_slider->the_post(); ?>
                           <div class="carousel-item<?php if ( $atomo_slider_item_number === 0 ) echo ' active'; ?> <?php echo esc_attr( join( ' ', get_post_class( '' ) ) ); ?>" id="post-<?php the_ID(); ?>">
                               <a class="slider-link" href="<?php echo esc_url( get_permalink() ); ?>">
-                                <div class="slider-image-wrapper">
+                                <div class="slider-image-wrapper flex-center">
                                     <?php if ( has_post_thumbnail() ) { the_post_thumbnail([ 1280, 1024 ], [ 'class' => 'slider-image' ]); } ?>
                                 </div>
                               </a>
@@ -172,12 +172,13 @@ get_header(); ?>
     <div class="issue-container flex-center">
       <img class="issue-version" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/version.svg" alt="">
       <div class="issue-image">
-        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/issue.jpg" alt="">
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/issue-n1.jpg" alt="">
       </div>
       <div class="issue-text">
-        <h2>Milie atqui publium ne ad iaequast auden</h2>
+        <h2>Átomo N1</h2>
+		<h3>Corrección política</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-        <a href="#">A link doesn't hurt</a>
+        <a class="button" href="#">Download this issue!</a>
       </div>
     </div>
   </section>

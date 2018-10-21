@@ -19,6 +19,8 @@
     height: auto;
     img {
       height: 100%;
+      // top: 50%;
+      // transform: translateY(-50%);
     }
   }
   &-link {
@@ -31,7 +33,7 @@
       background: @camel;
       color: white;
       padding: 2.3rem 2rem;
-      z-index: 9;
+      z-index: 8;
       .pagination {
         &-indicator {
           width: 44px;
@@ -93,13 +95,14 @@
 @media (max-width: @tablet) {
   .slider {
     height: 420px;
-    &-image-wrapper {
-      width: 65%;
-    }
+    // &-image-wrapper {
+    //   width: 65%;
+    // }
     &-text {
       &-wrapper {
-        width: 35%;
-        padding: 2rem;
+        // width: 35%;
+        // padding: 2rem;
+        height: 420px;
       }
       &-container {
         h3 {
