@@ -269,6 +269,19 @@ get_header(); ?>
 		</div>
 	</section><!-- #posts -->
 
+<?php if ( is_user_logged_in() ): ?>
+		<div class="log-out flex-center">
+		<div class="log-out-container flex vertical">
+			<a class="logout logout-link"></a>
+
+			<h3>Log out</h3>
+
+			<form id="atomo_logout_form" class="form" action="<?php echo home_url( 'logout' ); ?>" method="post">
+				<button class="submit self-end" value="Logout">Salir</button>
+			</form>
+		</div>
+	</div><!-- .log-out -->
+<?php else: ?>
 	<div class="log-in flex-center">
 		<div class="log-in-container flex vertical">
 			<a class="login login-link"></a>
@@ -288,6 +301,8 @@ get_header(); ?>
 			</form>
 		</div>
 	</div><!-- .log-in -->
+<?php endif; ?>
+
 
 </div><!-- .container -->
 

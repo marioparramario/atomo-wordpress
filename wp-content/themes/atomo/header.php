@@ -23,7 +23,11 @@
 					<div class="separator"></div>
 					<a class="lang-link" href="#english" rel="alternate" hreflang="en"><abbr title="English">EN</abbr></a>
 				</div>
-				<a class="login" href="#"><?php _e( 'Log in', 'atomo' ); ?></a>
+			<?php if (is_user_logged_in()): ?>
+				<a class="login" href="#go"><?php _e( 'Log out', 'atomo' ); ?></a>
+			<?php else: ?>
+				<a class="login" href="#go"><?php _e( 'Log in', 'atomo' ); ?></a>
+			<?php endif; ?>
 			</div>
 			<div class="navbar-init-button menu flex justify-end">
 				<a class="navbar-menu-button">
