@@ -23,7 +23,11 @@
 					<div class="separator"></div>
 					<a class="lang-link" href="#english" rel="alternate" hreflang="en"><abbr title="English">EN</abbr></a>
 				</div>
+			<?php if ( is_user_logged_in() ): ?>
+				<a class="logout" href="<?php echo wp_logout_url( home_url() ); ?>"><?php _e( 'Log out', 'atomo' ); ?></a>
+			<?php else: ?>
 				<a class="login" href="#"><?php _e( 'Log in', 'atomo' ); ?></a>
+			<?php endif; ?>
 			</div>
 			<div class="navbar-init-button menu flex justify-end">
 				<a class="navbar-menu-button">
@@ -66,7 +70,7 @@
 				<a href="<?php echo esc_url( home_url( '/issues' ) ); ?>">Ediciones</a>
 			</div>
 			<div class="navbar-init-item">
-				<a class="search-button" href="#"><?php _e( 'Búsqueda', 'atomo' ); ?></a>
+				<a class="search-button" href="<?php echo esc_url( home_url( '/search' ) ); ?>"><?php _e( 'Búsqueda', 'atomo' ); ?></a>
 			</div>
 			<div class="navbar-init-item">
 				<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Suscríbete</a>
@@ -162,7 +166,11 @@
 					<a class="lang-link" href="#english" rel="alternate" hreflang="en"><abbr title="English">EN</abbr></a>
 				</div>
 				<div class="navbar-mobile-button flex">
-					<a href="#">Log in</a>
+				<?php if ( is_user_logged_in() ): ?>
+					<a class="logout" href="<?php echo wp_logout_url( home_url() ); ?>"><?php _e( 'Log out', 'atomo' ); ?></a>
+				<?php else : ?>
+					<a class="login" href="#"><?php _e( 'Log in', 'atomo' ); ?></a>
+				<?php endif; ?>
 					<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Suscríbete</a>
 				</div>
 				<?php get_search_form( true ); ?>
