@@ -272,11 +272,20 @@ get_header(); ?>
 	<div class="log-in flex-center">
 		<div class="log-in-container flex vertical">
 			<a class="login login-link"></a>
+
 			<h3>Log in</h3>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-			<input type="search" placeholder="user" value="">
-			<input type="search" placeholder="password" value="">
-			<a class="submit self-end">Entrar</a>
+
+			<form id="atomo_login_form" class="form" action="<?php echo home_url( 'login' ); ?>" method="post">
+
+				<input type="text" name="log" class="username" placeholder="user">
+				<input type="password" name="pwd" class="password" placeholder="password">
+
+				<input name="redirect_to" type="hidden" value="/login/">
+				<input name="a" type="hidden" value="login">
+
+				<button class="submit self-end" value="Login">Entrar</button>
+			</form>
 		</div>
 	</div><!-- .log-in -->
 
