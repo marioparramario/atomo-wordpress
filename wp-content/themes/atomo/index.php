@@ -54,11 +54,8 @@ get_header(); ?>
 								<h3 class="title"><?php the_title(); ?></h3>
 								<?php the_excerpt(); ?>
 								<div class="line"></div>
-								<?php $atomo_author = get_post_meta($post->ID, 'author-article', true);
-									if ( ! empty( $atomo_author ) ) {
-										echo '<span>' . $atomo_author . '</span>';
-									}
-								?>
+								<?php $atomo_author = atomo_post_author( $post->ID ); ?>
+								<?php if ( ! empty( $atomo_author ) ) { echo '<span class="author">' . $atomo_author . '</span>'; } ?>
 							</div>
 						</div><!-- .slider-text-wrapper -->
 					</div><!-- .carousel-item -->
@@ -83,11 +80,8 @@ get_header(); ?>
 								<h3 class="title"><?php the_title(); ?></h3>
 								<?php the_excerpt(); ?>
 								<div class="line"></div>
-								<?php $atomo_author = get_post_meta( $post->ID, 'author-article', true );
-									if ( ! empty( $atomo_author ) ) {
-										echo '<span>' . $atomo_author . '</span>';
-									}
-								?>
+								<?php $atomo_author = atomo_post_author( $post->ID ); ?>
+								<?php if ( ! empty( $atomo_author ) ) { echo '<span class="author">' . $atomo_author . '</span>'; } ?>
 							</div>
 						</div><!-- .slider-text-wrapper -->
 					</div><!-- .carousel-item -->
