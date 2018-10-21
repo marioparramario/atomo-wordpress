@@ -246,6 +246,15 @@ if ( ! function_exists('atomo_custom_meta_boxes') ) {
 			'high'
 		);
 
+		add_meta_box(
+			'atomo_authored_post',
+			__( 'Author', 'atomo' ),
+			'atomo_author_metabox',
+			'post',
+			'side',
+			'high'
+		);
+
 	}
 }
 
@@ -436,6 +445,26 @@ if ( ! function_exists('atomo_save_post_meta') ) {
 			$value = '';
 		}
 
+		/*  ARTICLE AUTHOR  */
+		$meta_key = $args['meta_key'] ?? 'atomo_post_author';
+		$form_key = $args['form_key'] ?? 'post-author';
+
+		if ( isset( $_POST[ $form_key ] ) ) {
+			$value = trim( $_POST[ $form_key ] );
+		} else {
+			$value = '';
+		}
+
+		/*  ARTICLE AUTHOR DESIGNATION  */
+		$meta_key = $args['meta_key'] ?? 'atomo_post_author_designation';
+		$form_key = $args['form_key'] ?? 'post-author-designation';
+
+		if ( isset( $_POST[ $form_key ] ) ) {
+			$value = trim( $_POST[ $form_key ] );
+		} else {
+			$value = '';
+		}
+
 		// XXX Ideally we want some sort of timestamp here.
 		update_post_meta( $post_id, $meta_key, $value );
 	}
@@ -493,6 +522,35 @@ if ( ! function_exists('atomo_post_author_designation') ) {
 		}
 
 		return $var;
+	}
+}
+
+if ( ! function_exists('atomo_author_metabox') ) {
+	/**
+	 * Provide control interface for marking of articles's authors.
+	 *
+	 * @param WP_Post $post Post object to feature.
+	 */
+	function atomo_author_metabox( WP_Post $post ) {
+		$out = '';
+
+		wp_nonce_field('atomo_author', 'atomo_author_nonce');
+
+		$author = atomo_post_author( $post->ID );
+
+		$out .= '<p>';
+		$out .= '  <label for="atomo-post-author">' . __( 'Article\'s author', 'atomo' ) . '</label>';
+		$out .= '  <input id="atomo-post-author" type="text" name="post-author" value="' . $author . '">';
+		$out .= '</p>';
+
+		$designation = atomo_post_author_designation( $post->ID );
+
+		$out .= '<div>';
+		$out .= '  <p><label for="atomo-post-author-designation">' . __( 'Author\'s designation', 'atomo' ) . '</label>';
+		$out .= '  <input id="atomo-post-author-designation" type="text" name="post-author-designation" value="' . $designation . '">';
+		$out .= '</div>';
+
+		echo $out;
 	}
 }
 
