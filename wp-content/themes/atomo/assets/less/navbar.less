@@ -127,6 +127,30 @@
     z-index: 8;
     background: white;
     transition: all 0.6s cubic-bezier(.4,0,.2,1) 0.4s;
+    &.black {
+      background: @black;
+      .navbar-mobile {
+        &-wrapper {
+          .separator {
+            background: white;
+          }
+        }
+        &-content {
+          a {
+            color: white;
+          }
+          .search {
+            &-field {
+              border: 1px solid white;
+            }
+            &-submit {
+              background: @camel;
+              border: 1px solid @camel;
+            }
+          }
+        }
+      }
+    }
     &-wrapper {
       opacity: 0;
       transition: all 0.6s cubic-bezier(.4,0,.2,1) 0s;
@@ -447,9 +471,13 @@
     margin: 0.3rem 0;
   }
 }
-.navbar {
-  .dropdown > a::after {
-    background-image: url('../images/dropdown-white.svg');
+.black {
+  .dropdown {
+    & > a {
+      &::after {
+        background-image: url('../images/dropdown-white.svg');
+      }
+    }
   }
   .sub-menu {
     background: @black;
@@ -461,6 +489,20 @@
     }
   }
 }
+// .navbar {
+//   .dropdown > a::after {
+//     background-image: url('../images/dropdown-white.svg');
+//   }
+//   .sub-menu {
+//     background: @black;
+//     a {
+//       color: white;
+//       &:hover {
+//         color: @camel;
+//       }
+//     }
+//   }
+// }
 @media (max-width: @tablet) {
   .navbar-init {
     height: 200px;
@@ -526,7 +568,7 @@
         .search {
           &-form {
             height: 30px;
-            width: 220px;
+            width: 230px;
             position: relative;
             &::after {
               content: '';
@@ -587,16 +629,16 @@
   }
   .search-field,
   .navbar-mobile-content a {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
   }
   .navbar-mobile-content .search-form {
     width: 100%;
   }
-  .navbar-mobile-wrapper {
-    .separator {
-      margin: 0 1.5rem;
-    }
-  }
+  // .navbar-mobile-wrapper {
+  //   .separator {
+  //     margin: 0 1.5rem;
+  //   }
+  // }
 
 }
 @media (max-width: @phone) {

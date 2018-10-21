@@ -6,7 +6,7 @@ $(document).ready(function(){
 	$('.navbar-menu-button').click(function(){
 			$('.navbar-menu-button').toggleClass('active');
 			$('body').toggleClass('stop-scrolling');
-      $('.navbar-mobile').toggleClass('active black');
+      $('.navbar-mobile').toggleClass('active');
 	});
 });
 

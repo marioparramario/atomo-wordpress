@@ -175,12 +175,6 @@ input {
   margin-bottom: 2rem;
   line-height: 1.5;
 }
-.issue-text a {
-  font-size: 0.9rem;
-  position: relative;
-  font-weight: 500;
-  margin-top: 1rem;
-}
 .row {
   box-sizing: initial !important;
 }
@@ -388,6 +382,28 @@ input {
   }
   .loader {
     background-size: 150px;
+  }
+  .issue-version {
+    right: 5%;
+    width: 60px;
+  }
+  .issue-text {
+    margin-left: 2rem;
+  }
+  .issue-text h2 {
+    font-size: 1.7rem;
+  }
+  .issue-text h3 {
+    font-size: 1.2rem;
+  }
+  .issue-text p {
+    font-size: 0.85rem;
+    max-width: 280px;
+    padding-right: 1.5rem;
+  }
+  .button {
+    font-size: 0.75rem;
+    padding: 0.6rem 0.8rem;
   }
 }
 @media (max-width: 479px) {
