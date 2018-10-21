@@ -54,9 +54,9 @@ get_header(); ?>
 								<h3 class="title"><?php the_title(); ?></h3>
 								<?php the_excerpt(); ?>
 								<div class="line"></div>
-								<?php $meta_value = get_post_meta($post->ID, "author-article", true);
-									if (!empty($meta_value)) {
-										echo '<span>'. $meta_value .'</span>';
+								<?php $atomo_author = get_post_meta($post->ID, 'author-article', true);
+									if ( ! empty( $atomo_author ) ) {
+										echo '<span>' . $atomo_author . '</span>';
 									}
 								?>
 							</div>
@@ -83,9 +83,9 @@ get_header(); ?>
 								<h3 class="title"><?php the_title(); ?></h3>
 								<?php the_excerpt(); ?>
 								<div class="line"></div>
-								<?php $meta_value = get_post_meta($post->ID, "author-article", true);
-									if (!empty($meta_value)) {
-										echo '<span>'. $meta_value .'</span>';
+								<?php $atomo_author = get_post_meta( $post->ID, 'author-article', true );
+									if ( ! empty( $atomo_author ) ) {
+										echo '<span>' . $atomo_author . '</span>';
 									}
 								?>
 							</div>
