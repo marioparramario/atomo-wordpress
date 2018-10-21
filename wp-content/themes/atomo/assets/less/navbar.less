@@ -126,10 +126,10 @@
     top: 0;
     z-index: 8;
     background: white;
-    transition: all 0.8s cubic-bezier(.4,0,.2,1);
+    transition: all 0.6s cubic-bezier(.4,0,.2,1) 0.4s;
     &-wrapper {
       opacity: 0;
-      transition: all 0.6s cubic-bezier(.4,0,.2,1);
+      transition: all 0.6s cubic-bezier(.4,0,.2,1) 0s;
     }
     &-content {
       text-transform: uppercase;
@@ -148,19 +148,17 @@
       .search {
         &-form {
           display: flex;
-          height: 30px;
-          width: 220px;
+          height: 50px;
+          width: 620px;
+          label {
+            width: 100%;
+          }
         }
         &-submit {
           position: relative;
-          font-size: 0;
-          width: 30px;
+          font-family: @roboto;
+          text-transform: uppercase;
           margin-left: -1px;
-          &::before {
-            content: '';
-            width: 30px;
-            height: 30px;
-          }
         }
       }
     }
@@ -174,7 +172,7 @@
       a {
         color: white;
         background: @camel;
-        padding: 0.3rem 0.6rem;
+        padding: 0.4rem 0.6rem;
         margin: 0;
         margin-right: 0.5rem;
       }
@@ -184,6 +182,7 @@
       transition: all 0.6s cubic-bezier(.4,0,.2,1);
       .navbar-mobile-wrapper {
         opacity: 1;
+        transition: all 0.6s cubic-bezier(.4,0,.2,1) 0.4s;
       }
     }
   }
@@ -380,6 +379,7 @@
     font-family: @roboto;
     text-transform: uppercase;
     color: @camel;
+    letter-spacing: 0.08rem;
     &::-webkit-input-placeholder {
       color: @camel;
     }
@@ -387,7 +387,9 @@
   &-submit {
     width: 100px;
     background: @black;
+    letter-spacing: 0.08rem;
     color: white;
+    border: 1px solid @black;
   }
   form {
     display: flex;
@@ -513,16 +515,39 @@
         }
       }
       &-content {
+        &:first-child {
+          display: flex;
+        }
         a {
+          display: block;
           &.active {
           }
         }
         .search {
           &-form {
+            height: 30px;
+            width: 220px;
+            position: relative;
+            &::after {
+              content: '';
+              position: absolute;
+              top: 0;
+              right: 2px;
+              width: 30px;
+              height: 30px;
+              background-image: url('../images/search-icon-white.svg');
+              background-position: center center;
+              background-size: 18px;
+              background-repeat: no-repeat;
+            }
+          }
+          &-field {
+            padding: 0 0.7rem;
           }
           &-submit {
-            &::before {
-            }
+            width: 30px;
+            font-size: 0;
+
           }
         }
       }
@@ -532,6 +557,7 @@
       }
       &-button {
         a {
+          display: block;
         }
       }
       &.active {

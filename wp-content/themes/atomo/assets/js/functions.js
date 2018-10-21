@@ -31,11 +31,13 @@ function scrollFunction() {
 		document.querySelector("#lateral").style.opacity = "1";
 		document.querySelector(".navbar-menu").style.backgroundColor = "#1E1E1E";
 		document.querySelector(".navbar-menu a").style.color = "white";
+    document.querySelector('.navbar-mobile').classList.remove('black');
   } else {
     document.querySelector("#navbar").style.top = "-180px";
 		document.querySelector("#lateral").style.opacity = "0";
 		document.querySelector(".navbar-menu").style.backgroundColor = "white";
 		document.querySelector(".navbar-menu a").style.color = "#1E1E1E";
+    document.querySelector('.navbar-mobile').classList.add('black');
   }
 }
 

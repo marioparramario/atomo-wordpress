@@ -123,11 +123,11 @@
   top: 0;
   z-index: 8;
   background: white;
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
 }
 .navbar-mobile-wrapper {
   opacity: 0;
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0s;
 }
 .navbar-mobile-content {
   text-transform: uppercase;
@@ -146,19 +146,17 @@
 }
 .navbar-mobile-content .search-form {
   display: flex;
-  height: 30px;
-  width: 220px;
+  height: 50px;
+  width: 620px;
+}
+.navbar-mobile-content .search-form label {
+  width: 100%;
 }
 .navbar-mobile-content .search-submit {
   position: relative;
-  font-size: 0;
-  width: 30px;
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
   margin-left: -1px;
-}
-.navbar-mobile-content .search-submit::before {
-  content: '';
-  width: 30px;
-  height: 30px;
 }
 .navbar-mobile-lang a {
   margin: 0;
@@ -169,7 +167,7 @@
 .navbar-mobile-button a {
   color: white;
   background: #D8A073;
-  padding: 0.3rem 0.6rem;
+  padding: 0.4rem 0.6rem;
   margin: 0;
   margin-right: 0.5rem;
 }
@@ -179,6 +177,7 @@
 }
 .navbar-mobile.active .navbar-mobile-wrapper {
   opacity: 1;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
 }
 .navbar-wrapper {
   height: 100%;
@@ -359,6 +358,7 @@
   font-family: 'Roboto Mono', monospace;
   text-transform: uppercase;
   color: #D8A073;
+  letter-spacing: 0.08rem;
 }
 .search-field::-webkit-input-placeholder {
   color: #D8A073;
@@ -366,7 +366,9 @@
 .search-submit {
   width: 100px;
   background: #1E1E1E;
+  letter-spacing: 0.08rem;
   color: white;
+  border: 1px solid #1E1E1E;
 }
 .search form {
   display: flex;
@@ -469,6 +471,39 @@
   .navbar-mobile-wrapper .separator.lang {
     height: 12px;
     margin: 0 0.7rem;
+  }
+  .navbar-mobile-content:first-child {
+    display: flex;
+  }
+  .navbar-mobile-content a {
+    display: block;
+  }
+  .navbar-mobile-content .search-form {
+    height: 30px;
+    width: 220px;
+    position: relative;
+  }
+  .navbar-mobile-content .search-form::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 2px;
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/search-icon-white.svg');
+    background-position: center center;
+    background-size: 18px;
+    background-repeat: no-repeat;
+  }
+  .navbar-mobile-content .search-field {
+    padding: 0 0.7rem;
+  }
+  .navbar-mobile-content .search-submit {
+    width: 30px;
+    font-size: 0;
+  }
+  .navbar-mobile-button a {
+    display: block;
   }
   .navbar-init-button.menu,
   .navbar-menu-button {
