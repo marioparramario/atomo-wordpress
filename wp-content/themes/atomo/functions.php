@@ -470,6 +470,32 @@ if ( ! function_exists('atomo_post_author') ) {
 	}
 }
 
+if ( ! function_exists('atomo_post_author_designation') ) {
+	/**
+	 * Get article author's designation.
+	 *
+	 * @param int|WP_Post $post_id  Post ID or post object.
+	 * @param array $args (Optional) Alternative parameters.
+	 *
+	 * @return string
+	 */
+	function atomo_post_author_designation( $post_id = null, array $args = null ): string {
+		$meta_key = $args['meta_key'] ?? 'atomo_post_author_designation';
+
+		if ( empty( $post_id ) ) {
+			global $post;
+			$post_id = $post->ID;
+		}
+
+		$var = get_post_meta( $post_id, $meta_key, true );
+		if ( empty( $var ) ) {
+			return '';
+		}
+
+		return $var;
+	}
+}
+
 
 /*  ===  POST VIEWS COUNT  ===  */
 
