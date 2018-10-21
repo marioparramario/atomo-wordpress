@@ -19,9 +19,9 @@
 			</a>
 			<div class="navbar-init-button init flex vertical align-end">
 				<div class="navbar-init-button-lang flex align-center">
-					<a class="active" href="#"><?php _e( 'ES', 'atomo' ); ?></a>
+					<a class="lang-link active" href="#spanish" rel="alternate" hreflang="es"><abbr title="Español">ES</abbr></a>
 					<div class="separator"></div>
-					<a class="" href="#"><?php _e( 'EN', 'atomo' ); ?></a>
+					<a class="lang-link" href="#english" rel="alternate" hreflang="en"><abbr title="English">EN</abbr></a>
 				</div>
 				<a class="login" href="#"><?php _e( 'Log in', 'atomo' ); ?></a>
 			</div>

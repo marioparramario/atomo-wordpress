@@ -56,6 +56,10 @@
   font-family: 'Libre Baskerville', serif;
   align-self: flex-end;
   font-size: 0.7rem;
+  margin-top: 0.3rem;
+  max-width: 320px;
+  text-align: right;
+  line-height: 1.4;
 }
 .single-text-container ol {
   margin-top: 1rem;
@@ -116,6 +120,7 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin: 0 auto;
 }
 .single .navigation .nav-links {
   width: 100%;

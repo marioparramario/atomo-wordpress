@@ -32,14 +32,19 @@ get_header(); ?>
 					<div class="single-text-container flex vertical">
 						<h1 class="single-post-title"><?php the_title(); ?></h1>
 						<?php
-							$atomo_author = get_post_meta( $post->ID, 'author-article', true );
+							$atomo_author = atomo_post_author( $post->ID );
 							if ( ! empty( $atomo_author ) ) {
-								echo '<h4>' . $atomo_author . '</h4>';
+								echo '<h4 class="author">' . $atomo_author . '</h4>';
 							}
 
-							$atomo_author_sub = get_post_meta( $post->ID, 'author-article-sub', true );
-							if ( ! empty( $atomo_author_sub ) ) {
-								echo '<span>' . $atomo_author_sub . '</span>';
+							$atomo_author_designation = atomo_post_author_designation( $post->ID );
+							if ( ! empty( $atomo_author_designation ) ) {
+								echo '<span class="designation">' . $atomo_author_designation . '</span>';
+							}
+
+							$atomo_location = atomo_post_location( $post->ID );
+							if ( ! empty( $atomo_location ) ) {
+								echo '<span class="location">' . $atomo_location . '</span>';
 							}
 						?>
 						<div class="post-body">
