@@ -20,7 +20,13 @@
   margin-bottom: -120px;
 }
 .single-text-container {
-  margin: 4.5rem;
+  margin: 4rem;
+}
+.single-text-container .post-body {
+  padding-top: 2rem;
+}
+.single-text-container h2 {
+  font-size: 1.8rem;
 }
 .single-text-container h3 {
   color: #D8A073;
@@ -42,13 +48,35 @@
   background: #1E1E1E;
 }
 .single-text-container p {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   line-height: 1.8;
   margin-top: 1.5rem;
 }
 .single-text-container span {
-  margin-top: 4rem;
+  font-family: 'Libre Baskerville', serif;
+  align-self: flex-end;
   font-size: 0.7rem;
+}
+.single-text-container ol {
+  margin-top: 1rem;
+}
+.single-text-container ol > li {
+  margin-left: 0;
+  margin-bottom: 0.6rem;
+  padding-left: 0;
+  counter-increment: item;
+  list-style: none inside;
+}
+.single-text-container ol > li::before {
+  content: "(" counter(item) ")";
+  padding-right: 0.5em;
+}
+.single-text-container li {
+  color: #D6062D;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.4;
 }
 .single-text-quote {
   background: #D8A073;
@@ -113,4 +141,36 @@
 }
 .no-text-2 .nav-init {
   background: #FAF0E9;
+}
+figure {
+  width: 100% !important;
+  margin: 1.2rem 2.2rem;
+}
+figure img {
+  height: auto;
+}
+.alignleft {
+  margin-left: 0;
+  float: left;
+}
+.alignright {
+  margin-right: 0;
+  float: right;
+}
+.aligncenter {
+  margin-right: 0;
+  margin-left: 0;
+}
+.wp-caption-text {
+  margin-top: 0.5rem;
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  letter-spacing: 0.05rem;
+  line-height: 1.4;
+}
+.category-interviews em {
+  font-weight: bold;
+  letter-spacing: 0.04rem;
+  font-size: 0.9rem;
 }

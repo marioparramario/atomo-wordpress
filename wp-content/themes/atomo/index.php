@@ -16,8 +16,7 @@
 get_header(); ?>
 
 <div class="container flex vertical align-center">
-
-	<section id="slider" class="slider flex">
+	<section class="slider flex">
 		<?php
 			$atomo_slider_number = 0;
 			$atomo_slider_args = [
@@ -41,7 +40,7 @@ get_header(); ?>
 				<?php if ( is_singular() ) : ?>
 					<?php while ( $atomo_slider->have_posts() ) : $atomo_slider->the_post(); ?>
 					<div class="carousel-item<?php if ( $atomo_slider_number === 0 ) { echo ' active'; } ?> <?php echo esc_attr( join( ' ', get_post_class( '' ) ) ); ?>" id="post-<?php the_ID(); ?>">
-						<div class="slider-image-wrapper">
+						<div class="slider-image-wrapper flex-center">
 							<?php if ( has_post_thumbnail() ) { the_post_thumbnail([ 1280, 1024 ], [ 'class' => 'slider-image' ]); } ?>
 						</div>
 						<div class="slider-text-wrapper flex vertical justify-end">
@@ -53,9 +52,13 @@ get_header(); ?>
 							</ol>
 							<div class="slider-text-container">
 								<h3 class="title"><?php the_title(); ?></h3>
-								<?php the_content(); ?>
+								<?php the_excerpt(); ?>
 								<div class="line"></div>
-								<span class="author">por Friedrich Nietzsche</span>
+								<?php $atomo_author = get_post_meta($post->ID, 'author-article', true);
+									if ( ! empty( $atomo_author ) ) {
+										echo '<span>' . $atomo_author . '</span>';
+									}
+								?>
 							</div>
 						</div><!-- .slider-text-wrapper -->
 					</div><!-- .carousel-item -->
@@ -65,7 +68,7 @@ get_header(); ?>
 					<?php while ( $atomo_slider->have_posts() ) : $atomo_slider->the_post(); ?>
 					<div class="carousel-item<?php if ( $atomo_slider_number === 0 ) { echo ' active'; } ?> <?php echo esc_attr( join( ' ', get_post_class( '' ) ) ); ?>" id="post-<?php the_ID(); ?>">
 						<a class="slider-link" href="<?php echo esc_url( get_permalink() ); ?>">
-							<div class="slider-image-wrapper">
+							<div class="slider-image-wrapper flex-center">
 								<?php if ( has_post_thumbnail() ) { the_post_thumbnail([ 1280, 1024 ], [ 'class' => 'slider-image' ]); } ?>
 							</div>
 						</a>
@@ -78,9 +81,13 @@ get_header(); ?>
 							</ol>
 							<div class="slider-text-container">
 								<h3 class="title"><?php the_title(); ?></h3>
-								<?php the_content(); ?>
+								<?php the_excerpt(); ?>
 								<div class="line"></div>
-								<span class="author">por Friedrich Nietzsche</span>
+								<?php $atomo_author = get_post_meta( $post->ID, 'author-article', true );
+									if ( ! empty( $atomo_author ) ) {
+										echo '<span>' . $atomo_author . '</span>';
+									}
+								?>
 							</div>
 						</div><!-- .slider-text-wrapper -->
 					</div><!-- .carousel-item -->
@@ -124,7 +131,7 @@ get_header(); ?>
 					</div>
 					<div class="description flex vertical">
 						<h4 class="title"><?php the_title(); ?></h4>
-						<p class="excerpt"><?php the_excerpt(); ?></p>
+						<?php the_excerpt(); ?>
 						<p class="category"><?php esc_html_e( get_the_category()[0]->cat_name ); ?></p>
 					</div>
 				</a><!-- .item -->
@@ -142,7 +149,7 @@ get_header(); ?>
 						</div>
 						<div class="description flex vertical justify-center">
 							<h4 class="title"><?php the_title(); ?></h4>
-							<p class="excerpt"><?php the_excerpt(); ?></p>
+							<?php the_excerpt(); ?>
 							<p class="category"><?php esc_html_e( get_the_category()[0]->cat_name ); ?></p>
 						</div>
 					</a><!-- .item -->
@@ -157,17 +164,13 @@ get_header(); ?>
 		<div class="issue-container flex-center">
 			<img class="issue-version" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/version.svg" alt="">
 			<div class="issue-image">
-				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/issue.jpg" alt="<?php _e( 'Current issue', 'atomo' ); ?>">
+				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/issue-n1.jpg" alt="<?php _e( 'Current issue', 'atomo' ); ?>">
 			</div>
 			<div class="issue-text">
-				<h2 class="title">Milie atqui publium ne ad iaequast auden</h2>
-				<p class="description">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-					Ut enim ad minim veniam.
-				</p>
-				<a class="issue-link" href="#">A link doesn't hurt</a>
+				<h2 class="title">Átomo N1</h2>
+				<h3>Corrección política</h3>
+				<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+				<a class="button issue-link" href="#">Download this issue!</a>
 			</div>
 		</div>
 	</section><!-- #current-issue -->
@@ -198,7 +201,7 @@ get_header(); ?>
 					</div>
 					<div class="description flex vertical justify-center">
 						<h4 class="title"><?php the_title(); ?></h4>
-						<p class="excerpt"><?php the_excerpt();?></p>
+						<?php the_excerpt(); ?>
 						<p class="category"><?php esc_html_e( get_the_category()[0]->cat_name ); ?></p>
 					</div>
 				</a>
@@ -240,7 +243,7 @@ get_header(); ?>
 
 						<div class="description flex vertical justify-center">
 							<h4 class="title"><?php the_title(); ?></h4>
-							<span class="excerpt><?php the_excerpt( ); ?></span>
+							<?php the_excerpt( ); ?>
 							<p class="category"><?php esc_html_e( get_the_category()[0]->cat_name ); ?></p>
 						</div>
 					</div>
@@ -255,7 +258,7 @@ get_header(); ?>
 							</div>
 							<div class="description flex vertical justify-center">
 								<h4 class="title"><?php the_title(); ?></h4>
-								<span class="excerpt"><?php the_excerpt( ); ?></span>
+								<?php the_excerpt( ); ?>
 								<p class="category"><?php esc_html_e( get_the_category()[0]->cat_name ); ?></p>
 							</div>
 						</a>

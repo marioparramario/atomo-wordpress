@@ -15,19 +15,22 @@
   right: 315px;
 }
 .slider-image-wrapper {
-  width: 70%;
   float: left;
   height: auto;
 }
 .slider-image-wrapper img {
   height: 100%;
 }
+.slider-link {
+  width: 70%;
+}
 .slider-text-wrapper {
   width: 30%;
-  height: 100%;
+  height: 450px;
   background: #D8A073;
   color: white;
   padding: 2.3rem 2rem;
+  z-index: 8;
 }
 .slider-text-wrapper .pagination-indicator {
   width: 44px;
@@ -84,12 +87,8 @@
   .slider {
     height: 420px;
   }
-  .slider-image-wrapper {
-    width: 65%;
-  }
   .slider-text-wrapper {
-    width: 35%;
-    padding: 2rem;
+    height: 420px;
   }
   .slider-text-container h3 {
     font-size: 1.7rem;

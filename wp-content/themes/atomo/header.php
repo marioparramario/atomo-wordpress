@@ -92,8 +92,27 @@
 				<a href="<?php echo esc_url( home_url( '/category/essays/' ) ); ?>"><?php _e( 'Ensayos Á', 'atomo' ); ?></a>
 				<a href="<?php echo esc_url( home_url( '/category/interviews/' ) ); ?>"><?php _e( 'Entrevistas', 'atomo' ); ?></a>
 				<a href="<?php echo esc_url( home_url( '/category/books/' ) ); ?>"><?php _e( 'Libros', 'atomo' ); ?></a>
-				<a href="<?php echo esc_url( home_url( '/category/chronicle-others/' ) ); ?>"><?php _e( 'Crónica y otros', 'atomo' ); ?></a>
-				<a href="<?php echo esc_url( home_url( '/category/music/' ) ); ?>"><?php _e( 'Música', 'atomo' ); ?></a>
+
+				<div class="navbar-init-item dropdown">
+					<a href="<?php echo esc_url( home_url( '/category/chronicle-others/' ) ); ?>"><?php _e( 'Crónica y otros', 'atomo' ); ?></a>
+					<div class="sub-menu flex vertical align-start">
+						<a href="<?php echo esc_url( home_url( '/category/chronic/' ) ); ?>"><?php _e( 'Crónica', 'atomo' ); ?></a>
+						<a href="<?php echo esc_url( home_url( '/category/poetry/' ) ); ?>"><?php _e( 'Poesía', 'atomo' ); ?></a>
+						<a href="<?php echo esc_url( home_url( '/category/essays/' ) ); ?>"><?php _e( 'Ensayos', 'atomo' ); ?></a>
+						<a href="<?php echo esc_url( home_url( '/category/visual-arts/' ) ); ?>"><?php _e( 'Artes visuales', 'atomo' ); ?></a>
+					</div>
+
+				</div>
+				<div class="navbar-init-item dropdown">
+					<a href="<?php echo esc_url( home_url( '/category/music/' ) ); ?>"><?php _e( 'Música', 'atomo' ); ?></a>
+					<div class="sub-menu flex vertical align-start">
+						<a href="<?php echo esc_url( home_url( '/category/classic/' ) ); ?>"><?php _e( 'Música Clásica', 'atomo' ); ?></a>
+						<a href="<?php echo esc_url( home_url( '/category/jazz/' ) ); ?>"><?php _e( 'Jazz', 'atomo' ); ?></a>
+					</div>
+				</div>
+
+
+
 
 				<div class="separator"></div>
 
@@ -113,11 +132,26 @@
 	<nav class="navbar-mobile flex-center">
 		<div class="navbar-mobile-wrapper flex-center">
 			<div class="navbar-mobile-content flex vertical">
-				<a href="<?php echo esc_url( home_url( '/category/entrevistas/' ) ); ?>"><?php _e( 'Entrevistas', 'atomo' ); ?></a>
-				<a href="<?php echo esc_url( home_url( '/category/ficcion/' ) ); ?>"><?php _e( 'Ficción', 'atomo' ); ?></a>
-				<a href="<?php echo esc_url( home_url( '/category/cartas-ensayos/' ) ); ?>"><?php _e( 'Cartas y ensayos', 'atomo' ); ?></a>
-				<a href="<?php echo esc_url( home_url( '/category/poesia/' ) ); ?>"><?php _e( 'Poesía', 'atomo' ); ?></a>
-				<a href="<?php echo esc_url( home_url( '/category/arte-fotografia/' ) ); ?>"><?php _e( 'Arte y fotografía', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/category/essays/' ) ); ?>"><?php _e( 'Ensayos Á', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/category/interviews/' ) ); ?>"><?php _e( 'Entrevistas', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/category/books/' ) ); ?>"><?php _e( 'Libros', 'atomo' ); ?></a>
+				<div class="navbar-init-item dropdown">
+					<a href="<?php echo esc_url( home_url( '/category/chronicle-others/' ) ); ?>"><?php _e( 'Crónica y otros', 'atomo' ); ?></a>
+					<div class="sub-menu flex vertical align-start">
+						<a href="<?php echo esc_url( home_url( '/category/chronic/' ) ); ?>"><?php _e( 'Crónica', 'atomo' ); ?></a>
+						<a href="<?php echo esc_url( home_url( '/category/poetry/' ) ); ?>"><?php _e( 'Poesía', 'atomo' ); ?></a>
+						<a href="<?php echo esc_url( home_url( '/category/essays/' ) ); ?>"><?php _e( 'Ensayos', 'atomo' ); ?></a>
+						<a href="<?php echo esc_url( home_url( '/category/visual-arts/' ) ); ?>"><?php _e( 'Artes visuales', 'atomo' ); ?></a>
+					</div>
+
+				</div>
+				<div class="navbar-init-item dropdown">
+					<a href="<?php echo esc_url( home_url( '/category/music/' ) ); ?>"><?php _e( 'Música', 'atomo' ); ?></a>
+					<div class="sub-menu flex vertical align-start">
+						<a href="<?php echo esc_url( home_url( '/category/classic/' ) ); ?>"><?php _e( 'Música Clásica', 'atomo' ); ?></a>
+						<a href="<?php echo esc_url( home_url( '/category/jazz/' ) ); ?>"><?php _e( 'Jazz', 'atomo' ); ?></a>
+					</div>
+				</div>
 				<a href="<?php echo esc_url( home_url( '/issues' ) ); ?>">Ediciones</a>
 			</div>
 			<div class="separator"></div>
