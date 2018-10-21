@@ -16,7 +16,7 @@
 get_header(); ?>
 
 <div class="container flex vertical align-center">
-	<section class="grid-read flex-vertical">
+	<section class="slider flex">
 		<?php
 			$atomo_slider_number = 0;
 			$atomo_slider_args = [
@@ -52,9 +52,13 @@ get_header(); ?>
 							</ol>
 							<div class="slider-text-container">
 								<h3 class="title"><?php the_title(); ?></h3>
-								<?php the_content(); ?>
+								<?php the_excerpt(); ?>
 								<div class="line"></div>
-								<span class="author">por Friedrich Nietzsche</span>
+								<?php $meta_value = get_post_meta($post->ID, "author-article", true);
+									if (!empty($meta_value)) {
+										echo '<span>'. $meta_value .'</span>';
+									}
+								?>
 							</div>
 						</div><!-- .slider-text-wrapper -->
 					</div><!-- .carousel-item -->
@@ -77,9 +81,13 @@ get_header(); ?>
 							</ol>
 							<div class="slider-text-container">
 								<h3 class="title"><?php the_title(); ?></h3>
-								<?php the_content(); ?>
+								<?php the_excerpt(); ?>
 								<div class="line"></div>
-								<span class="author">por Friedrich Nietzsche</span>
+								<?php $meta_value = get_post_meta($post->ID, "author-article", true);
+									if (!empty($meta_value)) {
+										echo '<span>'. $meta_value .'</span>';
+									}
+								?>
 							</div>
 						</div><!-- .slider-text-wrapper -->
 					</div><!-- .carousel-item -->
