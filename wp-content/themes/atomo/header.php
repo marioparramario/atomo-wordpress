@@ -166,7 +166,7 @@
 					<a class="lang-link" href="#english" rel="alternate" hreflang="en"><abbr title="English">EN</abbr></a>
 				</div>
 				<div class="navbar-mobile-button flex">
-					<a href="#">Log in</a>
+					<a class="login" href="#"><?php _e( 'Log in', 'atomo' ); ?></a>
 					<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Suscríbete</a>
 				</div>
 				<?php get_search_form( true ); ?>
