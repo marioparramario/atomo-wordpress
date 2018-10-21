@@ -11,7 +11,7 @@ $(document).ready(function(){
 });
 
 $('.search-button').click(function(){
-    $('.search-wrapper').toggleClass('active');
+    $('.navbar-mobile').toggleClass('active');
 });
 
 $('.login').click(function(){
