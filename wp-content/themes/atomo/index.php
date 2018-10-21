@@ -131,7 +131,7 @@ get_header(); ?>
 					</div>
 					<div class="description flex vertical">
 						<h4 class="title"><?php the_title(); ?></h4>
-						<p class="excerpt"><?php the_excerpt(); ?></p>
+						<?php the_excerpt(); ?>
 						<p class="category"><?php esc_html_e( get_the_category()[0]->cat_name ); ?></p>
 					</div>
 				</a><!-- .item -->
@@ -149,7 +149,7 @@ get_header(); ?>
 						</div>
 						<div class="description flex vertical justify-center">
 							<h4 class="title"><?php the_title(); ?></h4>
-							<p class="excerpt"><?php the_excerpt(); ?></p>
+							<?php the_excerpt(); ?>
 							<p class="category"><?php esc_html_e( get_the_category()[0]->cat_name ); ?></p>
 						</div>
 					</a><!-- .item -->
@@ -201,7 +201,7 @@ get_header(); ?>
 					</div>
 					<div class="description flex vertical justify-center">
 						<h4 class="title"><?php the_title(); ?></h4>
-						<p class="excerpt"><?php the_excerpt();?></p>
+						<?php the_excerpt(); ?>
 						<p class="category"><?php esc_html_e( get_the_category()[0]->cat_name ); ?></p>
 					</div>
 				</a>
