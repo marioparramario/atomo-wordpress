@@ -582,8 +582,8 @@ if ( ! function_exists('atomo_author_metabox') ) {
 		$designation = atomo_post_author_designation( $post->ID );
 
 		$out .= '<p>';
-		$out .= '  <div><label for="atomo-post-author-designation">' . __( 'Author designation', 'atomo' ) . '</label></div>';
-		$out .= '  <input id="atomo-post-author-designation" type="text" name="post-author-designation" value="' . $designation . '">';
+		$out .= '  <div><label class="form-check-label" for="atomo-post-author-designation">' . __( 'Author designation', 'atomo' ) . '</label></div>';
+		$out .= '  <textarea id="atomo-post-author-designation" name="post-author-designation">' . $designation . '</textarea>';
 		$out .= '</p>';
 
 		$location = atomo_post_location( $post->ID );
