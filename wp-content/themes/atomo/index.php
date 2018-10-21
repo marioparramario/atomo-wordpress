@@ -235,7 +235,7 @@ get_header(); ?>
 
 						<div class="description flex vertical justify-center">
 							<h4 class="title"><?php the_title(); ?></h4>
-							<span class="excerpt><?php the_excerpt( ); ?></span>
+							<span class="excerpt"><?php the_excerpt( ); ?></span>
 							<p class="category"><?php esc_html_e( get_the_category()[0]->cat_name ); ?></p>
 						</div>
 					</div>
