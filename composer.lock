@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3757b4acb770a16459f3ae9da904972f",
+    "content-hash": "59d8cc1f63439e9f9f805cc3733ce67e",
     "packages": [
         {
             "name": "vlucas/phpdotenv",
@@ -299,7 +299,5 @@
         "ext-xmlreader": "*",
         "ext-zlib": "*"
     },
-    "platform-dev": {
-        "ext-xdebug": "*"
-    }
+    "platform-dev": []
 }
