@@ -116,9 +116,9 @@
 
 				<div class="separator"></div>
 
-				<a href="<?php echo esc_url( home_url( '/issues' ) ); ?>">Ediciones</a>
-				<a href="<?php echo esc_url( home_url( '/search' ) ); ?>">Búsqueda</a>
-				<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Suscríbete</a>
+				<a href="<?php echo esc_url( home_url( '/issues' ) ); ?>"><?php _e( 'Ediciones', 'atomo' ); ?></a>
+				<a class="search-button"><?php _e( 'Búsqueda', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>"><?php _e( 'Suscríbete', 'atomo' ); ?></a>
 			</div>
 
 			<a class="navbar-menu-button">
