@@ -590,8 +590,10 @@ if ( ! function_exists('atomo_author_metabox') ) {
 
 		$out .= '<p>';
 		$out .= '  <div><label for="atomo-post-location">' . __( 'Location', 'atomo' ) . '</label></div>';
-		$out .= '  <input id="atomo-post-location" type="text" name="post-location" value="' . $location . '">';
+		$out .= '  <textarea id="atomo-post-location" name="post-location">' . $location . '</textarea>';
 		$out .= '</p>';
+
+		$out .= '<input class="button button-primary button-large" type="submit" name="author-update" value="Update">';
 
 		echo $out;
 	}
