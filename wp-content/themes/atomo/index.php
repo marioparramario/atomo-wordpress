@@ -238,7 +238,7 @@ get_header(); ?>
 						<div class="description flex vertical justify-center">
 							<h4 class="title"><?php the_title(); ?></h4>
 							<?php the_excerpt( ); ?>
-							<p class="category"><?php esc_html_e( get_the_category()[0]->cat_name ); ?></p>
+							<p class="category"><?php esc_html_e( get_the_category()[0]->cat_name ?? 'uncategorized' ); ?></p>
 						</div>
 					</div>
 					<?php $atomo_item_number++; ?>
@@ -269,18 +269,23 @@ get_header(); ?>
 		</div>
 	</section><!-- #posts -->
 
-<?php if ( is_user_logged_in() ): ?>
-		<div class="log-out flex-center">
-		<div class="log-out-container flex vertical">
-			<a class="logout logout-link"></a>
+<?php if ( is_user_logged_in() ) : ?>
+	<div class="log-in flex-center">
+		<div class="log-in-container flex vertical">
+			<a class="logout logout-link" href="<?php echo wp_logout_url(); ?>"></a>
 
 			<h3>Log out</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
 
-			<form id="atomo_logout_form" class="form" action="<?php echo home_url( 'logout' ); ?>" method="post">
-				<button class="submit self-end" value="Logout">Salir</button>
+			<form id="logout-form" class="form" action="<?php echo wp_logout_url(); ?>" method="get">
+
+				<input name="redirect_to" type="hidden" value="<?php echo home_url(); ?>">
+				<input name="a" type="hidden" value="logout">
+
+				<button class="submit self-end">Salir</button>
 			</form>
 		</div>
-	</div><!-- .log-out -->
+	</div>
 <?php else: ?>
 	<div class="log-in flex-center">
 		<div class="log-in-container flex vertical">
@@ -289,12 +294,12 @@ get_header(); ?>
 			<h3>Log in</h3>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
 
-			<form id="atomo_login_form" class="form" action="<?php echo home_url( 'login' ); ?>" method="post">
+			<form id="login-form" class="form" action="<?php echo home_url( 'login' ); ?>" method="post">
 
 				<input type="text" name="log" class="username" placeholder="user">
 				<input type="password" name="pwd" class="password" placeholder="password">
 
-				<input name="redirect_to" type="hidden" value="/login/">
+				<input name="redirect_to" type="hidden" value="<?php home_url(); ?>">
 				<input name="a" type="hidden" value="login">
 
 				<button class="submit self-end" value="Login">Entrar</button>
