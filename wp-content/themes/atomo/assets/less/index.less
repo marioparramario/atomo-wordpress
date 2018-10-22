@@ -328,7 +328,7 @@ input {
   &::before {
     position: absolute;
     content: '';
-    background: fade(@camel, 90%);
+    background: fade(@black, 90%);
     top: 0;
     left: 0;
     width: 100%;
@@ -337,9 +337,9 @@ input {
   }
   &-container {
     position: relative;
-    background: @black;
-    width: 380px;
-    padding: 4rem;
+    background: @camel;
+    width: 350px;
+    padding: 3rem 4rem;
     color: white;
     .login {
       position: absolute;
@@ -353,7 +353,7 @@ input {
       background-repeat: no-repeat;
     }
     h3 {
-      color: @camel;
+      color: @black;
       margin-bottom: 0.5rem;
       font-size: 1.3rem;
     }
@@ -375,12 +375,13 @@ input {
     }
     .submit {
       text-transform: uppercase;
-      background: @green;
+      background: @black;
       color: white;
       font-size: 0.9rem;
-      padding: 0.4rem 1.4rem;
+      padding: 0.4rem 2.5rem;
       border: none;
       font-family: @roboto;
+      height: 30px
     }
   }
 }
@@ -414,6 +415,9 @@ input {
     font-family: @roboto;
     text-transform: uppercase;
   }
+}
+input, button {
+  letter-spacing: 0.08rem;
 }
 
 @media (max-width: @tablet) {

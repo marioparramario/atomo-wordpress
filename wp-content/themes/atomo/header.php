@@ -26,7 +26,7 @@
 			<?php if ( is_user_logged_in() ): ?>
 				<a class="logout" href="<?php echo wp_logout_url( home_url() ); ?>"><?php _e( 'Log out', 'atomo' ); ?></a>
 			<?php else: ?>
-				<a class="login" href="#"><?php _e( 'Log in', 'atomo' ); ?></a>
+				<a class="login"><?php _e( 'Log in', 'atomo' ); ?></a>
 			<?php endif; ?>
 			</div>
 			<div class="navbar-init-button menu flex justify-end">

@@ -296,7 +296,7 @@ input {
 .log-in::before {
   position: absolute;
   content: '';
-  background: rgba(216, 160, 115, 0.9);
+  background: rgba(30, 30, 30, 0.9);
   top: 0;
   left: 0;
   width: 100%;
@@ -305,9 +305,9 @@ input {
 }
 .log-in-container {
   position: relative;
-  background: #1E1E1E;
-  width: 380px;
-  padding: 4rem;
+  background: #D8A073;
+  width: 350px;
+  padding: 3rem 4rem;
   color: white;
 }
 .log-in-container .login {
@@ -322,7 +322,7 @@ input {
   background-repeat: no-repeat;
 }
 .log-in-container h3 {
-  color: #D8A073;
+  color: #1E1E1E;
   margin-bottom: 0.5rem;
   font-size: 1.3rem;
 }
@@ -344,12 +344,13 @@ input {
 }
 .log-in-container .submit {
   text-transform: uppercase;
-  background: #85AA8E;
+  background: #1E1E1E;
   color: white;
   font-size: 0.9rem;
-  padding: 0.4rem 1.4rem;
+  padding: 0.4rem 2.5rem;
   border: none;
   font-family: 'Roboto Mono', monospace;
+  height: 30px;
 }
 .subscription input {
   background: red;
@@ -375,6 +376,10 @@ input {
   font-size: 0.8rem;
   font-family: 'Roboto Mono', monospace;
   text-transform: uppercase;
+}
+input,
+button {
+  letter-spacing: 0.08rem;
 }
 @media (max-width: 991px) {
   a {
