@@ -50,6 +50,7 @@ get_header(); ?>
 						<div class="post-body">
 							<?php the_content(); ?>
 						</div>
+						<img class="single-icon self-end" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-iso-black.svg" alt="">
 					</div>
 				</div>
 			</article><!-- #post-<?php the_ID(); ?> -->

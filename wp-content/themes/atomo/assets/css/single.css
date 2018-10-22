@@ -26,12 +26,14 @@
   padding-top: 2rem;
 }
 .single-text-container h2 {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  font-weight: 600;
+  margin-top: 1.5rem;
 }
 .single-text-container h3 {
-  color: #D8A073;
-  font-size: 1.6rem;
-  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+  font-weight: 600;
 }
 .single-text-container h4 {
   align-self: flex-end;
@@ -48,7 +50,8 @@
   background: #1E1E1E;
 }
 .single-text-container p {
-  font-size: 0.85rem;
+  color: #1E1E1E;
+  font-size: 0.9rem;
   line-height: 1.8;
   margin-top: 1.5rem;
 }
@@ -60,6 +63,13 @@
   max-width: 320px;
   text-align: right;
   line-height: 1.4;
+}
+.single-text-container blockquote p {
+  font-size: 1.8rem;
+  line-height: 1.4;
+}
+.single-text-container q p {
+  font-weight: 600;
 }
 .single-text-container ol {
   margin-top: 1rem;
@@ -109,11 +119,6 @@
   height: 100px;
   z-index: 99;
 }
-.single blockquote p {
-  color: #D8A073;
-  font-size: 1.5rem;
-  line-height: 1.4;
-}
 .single .navigation {
   width: 720px;
   display: -webkit-box;
@@ -121,6 +126,7 @@
   display: -ms-flexbox;
   display: flex;
   margin: 0 auto;
+  margin-bottom: 2rem;
 }
 .single .navigation .nav-links {
   width: 100%;
@@ -136,6 +142,11 @@
 .single .navigation .nav-links a {
   font-size: 0.7rem;
   text-transform: uppercase;
+}
+.single-icon {
+  margin-top: 1.2rem;
+  width: 34px;
+  height: 34px;
 }
 .no-text .single-text-wrapper,
 .no-text-2 .single-text-wrapper {
@@ -165,6 +176,7 @@ figure img {
 .aligncenter {
   margin-right: 0;
   margin-left: 0;
+  margin-top: 1.5rem;
 }
 .wp-caption-text {
   margin-top: 0.5rem;

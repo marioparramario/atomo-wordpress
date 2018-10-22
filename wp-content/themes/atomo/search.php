@@ -80,9 +80,9 @@ get_header(); ?>
 			  <?php endif; ?>
 		  <?php endif; ?>
 		</div>
-		<div class="pagination-wrapper flex-center">
+		<!-- <div class="pagination-wrapper flex-center">
 	        <?php atomo_pagination(); ?>
-	    </div>
+	    </div> -->
 
 	</section>
     <section class="subscribe flex-center">

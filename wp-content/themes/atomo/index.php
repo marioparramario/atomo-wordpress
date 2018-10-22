@@ -303,9 +303,9 @@ get_header(); ?>
 		<?php endif; /* have_posts */ ?>
 		</div><!-- .row -->
 
-		<div class="pagination flex">
+		<!-- <div class="pagination flex">
 			<?php echo paginate_links( $atomo_popular_args ); ?>
-		</div>
+		</div> -->
 	</section><!-- #posts -->
 
 </div><!-- .container -->
