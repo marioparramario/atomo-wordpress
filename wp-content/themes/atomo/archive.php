@@ -1,5 +1,5 @@
 <?php
-get_header( 'index.html' ); ?>
+get_header(); ?>
 
 <div class="container flex vertical align-center">
 	<section class="grid-regular flex-vertical">
@@ -63,20 +63,14 @@ get_header( 'index.html' ); ?>
               <?php endif; ?>
           <?php endif; ?>
         </div>
-
-		<div class="pagination-wrapper flex-center">
-			<?php wp_bootstrap4_pagination( array() ); ?>
-		</div>
     </section>
-
-  <section class="subscribe flex-center">
-    <div class="subscribe-container flex-vertical">
-      <h2>Suscríbete a Átomo</h2>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-	  <a class="button" href="#">Suscríbete</a>
-    </div>
-  </section>
-
+	<section class="subscribe flex-center">
+      <div class="subscribe-container flex-vertical">
+        <h2>Suscríbete a Átomo</h2>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  	  <a class="button" href="#">Suscríbete</a>
+      </div>
+    </section>
 </div>
 
-<?php get_footer( 'index.html' ); ?>
+<?php get_footer(); ?>

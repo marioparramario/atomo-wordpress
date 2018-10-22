@@ -8,7 +8,7 @@
  * @subpackage Atomo
  */
 
-get_header( 'index.html' ); ?>
+get_header(); ?>
 
 <div class="container flex vertical align-center">
     <div class="search-result flex-vertical">
@@ -96,4 +96,4 @@ get_header( 'index.html' ); ?>
 
 </div>
 
-<?php get_footer( 'index.html' ); ?>
+<?php get_footer(); ?>

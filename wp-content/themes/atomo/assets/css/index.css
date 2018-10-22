@@ -72,8 +72,12 @@ input {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
   border-radius: 0;
-  background: white;
+  background: white !important;
+  color: #D8A073;
   padding: 0 1rem;
+  font-size: 0.8rem;
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
 }
 .headline {
   position: relative;
@@ -236,6 +240,7 @@ input {
 }
 .page-template-issues .issues {
   margin: 0;
+  min-height: 50vh;
 }
 .search-result {
   position: relative;
@@ -329,6 +334,7 @@ input {
 .log-in-container input {
   height: 30px;
   margin-bottom: 1rem;
+  width: auto;
 }
 .log-in-container input::-webkit-input-placeholder {
   font-size: 0.8rem;
@@ -342,12 +348,33 @@ input {
   color: white;
   font-size: 0.9rem;
   padding: 0.4rem 1.4rem;
+  border: none;
+  font-family: 'Roboto Mono', monospace;
 }
 .subscription input {
   background: red;
 }
 .subscription input .button {
   background: red;
+}
+.log-out {
+  display: none;
+}
+#login-form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+#login-form input::-webkit-input-placeholder {
+  font-size: 0.8rem;
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
 }
 @media (max-width: 991px) {
   a {
@@ -369,6 +396,12 @@ input {
   }
   .container {
     transform: translateY(-70px);
+  }
+  .subscribe-container {
+    padding: 3.6rem 0;
+  }
+  .subscribe h2 {
+    font-size: 2.5rem;
   }
 }
 @media (max-width: 767px) {
@@ -405,6 +438,12 @@ input {
     font-size: 0.75rem;
     padding: 0.6rem 0.8rem;
   }
+  .subscribe h2 {
+    font-size: 1.7rem;
+  }
+  .subscribe p {
+    font-size: 0.85rem;
+  }
 }
 @media (max-width: 479px) {
   .headline {
@@ -417,5 +456,24 @@ input {
   }
   .loader {
     background-size: 120px;
+  }
+  .issue-container {
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .issue-version {
+    right: 50px;
+  }
+  .issue-image {
+    width: 200px;
+  }
+  .issue-text {
+    margin-left: 0;
+    margin-top: 1rem;
+    text-align: center;
   }
 }

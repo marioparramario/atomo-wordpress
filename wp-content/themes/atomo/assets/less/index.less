@@ -75,8 +75,12 @@ input {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
   border-radius: 0;
-  background: white;
+  background: white !important;
+  color: @camel;
   padding: 0 1rem;
+  font-size: 0.8rem;
+  font-family: @roboto;
+  text-transform: uppercase;
   // &::-webkit-input-placeholder {
   //   color: fade( @dark-blue, 60% ) !important;
   // }
@@ -264,6 +268,7 @@ input {
     max-width: 720px;  }
   .issues {
     margin: 0;
+    min-height: 50vh;
   }
 
 }
@@ -360,6 +365,7 @@ input {
     input {
       height: 30px;
       margin-bottom: 1rem;
+      width: auto;
       &::-webkit-input-placeholder {
         font-size: 0.8rem;
         font-family: @roboto;
@@ -373,6 +379,8 @@ input {
       color: white;
       font-size: 0.9rem;
       padding: 0.4rem 1.4rem;
+      border: none;
+      font-family: @roboto;
     }
   }
 }
@@ -386,6 +394,25 @@ input {
     .button {
       background: red;
     }
+  }
+}
+.log-out {
+  display: none;
+}
+#login-form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  input::-webkit-input-placeholder {
+    font-size: 0.8rem;
+    font-family: @roboto;
+    text-transform: uppercase;
   }
 }
 
@@ -410,6 +437,14 @@ input {
 
   .container {
     transform: translateY(-70px);
+  }
+  .subscribe {
+    &-container {
+      padding: 3.6rem 0;
+    }
+    h2 {
+      font-size: 2.5rem;
+    }
   }
 }
 
@@ -449,6 +484,14 @@ input {
     font-size: 0.75rem;
     padding: 0.6rem 0.8rem;
   }
+  .subscribe {
+    h2 {
+      font-size: 1.7rem;
+    }
+    p {
+      font-size: 0.85rem;
+    }
+  }
 }
 
 @media (max-width: @phone) {
@@ -462,5 +505,26 @@ input {
   }
   .loader {
     background-size: 120px;
+  }
+  .issue {
+    &-container {
+      width: 100%;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+    }
+    &-version {
+      right: 50px;
+    }
+    &-image {
+      width: 200px;
+    }
+    &-text {
+      margin-left: 0;
+      margin-top: 1rem;
+      text-align: center;
+    }
   }
 }

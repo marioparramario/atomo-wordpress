@@ -61,7 +61,7 @@
       &:hover {
         color: @black;
       }
-      &.login {
+      &.login, &.logout {
         position: relative;
         border: 1px @camel solid;
         line-height: 0.6;
@@ -138,13 +138,16 @@
         &-content {
           a {
             color: white;
+            &.active {
+              color: @camel;
+            }
           }
           .search {
             &-field {
               border: 1px solid white;
             }
             &-submit {
-              background: @camel;
+              background: @camel !important;
               border: 1px solid @camel;
             }
           }
@@ -198,7 +201,7 @@
         background: @camel;
         padding: 0.4rem 0.6rem;
         margin: 0;
-        margin-right: 0.5rem;
+        margin-right: 1rem;
       }
     }
     &.active {
@@ -410,7 +413,7 @@
   }
   &-submit {
     width: 100px;
-    background: @black;
+    background: @black !important;
     letter-spacing: 0.08rem;
     color: white;
     border: 1px solid @black;
@@ -581,6 +584,8 @@
               background-position: center center;
               background-size: 18px;
               background-repeat: no-repeat;
+              z-index: 1;
+              cursor: pointer;
             }
           }
           &-field {
@@ -589,7 +594,8 @@
           &-submit {
             width: 30px;
             font-size: 0;
-
+            z-index: 1;
+            cursor: pointer;
           }
         }
       }

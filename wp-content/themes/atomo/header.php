@@ -70,7 +70,7 @@
 				<a href="<?php echo esc_url( home_url( '/issues' ) ); ?>">Ediciones</a>
 			</div>
 			<div class="navbar-init-item">
-				<a class="search-button" href="<?php echo esc_url( home_url( '/search' ) ); ?>"><?php _e( 'Búsqueda', 'atomo' ); ?></a>
+				<a class="search-button"><?php _e( 'Búsqueda', 'atomo' ); ?></a>
 			</div>
 			<div class="navbar-init-item">
 				<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Suscríbete</a>

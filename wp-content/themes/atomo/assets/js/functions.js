@@ -27,14 +27,26 @@ function scrollFunction() {
     document.querySelector("#navbar").style.top = "0";
 		document.querySelector(".navbar-menu").style.backgroundColor = "#1E1E1E";
 		document.querySelector(".navbar-menu a").style.color = "white";
-    document.querySelector('.navbar-mobile').classList.remove('black');
+    // document.querySelector('.navbar-mobile').classList.remove('black');
   } else {
     document.querySelector("#navbar").style.top = "-180px";
 		document.querySelector(".navbar-menu").style.backgroundColor = "white";
 		document.querySelector(".navbar-menu a").style.color = "#1E1E1E";
-    document.querySelector('.navbar-mobile').classList.add('black');
+    // document.querySelector('.navbar-mobile').classList.add('black');
   }
 }
+
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 180) {
+        $(".navbar-mobile").addClass("black");
+    } else {
+        $(".navbar-mobile").removeClass("black");
+    }
+});
+
+
 
 ;(function(window) {
 
