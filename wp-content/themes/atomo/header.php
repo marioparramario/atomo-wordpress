@@ -191,7 +191,7 @@
 	<?php if ( is_user_logged_in() ) : ?>
 	<div class="log-out flex-center">
 		<div class="log-out-container flex vertical">
-			<a class="logout logout-link" href="<?php echo wp_logout_url(); ?>"></a>
+			<a class="logout logout-link" href="<?php echo wp_logout_url( home_url() ); ?>"></a>
 		</div>
 	</div><!-- .log-out -->
 <?php else : ?>
