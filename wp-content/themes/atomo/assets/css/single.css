@@ -25,22 +25,32 @@
 .single-text-container .post-body {
   padding-top: 2rem;
 }
+.single-text-container h1 {
+  color: #D8A073;
+}
 .single-text-container h2 {
+  font-size: 1.8rem;
+  color: #1E1E1E;
+  font-style: italic;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+.single-text-container h3 {
   font-size: 1.2rem;
   line-height: 1.4;
   font-weight: 600;
   margin-top: 1.5rem;
 }
-.single-text-container h3 {
+.single-text-container h4 {
   margin-top: 1.5rem;
   font-weight: 600;
 }
-.single-text-container h4 {
+.single-text-container h5 {
   align-self: flex-end;
   position: relative;
   font-size: 0.9rem;
 }
-.single-text-container h4::before {
+.single-text-container h5::before {
   content: '';
   position: absolute;
   left: -60px;
