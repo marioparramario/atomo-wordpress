@@ -19,17 +19,6 @@ get_header(); ?>
 	<div class="log-out flex-center">
 		<div class="log-out-container flex vertical">
 			<a class="logout logout-link" href="<?php echo wp_logout_url(); ?>"></a>
-
-			<h3>Log out</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-
-			<form id="logout-form" class="form" action="<?php echo wp_logout_url(); ?>" method="get">
-
-				<input name="redirect_to" type="hidden" value="<?php echo home_url(); ?>">
-				<input name="a" type="hidden" value="logout">
-
-				<button class="submit self-end">Salir</button>
-			</form>
 		</div>
 	</div><!-- .log-out -->
 <?php else : ?>
