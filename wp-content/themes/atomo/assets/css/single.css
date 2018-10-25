@@ -63,7 +63,7 @@
   color: #1E1E1E;
   font-size: 0.9rem;
   line-height: 1.8;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
 }
 .single-text-container span {
   font-family: 'Libre Baskerville', serif;
@@ -72,6 +72,38 @@
   margin-top: 0.3rem;
   max-width: 320px;
   text-align: right;
+  line-height: 1.4;
+}
+.single-text-container img {
+  width: 50%;
+  margin: 0 1.5rem;
+}
+.single-text-container figure {
+  width: 100% !important;
+  margin: 1.2rem 2.2rem;
+}
+.single-text-container figure img {
+  height: auto;
+}
+.single-text-container .alignleft {
+  margin-left: 0;
+  float: left;
+}
+.single-text-container .alignright {
+  margin-right: 0;
+  float: right;
+}
+.single-text-container .aligncenter {
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+}
+.single-text-container .wp-caption-text {
+  margin-top: 0.5rem;
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  letter-spacing: 0.05rem;
   line-height: 1.4;
 }
 .single-text-container blockquote p {
@@ -155,7 +187,7 @@
 }
 .single-icon {
   margin-top: 1.2rem;
-  width: 34px;
+  width: 34px !important;
   height: 34px;
 }
 .no-text .single-text-wrapper,
@@ -168,36 +200,8 @@
 .no-text-2 .nav-init {
   background: #FAF0E9;
 }
-figure {
-  width: 100% !important;
-  margin: 1.2rem 2.2rem;
-}
-figure img {
-  height: auto;
-}
-.alignleft {
-  margin-left: 0;
-  float: left;
-}
-.alignright {
-  margin-right: 0;
-  float: right;
-}
-.aligncenter {
-  margin-right: 0;
-  margin-left: 0;
-  margin-top: 1.5rem;
-}
-.wp-caption-text {
-  margin-top: 0.5rem;
-  font-family: 'Roboto Mono', monospace;
-  text-transform: uppercase;
-  font-size: 0.65rem;
-  letter-spacing: 0.05rem;
-  line-height: 1.4;
-}
 .category-interviews em {
   font-weight: bold;
-  letter-spacing: 0.04rem;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.01rem;
 }
