@@ -15,45 +15,6 @@
 
 get_header(); ?>
 
-<?php if ( is_user_logged_in() ) : ?>
-	<div class="log-out flex-center">
-		<div class="log-out-container flex vertical">
-			<a class="logout logout-link" href="<?php echo wp_logout_url(); ?>"></a>
-
-			<h3>Log out</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-
-			<form id="logout-form" class="form" action="<?php echo wp_logout_url(); ?>" method="get">
-
-				<input name="redirect_to" type="hidden" value="<?php echo home_url(); ?>">
-				<input name="a" type="hidden" value="logout">
-
-				<button class="submit self-end">Salir</button>
-			</form>
-		</div>
-	</div><!-- .log-out -->
-<?php else : ?>
-	<div class="log-in flex-center">
-		<div class="log-in-container flex vertical">
-			<a class="login login-link"></a>
-
-			<h3>Log in</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-
-			<form id="login-form" class="form" action="<?php echo home_url( 'login' ); ?>" method="post">
-
-				<input type="text" name="log" class="username" placeholder="user">
-				<input type="password" name="pwd" class="password" placeholder="password">
-
-				<input name="redirect_to" type="hidden" value="<?php home_url(); ?>">
-				<input name="a" type="hidden" value="login">
-
-				<button class="submit self-end" value="Login">Entrar</button>
-			</form>
-		</div>
-	</div><!-- .log-in -->
-<?php endif; ?>
-
 <div class="container flex vertical align-center">
 	<section class="slider flex">
 		<?php

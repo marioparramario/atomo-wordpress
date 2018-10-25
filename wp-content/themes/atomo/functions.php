@@ -229,6 +229,21 @@ if ( ! function_exists( 'atomo_enqueue_scripts' ) ) {
 }
 
 
+add_filter( 'wpmem_login_redirect', 'atomo_login_redirect', 10, 2 );
+
+/**
+ * Redirect to front page after login.
+ */
+function atomo_login_redirect( $redirect_to, $user_id ) {
+
+	if ( $redirect_to ) {
+		return $redirect_to;
+	}
+
+	return home_url();
+}
+
+
 add_action( 'add_meta_boxes', 'atomo_custom_meta_boxes' );
 
 if ( ! function_exists('atomo_custom_meta_boxes') ) {
