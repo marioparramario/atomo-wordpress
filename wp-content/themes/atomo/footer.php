@@ -18,7 +18,7 @@
 				<div class="footer-social flex vertical">
 					<h4><?php esc_html_e( 'Follow Us', 'atomo' ); ?></h4>
 					<div class="social-container">
-						<a class="facebook-link" href="">
+						<a class="facebook-link" href="https://www.facebook.com/revistaatomo/">
 							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 19 19" style="enable-background:new 0 0 19 19;" xml:space="preserve">
 							<path d="M16.3,1.5H2.7c-0.6,0-1.2,0.6-1.2,1.2v13.5c0,0.7,0.6,1.3,1.2,1.3h6.5c0.2,0,0.3-0.1,0.3-0.3v-4.3
 							c0-0.2-0.1-0.3-0.3-0.3H8c-0.2,0-0.3-0.1-0.3-0.3V9.8c0-0.2,0.1-0.3,0.3-0.3h1.2c0.2,0,0.3-0.1,0.3-0.3V8c0-1.9,1.5-3.4,3.4-3.4h1.8
@@ -27,7 +27,7 @@
 							c0.7,0,1.2-0.6,1.2-1.2V2.7C17.5,2.1,16.9,1.5,16.3,1.5"/>
 							</svg>
 						</a>
-						<a class="instagram-link" href="">
+						<a class="instagram-link" href="https://www.instagram.com/revistaatomo/">
 							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 19 19" style="enable-background:new 0 0 19 19;" xml:space="preserve">
 								<g>
 								<path d="M13.4,1.7H5.6c-2.2,0-3.9,1.7-3.9,3.9v7.8c0,2.2,1.7,3.9,3.9,3.9h7.8c2.2,0,3.9-1.7,3.9-3.9V5.6
@@ -39,7 +39,7 @@
 								</g>
 							</svg>
 						</a>
-						<a class="twitter-link" href="">
+						<a class="twitter-link" href="https://twitter.com/revistaatomo">
 							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 19 19" style="enable-background:new 0 0 19 19;" xml:space="preserve">
 								<path d="M18.4,4c-0.1-0.1-0.2-0.1-0.4-0.1c-0.1,0.1-0.5,0.2-0.8,0.3c0.3-0.4,0.6-0.9,0.8-1.3c0-0.1,0-0.3-0.1-0.3
 								c-0.1-0.1-0.2-0.1-0.3,0c-0.2,0.2-1.3,0.6-2,0.8c-0.8-0.7-1.7-1.1-2.7-1.1c-0.7,0-1.4,0.2-2.2,0.7C9.2,3.8,9,5.6,9.1,6.6

@@ -163,8 +163,8 @@ get_header(); ?>
 			<div class="issue-text">
 				<h2 class="title">Átomo N1</h2>
 				<h3>Corrección política</h3>
-				<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-				<a class="button issue-link" href="#">Download this issue!</a>
+				<p class="description">Revista recién nacida, vamos en nuestro primer número.</p>
+				<a class="button issue-link" href="#">Descarga la revista</a>
 			</div>
 		</div>
 	</section><!-- #current-issue -->
@@ -210,7 +210,7 @@ get_header(); ?>
 	<section class="subscribe flex-center">
 		<div class="subscribe-container flex-vertical">
 			<h2 class="title">Suscríbete a Átomo</h2>
-			<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			<p>Para suscribirse y recibir la revista física en tu casa u oficina envíanos un email!</p>
 			<a class="button" href="#">Suscríbete</a>
 		</div>
 	</section><!-- .subscribe -->

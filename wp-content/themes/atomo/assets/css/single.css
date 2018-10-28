@@ -39,7 +39,7 @@
   font-size: 1.2rem;
   line-height: 1.4;
   font-weight: 600;
-  margin-top: 1.5rem;
+  margin: 1.5rem 0;
 }
 .single-text-container h4 {
   margin-top: 1.5rem;
@@ -64,6 +64,7 @@
   font-size: 0.9rem;
   line-height: 1.8;
   margin-top: 0.5rem;
+  text-indent: 2rem;
 }
 .single-text-container span {
   font-family: 'Libre Baskerville', serif;
