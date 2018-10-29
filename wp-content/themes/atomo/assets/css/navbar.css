@@ -183,6 +183,7 @@
   font-family: 'Roboto Mono', monospace;
   text-transform: uppercase;
   margin-left: -1px;
+  cursor: pointer;
 }
 .navbar-mobile-lang a {
   margin: 0;

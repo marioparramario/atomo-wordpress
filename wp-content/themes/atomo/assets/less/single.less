@@ -11,7 +11,6 @@
     width: 100%;
     max-width: @container;
     height: 450px;
-    background-image: url('../images/placeholders/forest.jpg');
     background-position: 50% 80%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -103,7 +102,7 @@
       .aligncenter {
         width: 100%;
         margin-right: 0;
-        margin-left: 0;
+        margin-left: -2rem;
         // margin-top: 1.5rem;
       }
       .wp-caption-text {
@@ -146,6 +145,33 @@
         font-size: 0.65rem;
         letter-spacing: 0.02rem;
         line-height: 1.4;
+      }
+    }
+    &-featured {
+      flex-wrap: wrap;
+      width: calc(100% + 8rem);
+      margin: 3rem auto;
+      margin-left: -4rem;
+      .column {
+        flex-basis: 50%;
+        position: relative;
+        overflow: hidden;
+      }
+      img {
+        width: auto !important;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0 !important;
+        height: 100%;
+      }
+      blockquote p {
+        color: white;
+        font-size: 1.3rem;
+        padding: 3rem;
+        background: @camel;
+        margin: 0;
+        text-indent: initial;
       }
     }
     &-quote {
@@ -230,5 +256,17 @@
     font-weight: bold;
     font-size: 0.95rem;
     letter-spacing: 0.01rem;
+  }
+}
+
+@media (max-width: @small-tablet) {
+  .single {
+    &-text-featured {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+    }
   }
 }
