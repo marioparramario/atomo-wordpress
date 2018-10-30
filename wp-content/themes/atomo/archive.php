@@ -65,12 +65,12 @@ get_header(); ?>
         </div>
     </section>
 	<section class="subscribe flex-center">
-      <div class="subscribe-container flex-vertical">
-        <h2>Suscríbete a Átomo</h2>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-  	  <a class="button" href="#">Suscríbete</a>
-      </div>
-    </section>
+		<div class="subscribe-container flex-vertical">
+			<h2 class="title">Suscríbete a Átomo</h2>
+			<p>Para suscribirse y recibir la revista física en tu casa u oficina envíanos un email!</p>
+			<a class="button" href="mailto:suscripciones@revistaatomo.com">Suscríbete</a>
+		</div>
+	</section><!-- .subscribe -->
 </div>
 
 <?php get_footer(); ?>

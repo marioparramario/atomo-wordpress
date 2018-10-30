@@ -211,7 +211,7 @@ get_header(); ?>
 		<div class="subscribe-container flex-vertical">
 			<h2 class="title">Suscríbete a Átomo</h2>
 			<p>Para suscribirse y recibir la revista física en tu casa u oficina envíanos un email!</p>
-			<a class="button" href="#">Suscríbete</a>
+			<a class="button" href="mailto:suscripciones@revistaatomo.com">Suscríbete</a>
 		</div>
 	</section><!-- .subscribe -->
 
