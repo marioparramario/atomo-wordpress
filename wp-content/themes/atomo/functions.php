@@ -752,3 +752,16 @@ function remove_empty_p($content){
     $content = force_balance_tags($content);
     return preg_replace('#<p>\s*+(<br\s*/*>)?\s*</p>#i', '', $content);
 }
+
+
+
+/**
+ * Social media share buttons
+ */
+function wcr_share_buttons() {
+    $url = urlencode(get_the_permalink());
+    $title = urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8'));
+    $media = urlencode(get_the_post_thumbnail_url(get_the_ID(), 'full'));
+
+    include( locate_template('share-template.php', false, false) );
+}

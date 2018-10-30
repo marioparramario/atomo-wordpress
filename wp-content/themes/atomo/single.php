@@ -28,7 +28,9 @@ get_header(); ?>
 				<?php $atomo_thumb_url = get_the_post_thumbnail_url( get_the_ID(), 'normal' ); ?>
 				<div class="single-image" style="<?php echo "background-image: url('$atomo_thumb_url')"; ?>"></div>
 				<div class="single-text-wrapper">
-					<div class="single-social sticky"></div>
+					<div class="single-social sticky">
+					<?php wcr_share_buttons(); ?>
+					</div>
 					<div class="single-text-container flex vertical">
 						<h1 class="single-post-title"><?php the_title(); ?></h1>
 						<h2><?php the_subtitle(); ?></h2>
