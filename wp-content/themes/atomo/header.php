@@ -4,6 +4,8 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/atomo-icon.png" />
+	<!-- <link rel="shortcut icon" type="image/png" href="./assets/images/atomo-icon.png"> -->
 
 	<?php wp_head(); ?>
 </head>
@@ -19,15 +21,17 @@
 			</a>
 			<div class="navbar-init-button init flex vertical align-end">
 				<div class="navbar-init-button-lang flex align-center">
-					<a class="lang-link active" href="#spanish" rel="alternate" hreflang="es"><abbr title="Español">ES</abbr></a>
+					<!-- <a class="lang-link active" href="#spanish" rel="alternate" hreflang="es"><abbr title="Español">ES</abbr></a> -->
+					<a class="lang-link active" rel="alternate"><abbr title="Español">ES</abbr></a>
 					<div class="separator"></div>
-					<a class="lang-link" href="#english" rel="alternate" hreflang="en"><abbr title="English">EN</abbr></a>
+					<!-- <a class="lang-link" href="#english" rel="alternate" hreflang="en"><abbr title="English">EN</abbr></a> -->
+						<a class="lang-link" rel="alternate"><abbr title="English">EN</abbr></a>
 				</div>
-			<?php if ( is_user_logged_in() ): ?>
+			<!-- <?php if ( is_user_logged_in() ): ?>
 				<a class="logout" href="<?php echo wp_logout_url( home_url() ); ?>"><?php _e( 'Log out', 'atomo' ); ?></a>
-			<?php else: ?>
+			<?php else: ?> -->
 				<a class="login"><?php _e( 'Log in', 'atomo' ); ?></a>
-			<?php endif; ?>
+			<!-- <?php endif; ?> -->
 			</div>
 			<div class="navbar-init-button menu flex justify-end">
 				<a class="navbar-menu-button">
@@ -85,11 +89,14 @@
 		<div class="navbar-wrapper flex vertical align-end">
 			<div class="navbar-button init flex align-center self-end">
 				<div class="navbar-button-lang flex align-center">
-					<a class="lang-link active" href="#spanish" rel="alternate" hreflang="es"><abbr title="Español">ES</abbr></a>
+					<!-- <a class="lang-link active" href="#spanish" rel="alternate" hreflang="es"><abbr title="Español">ES</abbr></a> -->
+					<a class="lang-link active" rel="alternate"><abbr title="Español">ES</abbr></a>
 					<div class="separator"></div>
-					<a class="lang-link" href="#english" rel="alternate" hreflang="en"><abbr title="English">EN</abbr></a>
+					<!-- <a class="lang-link" href="#english" rel="alternate" hreflang="en"><abbr title="English">EN</abbr></a> -->
+					<a class="lang-link" rel="alternate"><abbr title="English">EN</abbr></a>
 				</div>
-				<a class="login" href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>"><?php _e( 'Log in', 'atomo' ); ?></a>
+				<!-- <a class="login" href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>"><?php _e( 'Log in', 'atomo' ); ?></a> -->
+				<a class="login"><?php _e( 'Log in', 'atomo' ); ?></a>
 			</div>
 
 			<div class="navbar-container flex align-center">
@@ -161,16 +168,21 @@
 			<div class="separator"></div>
 			<div class="navbar-mobile-content flex vertical">
 				<div class="navbar-mobile-lang flex align-center">
-					<a class="lang-link active" href="#spanish" rel="alternate" hreflang="es"><abbr title="Español">ES</abbr></a>
+					<!-- <a class="lang-link active" href="#spanish" rel="alternate" hreflang="es"><abbr title="Español">ES</abbr></a> -->
+					<a class="lang-link active" rel="alternate" ><abbr title="Español">ES</abbr></a>
 					<div class="separator lang"></div>
-					<a class="lang-link" href="#english" rel="alternate" hreflang="en"><abbr title="English">EN</abbr></a>
+					<!-- <a class="lang-link" href="#english" rel="alternate" hreflang="en"><abbr title="English">EN</abbr></a> -->
+					<a class="lang-link" rel="alternate"><abbr title="English">EN</abbr></a>
+
 				</div>
 				<div class="navbar-mobile-button flex">
-				<?php if ( is_user_logged_in() ): ?>
+				<!-- <?php if ( is_user_logged_in() ): ?>
 					<a class="logout" href="<?php echo wp_logout_url( home_url() ); ?>"><?php _e( 'Log out', 'atomo' ); ?></a>
 				<?php else : ?>
 					<a class="login" href="#"><?php _e( 'Log in', 'atomo' ); ?></a>
 				<?php endif; ?>
+					<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Suscríbete</a> -->
+					<a class="login"><?php _e( 'Log in', 'atomo' ); ?></a>
 					<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Suscríbete</a>
 				</div>
 				<?php get_search_form( true ); ?>
@@ -198,8 +210,9 @@
 	<div class="log-in flex-center">
 		<div class="log-in-container flex vertical">
 			<a class="login login-link"></a>
-
-			<h3>Log in</h3>
+			<h3>Qué pngo acá?</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing</p>
+			<!-- <h3>Log in</h3>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
 
 			<form id="login-form" class="form" action="<?php echo home_url( 'login' ); ?>" method="post">
@@ -211,7 +224,7 @@
 				<input name="a" type="hidden" value="login">
 
 				<button class="submit self-end" value="Login">Entrar</button>
-			</form>
+			</form> -->
 		</div>
 	</div><!-- .log-in -->
 <?php endif; ?>

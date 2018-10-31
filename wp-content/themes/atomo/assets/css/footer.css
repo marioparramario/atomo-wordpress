@@ -17,6 +17,11 @@
   flex-basis: 60%;
   justify-self: flex-start;
 }
+.footer-items span {
+  color: white;
+  font-size: 0.7rem;
+  margin: 0.5rem 0;
+}
 .footer-items a {
   color: white;
   font-size: 0.7rem;

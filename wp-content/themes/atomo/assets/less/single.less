@@ -2,6 +2,14 @@
 
 .single {
   margin: 0;
+  &-false {
+    position: absolute;
+    top: 450px;
+    width: 820px;
+    // height: 100%;
+    z-index: 0;
+    // pointer-events: none;
+  }
   &-container {
     article {
       width: 100%;
@@ -14,6 +22,7 @@
     background-position: 50% 80%;
     background-size: cover;
     background-repeat: no-repeat;
+    background-color: @camel;
     // background-attachment: fixed;
 
   }
@@ -23,6 +32,7 @@
       background: white;
       transform: translateY(-150px);
       margin-bottom: -120px;
+      z-index: 2;
       // border-top: 3px @camel solid;
     }
     &-container {
@@ -69,7 +79,7 @@
         font-size: 0.9rem;
         line-height: 1.8;
         margin-top: 0.5rem;
-        text-indent: 2rem;
+        text-indent: 1rem;
       }
       span {
         font-family: @baskerville;
@@ -79,6 +89,7 @@
         max-width: 320px;
         text-align: right;
         line-height: 1.4;
+        letter-spacing: normal;
       }
       img {
         width: 50%;
@@ -196,11 +207,32 @@
     }
   }
   &-social {
-    display: none;
-    background: @camel;
-    width: 40px;
-    height: 100px;
+    // display: none;
+    width: 50px;
     z-index: 99;
+    margin: 0;
+    margin-top: 2rem;
+    &-wrapper {
+      a {
+        // pointer-events: auto;
+        margin: 0.4rem 0;
+        svg {
+          width: 26px;
+          height: 26px;
+          &#twitter {
+            width: 20px;
+            height: 20px;
+          }
+          &#whatsapp {
+            width: 22px;
+            height: 22px;
+          }
+        }
+        path {
+          fill: @camel;
+        }
+      }
+    }
   }
 
   .navigation {
@@ -211,6 +243,7 @@
     display: flex;
     margin: 0 auto;
     margin-bottom: 2rem;
+    z-index: 2;
     .nav-links {
       width: 100%;
       display: -webkit-box;
@@ -252,10 +285,18 @@
   }
 }
 .category-interviews {
+  p {
+    text-indent: inherit;
+  }
   em {
     font-weight: bold;
     font-size: 0.95rem;
     letter-spacing: 0.01rem;
+  }
+}
+@media (max-width: @single-special) {
+  .single {
+    width: 100%;
   }
 }
 

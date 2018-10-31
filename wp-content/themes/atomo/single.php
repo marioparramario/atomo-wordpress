@@ -27,10 +27,10 @@ get_header(); ?>
 			<article <?php post_class( 'flex-vertical' ); ?> id="post-<?php the_ID(); ?>">
 				<?php $atomo_thumb_url = get_the_post_thumbnail_url( get_the_ID(), 'normal' ); ?>
 				<div class="single-image" style="<?php echo "background-image: url('$atomo_thumb_url')"; ?>"></div>
+				<!-- <div class="single-social sticky">
+				<?php wcr_share_buttons(); ?>
+				</div> -->
 				<div class="single-text-wrapper">
-					<div class="single-social sticky">
-					<?php wcr_share_buttons(); ?>
-					</div>
 					<div class="single-text-container flex vertical">
 						<h1 class="single-post-title"><?php the_title(); ?></h1>
 						<h2><?php the_subtitle(); ?></h2>
@@ -56,6 +56,11 @@ get_header(); ?>
 							<?php the_content(); ?>
 						</div>
 						<img class="single-icon self-end" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-iso-black.svg" alt="">
+					</div>
+				</div>
+				<div class="single-false">
+					<div class="single-social sticky flex-vertical">
+					<?php wcr_share_buttons(); ?>
 					</div>
 				</div>
 			</article><!-- #post-<?php the_ID(); ?> -->
@@ -100,7 +105,7 @@ get_header(); ?>
 
 <?php endif; ?>
 
-	<?php the_post_navigation( [ 'prev_text' => __( 'Previous', 'atomo' ), 'next_text' => __( 'Next', 'atomo' )] ); ?>
+	<?php the_post_navigation( [ 'prev_text' => __( 'Anterior', 'atomo' ), 'next_text' => __( 'Siguiente', 'atomo' )] ); ?>
 
 	</section><!-- .single -->
 </div><!-- .container -->

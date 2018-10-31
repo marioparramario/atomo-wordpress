@@ -8,10 +8,10 @@
 			</div>
 
 			<div class="footer-items flex vertical justify-center">
-				<a href="<?php echo esc_url( home_url( 'blog' ) ); ?>"><?php _e( 'Blog', 'atomo' ); ?></a>
-				<a href="<?php echo esc_url( home_url( 'about-us' ) ); ?>"><?php _e( 'Acerca de nosotrs', 'atomo' ); ?></a>
-				<a href="<?php echo esc_url( home_url( 'privacy-policy' ) ); ?>"><?php _e( 'Políticas de privacidad', 'atomo' ); ?></a>
-				<a href="<?php echo esc_url( home_url( 'terms-of-use' ) ); ?>"><?php _e( 'Términos de uso', 'atomo' ); ?></a>
+				<a><?php _e( 'Acerca de nosotrs', 'atomo' ); ?></a>
+				<a><?php _e( 'Políticas de privacidad', 'atomo' ); ?></a>
+				<a><?php _e( 'Términos de uso', 'atomo' ); ?></a>
+				<span>Diseño y Dirección de Arte: <a href="http://www.magmaestudio.com/">Magma Estudio</a></span>
 			</div>
 
 			<div class="footer-contact flex vertical justify-center align-end">

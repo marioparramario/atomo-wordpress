@@ -1,6 +1,12 @@
 .single {
   margin: 0;
 }
+.single-false {
+  position: absolute;
+  top: 450px;
+  width: 820px;
+  z-index: 0;
+}
 .single-container article {
   width: 100%;
 }
@@ -11,12 +17,14 @@
   background-position: 50% 80%;
   background-size: cover;
   background-repeat: no-repeat;
+  background-color: #D8A073;
 }
 .single-text-wrapper {
   width: 720px;
   background: white;
   transform: translateY(-150px);
   margin-bottom: -120px;
+  z-index: 2;
 }
 .single-text-container {
   margin: 4rem;
@@ -63,7 +71,7 @@
   font-size: 0.9rem;
   line-height: 1.8;
   margin-top: 0.5rem;
-  text-indent: 2rem;
+  text-indent: 1rem;
 }
 .single-text-container span {
   font-family: 'Libre Baskerville', serif;
@@ -73,6 +81,7 @@
   max-width: 320px;
   text-align: right;
   line-height: 1.4;
+  letter-spacing: normal;
 }
 .single-text-container img {
   width: 50%;
@@ -182,11 +191,28 @@
   margin: 3rem 2rem 3rem 4.5rem;
 }
 .single-social {
-  display: none;
-  background: #D8A073;
-  width: 40px;
-  height: 100px;
+  width: 50px;
   z-index: 99;
+  margin: 0;
+  margin-top: 2rem;
+}
+.single-social-wrapper a {
+  margin: 0.4rem 0;
+}
+.single-social-wrapper a svg {
+  width: 26px;
+  height: 26px;
+}
+.single-social-wrapper a svg#twitter {
+  width: 20px;
+  height: 20px;
+}
+.single-social-wrapper a svg#whatsapp {
+  width: 22px;
+  height: 22px;
+}
+.single-social-wrapper a path {
+  fill: #D8A073;
 }
 .single .navigation {
   width: 720px;
@@ -196,6 +222,7 @@
   display: flex;
   margin: 0 auto;
   margin-bottom: 2rem;
+  z-index: 2;
 }
 .single .navigation .nav-links {
   width: 100%;
@@ -227,10 +254,18 @@
 .no-text-2 .nav-init {
   background: #FAF0E9;
 }
+.category-interviews p {
+  text-indent: inherit;
+}
 .category-interviews em {
   font-weight: bold;
   font-size: 0.95rem;
   letter-spacing: 0.01rem;
+}
+@media (max-width: 886px) {
+  .single {
+    width: 100%;
+  }
 }
 @media (max-width: 767px) {
   .single-text-featured {
