@@ -47,7 +47,7 @@ get_header(); ?>
 					  <?php $item_number++; ?>
 				  <?php endwhile; ?>
 			  <?php else : ?>
-				  <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
+				  <p><?php _e( 'Lo sentimos, no hay entrada que coincida con tu criterio', 'atomo' ); ?></p>
 			  <?php endif; ?>
 		  <?php else : ?>
 			  <?php if ( have_posts() ) : ?>
@@ -76,7 +76,7 @@ get_header(); ?>
 					  <?php $item_number++; ?>
 				  <?php endwhile; ?>
 			  <?php else : ?>
-				  <p><?php _e( 'Sorry, no posts matched your criteria.', 'atomo' ); ?></p>
+				  <p><?php _e( 'Lo sentimos, no hay entrada que coincida con tus criterio', 'atomo' ); ?></p>
 			  <?php endif; ?>
 		  <?php endif; ?>
 		</div>

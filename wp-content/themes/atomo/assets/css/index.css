@@ -192,7 +192,7 @@ input {
   box-sizing: initial !important;
 }
 .subscribe {
-  background: #D6062D;
+  background: #85AA8E;
   width: 100%;
   margin: 0 !important;
   max-width: 960px;
@@ -397,6 +397,10 @@ button {
   background: rgba(216, 160, 115, 0.15);
   text-shadow: none;
   color: #D8A073;
+}
+.issues h2,
+.issues p {
+  margin-bottom: 1rem;
 }
 @media (max-width: 991px) {
   a {

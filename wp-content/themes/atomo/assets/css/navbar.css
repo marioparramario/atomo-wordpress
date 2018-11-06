@@ -415,7 +415,6 @@
 }
 .dropdown > a {
   position: relative;
-  margin-right: 10px;
 }
 .dropdown > a::after {
   content: '';

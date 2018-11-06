@@ -114,7 +114,7 @@ get_header(); ?>
 			$atomo_primary = new WP_Query( $atomo_primary_args );
 		?>
 		<h3 class="headline">
-			<?php esc_html_e( 'Featured Articles', 'atomo' ); ?>
+			<?php esc_html_e( 'Artícuos destacados', 'atomo' ); ?>
 		</h3>
 		<div class="row flex">
 			<div class="column">
@@ -164,7 +164,6 @@ get_header(); ?>
 				<h2 class="title">Átomo N1</h2>
 				<h3>Corrección política</h3>
 				<p class="description">Revista recién nacida, vamos en nuestro primer número.</p>
-				<a class="button issue-link" href="#">Descarga la revista</a>
 			</div>
 		</div>
 	</section><!-- #current-issue -->
@@ -182,7 +181,7 @@ get_header(); ?>
 		$atomo_popular = new WP_Query( $atomo_popular_args );
 	?>
 		<h3 class="headline">
-			<?php esc_html_e( 'Most Read Articles', 'atomo' ); ?>
+			<?php esc_html_e( 'Artículos más leídos', 'atomo' ); ?>
 		</h3>
 		<div class="row flex">
 
@@ -219,7 +218,7 @@ get_header(); ?>
 	<section id="posts" class="grid-regular flex-vertical">
 		<?php $atomo_item_number = 0; ?>
 		<h3 class="headline">
-			<?php esc_html_e( 'All Articles', 'atomo' ); ?>
+			<?php esc_html_e( 'Todos los artículos', 'atomo' ); ?>
 		</h3>
 		<div class="row flex">
 		<?php if ( ! have_posts() ) : ?>

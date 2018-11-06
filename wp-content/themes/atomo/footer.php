@@ -8,7 +8,7 @@
 			</div>
 
 			<div class="footer-items flex vertical justify-center">
-				<a><?php _e( 'Acerca de nosotrs', 'atomo' ); ?></a>
+				<a><?php _e( 'Acerca de nosotros', 'atomo' ); ?></a>
 				<a><?php _e( 'Políticas de privacidad', 'atomo' ); ?></a>
 				<a><?php _e( 'Términos de uso', 'atomo' ); ?></a>
 				<span>Diseño y Dirección de Arte: <a href="http://www.magmaestudio.com/">Magma Estudio</a></span>
