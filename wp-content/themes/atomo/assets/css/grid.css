@@ -111,6 +111,7 @@
   align-self: flex-end;
 }
 .grid-regular .row {
+  width: 100%;
   flex-wrap: wrap;
 }
 .grid-regular .column {

@@ -30,7 +30,7 @@
 			<!-- <?php if ( is_user_logged_in() ): ?>
 				<a class="logout" href="<?php echo wp_logout_url( home_url() ); ?>"><?php _e( 'Log out', 'atomo' ); ?></a>
 			<?php else: ?> -->
-				<a class="login"><?php _e( 'Log in', 'atomo' ); ?></a>
+				<a class="login"><?php _e( 'Inicio', 'atomo' ); ?></a>
 			<!-- <?php endif; ?> -->
 			</div>
 			<div class="navbar-init-button menu flex justify-end">
@@ -77,7 +77,7 @@
 				<a class="search-button"><?php _e( 'Búsqueda', 'atomo' ); ?></a>
 			</div>
 			<div class="navbar-init-item">
-				<a>Suscríbete</a>
+				<a href="mailto:suscripciones@revistaatomo.com">Suscríbete</a>
 			</div>
 		</div>
 	</nav>
@@ -95,8 +95,8 @@
 					<!-- <a class="lang-link" href="#english" rel="alternate" hreflang="en"><abbr title="English">EN</abbr></a> -->
 					<a class="lang-link" rel="alternate"><abbr title="English">EN</abbr></a>
 				</div>
-				<!-- <a class="login" href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>"><?php _e( 'Log in', 'atomo' ); ?></a> -->
-				<a class="login"><?php _e( 'Log in', 'atomo' ); ?></a>
+				<!-- <a class="login" href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>"><?php _e( 'Inicio', 'atomo' ); ?></a> -->
+				<a class="login"><?php _e( 'Inicio', 'atomo' ); ?></a>
 			</div>
 
 			<div class="navbar-container flex align-center">
@@ -129,7 +129,7 @@
 
 				<a href="<?php echo esc_url( home_url( '/issues' ) ); ?>"><?php _e( 'Ediciones', 'atomo' ); ?></a>
 				<a class="search-button"><?php _e( 'Búsqueda', 'atomo' ); ?></a>
-				<a><?php _e( 'Suscríbete', 'atomo' ); ?></a>
+				<a href="mailto:suscripciones@revistaatomo.com"><?php _e( 'Suscríbete', 'atomo' ); ?></a>
 			</div>
 
 			<a class="navbar-menu-button">
@@ -179,11 +179,11 @@
 				<!-- <?php if ( is_user_logged_in() ): ?>
 					<a class="logout" href="<?php echo wp_logout_url( home_url() ); ?>"><?php _e( 'Log out', 'atomo' ); ?></a>
 				<?php else : ?>
-					<a class="login" href="#"><?php _e( 'Log in', 'atomo' ); ?></a>
+					<a class="login" href="#"><?php _e( 'Inicio', 'atomo' ); ?></a>
 				<?php endif; ?>
 					<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Suscríbete</a> -->
-					<a class="login"><?php _e( 'Log in', 'atomo' ); ?></a>
-					<a>Suscríbete</a>
+					<a class="login"><?php _e( 'Inicio', 'atomo' ); ?></a>
+					<a href="mailto:suscripciones@revistaatomo.com">Suscríbete</a>
 				</div>
 				<?php get_search_form( true ); ?>
 
@@ -210,8 +210,8 @@
 	<div class="log-in flex-center">
 		<div class="log-in-container flex vertical">
 			<a class="login login-link"></a>
-			<h3>Qué pngo acá?</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing</p>
+			<h3>Iniciar sesión</h3>
+			<p>Próximamente podrás ser parte de la comunidad virtual Átomo y hacer tu usuario personal.</p>
 			<!-- <h3>Log in</h3>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
 
