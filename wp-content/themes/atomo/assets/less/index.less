@@ -165,7 +165,7 @@ input {
   position: -ms-sticky;
   position: -o-sticky;
   position: sticky;
-  top: 100px;
+  top: 150px;
 }
 
 .issue {
@@ -258,11 +258,14 @@ input {
   border: none;
   background: @black;
   padding: 0.7rem 1.4rem;
+  &:hover {
+    color: @camel;
+  }
 }
 .green {
   background: @green;
 }
-.page-template-issues {
+.page-template-issues, .page-template-subscription {
   .main {
     background: white;
   }
@@ -277,7 +280,6 @@ input {
     margin: 0;
     min-height: 50vh;
   }
-
 }
 
 .search {
@@ -316,6 +318,17 @@ input {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
+  }
+  &-no-results {
+    .row {
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      p {
+        font-size: 1rem;
+      }
+    }
   }
 }
 .log-in {

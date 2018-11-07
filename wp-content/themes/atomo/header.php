@@ -77,7 +77,7 @@
 				<a class="search-button"><?php _e( 'Búsqueda', 'atomo' ); ?></a>
 			</div>
 			<div class="navbar-init-item">
-				<a href="mailto:suscripciones@revistaatomo.com">Suscríbete</a>
+				<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Suscríbete</a>
 			</div>
 		</div>
 	</nav>
@@ -129,7 +129,7 @@
 
 				<a href="<?php echo esc_url( home_url( '/issues' ) ); ?>"><?php _e( 'Ediciones', 'atomo' ); ?></a>
 				<a class="search-button"><?php _e( 'Búsqueda', 'atomo' ); ?></a>
-				<a href="mailto:suscripciones@revistaatomo.com"><?php _e( 'Suscríbete', 'atomo' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Suscríbete</a>
 			</div>
 
 			<a class="navbar-menu-button">
@@ -183,7 +183,7 @@
 				<?php endif; ?>
 					<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Suscríbete</a> -->
 					<a class="login"><?php _e( 'Inicio', 'atomo' ); ?></a>
-					<a href="mailto:suscripciones@revistaatomo.com">Suscríbete</a>
+					<a href="<?php echo esc_url( home_url( '/subscribe' ) ); ?>">Suscríbete</a>
 				</div>
 				<?php get_search_form( true ); ?>
 

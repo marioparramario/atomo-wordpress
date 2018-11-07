@@ -15,6 +15,7 @@
 }
 .footer-items {
   flex-basis: 60%;
+  padding-right: 4rem;
   justify-self: flex-start;
 }
 .footer-items span {
