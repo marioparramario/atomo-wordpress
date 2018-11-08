@@ -114,7 +114,7 @@ get_header(); ?>
 			$atomo_primary = new WP_Query( $atomo_primary_args );
 		?>
 		<h3 class="headline">
-			<?php esc_html_e( 'Artícuos destacados', 'atomo' ); ?>
+			<?php esc_html_e( 'Artículos destacados', 'atomo' ); ?>
 		</h3>
 		<div class="row flex">
 			<div class="column">

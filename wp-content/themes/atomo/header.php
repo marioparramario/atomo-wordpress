@@ -57,7 +57,7 @@
 				<div class="sub-menu flex vertical align-start">
 					<a href="<?php echo esc_url( home_url( '/category/chronic/' ) ); ?>"><?php _e( 'Crónica', 'atomo' ); ?></a>
 					<a href="<?php echo esc_url( home_url( '/category/poetry/' ) ); ?>"><?php _e( 'Poesía', 'atomo' ); ?></a>
-					<a href="<?php echo esc_url( home_url( '/category/essays/' ) ); ?>"><?php _e( 'Ensayos', 'atomo' ); ?></a>
+					<a href="<?php echo esc_url( home_url( '/category/fiction/' ) ); ?>"><?php _e( 'Ficción', 'atomo' ); ?></a>
 					<a href="<?php echo esc_url( home_url( '/category/visual-arts/' ) ); ?>"><?php _e( 'Artes visuales', 'atomo' ); ?></a>
 				</div>
 
@@ -109,7 +109,7 @@
 					<div class="sub-menu flex vertical align-start">
 						<a href="<?php echo esc_url( home_url( '/category/chronic/' ) ); ?>"><?php _e( 'Crónica', 'atomo' ); ?></a>
 						<a href="<?php echo esc_url( home_url( '/category/poetry/' ) ); ?>"><?php _e( 'Poesía', 'atomo' ); ?></a>
-						<a href="<?php echo esc_url( home_url( '/category/essays/' ) ); ?>"><?php _e( 'Ensayos', 'atomo' ); ?></a>
+						<a href="<?php echo esc_url( home_url( '/category/fiction/' ) ); ?>"><?php _e( 'Ficción', 'atomo' ); ?></a>
 						<a href="<?php echo esc_url( home_url( '/category/visual-arts/' ) ); ?>"><?php _e( 'Artes visuales', 'atomo' ); ?></a>
 					</div>
 
@@ -151,7 +151,7 @@
 					<div class="sub-menu flex vertical align-start">
 						<a href="<?php echo esc_url( home_url( '/category/chronic/' ) ); ?>"><?php _e( 'Crónica', 'atomo' ); ?></a>
 						<a href="<?php echo esc_url( home_url( '/category/poetry/' ) ); ?>"><?php _e( 'Poesía', 'atomo' ); ?></a>
-						<a href="<?php echo esc_url( home_url( '/category/essays/' ) ); ?>"><?php _e( 'Ensayos', 'atomo' ); ?></a>
+						<a href="<?php echo esc_url( home_url( '/category/fiction/' ) ); ?>"><?php _e( 'Ficción', 'atomo' ); ?></a>
 						<a href="<?php echo esc_url( home_url( '/category/visual-arts/' ) ); ?>"><?php _e( 'Artes visuales', 'atomo' ); ?></a>
 					</div>
 

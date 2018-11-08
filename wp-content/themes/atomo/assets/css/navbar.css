@@ -8,9 +8,6 @@
   height: 200px;
   z-index: 9;
 }
-.navbar-init-item {
-  width: 100%;
-}
 .navbar-init-item a {
   font-family: 'Roboto Mono', monospace;
   letter-spacing: 0.08rem;

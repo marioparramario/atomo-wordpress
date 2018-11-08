@@ -216,12 +216,45 @@
       flex-basis: auto;
       min-height: 60vw;
     }
+    &-text {
+      &-wrapper {
+        height: 200px;
+        padding: 1.4rem;
+        padding-top: 0.6rem;
+        padding-bottom: 0.2rem;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        .pagination {
+          top: auto;
+          bottom: 10px;
+          margin: 0;
+          padding: 0 1.4rem;
+          &-indicator {
+            margin-right: 10px;
+          }
+        }
+      }
+      &-container {
+        margin: 0.4rem 0;
+      }
+    }
   }
 }
 @media (max-width: @small-phone) {
   .slider {
     &-image {
       height: 200px;
+      &-wrapper {
+        img {
+          height: 100%;
+          width: auto;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
     }
   }
 }
