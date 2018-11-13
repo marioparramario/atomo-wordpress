@@ -188,9 +188,6 @@ if ( ! function_exists( 'atomo_enqueue_scripts' ) ) {
 		// wp_deregister_style( 'bootstrap' );
 		// wp_enqueue_style( 'bootstrap', "$base_url/bootstrap/css/bootstrap.css", false, null, 'all' );
 
-		wp_deregister_style( 'font' );
-		wp_enqueue_style( 'font', "$base_url/css/font.css", false, null, 'all' );
-
 		wp_deregister_style( 'layout' );
 		wp_enqueue_style( 'layout', "$base_url/css/layout.css", false, null, 'all' );
 
@@ -758,10 +755,97 @@ function remove_empty_p($content){
 /**
  * Social media share buttons
  */
-function wcr_share_buttons() {
-    $url = urlencode(get_the_permalink());
-    $title = urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8'));
-    $media = urlencode(get_the_post_thumbnail_url(get_the_ID(), 'full'));
+// function wcr_share_buttons() {
+//     $url = urlencode(get_the_permalink());
+//     $title = urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8'));
+//     $media = urlencode(get_the_post_thumbnail_url(get_the_ID(), 'full'));
+//
+//     include( locate_template('share-template.php', false, false) );
+// }
 
-    include( locate_template('share-template.php', false, false) );
+
+function crunchify_social_sharing_buttons($content) {
+	global $post;
+	if(is_singular() || is_home()){
+
+		// Get current page URL
+		$crunchifyURL = urlencode(get_permalink());
+
+		// Get current page title
+		$crunchifyTitle = htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');
+		// $crunchifyTitle = str_replace( ' ', '%20', get_the_title());
+
+		// Get Post Thumbnail for pinterest
+		$crunchifyThumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+
+		// Construct sharing URL without using any script
+		$twitterURL = 'https://twitter.com/intent/tweet?text='.$crunchifyTitle.'&amp;url='.$crunchifyURL.'&amp;via=Crunchify';
+		$facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='.$crunchifyURL;
+		$googleURL = 'https://plus.google.com/share?url='.$crunchifyURL;
+		$bufferURL = 'https://bufferapp.com/add?url='.$crunchifyURL.'&amp;text='.$crunchifyTitle;
+		$whatsappURL = 'whatsapp://send?text='.$crunchifyTitle . ' ' . $crunchifyURL;
+		$linkedInURL = 'https://www.linkedin.com/shareArticle?mini=true&url='.$crunchifyURL.'&amp;title='.$crunchifyTitle;
+
+		// Based on popular demand added Pinterest too
+		$pinterestURL = 'https://pinterest.com/pin/create/button/?url='.$crunchifyURL.'&amp;media='.$crunchifyThumbnail[0].'&amp;description='.$crunchifyTitle;
+
+		// Add sharing button at the end of page/page content
+		$content .= '<!-- Crunchify.com social sharing. Get your copy here: http://crunchify.me/1VIxAsz -->';
+		$content .= '<div class="crunchify-social">';
+		$content .= '<h5>SHARE ON</h5> <a class="crunchify-link crunchify-twitter" href="'. $twitterURL .'" target="_blank">Twitter</a>';
+		$content .= '<a class="crunchify-link crunchify-facebook" href="'.$facebookURL.'" target="_blank">Facebook</a>';
+		$content .= '<a class="crunchify-link crunchify-whatsapp" href="'.$whatsappURL.'" target="_blank">WhatsApp</a>';
+		$content .= '<a class="crunchify-link crunchify-googleplus" href="'.$googleURL.'" target="_blank">Google+</a>';
+		$content .= '<a class="crunchify-link crunchify-buffer" href="'.$bufferURL.'" target="_blank">Buffer</a>';
+		$content .= '<a class="crunchify-link crunchify-linkedin" href="'.$linkedInURL.'" target="_blank">LinkedIn</a>';
+		$content .= '<a class="crunchify-link crunchify-pinterest" href="'.$pinterestURL.'" data-pin-custom="true" target="_blank">Pin It</a>';
+		$content .= '</div>';
+
+		return $content;
+	}else{
+		// if not a post/page then don't include sharing button
+		return $content;
+	}
+};
+add_filter( 'the_content', 'crunchify_social_sharing_buttons');
+
+
+
+
+function doctype_opengraph($output) {
+    return $output . '
+    xmlns:og="http://opengraphprotocol.org/schema/"
+    xmlns:fb="http://www.facebook.com/2008/fbml"';
 }
+add_filter('language_attributes', 'doctype_opengraph');
+
+function fb_opengraph() {
+    global $post;
+
+    if(is_single()) {
+        if(has_post_thumbnail($post->ID)) {
+            $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'medium');
+        } else {
+            $img_src = get_stylesheet_directory_uri() . '/img/opengraph_image.jpg';
+        }
+        if($excerpt = $post->post_excerpt) {
+            $excerpt = strip_tags($post->post_excerpt);
+            $excerpt = str_replace("", "'", $excerpt);
+        } else {
+            $excerpt = get_bloginfo('description');
+        }
+        ?>
+
+    <meta property="og:title" content="<?php echo the_title(); ?>"/>
+    <meta property="og:description" content="<?php echo $excerpt; ?>"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="<?php echo the_permalink(); ?>"/>
+    <meta property="og:site_name" content="<?php echo get_bloginfo(); ?>"/>
+    <meta property="og:image" content="<?php echo $img_src; ?>"/>
+
+<?php
+    } else {
+        return;
+    }
+}
+add_action('wp_head', 'fb_opengraph', 5);

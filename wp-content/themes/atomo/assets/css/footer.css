@@ -23,6 +23,12 @@
   font-size: 0.7rem;
   margin: 0.5rem 0;
 }
+.footer-items .magma {
+  text-decoration: underline;
+}
+.footer-items .magma:hover {
+  text-decoration: none;
+}
 .footer-items a {
   color: white;
   font-size: 0.7rem;

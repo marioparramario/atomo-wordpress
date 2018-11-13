@@ -57,7 +57,7 @@ get_header(); ?>
 				</div>
 				<div class="single-false">
 					<div class="single-social sticky flex-vertical">
-					<?php wcr_share_buttons(); ?>
+					<!-- <?php wcr_share_buttons(); ?> -->
 					</div>
 				</div>
 			</article><!-- #post-<?php the_ID(); ?> -->
