@@ -503,6 +503,9 @@ button {
   .loader {
     background-size: 120px;
   }
+  .main {
+    background: white;
+  }
   .issue-container {
     width: 100%;
     -webkit-box-orient: vertical;

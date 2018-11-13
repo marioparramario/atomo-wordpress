@@ -53,11 +53,12 @@ get_header(); ?>
 							<?php the_content(); ?>
 						</div>
 						<img class="single-icon self-end" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo-iso-black.svg" alt="">
+						<?php wcr_share_buttons(); ?>
 					</div>
 				</div>
 				<div class="single-false">
 					<div class="single-social sticky flex-vertical">
-					<!-- <?php wcr_share_buttons(); ?> -->
+					<?php wcr_share_buttons(); ?>
 					</div>
 				</div>
 			</article><!-- #post-<?php the_ID(); ?> -->

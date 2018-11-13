@@ -102,25 +102,49 @@
   .footer {
     &-wrapper {
       padding: 2rem 30px;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
     }
     &-logo {
       margin-right: 25px;
+      margin-bottom: 2rem;
       img {
-        width: 50px;
+        width: auto;
+        height: 50px;
       }
     }
     &-items {
-      flex-basis: 60%;
+      flex-basis: 100%;
+      margin-bottom: 2rem;
+      padding: 0;
       a {
         font-size: 0.65rem;
       }
     }
     &-contact {
+      text-align: left;
+      -webkit-box-align: start;
+      -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      justify-content: inherit;
       svg {
         width: 16px;
       }
     }
     &-email {
+      -webkit-box-align: start;
+      -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+      align-items: flex-start;
       a {
         font-size: 0.9rem;
       }
@@ -132,32 +156,25 @@
   .footer {
     &-wrapper {
       padding: 4rem 30px;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-      flex-direction: column;
+
     }
     &-logo {
       height: 50px;
       margin-bottom: 30px;
     }
     &-items {
-      flex-basis: 100%;
+
       margin-bottom: 30px;
     }
     &-contact {
-      text-align: left;
-      -webkit-box-align: start;
-      -webkit-align-items: flex-start;
-      -ms-flex-align: start;
-      align-items: flex-start;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
     }
     &-email {
-      -webkit-box-align: start;
-      -webkit-align-items: flex-start;
-      -ms-flex-align: start;
-      align-items: flex-start;
+
     }
   }
 }
