@@ -532,8 +532,11 @@
       &.init {
         display: none;
       }
-      a:first-child::before {
-        display: none;
+      a:first-child {
+        margin: 0;
+        &::before {
+          display: none;
+        }
       }
     }
     &-container {
@@ -557,6 +560,7 @@
     }
     &-mobile {
       &-wrapper {
+        position: relative;
         .separator {
           height: 160px;
           width: 1px;
@@ -569,6 +573,7 @@
         }
       }
       &-content {
+        margin-right: 1rem;
         &:first-child {
           display: flex;
         }
@@ -577,6 +582,53 @@
           &.active {
           }
         }
+        .sub-menu {
+          position: relative;
+          // width: 230px;
+          opacity: 0;
+          max-height: 0;
+          top: 0;
+          right: 0;
+          padding: 0;
+          z-index: 9;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          &.active {
+            max-height: 100vh;
+            opacity: 1;
+          }
+        }
+        .dropdown {
+          &:hover {
+            & > a::after {
+              transform: rotateZ(0);
+            }
+          }
+          &:hover {
+            .sub-menu {
+              // max-height: 100vh;
+              opacity: 0;
+              // padding: 1rem 0;
+              &.active {
+                opacity: 1;
+              }
+            }
+          }
+        }
+        // .dropdown {
+        //   &:hover {
+        //     & > a::after {
+        //       transform: rotateZ(0);
+        //     }
+        //   }
+        //   &:hover {
+        //     .sub-menu {
+        //       opacity: 0 !important;
+        //     }
+        //   }
+        // }
         .search {
           &-form {
             height: 30px;
@@ -669,14 +721,14 @@
       }
     }
   }
-  .navbar-menu-button {
-    span {
-      width: 90%;
-      &:nth-of-type(3) {
-        width: calc(90% - 8px);
-      }
-    }
-  }
+  // .navbar-menu-button {
+  //   span {
+  //     width: 90%;
+  //     &:nth-of-type(3) {
+  //       width: calc(90% - 8px);
+  //     }
+  //   }
+  // }
   .navbar {
     &-wrapper {
       margin: 0 5%;

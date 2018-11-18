@@ -8,9 +8,9 @@
 			</div>
 
 			<div class="footer-items flex vertical justify-center">
+				<a class="sales" href="<?php echo esc_url( home_url( '/sales' ) ); ?>"><?php _e( 'Puntos de venta', 'atomo' ); ?></a>
 				<a><?php _e( 'Acerca de nosotros', 'atomo' ); ?></a>
 				<a><?php _e( 'Políticas de privacidad', 'atomo' ); ?></a>
-				<a href="<?php echo esc_url( home_url( '/sales' ) ); ?>"><?php _e( 'Puntos de venta', 'atomo' ); ?></a>
 				<span>Diseño Editorial y Dirección de Arte: <a class="magma" href="mailto:hola@magmaestudio.cl">Magma Estudio</a></span>
 			</div>
 

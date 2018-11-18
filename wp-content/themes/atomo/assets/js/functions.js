@@ -19,7 +19,10 @@ $('.login').click(function(){
     $('body').toggleClass('stop-scrolling');
 });
 
-
+$('.dropdown').click(function(){
+    $('.sub-menu').toggleClass('active');
+    console.log('come on');
+});
 
 window.onscroll = function() {scrollFunction()};
 function scrollFunction() {

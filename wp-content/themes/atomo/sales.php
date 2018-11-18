@@ -8,11 +8,14 @@
 get_header(); ?>
 <div class="container flex vertical align-center">
 	<section class="issues flex-center vertical">
-		<h2>Librería Takk</h2>
-		<p>Andrés de Fuenzalida 18, Providencia, Santiago, Región Metropolitana</p>
-		<h2>Librería Nueva Altamira</h2>
-		<p>Avda. Providencia 2124 Local 64 (Drugstore) - Providencia, Región Metropolitana/p>
-
+		<h2>Librería Takk.</h2>
+		<p>Drugstore, Providencia.</p>
+		<h2>Librería Nueva Altamira.</h2>
+		<p>Drugstore, Providencia.</p>
+		<h2>Bros Librerías.</h2>
+		<p>Los Domínicos, Apumanque, Alonso de Córdova, Finis Terrae.</p>
+		<h2>Librería Lolita.</h2>
+		<p>República de Cuba 1724, Providencia.</p>
 	</section>
 </div>
 

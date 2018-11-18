@@ -29,6 +29,10 @@
 .footer-items .magma:hover {
   text-decoration: none;
 }
+.footer-items .sales {
+  color: #D8A073;
+  text-decoration: underline;
+}
 .footer-items a {
   color: white;
   font-size: 0.7rem;

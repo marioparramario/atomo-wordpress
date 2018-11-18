@@ -53,7 +53,7 @@
 				<a href="<?php echo esc_url( home_url( '/category/books/' ) ); ?>"><?php _e( 'Libros', 'atomo' ); ?></a>
 			</div>
 			<div class="navbar-init-item dropdown">
-				<a href="<?php echo esc_url( home_url( '/category/chronicle-others/' ) ); ?>"><?php _e( 'Crónica y otros', 'atomo' ); ?></a>
+				<a><?php _e( 'Crónica y otros', 'atomo' ); ?></a>
 				<div class="sub-menu flex vertical align-start">
 					<a href="<?php echo esc_url( home_url( '/category/chronic/' ) ); ?>"><?php _e( 'Crónica', 'atomo' ); ?></a>
 					<a href="<?php echo esc_url( home_url( '/category/poetry/' ) ); ?>"><?php _e( 'Poesía', 'atomo' ); ?></a>
@@ -63,7 +63,7 @@
 
 			</div>
 			<div class="navbar-init-item dropdown">
-				<a href="<?php echo esc_url( home_url( '/category/music/' ) ); ?>"><?php _e( 'Música', 'atomo' ); ?></a>
+				<a><?php _e( 'Música', 'atomo' ); ?></a>
 				<div class="sub-menu flex vertical align-start">
 					<a href="<?php echo esc_url( home_url( '/category/classic/' ) ); ?>"><?php _e( 'Música Clásica', 'atomo' ); ?></a>
 					<a href="<?php echo esc_url( home_url( '/category/jazz/' ) ); ?>"><?php _e( 'Jazz', 'atomo' ); ?></a>
@@ -105,7 +105,7 @@
 				<a href="<?php echo esc_url( home_url( '/category/books/' ) ); ?>"><?php _e( 'Libros', 'atomo' ); ?></a>
 
 				<div class="navbar-init-item dropdown">
-					<a href="<?php echo esc_url( home_url( '/category/chronicle-others/' ) ); ?>"><?php _e( 'Crónica y otros', 'atomo' ); ?></a>
+					<a><?php _e( 'Crónica y otros', 'atomo' ); ?></a>
 					<div class="sub-menu flex vertical align-start">
 						<a href="<?php echo esc_url( home_url( '/category/chronic/' ) ); ?>"><?php _e( 'Crónica', 'atomo' ); ?></a>
 						<a href="<?php echo esc_url( home_url( '/category/poetry/' ) ); ?>"><?php _e( 'Poesía', 'atomo' ); ?></a>
@@ -115,7 +115,7 @@
 
 				</div>
 				<div class="navbar-init-item dropdown">
-					<a href="<?php echo esc_url( home_url( '/category/music/' ) ); ?>"><?php _e( 'Música', 'atomo' ); ?></a>
+					<a><?php _e( 'Música', 'atomo' ); ?></a>
 					<div class="sub-menu flex vertical align-start">
 						<a href="<?php echo esc_url( home_url( '/category/classic/' ) ); ?>"><?php _e( 'Música Clásica', 'atomo' ); ?></a>
 						<a href="<?php echo esc_url( home_url( '/category/jazz/' ) ); ?>"><?php _e( 'Jazz', 'atomo' ); ?></a>
@@ -147,7 +147,7 @@
 				<a href="<?php echo esc_url( home_url( '/category/interviews/' ) ); ?>"><?php _e( 'Entrevistas', 'atomo' ); ?></a>
 				<a href="<?php echo esc_url( home_url( '/category/books/' ) ); ?>"><?php _e( 'Libros', 'atomo' ); ?></a>
 				<div class="navbar-init-item dropdown">
-					<a href="<?php echo esc_url( home_url( '/category/chronicle-others/' ) ); ?>"><?php _e( 'Crónica y otros', 'atomo' ); ?></a>
+					<a><?php _e( 'Crónica y otros', 'atomo' ); ?></a>
 					<div class="sub-menu flex vertical align-start">
 						<a href="<?php echo esc_url( home_url( '/category/chronic/' ) ); ?>"><?php _e( 'Crónica', 'atomo' ); ?></a>
 						<a href="<?php echo esc_url( home_url( '/category/poetry/' ) ); ?>"><?php _e( 'Poesía', 'atomo' ); ?></a>
@@ -157,7 +157,7 @@
 
 				</div>
 				<div class="navbar-init-item dropdown">
-					<a href="<?php echo esc_url( home_url( '/category/music/' ) ); ?>"><?php _e( 'Música', 'atomo' ); ?></a>
+					<a><?php _e( 'Música', 'atomo' ); ?></a>
 					<div class="sub-menu flex vertical align-start">
 						<a href="<?php echo esc_url( home_url( '/category/classic/' ) ); ?>"><?php _e( 'Música Clásica', 'atomo' ); ?></a>
 						<a href="<?php echo esc_url( home_url( '/category/jazz/' ) ); ?>"><?php _e( 'Jazz', 'atomo' ); ?></a>
