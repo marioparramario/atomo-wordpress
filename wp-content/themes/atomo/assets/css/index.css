@@ -184,6 +184,9 @@ input {
   margin-bottom: 2rem;
   line-height: 1.5;
 }
+.sales p {
+  margin-bottom: 1.4rem;
+}
 .row {
   box-sizing: initial !important;
 }

@@ -25,9 +25,7 @@
 }
 .footer-items .magma {
   text-decoration: underline;
-}
-.footer-items .magma:hover {
-  text-decoration: none;
+  color: #D8A073;
 }
 .footer-items .sales {
   color: #D8A073;

@@ -49,6 +49,7 @@ get_header(); ?>
 								echo '<span class="location">' . $atomo_location . '</span>';
 							}
 						?>
+						<span class="locaiton"><?php echo esc_html( get_post_meta( get_the_ID(), 'atomo_post_ph', true ) ); ?></span>
 						<div class="post-body">
 							<?php the_content(); ?>
 						</div>

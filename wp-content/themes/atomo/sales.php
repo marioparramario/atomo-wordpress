@@ -7,7 +7,7 @@
  */
 get_header(); ?>
 <div class="container flex vertical align-center">
-	<section class="issues flex-center vertical">
+	<section class="sales flex-center vertical">
 		<h2>Librería Takk.</h2>
 		<p>Drugstore, Providencia.</p>
 		<h2>Librería Nueva Altamira.</h2>
