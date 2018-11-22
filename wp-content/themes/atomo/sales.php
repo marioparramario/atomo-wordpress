@@ -16,6 +16,8 @@ get_header(); ?>
 		<p>Los Domínicos, Apumanque, Alonso de Córdova, Finis Terrae.</p>
 		<h2>Librería Lolita.</h2>
 		<p>República de Cuba 1724, Providencia.</p>
+		<h2>Librería Qué Leo Pedro de Valdivia.</h2>
+		<p>Av. Pedro de Valdivia 40, Providencia, Santiago, Región Metropolitana</p>
 	</section>
 </div>
 
