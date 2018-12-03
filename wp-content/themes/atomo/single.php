@@ -33,23 +33,11 @@ get_header(); ?>
 						<h2><?php the_subtitle(); ?></h2>
 
 
-						<?php
-							$atomo_author = atomo_post_author( $post->ID );
-							if ( ! empty( $atomo_author ) ) {
-								echo '<h5 class="author">' . $atomo_author . '</h5>';
-							}
 
-							$atomo_author_designation = atomo_post_author_designation( $post->ID );
-							if ( ! empty( $atomo_author_designation ) ) {
-								echo '<span class="designation">' . $atomo_author_designation . '</span>';
-							}
-
-							$atomo_location = atomo_post_location( $post->ID );
-							if ( ! empty( $atomo_location ) ) {
-								echo '<span class="location">' . $atomo_location . '</span>';
-							}
-						?>
-						<span class="locaiton"><?php echo esc_html( get_post_meta( get_the_ID(), 'atomo_post_ph', true ) ); ?></span>
+						<h5 class="autor"><?php echo esc_html( get_post_meta( get_the_ID(), 'atomo_post_author', true ) ); ?></h5>
+						<span class="designation"><?php echo esc_html( get_post_meta( get_the_ID(), 'atomo_post_author_designation', true ) ); ?></span>
+						<span class="location"><?php echo esc_html( get_post_meta( get_the_ID(), 'atomo_post_location', true ) ); ?></span>
+						<span class="photo"><?php echo esc_html( get_post_meta( get_the_ID(), 'atomo_post_ph', true ) ); ?></span>
 						<div class="post-body">
 							<?php the_content(); ?>
 						</div>
